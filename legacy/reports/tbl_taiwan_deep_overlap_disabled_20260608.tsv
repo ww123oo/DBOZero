@@ -1,0 +1,115 @@
+line	file	id	source_text	translation	reason	taiwan_refs
+298	tbl0.pak	0x01341695	Special	特殊	translation_any_taiwan	local_data.dat:DST_HOIPOIMIX_RECIPE_FILTER_SPECIAL;local_data.dat:DST_SCOUTER_PC_VIEWER_SPECIAL
+319	tbl0.pak	0x01397DF1	Warrior	那美克战士	translation_any_taiwan	local_data.dat:DST_NAMEK_FIGHTER;table_text_all_data.rdf:13:6008:0;table_text_all_data.rdf:14:3007:0;table_text_all_data.rdf:3:111703240:0
+320	tbl0.pak	0x01397F6D	Wonder	意魔人	translation_any_taiwan	local_data.dat:DST_WONDER_MAJIN;table_text_all_data.rdf:13:6014:0;table_text_all_data.rdf:14:3010:0
+323	tbl0.pak	0x0139972D	Warrior	那美克战士	translation_any_taiwan	local_data.dat:DST_NAMEK_FIGHTER;table_text_all_data.rdf:13:6008:0;table_text_all_data.rdf:14:3007:0;table_text_all_data.rdf:3:111703240:0
+441	tbl1.pak	0x016C2E38	Capsule	胶囊	translation_any_taiwan	table_text_all_data.rdf:4:101:0
+442	tbl1.pak	0x016C2E5A	Potion	药水	translation_any_taiwan	local_data.dat:DST_MARKET_RESORATIVE_ITEM;table_text_all_data.rdf:4:2100581:0
+443	tbl1.pak	0x016C2E92	Martial Artist Combat	武道家战斗	translation_any_taiwan	table_text_all_data.rdf:4:11011:0;table_text_all_data.rdf:4:11041:0;table_text_all_data.rdf:4:17011:0
+445	tbl1.pak	0x016C2EEE	Martial Artist HTB	武道家HTB	translation_any_taiwan	table_text_all_data.rdf:4:11013:0;table_text_all_data.rdf:4:11043:0;table_text_all_data.rdf:4:17013:0
+446	tbl1.pak	0x016C2F18	Spiritualist Combat	气功师战斗	translation_any_taiwan	table_text_all_data.rdf:4:11021:0;table_text_all_data.rdf:4:11051:0;table_text_all_data.rdf:4:17021:0
+448	tbl1.pak	0x016C2F6C	Spiritualist HTB	气功师HTB	translation_any_taiwan	table_text_all_data.rdf:4:11023:0;table_text_all_data.rdf:4:11053:0;table_text_all_data.rdf:4:17023:0
+449	tbl1.pak	0x016C2F92	Martial Artist Combat	武道家战斗	translation_any_taiwan	table_text_all_data.rdf:4:11011:0;table_text_all_data.rdf:4:11041:0;table_text_all_data.rdf:4:17011:0
+451	tbl1.pak	0x016C2FEE	Martial Artist HTB	武道家HTB	translation_any_taiwan	table_text_all_data.rdf:4:11013:0;table_text_all_data.rdf:4:11043:0;table_text_all_data.rdf:4:17013:0
+452	tbl1.pak	0x016C3018	Spiritualist Combat	气功师战斗	translation_any_taiwan	table_text_all_data.rdf:4:11021:0;table_text_all_data.rdf:4:11051:0;table_text_all_data.rdf:4:17021:0
+454	tbl1.pak	0x016C306C	Spiritualist HTB	气功师HTB	translation_any_taiwan	table_text_all_data.rdf:4:11023:0;table_text_all_data.rdf:4:11053:0;table_text_all_data.rdf:4:17023:0
+459	tbl1.pak	0x016C3154	Spiritualists	气功师	translation_any_taiwan	local_data.dat:DST_HUMAN_MYSTIC;table_text_all_data.rdf:13:6011:0;table_text_all_data.rdf:14:3006:0
+461	tbl1.pak	0x016C32EE	Spiritualists	气功师	translation_any_taiwan	local_data.dat:DST_HUMAN_MYSTIC;table_text_all_data.rdf:13:6011:0;table_text_all_data.rdf:14:3006:0
+464	tbl1.pak	0x016C33A4	Scouter	探测器	pair_any_taiwan	local_data.dat:DST_EQUIP_SLOT_TYPE_SCOUTER
+465	tbl1.pak	0x016C33DA	Weapon	武器	pair_any_taiwan	local_data.dat:DST_EQUIP_SLOT_TYPE_HAND
+467	tbl1.pak	0x016C34E4	Material	材料	translation_any_taiwan	local_data.dat:DST_MARKET_STUFF;table_text_all_data.rdf:4:11893:0;table_text_all_data.rdf:4:17604:0;table_text_all_data.rdf:4:18634:0;table_text_all_data.rdf:4:199511:0
+535	tbl1.pak	0x016C7C46	Beverage	饮料	translation_any_taiwan	table_text_all_data.rdf:4:21564:0;table_text_all_data.rdf:4:21771:0;table_text_all_data.rdf:4:21791:0;table_text_all_data.rdf:4:21811:0;table_text_all_data.rdf:4:21821:0;table_text_all_data.rdf:4:21853:0
+536	tbl1.pak	0x016C7D3A	Target	目标	pair_any_taiwan	local_data.dat:DST_DWC_TARGET
+538	tbl1.pak	0x016C85DA	Outfit	套装	translation_any_taiwan	local_data.dat:DST_SCOUTER_PC_VIEWER_COSTUME
+541	tbl1.pak	0x016C8738	Time Machine	时光机	translation_any_taiwan	table_text_all_data.rdf:13:14158:0;table_text_all_data.rdf:4:107404:0
+549	tbl1.pak	0x016C97BE	Earring	耳环	pair_any_taiwan	local_data.dat:DST_EQUIP_SLOT_TYPE_EARRING
+553	tbl1.pak	0x016C9D92	Empowerment	强化	translation_any_taiwan	local_data.dat:DST_MULTIDIALOG_MENU_SMITH_UPGRADE;table_text_all_data.rdf:7:24480:0;table_text_all_data.rdf:7:24481:0
+563	tbl1.pak	0x01714EE2	Gatekeeper	守门人	translation_any_taiwan	local_data.dat:DST_JOB_GATE_KEEPER;table_text_all_data.rdf:6:30:0
+568	tbl1.pak	0x01721EAC	Bardock	巴达克	translation_any_taiwan	table_text_all_data.rdf:6:1151102:0
+569	tbl1.pak	0x01721F08	Martial Artist	武道家	translation_any_taiwan	local_data.dat:DST_HUMAN_FIGHTER;table_text_all_data.rdf:13:6010:0;table_text_all_data.rdf:14:3005:0;table_text_all_data.rdf:6:1181101:0;table_text_all_data.rdf:6:1181102:0
+570	tbl1.pak	0x01721F2A	Martial Artist	武道家	translation_any_taiwan	local_data.dat:DST_HUMAN_FIGHTER;table_text_all_data.rdf:13:6010:0;table_text_all_data.rdf:14:3005:0;table_text_all_data.rdf:6:1181101:0;table_text_all_data.rdf:6:1181102:0
+579	tbl1.pak	0x01725D28	Chiaotzu	饺子	translation_any_taiwan	table_text_all_data.rdf:6:1581101:0;table_text_all_data.rdf:6:1582101:0;table_text_all_data.rdf:6:1582102:0
+584	tbl1.pak	0x01728E2E	Burter	巴特	translation_any_taiwan	table_text_all_data.rdf:5:1541101:0;table_text_all_data.rdf:5:1541102:0;table_text_all_data.rdf:5:1541103:0;table_text_all_data.rdf:6:2671101:0
+653	tbl1.pak	0x0172F5D2	Big Elder	大长老	translation_any_taiwan	table_text_all_data.rdf:6:4211102:0;table_text_all_data.rdf:6:4211201:0
+689	tbl1.pak	0x01733506	Piccolo	比克	translation_any_taiwan	table_text_all_data.rdf:13:9047:0;table_text_all_data.rdf:6:5551101:0;table_text_all_data.rdf:6:5551102:0;table_text_all_data.rdf:6:5551103:0;table_text_all_data.rdf:6:5551104:0;table_text_all_data.rdf:6:5551106:0;table_text_all_data.rdf:6:5552101:0;table_text_all_data.rdf:6:5552102:0;table_text_all_data.rdf:6:5552103:0;table_text_all_data.rdf:6:5552201:0;table_text_all_data.rdf:6:5553101:0;table_text_all_data.rdf:6:5553102:0;table_text_all_data.rdf:6:5553103:0;table_text_all_data.rdf:6:5553104:0
+702	tbl1.pak	0x017347E0	Shenron	神龙	translation_any_taiwan	local_data.dat:DST_SHENRON;table_text_all_data.rdf:5:717621440:0;table_text_all_data.rdf:6:6361101:0;table_text_all_data.rdf:6:6361102:0;table_text_all_data.rdf:6:6361103:0;table_text_all_data.rdf:6:6361104:0;table_text_all_data.rdf:6:6361105:0
+729	tbl1.pak	0x017F2666	Super Saiyan	超级赛亚人	translation_any_taiwan	table_text_all_data.rdf:13:3011:0;table_text_all_data.rdf:13:5030:0;table_text_all_data.rdf:17:2611002:0;table_text_all_data.rdf:17:2612002:0;table_text_all_data.rdf:7:1211110:0;table_text_all_data.rdf:7:210110:0
+730	tbl1.pak	0x017F2684	Pure Majin	纯粹魔人	translation_any_taiwan	table_text_all_data.rdf:7:5202510:0;table_text_all_data.rdf:7:6202410:0
+869	tbl1.pak	0x0186B918	Martial Artist	武道家	translation_any_taiwan	local_data.dat:DST_HUMAN_FIGHTER;table_text_all_data.rdf:13:6010:0;table_text_all_data.rdf:14:3005:0;table_text_all_data.rdf:6:1181101:0;table_text_all_data.rdf:6:1181102:0
+870	tbl1.pak	0x0186B93A	Spiritualist	气功师	translation_any_taiwan	local_data.dat:DST_HUMAN_MYSTIC;table_text_all_data.rdf:13:6011:0;table_text_all_data.rdf:14:3006:0
+871	tbl1.pak	0x0186B958	Warrior	那美克战士	translation_any_taiwan	local_data.dat:DST_NAMEK_FIGHTER;table_text_all_data.rdf:13:6008:0;table_text_all_data.rdf:14:3007:0;table_text_all_data.rdf:3:111703240:0
+872	tbl1.pak	0x0186B96C	Dragon Clan	那美克龙族	translation_any_taiwan	local_data.dat:DST_NAMEK_MYSTIC;table_text_all_data.rdf:13:6009:0;table_text_all_data.rdf:14:3008:0
+873	tbl1.pak	0x0186B9A6	Wonder Majin	意魔人	translation_any_taiwan	local_data.dat:DST_WONDER_MAJIN;table_text_all_data.rdf:13:6014:0;table_text_all_data.rdf:14:3010:0
+885	tbl1.pak	0x011ADE53	Dungeon	副本	translation_any_taiwan	local_data.dat:DST_TELEPORT_TYPE_DUNGEON
+929	tbl1.pak	0x012B37B9	Fighter	战士	translation_any_taiwan	table_text_all_data.rdf:13:17029:0
+1009	tbl1.pak	0x012ECB39	Upgrade Stone	升级石	pair_any_taiwan	local_data.dat:DST_DOJO_UPGRADE_NEED_ITEM
+1246	tbl1.pak	0x013661BF	Crystal	水晶	translation_any_taiwan	table_text_all_data.rdf:3:5110010:0
+1458	tbl1.pak	0x013B6A17	Dragon Stick	龙棍	translation_any_taiwan	table_text_all_data.rdf:3:6720200:0
+2043	tbl1.pak	0x0150B243	Stone Sword	石剑	translation_any_taiwan	table_text_all_data.rdf:3:7935050:0
+2055	tbl1.pak	0x0150C95F	Meat R	肉R	translation_any_taiwan	table_text_all_data.rdf:3:7990010:0
+2434	tbl1.pak	0x01655683	Energy	气功	translation_any_taiwan	local_data.dat:DST_SYSTEMEFFECT_ENERGY
+2435	tbl1.pak	0x016556FB	Attack	攻击	translation_any_taiwan	table_text_all_data.rdf:13:1016:0
+2436	tbl1.pak	0x016557FB	Attack Speed	攻击速度	translation_any_taiwan	table_text_all_data.rdf:13:1034:0
+2834	tbl1.pak	0x016D730F	Water Lizard	水蜥蜴	translation_any_taiwan	table_text_all_data.rdf:5:2311116:0;table_text_all_data.rdf:5:2311117:0;table_text_all_data.rdf:5:2311118:0
+2838	tbl1.pak	0x016D8DB1	Battle Robot	战斗机器人	translation_any_taiwan	table_text_all_data.rdf:5:2612134:0;table_text_all_data.rdf:5:2612135:0;table_text_all_data.rdf:5:2612136:0;table_text_all_data.rdf:5:6011134:0;table_text_all_data.rdf:5:717621320:0
+2841	tbl1.pak	0x016D9BCF	Beetle Egg	甲虫蛋	translation_any_taiwan	table_text_all_data.rdf:5:2841104:0;table_text_all_data.rdf:5:2841105:0
+2855	tbl1.pak	0x016DBAD5	Beetle	甲虫	translation_any_taiwan	table_text_all_data.rdf:5:3501101:0;table_text_all_data.rdf:5:3501102:0;table_text_all_data.rdf:5:3501103:0;table_text_all_data.rdf:5:3501152:0;table_text_all_data.rdf:5:3503137:0
+2875	tbl1.pak	0x016E5839	Fan Saibaman	扇栽培人	translation_any_taiwan	table_text_all_data.rdf:5:5211101:0;table_text_all_data.rdf:5:5211102:0;table_text_all_data.rdf:5:5211103:0
+2876	tbl1.pak	0x016E5893	Wind Saibaman	风栽培人	translation_any_taiwan	table_text_all_data.rdf:5:5211110:0;table_text_all_data.rdf:5:5211111:0;table_text_all_data.rdf:5:5211112:0
+2882	tbl1.pak	0x016E5D19	Water Fan Saibaman	水扇栽培人	translation_any_taiwan	table_text_all_data.rdf:5:5213104:0;table_text_all_data.rdf:5:5213105:0;table_text_all_data.rdf:5:5213106:0
+2893	tbl1.pak	0x016EA95D	Dark Namekian	黑暗那美克星人	translation_any_taiwan	table_text_all_data.rdf:7:890978:0
+2897	tbl1.pak	0x016EB6F3	Ancient Starfish Saibaman	古代海星栽培人	translation_any_taiwan	table_text_all_data.rdf:5:5812307:0;table_text_all_data.rdf:5:5812308:0;table_text_all_data.rdf:5:5812309:0
+2899	tbl1.pak	0x016EC209	Narak Soldier	那拉克士兵	translation_any_taiwan	table_text_all_data.rdf:5:5871101:0;table_text_all_data.rdf:5:5871102:0;table_text_all_data.rdf:5:5871103:0
+2908	tbl1.pak	0x016EE859	Ghost Robot	幽灵机器人	translation_any_taiwan	table_text_all_data.rdf:5:6013104:0;table_text_all_data.rdf:5:6013105:0;table_text_all_data.rdf:5:6013106:0
+2923	tbl1.pak	0x016F4C97	Original Saibaman	原始栽培人	translation_any_taiwan	table_text_all_data.rdf:5:6811128:0;table_text_all_data.rdf:5:6811129:0;table_text_all_data.rdf:5:6811130:0
+2936	tbl1.pak	0x016FE0A9	Saibaman	栽培人	translation_any_taiwan	table_text_all_data.rdf:13:10012:0;table_text_all_data.rdf:5:17311101:0;table_text_all_data.rdf:5:7311101:0;table_text_all_data.rdf:5:7311102:0;table_text_all_data.rdf:5:7311103:0;table_text_all_data.rdf:5:7311104:0
+2984	tbl1.pak	0x0170B5E3	Machine Egg	机器蛋	translation_any_taiwan	table_text_all_data.rdf:5:12841107:0;table_text_all_data.rdf:5:12841110:0;table_text_all_data.rdf:5:12841113:0;table_text_all_data.rdf:5:12841116:0;table_text_all_data.rdf:5:12841119:0;table_text_all_data.rdf:5:12841122:0
+3015	tbl1.pak	0x0170F785	Mira's Army Treatment Robot	米拉军治疗机器人	translation_any_taiwan	table_text_all_data.rdf:5:17771201:0
+3016	tbl1.pak	0x0170F7C1	Mira's Army Supply Robot	米拉军补给机器人	translation_any_taiwan	table_text_all_data.rdf:5:17773201:0
+3043	tbl1.pak	0x01713B99	Super Saiyan Broly	超级赛亚人布罗利	translation_any_taiwan	table_text_all_data.rdf:5:68131391:0
+3058	tbl1.pak	0x017143C1	Sword Fish	剑鱼	translation_any_taiwan	table_text_all_data.rdf:5:717621290:0
+3059	tbl1.pak	0x01714417	Combat Robot	战斗机器人	translation_any_taiwan	table_text_all_data.rdf:5:2612134:0;table_text_all_data.rdf:5:2612135:0;table_text_all_data.rdf:5:2612136:0;table_text_all_data.rdf:5:6011134:0;table_text_all_data.rdf:5:717621320:0
+3066	tbl1.pak	0x0177B9FF	Energy Cannon	气功炮	translation_any_taiwan	table_text_all_data.rdf:7:9104910:0;table_text_all_data.rdf:7:9104920:0;table_text_all_data.rdf:7:9104930:0;table_text_all_data.rdf:7:9104940:0;table_text_all_data.rdf:7:9104950:0
+3069	tbl1.pak	0x0177C531	Saiyan Spirit	赛亚人精神	translation_any_taiwan	table_text_all_data.rdf:7:16010:0;table_text_all_data.rdf:7:16011:0
+3077	tbl1.pak	0x0177F2C3	Kiri Kiri Kiri	基里基里基里	translation_any_taiwan	table_text_all_data.rdf:7:21000:0;table_text_all_data.rdf:7:21001:0
+3095	tbl1.pak	0x01783AAB	Invincible	无敌	translation_any_taiwan	table_text_all_data.rdf:7:23850:0;table_text_all_data.rdf:7:26180:0;table_text_all_data.rdf:7:26181:0
+3097	tbl1.pak	0x01784053	Double Hit	双重打击	translation_any_taiwan	table_text_all_data.rdf:7:19480:0;table_text_all_data.rdf:7:19481:0
+3118	tbl1.pak	0x0178EC35	Super Saiyan 2	超级赛亚人2	translation_any_taiwan	table_text_all_data.rdf:7:800970:0
+3119	tbl1.pak	0x0178F17B	Super Saiyan 4	超级赛亚人4	translation_any_taiwan	table_text_all_data.rdf:7:800980:0
+3120	tbl1.pak	0x0178F237	Oozaru	大猿	translation_any_taiwan	table_text_all_data.rdf:7:800982:0
+3121	tbl1.pak	0x0178F55F	Legendary Super Saiyan (Z)	传说超级赛亚人(Z)	translation_any_taiwan	table_text_all_data.rdf:7:829979:0
+3128	tbl1.pak	0x0179192B	Super Saiyan Rose	超级赛亚人桃红	translation_any_taiwan	table_text_all_data.rdf:7:910129:0
+3136	tbl1.pak	0x017985FB	Healing	治疗	translation_any_taiwan	local_data.dat:DST_SCOUTER_DH
+3175	tbl1.pak	0x017C7559	Recovery	恢复	translation_any_taiwan	table_text_all_data.rdf:4:11931:0;table_text_all_data.rdf:4:12931:0;table_text_all_data.rdf:4:13931:0;table_text_all_data.rdf:4:15931:0;table_text_all_data.rdf:4:17931:0;table_text_all_data.rdf:4:19931:0;table_text_all_data.rdf:4:524931:0;table_text_all_data.rdf:7:21970:0;table_text_all_data.rdf:7:21971:0
+3199	tbl1.pak	0x018194AF	Bomb Box	炸弹盒	translation_any_taiwan	table_text_all_data.rdf:11:238:0
+3218	tbl1.pak	0x018604FF	Fainting	昏迷	translation_any_taiwan	local_data.dat:DST_DRAGONBALL_SCRAMBLE_CONFIRM_DROP_1;table_text_all_data.rdf:8:804:0
+3219	tbl1.pak	0x0186098F	Damage	伤害	translation_any_taiwan	local_data.dat:DST_SCOUTER_DD;table_text_all_data.rdf:13:1084:0
+3220	tbl1.pak	0x01860CF3	Capsule Corp	胶囊公司	translation_any_taiwan	table_text_all_data.rdf:13:3014:0
+3221	tbl1.pak	0x01860D67	Namekian	那美克星人	translation_any_taiwan	local_data.dat:DST_NAMEK;table_text_all_data.rdf:13:3017:0
+3229	tbl1.pak	0x01861879	Guard Robot	守卫机器人	translation_any_taiwan	table_text_all_data.rdf:5:6011246:0;table_text_all_data.rdf:5:6011247:0;table_text_all_data.rdf:5:6011248:0
+3235	tbl1.pak	0x01861C27	CC Life Pill	CC生命药丸	translation_any_taiwan	table_text_all_data.rdf:13:3131:0
+3239	tbl1.pak	0x01861F49	Upgrade	升级	pair_any_taiwan	local_data.dat:DST_DOJO_UPGRADE
+3242	tbl1.pak	0x01862473	Dragon Ball	龙珠	translation_any_taiwan	table_text_all_data.rdf:13:14161:0;table_text_all_data.rdf:13:5002:0
+3246	tbl1.pak	0x018628FF	Family	家族	translation_any_taiwan	table_text_all_data.rdf:13:14066:0;table_text_all_data.rdf:13:5040:0
+3249	tbl1.pak	0x01862CA5	Warrior	那美克战士	translation_any_taiwan	local_data.dat:DST_NAMEK_FIGHTER;table_text_all_data.rdf:13:6008:0;table_text_all_data.rdf:14:3007:0;table_text_all_data.rdf:3:111703240:0
+3250	tbl1.pak	0x01862CB9	Dragon Clan	那美克龙族	translation_any_taiwan	local_data.dat:DST_NAMEK_MYSTIC;table_text_all_data.rdf:13:6009:0;table_text_all_data.rdf:14:3008:0
+3251	tbl1.pak	0x01862CD5	Martial Artist	武道家	translation_any_taiwan	local_data.dat:DST_HUMAN_FIGHTER;table_text_all_data.rdf:13:6010:0;table_text_all_data.rdf:14:3005:0;table_text_all_data.rdf:6:1181101:0;table_text_all_data.rdf:6:1181102:0
+3252	tbl1.pak	0x01862CF7	Spiritualist	气功师	translation_any_taiwan	local_data.dat:DST_HUMAN_MYSTIC;table_text_all_data.rdf:13:6011:0;table_text_all_data.rdf:14:3006:0
+3253	tbl1.pak	0x01862D15	Engineer	工程师	pair_any_taiwan	local_data.dat:DST_ENGINEER
+3254	tbl1.pak	0x01862D49	Wonder Majin	意魔人	translation_any_taiwan	local_data.dat:DST_WONDER_MAJIN;table_text_all_data.rdf:13:6014:0;table_text_all_data.rdf:14:3010:0
+3257	tbl1.pak	0x01862E11	Swordsman	剑术家	translation_any_taiwan	local_data.dat:DST_SWORD_MASTER;table_text_all_data.rdf:13:6021:0
+3261	tbl1.pak	0x01862FBF	Advanced	高级	translation_any_taiwan	local_data.dat:DST_ITEM_GRADE_SUPERIOR;local_data.dat:DST_OPTION_DROPFILTER_SUPERIOR;table_text_all_data.rdf:13:7002:0
+3262	tbl1.pak	0x01862FFF	Legendary	传说	pair_any_taiwan	local_data.dat:DST_DWC_CARD_GRADE_05
+3263	tbl1.pak	0x01863123	Scroll	卷轴	translation_any_taiwan	local_data.dat:DST_SCROLL;table_text_all_data.rdf:13:7018:0
+3264	tbl1.pak	0x018631A1	Backpack	背包	translation_any_taiwan	local_data.dat:DST_BACKDST_PACK;table_text_all_data.rdf:13:7025:0
+3266	tbl1.pak	0x018632A1	Necklace	项链	pair_any_taiwan	local_data.dat:DST_EQUIP_SLOT_TYPE_NECKLACE
+3281	tbl1.pak	0x0186854D	CC Bus	CC巴士	translation_any_taiwan	table_text_all_data.rdf:13:17007:0
+3283	tbl1.pak	0x0186883F	Warrior	那美克战士	translation_any_taiwan	local_data.dat:DST_NAMEK_FIGHTER;table_text_all_data.rdf:13:6008:0;table_text_all_data.rdf:14:3007:0;table_text_all_data.rdf:3:111703240:0
+3284	tbl1.pak	0x01868853	Dragon Clan	那美克龙族	translation_any_taiwan	local_data.dat:DST_NAMEK_MYSTIC;table_text_all_data.rdf:13:6009:0;table_text_all_data.rdf:14:3008:0
+3286	tbl1.pak	0x018688E3	Mira's Army	米拉军	translation_any_taiwan	table_text_all_data.rdf:13:17035:0
+3289	tbl1.pak	0x0186924F	Giant Android	巨大人造人	translation_any_taiwan	table_text_all_data.rdf:13:17102:0
+3294	tbl1.pak	0x0186DB6F	Staff of Shenron	神龙的杖	translation_any_taiwan	table_text_all_data.rdf:17:2220002:0
+3298	tbl1.pak	0x0186DF8D	Shenron's Scroll	神龙的卷轴	translation_any_taiwan	table_text_all_data.rdf:17:2313002:0
+3301	tbl1.pak	0x0186E155	Shenron's Sword	神龙的剑	translation_any_taiwan	table_text_all_data.rdf:17:2322002:0
+3305	tbl1.pak	0x0186E3FB	Shenron's Drum	神龙的鼓	translation_any_taiwan	table_text_all_data.rdf:17:2333002:0
+3306	tbl1.pak	0x0186E46F	Shenron's Mask	神龙的面具	translation_any_taiwan	table_text_all_data.rdf:17:2334002:0
