@@ -2,7 +2,7 @@
 """
 DBO Zero lang0.pak fixed-size single-value patcher.
 
-This dev tool intentionally patches only quoted values in pack\lang0.pak.
+This dev tool intentionally patches only quoted values in pack/lang0.pak.
 It preserves file size and all unrelated bytes because lang0.pak also contains
 metadata records after the visible key/value text.
 """
