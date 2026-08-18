@@ -1,0 +1,4 @@
+# file	id	source_text	translation
+# id can be 0x... from tbl_candidates.tsv, or * to replace every matching UTF-16LE string in that file.
+tbl0.pak	*	AzureRenegade	苍蓝叛逆者
+tbl0.pak	*	BurningRenegade	燃烧叛逆者
