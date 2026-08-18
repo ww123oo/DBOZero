@@ -8,6 +8,8 @@
 
 本倉庫由 [kalworth/DBOZero](https://github.com/kalworth/DBOZero) fork，並加強**台灣繁中用字**（例如「登錄」「帳號」）。
 
+**相關文件：** [常見問題 FAQ](docs/faq.md) · [貢獻說明](CONTRIBUTING.md) · [翻譯規則](docs/translation-rules.md)
+
 ---
 
 ## 你是哪一種使用者？
@@ -18,6 +20,8 @@
 | 自己從遊戲產生補丁／改翻譯 | [B. 新手快速開始（自己構建）](#b-新手快速開始自己構建) |
 | 日常改幾個詞再重建 | [C. 日常改翻譯](#c-日常改翻譯) |
 | 遊戲更新了要重做補丁 | [D. 遊戲更新後](#d-遊戲更新後) |
+| 遇到錯誤訊息 | [docs/faq.md](docs/faq.md) |
+| 想幫忙翻譯／修工具 | [CONTRIBUTING.md](CONTRIBUTING.md) |
 
 ---
 
@@ -26,7 +30,7 @@
 不需要 Python，也不需要 clone 本倉庫。
 
 1. 到 [Releases](https://github.com/ww123oo/DBOZero/releases) 下載最新補丁（繁中或簡中）。  
-   > 若尚無 Release，請改走下方 **B. 自己構建**。
+   > **目前暫無正式 Release**（遊戲每週更新，需多輪實測後再打包）。請改走下方 **B. 自己構建**。
 2. **先備份**遊戲目錄（或至少備份 `DBOZero` 資料夾）。
 3. 解壓後，把裡面的 `DBOZero` 內容，複製到遊戲裡的 `DBOZero`，**覆蓋同名檔案**。
 4. 啟動遊戲檢查。
@@ -85,8 +89,8 @@ dir output_taiwan\DBOZero
 | `pip` / `dboc` 不是內部或外部命令 | 重裝 Python 並勾選 PATH，或改用 `python -m pip install -e .`、`python -m hanhua_v3` |
 | 必須用可編輯安裝 | 請用 `pip install -e .`（有 `-e`），不要只 `pip install .` |
 
-查看目前設定：`dboc config --show`  
-完整參數：`dboc --help`
+更多見 [docs/faq.md](docs/faq.md)。  
+查看目前設定：`dboc config --show`　｜　全部參數：`dboc --help`
 
 ---
 
@@ -168,18 +172,20 @@ dboc --help      # 全部說明
 ```text
 DBOZero/
 ├── README.md              ← 你正在看的說明
+├── CONTRIBUTING.md        ← 如何貢獻翻譯／程式
 ├── data/                  ← ★ 翻譯表（日常改這裡）
 ├── hanhua_v3/             ← 工具本體（一般不用改）
 │   └── runtime/install_hanhua.py  ← 繁中用字修正表
-├── docs/                  ← 規則與開發說明
+├── docs/                  ← FAQ、規則、開發說明
 ├── src_file/              ← 從遊戲同步來的源（不進 Git）
 ├── output/                ← 簡中補丁產出（不進 Git）
 ├── output_taiwan/         ← 繁中補丁產出（不進 Git）
 ├── tests/                 ← 測試
-└── legacy/                ← 舊版歸檔（別當日常入口）
+└── legacy/                ← 舊版歸檔（僅參考；可能不完整／有錯字）
 ```
 
-**新手請忽略：** `legacy/`、`scripts/`、`reports/internal/`。
+**新手請忽略：** `legacy/`、`scripts/`、`reports/internal/`。  
+`legacy/` 說明見 [legacy/README.md](legacy/README.md)。
 
 ---
 
