@@ -53,11 +53,11 @@ def load_config(path: Path = CONFIG_PATH) -> dict[str, str]:
                 continue
             match = _KEY_VALUE_RE.match(line)
             if not match:
-                raise ConfigError(f"{path.name}:{line_no}: 无法解析的配置行：{stripped}")
+                raise ConfigError(f"{path.name}:{line_no}: 無法解析的設定行：{stripped}")
             try:
                 values[match.group(1)] = json.loads(match.group(2))
             except json.JSONDecodeError as exc:
-                raise ConfigError(f"{path.name}:{line_no}: 字符串转义无效：{stripped}") from exc
+                raise ConfigError(f"{path.name}:{line_no}: 字串跳脫無效：{stripped}") from exc
     return values
 
 
@@ -66,8 +66,8 @@ def save_game_dir(game_dir: Path, path: Path = CONFIG_PATH) -> None:
     existing = load_config(path)
     existing["game_dir"] = str(game_dir.expanduser().resolve())
     lines = [
-        "# dboc 本地配置（按用户机器区分，已加入 .gitignore，请勿提交）",
-        "# 游戏目录，指向 DBOZero 资源目录或其上一级游戏根目录",
+        "# dboc 本機設定（按使用者機器區分，已加入 .gitignore，請勿提交）",
+        "# 遊戲目錄，指向 DBOZero 資源目錄或其上一級遊戲根目錄",
     ]
     for key, value in existing.items():
         lines.append(f"{key} = {json.dumps(value, ensure_ascii=False)}")
@@ -113,10 +113,10 @@ def resolve_game_dir(cli_value: Path | None, *, config_path: Path = CONFIG_PATH)
     if detected is not None:
         return detected
     raise ConfigError(
-        "未找到游戏目录。请任选一种方式配置：\n"
-        "  1. dboc config --game-dir \"<游戏目录>\"\n"
-        f"  2. 在 {CONFIG_PATH.name} 中写入 game_dir = \"<游戏目录>\"\n"
-        f"  3. 设置环境变量 {ENV_GAME_DIR}\n"
-        "  4. 在命令中加 --game-dir \"<游戏目录>\"\n"
-        "游戏目录指向 DBOZero 资源目录或其上一级（需包含 pack/lang0.pak）。"
+        "未找到遊戲目錄。請任選一種方式設定：\n"
+        "  1. dboc config --game-dir \"<遊戲目錄>\"\n"
+        f"  2. 在 {CONFIG_PATH.name} 中寫入 game_dir = \"<遊戲目錄>\"\n"
+        f"  3. 設定環境變數 {ENV_GAME_DIR}\n"
+        "  4. 在命令中加 --game-dir \"<遊戲目錄>\"\n"
+        "遊戲目錄指向 DBOZero 資源目錄或其上一級（需包含 pack/lang0.pak）。"
     )
