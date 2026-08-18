@@ -44,7 +44,7 @@ def resolve_game_dir(path: Path) -> Path:
     nested = path / "DBOZero"
     if (nested / "pack" / "lang0.pak").is_file():
         return nested
-    raise SourceRefreshError(f"找不到游戏资源目录：{path}")
+    raise SourceRefreshError(f"找不到遊戲資源目錄：{path}")
 
 
 def resolve_source_dir(path: Path) -> Path:
@@ -65,7 +65,7 @@ def sha256_file(path: Path) -> str:
 def validate_layout(root: Path) -> None:
     missing = [str(relative) for relative in SOURCE_FILES if not (root / relative).is_file()]
     if missing:
-        raise SourceRefreshError("缺少必要源文件：" + ", ".join(missing))
+        raise SourceRefreshError("缺少必要源檔案：" + ", ".join(missing))
 
 
 OUTPUT_VARIANT_DIRS = (
@@ -114,12 +114,12 @@ def detect_patched_source(
             None,
         )
         if matched_variant is not None:
-            warnings.append(f"{relative.as_posix()} 与构建输出 {matched_variant} 逐字节一致")
+            warnings.append(f"{relative.as_posix()} 與構建輸出 {matched_variant} 逐位元組一致")
         elif relative in UTF8_ORIGINAL_FILES:
             try:
                 live_file.read_bytes().decode("utf-8")
             except UnicodeDecodeError:
-                warnings.append(f"{relative.as_posix()} 不是有效 UTF-8，疑似 GBK/CP950 补丁输出")
+                warnings.append(f"{relative.as_posix()} 不是有效 UTF-8，疑似 GBK/CP950 補丁輸出")
     return warnings
 
 
@@ -128,9 +128,9 @@ def assert_source_not_patched(game_root: Path, *, variant_dirs: tuple[Path, ...]
     if warnings:
         details = "\n".join(f"  - {line}" for line in warnings)
         raise SourceRefreshError(
-            "游戏目录里的文件看起来是已打补丁的版本，已停止同步以避免覆盖原版快照：\n"
+            "遊戲目錄裡的檔案看起來是已打補丁的版本，已停止同步以避免覆蓋原版快照：\n"
             f"{details}\n"
-            "请先用游戏启动器的文件校验/修复功能恢复官方原版文件，再重新运行。"
+            "請先用遊戲啟動器的檔案校驗／修復功能恢復官方原版檔案，再重新執行。"
         )
 
 
@@ -157,7 +157,7 @@ def refresh_source(
             try:
                 shutil.copy2(source, temporary)
                 if sha256_file(temporary) != source_hash:
-                    raise SourceRefreshError(f"复制校验失败：{relative}")
+                    raise SourceRefreshError(f"複製校驗失敗：{relative}")
                 os.replace(temporary, target)
             finally:
                 temporary.unlink(missing_ok=True)

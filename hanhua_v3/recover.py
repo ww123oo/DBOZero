@@ -47,7 +47,7 @@ def git_tsv(ref: str, relative_path: str) -> list[dict[str, str]]:
         payload = subprocess.run(command, cwd=ROOT, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stdout
         text = payload.decode("utf-8-sig")
     except (OSError, subprocess.CalledProcessError, UnicodeDecodeError) as exc:
-        raise RecoveryError(f"无法读取 Git 翻译数据：{ref}:{relative_path}") from exc
+        raise RecoveryError(f"無法讀取 Git 翻譯資料：{ref}:{relative_path}") from exc
     return list(csv.DictReader(io.StringIO(text), delimiter="\t"))
 
 
@@ -85,7 +85,7 @@ def write_tsv_atomic(path: Path, fieldnames: list[str], rows: list[dict[str, str
 
 def recover_from_git(refs: list[str], *, dry_run: bool = False) -> RecoveryStats:
     if not refs:
-        raise RecoveryError("至少需要一个 Git 引用")
+        raise RecoveryError("至少需要一個 Git 引用")
     queue_fields, queue_rows = read_tsv(QUEUE_PATH)
     master_fields, master_rows = read_tsv(TRANSLATIONS_PATH)
     _catalog_fields, catalog_rows = read_tsv(CATALOG_PATH)
