@@ -1,170 +1,189 @@
 # DBO Zero 繁中漢化工具鏈
 
-從遊戲原始資源生成 **台灣繁中（CP950/Big5）** 與大陸簡中（GBK）兩套**複製式**漢化補丁。  
-把產物覆蓋到遊戲目錄即可生效，不修改遊戲程式、不寫註冊表。
+從本機遊戲原始資源，生成 **台灣繁中** 與 **大陸簡中** 兩套「複製式」漢化補丁。  
+把產出的檔案覆蓋到遊戲目錄即可生效，**不修改**遊戲程式、不寫註冊表。
 
-> **免責聲明**：本專案是非官方玩家自製工具，與遊戲開發商／營運商無關。  
-> 倉庫不包含任何遊戲資源檔；補丁由工具在你本機安裝的遊戲上生成。  
-> 使用風險自負，請先備份遊戲目錄。
+> **免責聲明**：非官方玩家自製工具，與遊戲開發商／營運商無關。  
+> 倉庫**不含**任何遊戲資源；補丁由你在本機生成。使用前請先備份遊戲目錄。
 
-本倉庫由 [kalworth/DBOZero](https://github.com/kalworth/DBOZero) fork，並針對**台灣繁中用字**做了加強（例如統一使用「登錄」「帳號」等）。
-
----
-
-## 只想用漢化補丁的玩家
-
-不需要安裝 Python，也不需要 clone 本倉庫：
-
-1. 到 [Releases 頁面](https://github.com/ww123oo/DBOZero/releases) 下載最新補丁壓縮包（繁中或簡中）；
-2. 解壓後，把其中的 `DBOZero` 目錄內容複製到遊戲目錄下的 `DBOZero`，覆蓋同名檔案；
-3. 啟動遊戲。
-
-還原原文：用遊戲啟動器的檔案校驗／修復，或把你備份的原始檔案蓋回去。
-
-> 目前若尚無 Release，請使用下方「自己構建」流程產生補丁。
+本倉庫由 [kalworth/DBOZero](https://github.com/kalworth/DBOZero) fork，並加強**台灣繁中用字**（例如「登錄」「帳號」）。
 
 ---
 
-## 想參與翻譯或自己構建補丁
+## 你是哪一種使用者？
 
-### 環境需求
+| 我想… | 請看 |
+|--------|------|
+| 只想打上漢化、進遊戲 | [A. 只使用補丁](#a-只使用補丁) |
+| 自己從遊戲產生補丁／改翻譯 | [B. 新手快速開始（自己構建）](#b-新手快速開始自己構建) |
+| 日常改幾個詞再重建 | [C. 日常改翻譯](#c-日常改翻譯) |
+| 遊戲更新了要重做補丁 | [D. 遊戲更新後](#d-遊戲更新後) |
 
-- Windows（遊戲本身是 Windows 程式；工具鏈純 Python 部分也可在 macOS／Linux 執行）
-- Python 3.9 或更高
-- Git
-- 一份已安裝的 DBO Zero 遊戲（只讀提取原始資源）
+---
 
-### 快速開始
+## A. 只使用補丁
+
+不需要 Python，也不需要 clone 本倉庫。
+
+1. 到 [Releases](https://github.com/ww123oo/DBOZero/releases) 下載最新補丁（繁中或簡中）。  
+   > 若尚無 Release，請改走下方 **B. 自己構建**。
+2. **先備份**遊戲目錄（或至少備份 `DBOZero` 資料夾）。
+3. 解壓後，把裡面的 `DBOZero` 內容，複製到遊戲裡的 `DBOZero`，**覆蓋同名檔案**。
+4. 啟動遊戲檢查。
+
+**還原官方原文**：用遊戲啟動器的「檔案校驗／修復」，或把備份蓋回去。
+
+---
+
+## B. 新手快速開始（自己構建）
+
+### 需要準備
+
+- Windows（建議；遊戲是 Windows 版）
+- [Python 3.9+](https://www.python.org/downloads/)（安裝時勾選 **Add Python to PATH**）
+- [Git](https://git-scm.com/downloads)
+- 本機已安裝的 **DBO Zero**（必須是**官方原版**檔案，不要先打過漢化）
+
+### 五步完成第一次構建
+
+在 **PowerShell** 執行（把路徑改成你的遊戲目錄）：
 
 ```powershell
+# 1) 下載工具
 git clone https://github.com/ww123oo/DBOZero.git
 cd DBOZero
-pip install -e .            # 安裝跨平台 dboc 命令（可編輯安裝）
-dboc config --game-dir "E:\DBO Zero 2.0"   # 設定一次遊戲目錄
-dboc update                 # 提取源檔 → 掃描 → 翻譯新增 → 構建兩套補丁
+
+# 2) 安裝命令 dboc（只裝在這個資料夾，可安全重跑）
+pip install -e .
+
+# 3) 告訴工具遊戲在哪（只需做一次，會寫入本機 dboc.toml）
+dboc config --game-dir "E:\DBO Zero 2.0"
+
+# 4) 一鍵：同步源檔 → 掃描 → 填可自動翻譯的詞 → 產出兩套補丁
+dboc update
+
+# 5) 確認有產出
+dir output\DBOZero
+dir output_taiwan\DBOZero
 ```
 
-遊戲目錄只需設定一次，會寫入倉庫根目錄的 `dboc.toml`（已加入 `.gitignore`）。  
-也可使用環境變數 `DBOC_GAME_DIR`，或命令列 `--game-dir` 臨時指定。  
-查看目前生效路徑：`dboc config --show`。
+### 把補丁套進遊戲
 
-### 翻譯入口（日常只改這兩個檔）
+```text
+繁中：把  output_taiwan\DBOZero\*  覆蓋到  遊戲目錄\DBOZero\
+簡中：把  output\DBOZero\*          覆蓋到  遊戲目錄\DBOZero\
+```
 
-| 檔案 | 用途 | 注意 |
-|------|------|------|
-| `data/new_translations.tsv` | 新增詞條佇列 | **只填「填寫中文」欄** |
-| `data/translations.tsv` | 已接受譯文主表 | **只改 `zh_cn` 欄** |
+覆蓋前請先備份。工具**只讀**遊戲目錄，不會自動寫入遊戲。
 
-改完後執行：
+### 常見第一次錯誤
+
+| 現象 | 怎麼辦 |
+|------|--------|
+| `找不到遊戲目錄` / `缺少必要源檔案` | 路徑要指到含 `DBOZero` 的遊戲根目錄，或直接指到 `...\DBOZero`；路徑有空格請加引號 |
+| `疑似已打補丁` / 拒絕同步 | 遊戲已被漢化過。用啟動器**修復原版**後再 `dboc update` |
+| `pip` / `dboc` 不是內部或外部命令 | 重裝 Python 並勾選 PATH，或改用 `python -m pip install -e .`、`python -m hanhua_v3` |
+| 必須用可編輯安裝 | 請用 `pip install -e .`（有 `-e`），不要只 `pip install .` |
+
+查看目前設定：`dboc config --show`  
+完整參數：`dboc --help`
+
+---
+
+## C. 日常改翻譯
+
+平時**只動這兩個表**，不要改其他欄位名稱：
+
+| 檔案 | 你要做的事 |
+|------|------------|
+| `data/new_translations.tsv` | 新詞：只填 **`填写中文`** 這一欄 |
+| `data/translations.tsv` | 改舊譯：只改 **`zh_cn`** 這一欄 |
+
+改完後：
 
 ```powershell
 dboc build
 ```
 
-產出：
-
 - `output/DBOZero` → 大陸簡中（GBK）
 - `output_taiwan/DBOZero` → 台灣繁中（CP950／Big5）
 
-翻譯與編碼規則見 [docs/translation-rules.md](docs/translation-rules.md)。
-
-### 常用命令
-
-```text
-dboc update        # 遊戲更新後一鍵：恢復點 → 同步源 → 掃描 → 翻譯新增 → 構建
-dboc status        # 對比源快照與本機遊戲是否一致
-dboc refresh       # 只從遊戲目錄同步必要源檔（會先建 Git 恢復點）
-dboc scan          # 只掃描 src_file 並刷新翻譯佇列
-dboc translate     # 批量填寫可確定的佇列譯文
-dboc build         # 構建兩套補丁（預設並行、增量）
-dboc config        # 查看／寫入遊戲目錄設定
-dboc --help        # 全部命令與參數
-```
-
-遊戲目錄只作為**讀取源**。CLI 不會寫入遊戲目錄，也不會複製帳號資料、日誌、用戶端程式或更新快取。
+更細的規則：[docs/translation-rules.md](docs/translation-rules.md)  
+迷你檢查清單：[reports/what_to_do_next.md](reports/what_to_do_next.md)
 
 ---
 
-## 倉庫結構
+## D. 遊戲更新後
+
+**正確順序：**
+
+1. 用啟動器把遊戲更新／修復成**官方原版**（不要帶著舊漢化去同步）。
+2. 在本倉庫執行：
+
+```powershell
+dboc update
+```
+
+3. 再把新的 `output_taiwan`（或 `output`）覆蓋回遊戲。
+
+`dboc update` 會：建立 Git 恢復點 → 同步源 → 掃描新詞 → 盡量自動填譯 → 構建兩套補丁。
+
+---
+
+## 常用命令一覽
+
+```text
+dboc update      # 遊戲更新後一鍵重做（建議）
+dboc status      # 看源快照與本機遊戲是否一致
+dboc refresh     # 只同步必要源檔（會先建恢復點）
+dboc scan        # 只掃描並刷新翻譯佇列
+dboc translate   # 批量填可確定的佇列譯文
+dboc build       # 只構建補丁（改完 TSV 後用這個）
+dboc config      # 查看／寫入遊戲目錄
+dboc --help      # 全部說明
+```
+
+---
+
+## 台灣繁中用字
+
+構建繁中時會先轉繁體，再套用 `TAIWAN_SIMPLIFY_FIXUPS`（在 `hanhua_v3/runtime/install_hanhua.py`）。
+
+| 簡中 | 本倉庫繁中 |
+|------|------------|
+| 登录 | **登錄** |
+| 账号／账户 | **帳號／帳戶** |
+| 服务器 | **伺服器** |
+| 信息 | **訊息** |
+| 窗口 | **視窗** |
+| 默认 | **預設** |
+| 设置 | **設定** |
+
+若遊戲裡仍看到不順的用字，在修正表追加 `("正確台灣用字", "簡體")`，長詞放前面，再 `dboc build`。
+
+---
+
+## 倉庫裡什麼要動、什麼別動
 
 ```text
 DBOZero/
-├── README.md                 # 本說明
-├── pyproject.toml            # 套件與 dboc 入口
-├── build_output.py           # 構建入口（由 dboc build 呼叫）
-├── LICENSE
-│
-├── hanhua_v3/                # ★ 現行工具鏈（唯一維護的實作）
-│   ├── cli.py                # 命令列編排
-│   ├── config.py             # 本機設定與遊戲目錄探測
-│   ├── source.py             # 從遊戲只讀同步源檔
-│   ├── scan.py               # 掃描並刷新翻譯佇列
-│   ├── recover.py            # 從 Git 歷史恢復譯文
-│   ├── glossary.py           # 人工校訂譯名
-│   ├── policy.py             # 政策與黑名單
-│   └── runtime/              # 實際補丁模組（繁簡轉換、打包等）
-│       └── install_hanhua.py # 含台灣用字修正表 TAIWAN_SIMPLIFY_FIXUPS
-│
-├── data/                     # ★ 翻譯核心資產（會進 Git）
-│   ├── translations.tsv      # 已接受主表
-│   ├── new_translations.tsv  # 日常新增佇列
-│   └── gui_font.ini          # 可選字型設定
-│
-├── docs/                     # 文件
-│   ├── translation-rules.md  # 翻譯與編碼規範
-│   └── development.md        # 開發者說明
-│
-├── src_file/                 # 源快照（遊戲資源，不進 Git）
-│   └── README.md             # 說明要放哪些檔、如何取得
-│
-├── tests/                    # 單元測試
-├── scripts/                  # 特殊恢復腳本（非日常入口）
-├── reports/                  # 少數人工備註（產生的 internal 報表不進 Git）
-│
-├── legacy/                   # 舊版工具與歷史資料（僅供參考／遷移）
-│   └── README.md
-│
-├── output/                   # 構建產物：簡中（不進 Git）
-└── output_taiwan/            # 構建產物：繁中（不進 Git）
+├── README.md              ← 你正在看的說明
+├── data/                  ← ★ 翻譯表（日常改這裡）
+├── hanhua_v3/             ← 工具本體（一般不用改）
+│   └── runtime/install_hanhua.py  ← 繁中用字修正表
+├── docs/                  ← 規則與開發說明
+├── src_file/              ← 從遊戲同步來的源（不進 Git）
+├── output/                ← 簡中補丁產出（不進 Git）
+├── output_taiwan/         ← 繁中補丁產出（不進 Git）
+├── tests/                 ← 測試
+└── legacy/                ← 舊版歸檔（別當日常入口）
 ```
 
-**日常只需要關心：**
-
-1. `data/*.tsv` — 改譯文  
-2. `hanhua_v3/runtime/install_hanhua.py` — 調整繁中用字修正表  
-3. `dboc build` / `dboc update` — 產出補丁  
-
-其餘 `legacy/`、`scripts/`、`reports/` 為輔助，不必日常動用。
+**新手請忽略：** `legacy/`、`scripts/`、`reports/internal/`。
 
 ---
 
-## 台灣繁中用字說明
-
-簡中譯文在構建繁中補丁時，會經由 Windows API 轉繁體，再套用 `TAIWAN_SIMPLIFY_FIXUPS` 修正表。
-
-本 fork 已調整的重點包括：
-
-| 簡中 | 本倉庫繁中 | 說明 |
-|------|------------|------|
-| 登录 | **登錄** | 統一使用「登錄」 |
-| 账号／账户 | **帳號／帳戶** | 避免出現「賬」 |
-| 服务器 | **伺服器** | 台灣常用 |
-| 信息 | **訊息** | 台灣常用 |
-| 窗口 | **視窗** | 台灣常用 |
-| 默认 | **預設** | 台灣常用 |
-| 设置 | **設定** | 台灣常用 |
-
-若實際遊戲中仍看到不理想用字，可在 `hanhua_v3/runtime/install_hanhua.py` 的 `TAIWAN_SIMPLIFY_FIXUPS` 繼續追加，格式為：
-
-```python
-("正確台灣用字", "簡體原文"),
-```
-
-長詞請放在短詞前面，改完後重新 `dboc build`。
-
----
-
-## 開發與驗證
+## 開發者驗證
 
 ```powershell
 pip install -e .[dev]
@@ -174,11 +193,11 @@ dboc status
 dboc build
 ```
 
-更多模組職責與約定見 [docs/development.md](docs/development.md)。
+模組說明見 [docs/development.md](docs/development.md)。
 
 ---
 
 ## License
 
-程式碼以 [MIT License](LICENSE) 發布。  
-遊戲本身的資源與商標歸原權利人所有。
+程式碼：[MIT License](LICENSE)  
+遊戲資源與商標歸原權利人所有。

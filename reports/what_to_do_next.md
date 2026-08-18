@@ -1,27 +1,25 @@
-# 日常翻譯工作說明
+# 日常翻譯小清單（給已會構建的人）
 
-平時只需要關心下面兩個檔案與一次構建命令。
+第一次使用請先看根目錄 [README.md](../README.md) 的「新手快速開始」。
 
 ## 1. 補新內容
 
 開啟：`data/new_translations.tsv`
 
-**只填這一欄：**
+**只填這一欄（表頭原文如此，請勿改名）：**
 
-- `填寫中文`
+- `填写中文`
 
-其他欄僅供參考（來源、檔案、位置、原文、參考譯文、長度狀態）。  
-`ok` = 長度可用；`untranslated` = 尚未填；`too_long` = 可能放不進固定長度欄位。
+其他欄只供參考。  
+`ok` = 長度大致可用；`untranslated` = 尚未填；`too_long` = 可能放不進固定長度欄位。
 
-TBL 列很多，建議依「來源」「檔案」或關鍵字篩選後再填。
+TBL 列很多，建議用試算表依「来源」「文件」或關鍵字篩選後再填。
 
 ## 2. 改舊翻譯
 
 開啟：`data/translations.tsv`
 
-**只改這一欄：**
-
-- `zh_cn`
+**只改：** `zh_cn`
 
 ## 3. 產生補丁
 
@@ -29,14 +27,16 @@ TBL 列很多，建議依「來源」「檔案」或關鍵字篩選後再填。
 dboc build
 ```
 
-- 簡中：打包 `output/`
-- 繁中：打包 `output_taiwan/`
+- 簡中 → `output/DBOZero`
+- 繁中 → `output_taiwan/DBOZero`
 
-**不要**把 `src_file`、`data`、`legacy`、`reports` 一起發出。
+**不要**把 `src_file`、`data`、`legacy`、`reports` 整包發給玩家。
 
-## 4. 檢查產物
+## 4. 套用到遊戲
 
-至少確認這些檔案存在：
+覆蓋前先備份，再把對應 `DBOZero` 內容複製到遊戲的 `DBOZero`。
+
+## 5. 檢查產物是否存在
 
 ```text
 output/DBOZero/localize/Taiwan/language/local_data.dat
@@ -49,9 +49,8 @@ output_taiwan/DBOZero/pack/tbl0.pak
 output_taiwan/DBOZero/pack/tbl1.pak
 ```
 
-`dboc build` 只讀 `src_file/DBOZero`，不會動真實遊戲目錄。
+## 6. 其他
 
-## 5. 其他
-
-`reports/internal/` 是工具內部產物，平時不用看。  
-繁中用字修正見 `hanhua_v3/runtime/install_hanhua.py` 的 `TAIWAN_SIMPLIFY_FIXUPS`。
+- `reports/internal/`：工具內部產物，平時不用看。
+- 繁中用字：`hanhua_v3/runtime/install_hanhua.py` 的 `TAIWAN_SIMPLIFY_FIXUPS`。
+- 詳細規則：`docs/translation-rules.md`。
