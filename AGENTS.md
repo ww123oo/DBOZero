@@ -2,68 +2,57 @@
 
 ## Tips
 
-Answer questions in Chinese, and address me as "老大" before every answer.
+Answer questions in Chinese.
 
 ## Agent Safety Workflow
 
 - Use `tmp/` (gitignored) as the scratch root for any experimental or generated file work.
-- At the start of a task, create a purpose-named subdirectory under `tmp/` (for example `tmp/tbl2_format_probe/`) and keep all intermediate files, experiment outputs, and verification artifacts inside it. One directory per task; keep the directory after the task ends as a work record — do not clean it up.
-- Unless the user explicitly asks for direct source modification, do not edit the tracked source tree first. Build and verify the change inside `tmp/<task>/`, run tests/validation there, and only after verification ask the user whether to merge it into the source tree.
+- At the start of a task, create a purpose-named subdirectory under `tmp/` and keep intermediate files inside it.
+- Unless the user explicitly asks for direct source modification, do not edit the tracked source tree first. Build and verify inside `tmp/<task>/`, then ask before merging.
 - Merging into tracked source always requires explicit user confirmation.
 
 ## Current Workflow
 
-This workspace builds a copy-only DBO Zero Chinese patch from `src_file/DBOZero`. Never write to the live game directory. The only allowed live-directory read is an explicit `dboc refresh` or `dboc update`, which copies the required original assets into `src_file/DBOZero`.
+This workspace builds a copy-only DBO Zero Chinese patch from `src_file/DBOZero`.
+Never write to the live game directory.
+The only allowed live-directory read is an explicit `dboc refresh` or `dboc update`.
 
-## CLI Usage Documentation
+## CLI
 
-- The canonical user-facing documentation is the repository-root `README.md`.
-- Translation and build rules live in `docs/translation-rules.md`; module architecture and dev workflow live in `docs/development.md`. Read them before changing translation handling or build logic.
-- Use `dboc --help` or `dboc <command> --help` for the live argument reference.
-- When a CLI command, option, default, or workflow changes, update `README.md` (and `docs/` when relevant) in the same change. Keep `AGENTS.md` focused on repository constraints and safety rules.
+- Canonical user docs: root `README.md`
+- Translation rules: `docs/translation-rules.md`
+- Dev docs: `docs/development.md`
+- Install: `pip install -e .` only (editable; workspace root = repo root)
 
-Use the unified v3 CLI:
+Key commands:
 
-- Install with `pip install -e .` (editable install; the workspace root must stay the repository root). This is the only supported installation path.
-
-- `dboc update`: creates a Git checkpoint, refreshes source assets, scans, translates new rows, and builds both outputs.
-- `dboc status`: compares the 9 required source assets with the live game directory without modifying either location.
-- `dboc refresh`: creates a Git checkpoint and refreshes only the 9 required source assets.
-- `dboc scan`: refreshes discovery data and translation queues from `src_file/DBOZero`.
-- `dboc recover --ref "stash@{n}"`: fills current blank translations from Git history using exact keys and unambiguous source-text fallback.
-- `dboc build`: builds both outputs in parallel by default.
-- `dboc config`: shows or writes the per-machine game directory in `dboc.toml` (gitignored). Resolution order: `--game-dir` > `DBOC_GAME_DIR` env > `dboc.toml` > autodetect. Never hardcode a game path in source code.
-
-The old `python -m hanhua_v3`, `build_output.py`, and `python -m hanhua_v3.scan` entrypoints remain compatible, but daily work should use `dboc`.
-
-Build from this directory:
-
-```powershell
-dboc build
-```
-
-Expected outputs:
-
-- `output/DBOZero`: mainland Simplified Chinese, GBK-oriented.
-- `output_taiwan/DBOZero`: Taiwan Traditional Chinese, CP950/Big5-oriented.
+- `dboc update` — checkpoint → refresh source → scan → translate new → build both
+- `dboc status` — compare source snapshot vs live game
+- `dboc refresh` — checkpoint + refresh required source assets
+- `dboc scan` — refresh queues from `src_file/DBOZero`
+- `dboc build` — build simplified + traditional outputs
+- `dboc config` — show/write game dir in `dboc.toml` (gitignored)
 
 ## Source And Output Boundaries
 
-- `src_file/DBOZero/` is the source snapshot, synced read-only from the user's own game install via `dboc refresh`. It contains copyrighted game assets and is **not tracked by Git** — never commit it. The game directory must hold original files: `refresh`/`update` refuse to sync when live files match the build outputs (i.e. the patch is applied), and `dboc status` reports the same warning. Restore originals via the launcher repair first.
-- `dboc.toml` is per-machine local config and is **not tracked by Git**.
-- `output/`, `output_taiwan/`, and `release/` are generated deliverables, not tracked.
-- `hanhua_v3/runtime/` holds the actively maintained patching modules (moved from `legacy/tools`). Edit them there; the same-named files under `legacy/tools/` are compatibility shims only.
-- `legacy/` otherwise contains archived tools, old TSV files, and historical reference data. Do not restart old override workflows unless explicitly asked.
-- `reports/internal/` contains generated discovery/audit tables. Keep them out of the daily editing surface.
-- Generated game-facing files must not be converted to UTF-8 Chinese text.
+- `src_file/DBOZero/` — source snapshot, **not tracked**; never commit game assets
+- `dboc.toml` — local config, **not tracked**
+- `output/`, `output_taiwan/`, `release/` — generated, **not tracked**
+- `hanhua_v3/runtime/` — actively maintained patch modules
+- `legacy/` — archived only; do not restart old workflows unless asked
+- `reports/internal/` — generated discovery tables; keep out of daily editing
 
-## Translation Rules
+## Taiwan Traditional Preferences (this fork)
 
-The full translation-table, text-source-priority, and encoding/pack rules are in `docs/translation-rules.md`. They are normative for any change touching `data/` or the build pipeline.
+When adjusting `TAIWAN_SIMPLIFY_FIXUPS` in `hanhua_v3/runtime/install_hanhua.py`:
+
+- Prefer **登錄** (not 登入) for login
+- Prefer **帳號 / 帳戶** (not 賬號 / 賬戶)
+- Prefer Taiwan UI vocabulary: 伺服器、訊息、視窗、預設、設定、軟體…
+
+Format: `("正確台灣用字", "簡體原文")`. Longer phrases before shorter ones.
 
 ## Validation
-
-The active v3 validation baseline is:
 
 ```powershell
 python -m compileall -q build_output.py hanhua_v3
@@ -72,8 +61,8 @@ dboc status
 dboc build
 ```
 
-Do not use `legacy/tools/validate_output.py` as the default v3 validation gate. CI mirrors these checks (compile, pytest, CLI smoke) on Windows and Ubuntu.
-
 ## Code Style
 
-Use Python 3 and the standard library unless there is a clear reason to add a dependency. Tests live in `tests/` and use pytest. Keep changes scoped to the v3 workflow unless the user asks for legacy recovery.
+Python 3 + standard library unless a dependency is clearly needed.
+Tests in `tests/` with pytest.
+Keep changes scoped to the v3 workflow unless the user asks for legacy recovery.
