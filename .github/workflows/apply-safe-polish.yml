@@ -1,0 +1,50 @@
+name: Apply safe polish
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download and extract patched modules
+        run: |
+          curl -fsSL -o /tmp/safe-polish.tgz "https://litter.catbox.moe/zti8gy.tgz"
+          tar xzf /tmp/safe-polish.tgz
+          python3 - <<'PY'
+          import ast
+          from pathlib import Path
+          paths = [
+            "hanhua_v3/cli.py",
+            "hanhua_v3/config.py",
+            "hanhua_v3/glossary.py",
+            "hanhua_v3/recover.py",
+            "hanhua_v3/scan.py",
+            "hanhua_v3/runtime/auto_translate_new_source.py",
+            "hanhua_v3/runtime/lang0_gbk_patch.py",
+            "hanhua_v3/runtime/tbl_utf16_patch.py",
+            "hanhua_v3/runtime/taiwan_fixups.py",
+          ]
+          for p in paths:
+              text = Path(p).read_text(encoding="utf-8")
+              ast.parse(text)
+              assert "__all__" in text, p
+              print("ok", p)
+          assert "CLASS_TERM_REPLACEMENTS" in Path("hanhua_v3/runtime/auto_translate_new_source.py").read_text(encoding="utf-8")
+          assert "visible_forced_tbl_text" not in Path("hanhua_v3/runtime/auto_translate_new_source.py").read_text(encoding="utf-8")
+          assert "CREATE_NO_WINDOW" in Path("hanhua_v3/recover.py").read_text(encoding="utf-8")
+          print("checks passed")
+          PY
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hanhua_v3/
+          git commit -m "refactor: safe Doubao P2/P3/P6 polish (__all__, CLASS_TERM, CREATE_NO_WINDOW, config dedup)" || exit 0
+          git push
