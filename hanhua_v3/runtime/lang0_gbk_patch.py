@@ -1,22 +1,3 @@
-__all__ = [
-    "ALLOWED_PRINTF_MISMATCHES",
-    "PatchError",
-    "PRINTF_SPEC_RE",
-    "auto_detect_game_dir",
-    "backup_lang0",
-    "build_parser",
-    "decode_lang0_value",
-    "encode_lang0_value",
-    "encoded_text_bytes",
-    "find_lang0_value_end",
-    "find_lang0_value_start",
-    "install",
-    "is_game_dir",
-    "lang0_path",
-    "main",
-    "tool_dir",
-]
-
 # -*- coding: utf-8 -*-
 """
 DBO Zero lang0.pak fixed-size single-value patcher.
@@ -38,6 +19,25 @@ import subprocess
 import sys
 from pathlib import Path
 
+
+__all__ = [
+    "ALLOWED_PRINTF_MISMATCHES",
+    "PatchError",
+    "PRINTF_SPEC_RE",
+    "auto_detect_game_dir",
+    "backup_lang0",
+    "build_parser",
+    "decode_lang0_value",
+    "encode_lang0_value",
+    "encoded_text_bytes",
+    "find_lang0_value_end",
+    "find_lang0_value_start",
+    "install",
+    "is_game_dir",
+    "lang0_path",
+    "main",
+    "tool_dir",
+]
 
 class PatchError(RuntimeError):
     pass
