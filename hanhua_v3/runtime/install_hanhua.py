@@ -226,16 +226,26 @@ def to_traditional(text: str) -> str:
 
 
 def apply_taiwan_fixups(text: str) -> str:
+    """Map Taiwan-style traditional forms back toward simplified (for 簡中 output).
+
+    TAIWAN_SIMPLIFY_FIXUPS entries are (traditional, simplified); here we replace
+    traditional -> simplified.
+    """
     fixed = text
-    for old, new in TAIWAN_SIMPLIFY_FIXUPS:
-        fixed = fixed.replace(old, new)
+    for trad, simp in TAIWAN_SIMPLIFY_FIXUPS:
+        fixed = fixed.replace(trad, simp)
     return fixed
 
 
 def apply_traditional_fixups(text: str) -> str:
+    """Prefer Taiwan traditional wording after LCMap traditional conversion.
+
+    TAIWAN_SIMPLIFY_FIXUPS entries are (traditional, simplified); here we replace
+    simplified -> traditional (e.g. 登录->登錄, 账号->帳號).
+    """
     fixed = text
-    for old, new in TAIWAN_SIMPLIFY_FIXUPS:
-        fixed = fixed.replace(new, old)
+    for trad, simp in TAIWAN_SIMPLIFY_FIXUPS:
+        fixed = fixed.replace(simp, trad)
     return fixed
 
 
@@ -1239,7 +1249,7 @@ def install(game_dir: Path, overrides_path: Path | None, activate: bool, target_
         shutil.copytree(Path(temp_name) / target_folder, target_folder_path)
         if activate:
             activate_language(game_dir, target_folder)
-        report_lines = ["DBO Zero Simplified Chinese patch installed.", ""]
+        report_lines = ["DBO Zero 簡中補丁已安裝。", ""]
         report_lines.extend(format_stats(stats))
         report_lines.append("")
         report_lines.append(f"Target folder: {target_folder}")
@@ -1357,7 +1367,7 @@ def command_export_tbl(args: argparse.Namespace) -> int:
 def command_install(args: argparse.Namespace) -> int:
     target_folder = validate_target_folder(args.target_folder)
     backup = install(args.game_dir.resolve(), args.overrides, not args.no_activate, target_folder)
-    print("Installed Simplified Chinese patch.")
+    print("已安裝簡中補丁。")
     print(f"Backup: {backup}")
     if args.no_activate:
         print("Language was not activated because --no-activate was used.")
@@ -1459,7 +1469,7 @@ def command_restore(args: argparse.Namespace) -> int:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="DBO Zero Simplified Chinese patch installer")
+    parser = argparse.ArgumentParser(description="DBO Zero 簡中／繁中補丁安裝器")
     parser.add_argument(
         "--game-dir",
         type=Path,

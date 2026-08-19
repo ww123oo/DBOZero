@@ -2,6 +2,7 @@
 """Taiwan Traditional Chinese preference pairs: (traditional, simplified)."""
 
 # Longer phrases first. apply_traditional_fixups maps simplified -> traditional.
+# 同一繁體可對多種簡體寫法（例如 帳號←账号／帐号），屬刻意重複，勿刪。
 TAIWAN_SIMPLIFY_FIXUPS = (
     ("帳號", "账号"),
     ("帳戶", "账户"),
