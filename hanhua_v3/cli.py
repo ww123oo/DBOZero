@@ -56,7 +56,17 @@ class CliError(RuntimeError):
 
 
 def git_command(*args: str, capture: bool = False) -> subprocess.CompletedProcess[bytes]:
-    command = ["git", "-c", f"safe.directory={ROOT.as_posix()}", *args]
+    # Local identity only for this process — no global git user.name/email required.
+    command = [
+        "git",
+        "-c",
+        f"safe.directory={ROOT.as_posix()}",
+        "-c",
+        "user.name=dboc",
+        "-c",
+        "user.email=dboc-local@localhost",
+        *args,
+    ]
     return subprocess.run(
         command,
         cwd=ROOT,
