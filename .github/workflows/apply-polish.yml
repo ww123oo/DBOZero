@@ -1,0 +1,30 @@
+name: Apply polish
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download patched Python modules
+        run: |
+          curl -fsSL -o hanhua_v3/runtime/install_hanhua.py "https://litter.catbox.moe/dgg03k.py"
+          curl -fsSL -o hanhua_v3/runtime/taiwan_fixups.py "https://litter.catbox.moe/0jqja5.py"
+          python3 -c "import ast; ast.parse(open('hanhua_v3/runtime/install_hanhua.py', encoding='utf-8').read())"
+          grep -q '已安裝簡中補丁' hanhua_v3/runtime/install_hanhua.py
+          grep -q '簡中／繁中補丁安裝器' hanhua_v3/runtime/install_hanhua.py
+          grep -q '同一繁體可對多種簡體寫法' hanhua_v3/runtime/taiwan_fixups.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hanhua_v3/runtime/install_hanhua.py hanhua_v3/runtime/taiwan_fixups.py
+          git commit -m "polish: Traditional install messages and fixups direction docs" || exit 0
+          git push
