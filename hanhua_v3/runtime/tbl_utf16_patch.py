@@ -36,7 +36,7 @@ __all__ = [
     "tool_dir",
 ]
 
-TBL_FILES = ("tbl0.pak", "tbl1.pak")
+TBL_FILES = ("tbl0.pak", "tbl1.pak", "tbl2.pak")
 ALL_OFFSETS = {"", "*", "all", "ALL"}
 
 

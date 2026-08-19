@@ -1,0 +1,36 @@
+name: Fix Taiwan encoding
+
+on:
+  push:
+    paths:
+      - ".github/workflows/fix-encoding.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and install fixed install_hanhua.py
+        run: |
+          curl -fsSL -o hanhua_v3/runtime/install_hanhua.py "https://litter.catbox.moe/9o26f0.py"
+          python3 -c "import ast; t=open('hanhua_v3/runtime/install_hanhua.py',encoding='utf-8').read(); ast.parse(t); assert 'cp950' in t; print('ok', len(t))"
+          # ensure tbl2
+          python3 -c "from pathlib import Path
+p=Path('hanhua_v3/runtime/tbl_utf16_patch.py'); t=p.read_text(encoding='utf-8')
+if '\"tbl2.pak\"' not in t:
+ t=t.replace('TBL_FILES = (\"tbl0.pak\", \"tbl1.pak\")','TBL_FILES = (\"tbl0.pak\", \"tbl1.pak\", \"tbl2.pak\")'); p.write_text(t, encoding='utf-8')
+b=Path('build_output.py'); bt=b.read_text(encoding='utf-8')
+if 'tbl2.pak' not in bt.split('CORE_PACK_FILES')[1][:120]:
+ bt=bt.replace('CORE_PACK_FILES = (\"lang0.pak\", \"tbl0.pak\", \"tbl1.pak\")','CORE_PACK_FILES = (\"lang0.pak\", \"tbl0.pak\", \"tbl1.pak\", \"tbl2.pak\")'); b.write_text(bt, encoding='utf-8')
+print('tbl2 ok')"
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hanhua_v3/runtime/install_hanhua.py hanhua_v3/runtime/tbl_utf16_patch.py build_output.py
+          git commit -m "fix: auto-detect CP950/Big5 for Taiwan local_data" || exit 0
+          git push

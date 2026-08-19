@@ -40,7 +40,7 @@ ROOT = Path(__file__).resolve().parent
 
 ACTIVE_STATUSES = {"", "accepted", "active", "ok", "keep"}
 TAIWAN_FILES = set(install_hanhua.LOCALIZATION_FILES)
-CORE_PACK_FILES = ("lang0.pak", "tbl0.pak", "tbl1.pak")
+CORE_PACK_FILES = ("lang0.pak", "tbl0.pak", "tbl1.pak", "tbl2.pak")
 OPTIONAL_PACK_FILES = ("gui0.pak",)
 BUILD_CACHE_VERSION = 1
 BUILD_MANIFEST_NAME = ".build_manifest.json"
@@ -651,7 +651,7 @@ def write_user_readme(out_dir: Path) -> None:
 
 说明：
 - 本补丁不含安装器。
-- 本补丁会覆盖 Taiwan 语言文件、lang0.pak、tbl0.pak、tbl1.pak、gui0.pak。
+- 本补丁会覆盖 Taiwan 语言文件、lang0.pak、tbl0.pak、tbl1.pak、tbl2.pak、gui0.pak。
 - 出问题就用你自己的备份覆盖回去。
 """
     (out_dir / "使用说明.txt").write_text(text, encoding="utf-8")

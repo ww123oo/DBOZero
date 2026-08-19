@@ -794,7 +794,7 @@ def legacy_label(root: Path, path: Path) -> str:
 def infer_surface_from_legacy_file(path_name: str, file_name: str) -> str:
     if path_name == "lang0_candidates.tsv" or file_name == "lang0.pak":
         return "lang0"
-    if path_name == "tbl_candidates.tsv" or file_name in {"tbl0.pak", "tbl1.pak"}:
+    if path_name == "tbl_candidates.tsv" or file_name in {"tbl0.pak", "tbl1.pak", "tbl2.pak"}:
         return "tbl"
     return "taiwan"
 

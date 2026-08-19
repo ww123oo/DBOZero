@@ -909,7 +909,7 @@ UI	lang0.pak	DST_HLS_ITEM_TYPE_GMT	Extend Time	增加修练时	延长时间	ok
 UI	lang0.pak	DST_HLS_ITEM_TYPE_ITEM_CREATE	Cash Shop Capsule	道具将存放于胶囊	现金商店胶囊	ok
 UI	lang0.pak	DST_HLS_ITEM_TYPE_PACKAGE	Bundles	套装道	Bundles	ok
 UI	lang0.pak	DST_HLS_QUICK_LINK	Related Items	购买相关商品	购买相关商品	ok
-UI	lang0.pak	DST_HLS_REFRESH	Refresh	刷新	刷新	ok
+UI	lang0.pak	DST_HLS_REFRESH	Refresh	重新整理	刷新	ok
 UI	lang0.pak	DST_HLS_SEARCH	Search	搜寻	搜索	ok
 UI	lang0.pak	DST_HLS_SEARCH_GUIDE	Enter Item Name		进入道具名称	ok
 UI	lang0.pak	DST_HLS_SLOT_BUY	Buy	购物	买	ok
@@ -4420,7 +4420,7 @@ UI	lang0.pak	WAGUWAGUMACHINE_OVER_MAX_COIN	Number of coins that can hold a maxim
 UI	lang0.pak	WAGUWAGUMACHINE_OVER_MAX_EVENTCOIN	Can only hold 500 event coins.	活动代币最多可持有500枚	最多只能持有500个活动硬币。	ok
 UI	lang0.pak	WAGUWAGUMACHINE_SOME_FAILED_TO_EXTRACT	Failed to extract capsules.		提取胶囊失败。	ok
 UI	lang0.pak	WAGUWAGUMACHINE_STOP_MACHINE	This machine has stopped	此机台已停止动作	该机器已停止	ok
-UI	lang0.pak	WAGUWAGUMACHINE_WINNER_REST	After a 1st place win, the machine resets.	此机台送出头奖后正在刷新商品。	获得第一名后，机器会重置。	ok
+UI	lang0.pak	WAGUWAGUMACHINE_WINNER_REST	After a 1st place win, the machine resets.	此机台送出头奖后正在重新整理商品。	获得第一名后，机器会重置。	ok
 UI	lang0.pak	GAME_KAIOKEN_BOOST_NOT_AVAILABLE	Kaioken Boost is not available in this form.	界王拳强化在此形态下不可用。	该形态下无法使用界王拳强化。	ok
 UI	lang0.pak	GAME_KAIOKEN_BOOST_REQUIRES_AURA	Kaioken Boost requires aura to be active.	界王拳强化需要气场处于启动状态。	界王拳强化需要先激活气场。	ok
 UI	lang0.pak	GAME_CANNOT_TOGGLE_AURA_WITH_KAIOKEN	Cannot toggle aura while Kaioken Boost is active.	界王神拳强化生效时，无法切换气场。	界王拳强化生效时，无法切换气场。	ok

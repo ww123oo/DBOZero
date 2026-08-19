@@ -397,7 +397,7 @@ def convert_local_data(
 ) -> dict[str, int]:
     source = taiwan_language_dir(game_dir) / "local_data.dat"
     english = dbo_root(game_dir) / "pack" / "lang0.pak"
-    tw_rows = read_kv_dat(source, "gbk")
+    tw_rows = read_kv_dat_auto(source, ("cp950", "big5", "gbk", "utf-8"))
     en_rows = read_kv_dat_auto(english, ("utf-8", "gbk"), allow_invalid=True)
 
     tw_keys = {key for key, _ in tw_rows}
@@ -470,9 +470,8 @@ def read_taiwan_language_kv(
     allow_invalid: bool = False,
 ) -> list[tuple[str, str]]:
     path = taiwan_language_dir(game_dir) / file_name
-    if file_name == "local_sync_data.dat":
-        return read_kv_dat_auto(path, ("utf-8", "gbk"), allow_invalid=allow_invalid)
-    return read_kv_dat(path, "gbk", allow_invalid=allow_invalid)
+    # Official Taiwan client files are typically CP950/Big5; try those first.
+    return read_kv_dat_auto(path, ("cp950", "big5", "gbk", "utf-8"), allow_invalid=allow_invalid)
 
 
 def decode_text_auto(path: Path, encodings: tuple[str, ...]) -> tuple[str, str]:
@@ -522,7 +521,7 @@ def convert_pack_lang0(
     source = dbo_root(game_dir) / "pack" / "lang0.pak"
     lang_text, _ = decode_text_auto(source, ("utf-8", "gbk"))
     lang_lines = lang_text.splitlines(keepends=True)
-    taiwan_rows = dict(read_kv_dat(taiwan_language_dir(game_dir) / "local_data.dat", "gbk"))
+    taiwan_rows = dict(read_kv_dat_auto(taiwan_language_dir(game_dir) / "local_data.dat", ("cp950", "big5", "gbk", "utf-8")))
 
     output_lines: list[str] = []
     source_keys = 0
@@ -844,7 +843,7 @@ def collect_table_quest_rows(game_dir: Path) -> list[list[str]]:
 
 def collect_kv_untranslated_rows(game_dir: Path) -> list[list[str]]:
     rows: list[list[str]] = []
-    tw = dict(read_kv_dat(taiwan_language_dir(game_dir) / "local_data.dat", "gbk"))
+    tw = dict(read_kv_dat_auto(taiwan_language_dir(game_dir) / "local_data.dat", ("cp950", "big5", "gbk", "utf-8")))
     en = read_kv_dat_auto(dbo_root(game_dir) / "pack" / "lang0.pak", ("utf-8", "gbk"), allow_invalid=True)
     for key, value in en:
         if key not in tw:
@@ -1288,7 +1287,7 @@ def command_plan(args: argparse.Namespace) -> int:
     game_dir = args.game_dir.resolve()
     target_folder = validate_target_folder(args.target_folder)
     require_game_layout(game_dir)
-    tw_rows = read_kv_dat(taiwan_language_dir(game_dir) / "local_data.dat", "gbk")
+    tw_rows = read_kv_dat_auto(taiwan_language_dir(game_dir) / "local_data.dat", ("cp950", "big5", "gbk", "utf-8"))
     en_rows = read_kv_dat_auto(dbo_root(game_dir) / "pack" / "lang0.pak", ("utf-8", "gbk"), allow_invalid=True)
     tw_keys = {key for key, _ in tw_rows}
     local_sync_rows = read_taiwan_language_kv(game_dir, "local_sync_data.dat")
