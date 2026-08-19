@@ -306,14 +306,14 @@ UI	lang0.pak	DST_CCBD_STATUS_DISABLE_ITEM	Consumables disabled	无法使用一�
 UI	lang0.pak	DST_CCBD_WAIT_AFTER_REWARD	Please Wait.	已完成选择，	请稍等。	ok
 UI	lang0.pak	DST_CHANGE_ITEMBATTLEATTR_BTN_CANCEL_TOOLTIP	Return to element selection without spending Zeni.		返回到属性选择不使用花费索尼。	ok
 UI	lang0.pak	DST_CHANGE_ITEMBATTLEATTR_BTN_OK_TOOLTIP	Confirm and apply the selected element to your item.		确认和应用已选属性到你的道具。	ok
-UI	lang0.pak	DST_CHANGE_ITEMBATTLEATTR_ONE_MSG	"[align = ""center""][font size = ""12"" color=""f4d762""]Change Item Element[/font][br][br][font size = ""10"" color=""ffffff""]Selected Element: %s[br]Price: %s Zeni[br]Success Rate: %d%%[br][br]On success, %s element is applied.[br]On failure, the element is cleared.[br]No sacrifice item is required.[/font]"		"[align = ""center""][font size = ""12"" color=""f4d762""]更改道具属性[/font][br][br][font size = ""10"" color=""ffffff""]已选属性：%s[br]价格：%s 索尼[br]成功率：%d%%[br][br]成功时， %s 属性是 应用。[br]失败时，属性是 清除。[br]无辅助道具是 需要。[/font]"	untranslated
-UI	lang0.pak	DST_CHANGE_ITEMBATTLEATTR_TWO_MSG	"[align = ""center""][font size = ""12"" color=""f4d762""]Change Item Element[/font][br][br][font size = ""10"" color=""ffffff""]Selected Element: %s[br]Price: %s Zeni[br]Success Rate: %d%%[br][br]On success, %s element is applied.[br]On failure, the element is cleared.[/font]"		"[align = ""center""][font size = ""12"" color=""f4d762""]更改道具属性[/font][br][br][font size = ""10"" color=""ffffff""]已选属性：%s[br]价格：%s 索尼[br]成功率：%d%%[br][br]成功时， %s 属性是 应用。[br]失败时，属性是 清除。[/font]"	untranslated
+UI	lang0.pak	DST_CHANGE_ITEMBATTLEATTR_ONE_MSG	"[align = ""center""][font size = ""12"" color=""f4d762""]Change Item Element[/font][br][br][font size = ""10"" color=""ffffff""]Selected Element: %s[br]Price: %s Zeni[br]Success Rate: %d%%[br][br]On success, %s element is applied.[br]On failure, the element is cleared.[br]No sacrifice item is required.[/font]"		"[align = ""center""][font size = ""12"" color=""f4d762""]更改道具属性[/font][br][br][font size = ""10"" color=""ffffff""]已选属性：%s[br]价格：%s 索尼[br]成功率：%d%%[br][br]成功时， %s 属性是 应用。[br]失败时，属性是 清除。[br]无辅助道具是 需要。[/font]"	ok
+UI	lang0.pak	DST_CHANGE_ITEMBATTLEATTR_TWO_MSG	"[align = ""center""][font size = ""12"" color=""f4d762""]Change Item Element[/font][br][br][font size = ""10"" color=""ffffff""]Selected Element: %s[br]Price: %s Zeni[br]Success Rate: %d%%[br][br]On success, %s element is applied.[br]On failure, the element is cleared.[/font]"		"[align = ""center""][font size = ""12"" color=""f4d762""]更改道具属性[/font][br][br][font size = ""10"" color=""ffffff""]已选属性：%s[br]价格：%s 索尼[br]成功率：%d%%[br][br]成功时， %s 属性是 应用。[br]失败时，属性是 清除。[/font]"	ok
 UI	lang0.pak	DST_ITEMBATTLEATTR_INFO_ELEMENT_CLICK	Click to select this element for your item.		点击为你的道具选择此属性。	ok
 UI	lang0.pak	DST_ITEMBATTLEATTR_INFO_ELEMENT_FAIL	If it fails, the item element is cleared.			untranslated
 UI	lang0.pak	DST_ITEMBATTLEATTR_INFO_ELEMENT_TITLE	Element Slot		属性栏位	ok
 UI	lang0.pak	DST_ITEMBATTLEATTR_INFO_ITEM_SLOT	Insert gloves or jacket here.		请在此放入手套或上衣。	ok
-UI	lang0.pak	DST_ITEMBATTLEATTR_MSG_READY	"[font size = ""10"" color = ""ffffff""]Item ready.[br]Selected element: %s[br]Press Change Element to confirm.[/font]"		"[font size = ""10"" color = ""ffffff""]道具准备。[br]已选属性：%s[br]按下更改属性到 确认。[/font]"	untranslated
-UI	lang0.pak	DST_ITEMBATTLEATTR_MSG_SELECT_ELEMENT	"[font size = ""10"" color = ""ffffff""]Item inserted.[br]Click an element slot to choose the element you want.[br]No sacrifice item required.[/font]"		"[font size = ""10"" color = ""ffffff""]道具已放入。[br]点击属性栏位到 选择属性你想。[br]不需要辅助道具。[/font]"	untranslated
+UI	lang0.pak	DST_ITEMBATTLEATTR_MSG_READY	"[font size = ""10"" color = ""ffffff""]Item ready.[br]Selected element: %s[br]Press Change Element to confirm.[/font]"		"[font size = ""10"" color = ""ffffff""]道具准备。[br]已选属性：%s[br]按下更改属性到 确认。[/font]"	ok
+UI	lang0.pak	DST_ITEMBATTLEATTR_MSG_SELECT_ELEMENT	"[font size = ""10"" color = ""ffffff""]Item inserted.[br]Click an element slot to choose the element you want.[br]No sacrifice item required.[/font]"		"[font size = ""10"" color = ""ffffff""]道具已放入。[br]点击属性栏位到 选择属性你想。[br]不需要辅助道具。[/font]"	ok
 UI	lang0.pak	DST_ITEMBATTLEATTR_NOTIFY_SELECT_ELEMENT	Select an element before continuing.		继续前请选择属性。	ok
 UI	lang0.pak	DST_ITEMBATTLEATTR_VIP_REMOTE_ONLY	VIP members can open Change Element remotely from the status bar.	VIP成员可以从状态栏远程打开属性更改。	VIP成员可以从状态栏远程打开属性更改。	ok
 UI	lang0.pak	DST_VIP_REMOTE_HUB_TITLE	VIP Remote Services	VIP远程服务	VIP远程服务	ok
@@ -1105,8 +1105,8 @@ UI	lang0.pak	DST_ITEMUPGRADE_STOP	Stop!	停止	停止	ok
 UI	lang0.pak	DST_ITEMUPGRADE_MAINTITLE	1. Upgrade	1. 道具强	1. 升级	ok
 UI	lang0.pak	DST_ITEMUPGRADE_MSG_BLACKHOIPOISTONE_IN_FAIL_CLASS	Level too low		等级太低	ok
 UI	lang0.pak	DST_ITEMUPGRADE_MSG_BLACKHOIPOISTONE_IN_FAIL_QUANTITY	"[font size = ""10"" color = ""ffff33""]%s is insufficient.[br][br]%s[/font][font size = ""10"" color = ""dd0010""] %d[/font][font size = ""10"" color = ""ffff33""] requires %s[br]When successful, the item will decrease by 1.[/font]"		"[font size = ""10"" color = ""ffff33""]%s 是。[br][br]%s[/font][font size = ""10"" color = ""dd0010""] %d[/font][font size = ""10"" color = ""ffff33""] 需要 %s[br]当成功，该道具将由 1.[/font]"	ok
-UI	lang0.pak	DST_ITEMUPGRADE_MSG_BLACK_HOIPOISTONE_IN	"[font size = ""10"" color = ""ffffff""]Item ready.[br]Click an element slot to choose the element you want.[br]No sacrifice item required.[/font]"		"[font size = ""10"" color = ""ffffff""]道具准备。[br]点击属性栏位到 选择属性你想。[br]不需要辅助道具。[/font]"	untranslated
-UI	lang0.pak	DST_ITEMUPGRADE_MSG_CHANGE_ATTR	Element Change[br]%s -> %s		属性更改[br]%s -> %s	untranslated
+UI	lang0.pak	DST_ITEMUPGRADE_MSG_BLACK_HOIPOISTONE_IN	"[font size = ""10"" color = ""ffffff""]Item ready.[br]Click an element slot to choose the element you want.[br]No sacrifice item required.[/font]"		"[font size = ""10"" color = ""ffffff""]道具准备。[br]点击属性栏位到 选择属性你想。[br]不需要辅助道具。[/font]"	ok
+UI	lang0.pak	DST_ITEMUPGRADE_MSG_CHANGE_ATTR	Element Change[br]%s -> %s		属性更改[br]%s -> %s	ok
 UI	lang0.pak	DST_ITEMUPGRADE_MSG_DOWNGRADEREADY	Possible downgrade[br]%s[br][br]Downgrade success rate 100%%[br]%s Change %s%s		可以降级[br]%s[br][br]降级成功率 100%%[br]%s 更改 %s%s	ok
 UI	lang0.pak	DST_ITEMUPGRADE_MSG_ENERGY_DOWN	Energy Attack %s Decrease %d -> %d		气功攻击 %s 减少 %d -> %d	ok
 UI	lang0.pak	DST_ITEMUPGRADE_MSG_ENERGY_UP	Energy Attack %s Increase %d -> %d		气功攻击 %s 增加 %d -> %d	ok
@@ -1116,7 +1116,7 @@ UI	lang0.pak	DST_ITEMUPGRADE_MSG_HOIPOISTONE_IN_FAIL_QUANTITY	%s need more[br][b
 UI	lang0.pak	DST_ITEMUPGRADE_MSG_ITEM_IN	Please put in HoiPoi stones[br][br]When you upgrade[br]: %d HoiPoi stone [br] %d are required.[br][br]When downgrade[br] : %d black stones are required		请在 HoiPoi[br][br]当你升级[br]：%d HoiPoi 石 [br] %d 是需要。[br][br]当降级[br] ：%d 黑色是需要	ok
 UI	lang0.pak	DST_ITEMUPGRADE_MSG_MAXLEVEL_ITEM_IN	"[font size = ""10"" color = ""FFFF33""]Please insert a second item[br][br]Note: A Second Item increases the success rate.[/font]"		"[font size = ""10"" color = ""FFFF33""]请放入第二道具[br][br]提示：A第二道具增加成功率。[/font]"	ok
 UI	lang0.pak	DST_ITEMUPGRADE_MSG_MINLEVEL_ITEM_IN	Please insert a second item[br][br]Note: A Second Item increase the success rate.		请放入第二道具[br][br]提示：A第二道具增加成功率。	ok
-UI	lang0.pak	DST_ITEMUPGRADE_MSG_NO_CHANGE_ATTR	No element changed		无属性已更改	untranslated
+UI	lang0.pak	DST_ITEMUPGRADE_MSG_NO_CHANGE_ATTR	No element changed		无属性已更改	ok
 UI	lang0.pak	DST_ITEMUPGRADE_MSG_NO_CHANGE_PARAMETER	No change		无更改	ok
 UI	lang0.pak	DST_ITEMUPGRADE_MSG_PHYSICAL_DOWN	Attack%s Decrease %d -> %d		物理攻击 %s 减少 %d -> %d	ok
 UI	lang0.pak	DST_ITEMUPGRADE_MSG_PHYSICAL_UP	Attack %s Increase %d -> %d		攻击 %s 增加 %d -> %d	ok

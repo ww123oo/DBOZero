@@ -4,6 +4,7 @@
 __all__ = ["TAIWAN_SIMPLIFY_FIXUPS"]
 
 # Longer phrases first. apply_traditional_fixups maps simplified -> traditional.
+# 勿加入 刷新↔重新整理：短 UI 會被撐成 8 bytes，lang0 定長會失敗。
 # 同一繁體可對多種簡體寫法（例如 帳號←账号／帐号），屬刻意重複，勿刪。
 TAIWAN_SIMPLIFY_FIXUPS = (
     ("帳號", "账号"),
@@ -47,7 +48,6 @@ TAIWAN_SIMPLIFY_FIXUPS = (
     ("開啟", "打开"),
     ("關閉", "关闭"),
     ("儲存", "保存"),
-    ("重新整理", "刷新"),
     ("搜尋", "搜索"),
     ("載入", "加载"),
     ("請稍候", "请稍候"),
