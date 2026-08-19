@@ -1,0 +1,86 @@
+name: Fix tbl2 support
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 5
+
+      - name: Restore files from pre-empty commit and patch
+        run: |
+          # last good commit before empty push
+          GOOD=$(git rev-list --max-count=20 HEAD | while read c; do
+            sz=$(git cat-file -s "$c:hanhua_v3/runtime/tbl_utf16_patch.py" 2>/dev/null || echo 0)
+            if [ "$sz" -gt 1000 ]; then echo "$c"; break; fi
+          done)
+          echo "GOOD=$GOOD"
+          git show "$GOOD:hanhua_v3/runtime/tbl_utf16_patch.py" > hanhua_v3/runtime/tbl_utf16_patch.py
+          git show "$GOOD:build_output.py" > build_output.py
+          git show "$GOOD:hanhua_v3/scan.py" > hanhua_v3/scan.py
+
+          python3 <<'PY'
+          from pathlib import Path
+
+          p = Path("hanhua_v3/runtime/tbl_utf16_patch.py")
+          t = p.read_text(encoding="utf-8")
+          t = t.replace(
+              'TBL_FILES = ("tbl0.pak", "tbl1.pak")',
+              'TBL_FILES = ("tbl0.pak", "tbl1.pak", "tbl2.pak")',
+          )
+          if '"tbl2.pak"' not in t:
+              raise SystemExit("tbl_utf16_patch patch failed")
+          p.write_text(t, encoding="utf-8")
+
+          p = Path("build_output.py")
+          t = p.read_text(encoding="utf-8")
+          t = t.replace(
+              'CORE_PACK_FILES = ("lang0.pak", "tbl0.pak", "tbl1.pak")',
+              'CORE_PACK_FILES = ("lang0.pak", "tbl0.pak", "tbl1.pak", "tbl2.pak")',
+          )
+          # readme backup lists
+          t = t.replace(
+              "DBOZero\\\\pack\\\\tbl1.pak\n    DBOZero\\\\pack\\\\gui0.pak",
+              "DBOZero\\\\pack\\\\tbl1.pak\n    DBOZero\\\\pack\\\\tbl2.pak\n    DBOZero\\\\pack\\\\gui0.pak",
+          )
+          t = t.replace(
+              "DBOZero\\pack\\tbl1.pak\n    DBOZero\\pack\\gui0.pak",
+              "DBOZero\\pack\\tbl1.pak\n    DBOZero\\pack\\tbl2.pak\n    DBOZero\\pack\\gui0.pak",
+          )
+          # cover text mentions
+          t = t.replace(
+              "lang0.pak、tbl0.pak、tbl1.pak、gui0.pak",
+              "lang0.pak、tbl0.pak、tbl1.pak、tbl2.pak、gui0.pak",
+          )
+          if "tbl2.pak" not in t or 'CORE_PACK_FILES = ("lang0.pak", "tbl0.pak", "tbl1.pak", "tbl2.pak")' not in t:
+              raise SystemExit(f"build_output patch failed; core={('CORE_PACK' in t)}")
+          p.write_text(t, encoding="utf-8")
+
+          p = Path("hanhua_v3/scan.py")
+          t = p.read_text(encoding="utf-8")
+          t = t.replace(
+              'file_name in {"tbl0.pak", "tbl1.pak"}',
+              'file_name in {"tbl0.pak", "tbl1.pak", "tbl2.pak"}',
+          )
+          p.write_text(t, encoding="utf-8")
+
+          import ast
+          for f in ["hanhua_v3/runtime/tbl_utf16_patch.py", "build_output.py", "hanhua_v3/scan.py"]:
+              ast.parse(Path(f).read_text(encoding="utf-8"))
+              print("ok", f, Path(f).stat().st_size)
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hanhua_v3/runtime/tbl_utf16_patch.py build_output.py hanhua_v3/scan.py
+          git commit -m "feat: support tbl2.pak in TBL patch and build (restore after empty push)" || exit 0
+          git push
