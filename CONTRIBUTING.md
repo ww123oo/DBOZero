@@ -53,7 +53,7 @@ dboc build
 
 ## 台灣用字修正
 
-檔案：`hanhua_v3/runtime/install_hanhua.py`（或同目錄 `taiwan_fixups.py`，若有拆出）
+檔案：`hanhua_v3/runtime/taiwan_fixups.py`（**唯一來源**；由 `install_hanhua.py` 匯入）
 
 格式：
 
