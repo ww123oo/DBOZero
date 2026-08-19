@@ -13,7 +13,7 @@
 其他欄只供參考。  
 `ok` = 長度大致可用；`untranslated` = 尚未填；`too_long` = 可能放不進固定長度欄位。
 
-TBL 列很多，建議用試算表依「来源」「文件」或關鍵字篩選後再填。
+TBL 列很多，建議用試算表依「来源」「文件」（表頭原文，請勿改名）或關鍵字篩選後再填。
 
 ## 2. 改舊翻譯
 
@@ -52,5 +52,5 @@ output_taiwan/DBOZero/pack/tbl1.pak
 ## 6. 其他
 
 - `reports/internal/`：工具內部產物，平時不用看。
-- 繁中用字：`hanhua_v3/runtime/install_hanhua.py` 的 `TAIWAN_SIMPLIFY_FIXUPS`。
+- 繁中用字：`hanhua_v3/runtime/taiwan_fixups.py` 的 `TAIWAN_SIMPLIFY_FIXUPS`（唯一來源）。
 - 詳細規則：`docs/translation-rules.md`。
