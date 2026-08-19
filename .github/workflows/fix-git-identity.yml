@@ -1,0 +1,64 @@
+name: Fix git identity
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch git_command
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          path = Path("hanhua_v3/cli.py")
+          text = path.read_text(encoding="utf-8")
+          old = '''def git_command(*args: str, capture: bool = False) -> subprocess.CompletedProcess[bytes]:
+    command = ["git", "-c", f"safe.directory={ROOT.as_posix()}", *args]
+    return subprocess.run(
+        command,
+        cwd=ROOT,
+        check=True,
+        stdout=subprocess.PIPE if capture else None,
+        stderr=subprocess.PIPE if capture else None,
+    )
+'''
+          new = '''def git_command(*args: str, capture: bool = False) -> subprocess.CompletedProcess[bytes]:
+    # Local identity only for this process — no global git user.name/email required.
+    command = [
+        "git",
+        "-c",
+        f"safe.directory={ROOT.as_posix()}",
+        "-c",
+        "user.name=dboc",
+        "-c",
+        "user.email=dboc-local@localhost",
+        *args,
+    ]
+    return subprocess.run(
+        command,
+        cwd=ROOT,
+        check=True,
+        stdout=subprocess.PIPE if capture else None,
+        stderr=subprocess.PIPE if capture else None,
+    )
+'''
+          if old not in text:
+              raise SystemExit("git_command block not found or already patched")
+          path.write_text(text.replace(old, new), encoding="utf-8")
+          import ast
+          ast.parse(path.read_text(encoding="utf-8"))
+          assert "user.email=dboc-local@localhost" in path.read_text(encoding="utf-8")
+          print("patched ok")
+          PY
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hanhua_v3/cli.py
+          git commit -m "fix: use local git identity for automatic checkpoints" || exit 0
+          git push
