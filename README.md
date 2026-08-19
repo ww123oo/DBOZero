@@ -151,7 +151,7 @@ dboc --help      # 全部說明
 
 ## 台灣繁中用字
 
-構建繁中時會先轉繁體，再套用 `TAIWAN_SIMPLIFY_FIXUPS`（在 `hanhua_v3/runtime/install_hanhua.py`）。
+構建繁中時會先轉繁體，再套用 `TAIWAN_SIMPLIFY_FIXUPS`（**唯一來源**：`hanhua_v3/runtime/taiwan_fixups.py`）。
 
 | 簡中 | 本倉庫繁中 |
 |------|------------|
@@ -175,7 +175,7 @@ DBOZero/
 ├── CONTRIBUTING.md        ← 如何貢獻翻譯／程式
 ├── data/                  ← ★ 翻譯表（日常改這裡）
 ├── hanhua_v3/             ← 工具本體（一般不用改）
-│   └── runtime/install_hanhua.py  ← 繁中用字修正表
+│   └── runtime/taiwan_fixups.py  ← 繁中用字修正表（唯一來源）
 ├── docs/                  ← FAQ、規則、開發說明
 ├── src_file/              ← 從遊戲同步來的源（不進 Git）
 ├── output/                ← 簡中補丁產出（不進 Git）
