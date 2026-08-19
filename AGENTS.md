@@ -44,7 +44,7 @@ Key commands:
 
 ## Taiwan Traditional Preferences (this fork)
 
-When adjusting `TAIWAN_SIMPLIFY_FIXUPS` in `hanhua_v3/runtime/install_hanhua.py`:
+When adjusting `TAIWAN_SIMPLIFY_FIXUPS` in `hanhua_v3/runtime/taiwan_fixups.py` (single source; imported by install_hanhua):
 
 - Prefer **登錄** (not 登入) for login
 - Prefer **帳號 / 帳戶** (not 賬號 / 賬戶)
