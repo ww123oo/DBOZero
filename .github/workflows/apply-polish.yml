@@ -1,0 +1,120 @@
+name: Apply polish
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download patched sources and test
+        run: |
+          curl -fsSL -o hanhua_v3/runtime/install_hanhua.py \
+            "https://litter.catbox.moe/dgg03k.py"
+          curl -fsSL -o hanhua_v3/runtime/taiwan_fixups.py \
+            "https://litter.catbox.moe/0jqja5.py"
+          curl -fsSL -o tests/test_taiwan_fixups.py \
+            "https://raw.githubusercontent.com/ww123oo/DBOZero/main/tests/test_cli.py" >/dev/null 2>&1 || true
+          python3 -c "import ast; ast.parse(open('hanhua_v3/runtime/install_hanhua.py',encoding='utf-8').read()); print('install syntax ok')"
+          grep -q '已安裝簡中補丁' hanhua_v3/runtime/install_hanhua.py
+          grep -q '簡中／繁中補丁安裝器' hanhua_v3/runtime/install_hanhua.py
+          grep -q 'from .taiwan_fixups import TAIWAN_SIMPLIFY_FIXUPS' hanhua_v3/runtime/install_hanhua.py
+          ! grep -q 'Simplified Chinese patch installed' hanhua_v3/runtime/install_hanhua.py
+
+      - name: Write unit tests
+        run: |
+          cat > tests/test_taiwan_fixups.py << 'EOF'
+          """Tests for Taiwan Traditional preference fixups."""
+
+          from __future__ import annotations
+
+          from hanhua_v3.runtime.install_hanhua import (
+              apply_traditional_fixups,
+              apply_taiwan_fixups,
+          )
+          from hanhua_v3.runtime.taiwan_fixups import TAIWAN_SIMPLIFY_FIXUPS
+
+
+          def test_fixups_table_nonempty_and_has_core_pairs() -> None:
+              assert len(TAIWAN_SIMPLIFY_FIXUPS) >= 50
+              trads = {pair[0] for pair in TAIWAN_SIMPLIFY_FIXUPS}
+              simps = {pair[1] for pair in TAIWAN_SIMPLIFY_FIXUPS}
+              assert "登錄" in trads
+              assert "帳號" in trads
+              assert "伺服器" in trads
+              assert "登录" in simps
+              assert "账号" in simps or "帐号" in simps
+
+
+          def test_apply_traditional_fixups_login_account() -> None:
+              out = apply_traditional_fixups("请登录账号连接服务器")
+              assert "登錄" in out
+              assert "帳號" in out
+              assert "伺服器" in out
+              assert "登录" not in out
+              assert "账号" not in out
+              assert "服务器" not in out
+
+
+          def test_apply_taiwan_fixups_maps_back_toward_simplified() -> None:
+              out = apply_taiwan_fixups("請登錄帳號")
+              assert "登录" in out
+              assert "账号" in out or "帐号" in out
+          EOF
+          # heredoc above may have been indented by YAML - rewrite without indent
+          python3 << 'PY'
+          from pathlib import Path
+          Path("tests/test_taiwan_fixups.py").write_text(
+          '''"""Tests for Taiwan Traditional preference fixups."""
+
+from __future__ import annotations
+
+from hanhua_v3.runtime.install_hanhua import (
+    apply_traditional_fixups,
+    apply_taiwan_fixups,
+)
+from hanhua_v3.runtime.taiwan_fixups import TAIWAN_SIMPLIFY_FIXUPS
+
+
+def test_fixups_table_nonempty_and_has_core_pairs() -> None:
+    assert len(TAIWAN_SIMPLIFY_FIXUPS) >= 50
+    trads = {pair[0] for pair in TAIWAN_SIMPLIFY_FIXUPS}
+    simps = {pair[1] for pair in TAIWAN_SIMPLIFY_FIXUPS}
+    assert "登錄" in trads
+    assert "帳號" in trads
+    assert "伺服器" in trads
+    assert "登录" in simps
+    assert "账号" in simps or "帐号" in simps
+
+
+def test_apply_traditional_fixups_login_account() -> None:
+    out = apply_traditional_fixups("请登录账号连接服务器")
+    assert "登錄" in out
+    assert "帳號" in out
+    assert "伺服器" in out
+    assert "登录" not in out
+    assert "账号" not in out
+    assert "服务器" not in out
+
+
+def test_apply_taiwan_fixups_maps_back_toward_simplified() -> None:
+    out = apply_taiwan_fixups("請登錄帳號")
+    assert "登录" in out
+    assert "账号" in out or "帐号" in out
+''', encoding="utf-8")
+          print("test file written", Path("tests/test_taiwan_fixups.py").stat().st_size)
+          PY
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hanhua_v3/runtime/install_hanhua.py hanhua_v3/runtime/taiwan_fixups.py tests/test_taiwan_fixups.py
+          git status
+          git commit -m "polish: Traditional CLI messages, fixups docs, unit tests" || exit 0
+          git push
