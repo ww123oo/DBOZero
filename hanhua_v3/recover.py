@@ -10,6 +10,22 @@ from pathlib import Path
 from .batch_translate_queue import is_internal_identifier
 
 
+__all__ = [
+    "CATALOG_PATH",
+    "QUEUE_PATH",
+    "ROOT",
+    "RecoveryError",
+    "RecoveryStats",
+    "TRANSLATIONS_PATH",
+    "exact_queue_key",
+    "git_tsv",
+    "master_key",
+    "read_tsv",
+    "recover_from_git",
+    "stable_key",
+    "write_tsv_atomic",
+]
+
 ROOT = Path(__file__).resolve().parents[1]
 QUEUE_PATH = ROOT / "data" / "new_translations.tsv"
 TRANSLATIONS_PATH = ROOT / "data" / "translations.tsv"
@@ -44,7 +60,15 @@ def git_tsv(ref: str, relative_path: str) -> list[dict[str, str]]:
         f"{ref}:{relative_path}",
     ]
     try:
-        payload = subprocess.run(command, cwd=ROOT, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stdout
+        run_kwargs: dict = {
+            "cwd": ROOT,
+            "check": True,
+            "stdout": subprocess.PIPE,
+            "stderr": subprocess.PIPE,
+        }
+        if os.name == "nt":
+            run_kwargs["creationflags"] = getattr(subprocess, "CREATE_NO_WINDOW", 0)
+        payload = subprocess.run(command, **run_kwargs).stdout
         text = payload.decode("utf-8-sig")
     except (OSError, subprocess.CalledProcessError, UnicodeDecodeError) as exc:
         raise RecoveryError(f"無法讀取 Git 翻譯資料：{ref}:{relative_path}") from exc

@@ -1,3 +1,21 @@
+__all__ = [
+    "ALL_OFFSETS",
+    "PatchError",
+    "TBL_FILES",
+    "TblOverride",
+    "encoded_text_bytes",
+    "find_all",
+    "fixed_replacement",
+    "fixed_single_byte_replacement",
+    "has_length_prefix",
+    "inside_length_prefixed_field",
+    "length_prefixed_offsets",
+    "length_prefixed_source_variants",
+    "main",
+    "parse_offset",
+    "tool_dir",
+]
+
 # -*- coding: utf-8 -*-
 """
 DBO Zero tbl0/tbl1 fixed-field patcher.

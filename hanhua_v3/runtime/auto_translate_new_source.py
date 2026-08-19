@@ -6,6 +6,14 @@ import re
 import sys
 from pathlib import Path
 
+__all__ = [
+    "generate_taiwan_rows",
+    "generate_tbl_rows",
+    "main",
+    "translate_name",
+    "translate_untranslated",
+]
+
 try:
     from . import tbl_utf16_patch as tbl
 except ImportError:  # Keep direct script execution working.
@@ -957,39 +965,41 @@ def unresolved_ascii(text: str) -> list[str]:
     return [token for token in re.findall(r"[A-Za-z]+", text) if token not in ALLOWED_ASCII]
 
 
+CLASS_TERM_REPLACEMENTS: dict[str, str] = {
+    "(Martial)": "(武道家)",
+    "(Spiritualist)": "(气功师)",
+    "(Warrior)": "(那美克战士)",
+    "(Dragon)": "(龙族)",
+    "(Might)": "(大魔人)",
+    "(Wonder)": "(意魔人)",
+    "(Namek Warrior)": "(那美克战士)",
+    "(Dragon Clan)": "(那美克龙族)",
+    "(Might Majin)": "(大魔人)",
+    "(Wonder Majin)": "(意魔人)",
+    "[Martial Artist]": "[武道家]",
+    "[Spiritualist]": "[气功师]",
+    "[Dragon Clan]": "[那美克龙族]",
+    "[Might Majin]": "[大魔人]",
+    "[Wonder Majin]": "[意魔人]",
+    "[Namek Warrior]": "[那美克战士]",
+    "Martial Artists": "武道家",
+    "Martial Artist": "武道家",
+    "Spiritualists": "气功师",
+    "Spiritualist": "气功师",
+    "Namek Warrior": "那美克战士",
+    "Dragon Clan": "那美克龙族",
+    "Might Majin": "大魔人",
+    "Wonder Majin": "意魔人",
+}
+
+
 def translate_class_label(text: str) -> str | None:
     return CLASS_NAME_MAP.get(normalize(text))
 
 
 def translate_class_terms_fallback(text: str) -> str | None:
     output = text
-    replacements = {
-        "(Martial)": "(武道家)",
-        "(Spiritualist)": "(气功师)",
-        "(Warrior)": "(那美克战士)",
-        "(Dragon)": "(龙族)",
-        "(Might)": "(大魔人)",
-        "(Wonder)": "(意魔人)",
-        "(Namek Warrior)": "(那美克战士)",
-        "(Dragon Clan)": "(那美克龙族)",
-        "(Might Majin)": "(大魔人)",
-        "(Wonder Majin)": "(意魔人)",
-        "[Martial Artist]": "[武道家]",
-        "[Spiritualist]": "[气功师]",
-        "[Dragon Clan]": "[那美克龙族]",
-        "[Might Majin]": "[大魔人]",
-        "[Wonder Majin]": "[意魔人]",
-        "[Namek Warrior]": "[那美克战士]",
-        "Martial Artists": "武道家",
-        "Martial Artist": "武道家",
-        "Spiritualists": "气功师",
-        "Spiritualist": "气功师",
-        "Namek Warrior": "那美克战士",
-        "Dragon Clan": "那美克龙族",
-        "Might Majin": "大魔人",
-        "Wonder Majin": "意魔人",
-    }
-    for source, target in sorted(replacements.items(), key=lambda item: len(item[0]), reverse=True):
+    for source, target in sorted(CLASS_TERM_REPLACEMENTS.items(), key=lambda item: len(item[0]), reverse=True):
         output = output.replace(source, target)
     return output if output != text else None
 
@@ -1002,14 +1012,6 @@ def visible_class_candidate_text(text: str) -> bool:
         return False
     return True
 
-
-def visible_forced_tbl_text(text: str) -> bool:
-    text = text.strip()
-    if not text or len(text) > 96 or "\n" in text or "\r" in text:
-        return False
-    if text.startswith("((") or text[0].islower():
-        return False
-    return True
 
 
 def translate_name(text: str, depth: int = 0) -> str | None:

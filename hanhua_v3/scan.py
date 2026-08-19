@@ -14,6 +14,15 @@ from .policy import is_tbl_internal_token
 from .runtime import install_hanhua
 
 
+__all__ = [
+    "CatalogEntry",
+    "LegacyCandidate",
+    "TranslationRow",
+    "load_active_translations",
+    "main",
+    "scan_current_catalog",
+]
+
 ROOT = Path(__file__).resolve().parents[1]
 
 

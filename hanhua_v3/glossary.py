@@ -1,5 +1,7 @@
 """Curated exact translations for current and recurring game terminology."""
 
+__all__ = ["CURATED_TRANSLATIONS"]
+
 CURATED_TRANSLATIONS = {
     # July 2026 dungeon queue and item ascension UI.
     "Dungeon Queue Ready": "副本匹配就绪",

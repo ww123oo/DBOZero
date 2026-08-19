@@ -20,6 +20,17 @@ import re
 from pathlib import Path
 
 
+__all__ = [
+    "CONFIG_PATH",
+    "ConfigError",
+    "ENV_GAME_DIR",
+    "ROOT",
+    "autodetect_game_dir",
+    "load_config",
+    "resolve_game_dir",
+    "save_game_dir",
+]
+
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "dboc.toml"
 ENV_GAME_DIR = "DBOC_GAME_DIR"
@@ -93,7 +104,15 @@ def autodetect_game_dir() -> Path | None:
         for relative in _AUTODETECT_ROOTS:
             candidates.append(home / relative)
             candidates.append(home / "Games" / Path(relative).name)
+    seen: set[str] = set()
     for candidate in candidates:
+        try:
+            key = str(candidate.resolve()).lower()
+        except OSError:
+            key = str(candidate).lower()
+        if key in seen:
+            continue
+        seen.add(key)
         if _looks_like_game_dir(candidate):
             return candidate
     return None

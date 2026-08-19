@@ -1,3 +1,22 @@
+__all__ = [
+    "ALLOWED_PRINTF_MISMATCHES",
+    "PatchError",
+    "PRINTF_SPEC_RE",
+    "auto_detect_game_dir",
+    "backup_lang0",
+    "build_parser",
+    "decode_lang0_value",
+    "encode_lang0_value",
+    "encoded_text_bytes",
+    "find_lang0_value_end",
+    "find_lang0_value_start",
+    "install",
+    "is_game_dir",
+    "lang0_path",
+    "main",
+    "tool_dir",
+]
+
 # -*- coding: utf-8 -*-
 """
 DBO Zero lang0.pak fixed-size single-value patcher.
@@ -199,15 +218,6 @@ def printf_specs(text: str) -> list[str]:
 def printf_mismatch_allowed(key: str, old_specs: list[str], new_specs: list[str]) -> bool:
     return ALLOWED_PRINTF_MISMATCHES.get(key) == (tuple(old_specs), tuple(new_specs))
 
-
-def find_bytes(data: bytes, needle: bytes) -> int:
-    idx = data.find(needle)
-    if idx < 0:
-        return -1
-    second = data.find(needle, idx + 1)
-    if second >= 0:
-        raise PatchError(f"Duplicate lang0 key pattern: {needle.decode('ascii', errors='replace')}")
-    return idx
 
 
 def find_lang0_value_start(data: bytes, key: str) -> int:
