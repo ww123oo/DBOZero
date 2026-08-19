@@ -14,9 +14,9 @@
 | `tools/` | 舊腳本相容墊片 | 真正邏輯在 `hanhua_v3/runtime/` |
 | `translations/` | 舊手工 override TSV | 掃描可能讀取 |
 | `candidates/` | 舊候選／匯出 TSV | 掃描可能當建議；體積較大 |
+| `reports/` | 舊稽核／備份 TSV | **刻意完整保留當考古資料**；可能有錯字或過期內容 |
 | `docs/` | 舊筆記 | 僅供考古 |
-
-已移除未參與程式流程的截圖（`assets/`）與過期稽核報表（`reports/`），以縮小 clone 體積。
+| `assets/testpng/` | 舊測試截圖 | 不參與構建；可忽略 |
 
 ## 和 v3 的關係
 
