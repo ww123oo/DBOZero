@@ -116,7 +116,7 @@ pytest
 
 1. 確認覆蓋的是 **`output_taiwan`**（繁中），不是 `output`（簡中）。  
 2. 繁中會再套用台灣用字表；可在  
-   `hanhua_v3/runtime/install_hanhua.py` 的 `TAIWAN_SIMPLIFY_FIXUPS` 追加：
+   `hanhua_v3/runtime/taiwan_fixups.py` 的 `TAIWAN_SIMPLIFY_FIXUPS` 追加：
 
 ```python
 ("帳號", "账号"),
@@ -136,7 +136,8 @@ pytest
 ### clone 很大？
 
 主要來自 `data/` 與 `legacy/candidates/` 歷史表。  
-`legacy/assets`、`legacy/reports` 等非必要大檔已盡量拿掉；`legacy/candidates` 仍可能被掃描當建議，故保留。
+`legacy/reports/` 刻意完整保留當考古資料；`legacy/assets/testpng/` 為舊測試圖、不參與構建。  
+`legacy/candidates` 仍可能被掃描當建議，故保留。
 
 ### 想貢獻翻譯或修工具？
 
