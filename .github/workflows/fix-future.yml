@@ -11,14 +11,70 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Apply fix
+
+      - name: Move __all__ after from __future__
         run: |
-          curl -fsSL -o /tmp/f.tgz "https://litter.catbox.moe/nszwc2.tgz"
-          tar xzf /tmp/f.tgz
-          python3 -c "import ast; from pathlib import Path
-for p in ['hanhua_v3/runtime/lang0_gbk_patch.py','hanhua_v3/runtime/tbl_utf16_patch.py']:
- t=Path(p).read_text(encoding='utf-8'); assert t.find('from __future__') < t.find('__all__'); ast.parse(t); print('ok', p)"
-      - name: Commit
+          python3 <<'PY'
+          from pathlib import Path
+          import re, ast
+
+          def fix(path: Path) -> None:
+              text = path.read_text(encoding="utf-8")
+              m = re.search(r"^__all__\s*=\s*\[[\s\S]*?\]\s*\n+", text, re.M)
+              if not m:
+                  raise SystemExit(f"no leading __all__ in {path}")
+              if text.find("from __future__") < m.start():
+                  print("already ok", path)
+                  return
+              block = m.group(0).rstrip() + "\n\n"
+              text = text[: m.start()] + text[m.end() :]
+              # insert after imports
+              lines = text.splitlines(keepends=True)
+              i = 0
+              if i < len(lines) and lines[i].startswith("#") and "coding" in lines[i]:
+                  i += 1
+              if i < len(lines) and lines[i].lstrip().startswith(("\"\"\"", "'''")):
+                  q = '"""' if '"""' in lines[i][:5] else "'''"
+                  if lines[i].count(q) >= 2 and len(lines[i].strip()) > 3:
+                      i += 1
+                  else:
+                      i += 1
+                      while i < len(lines) and q not in lines[i]:
+                          i += 1
+                      i += 1
+              while i < len(lines):
+                  s = lines[i].strip()
+                  if not s:
+                      i += 1
+                      continue
+                  if s.startswith("from __future__"):
+                      i += 1
+                      continue
+                  if s.startswith("import ") or s.startswith("from "):
+                      if "(" in s and ")" not in s:
+                          i += 1
+                          while i < len(lines) and ")" not in lines[i]:
+                              i += 1
+                          i += 1
+                      else:
+                          i += 1
+                      continue
+                  break
+              lines.insert(i, block)
+              new = "".join(lines)
+              assert new.find("from __future__") < new.find("__all__"), path
+              ast.parse(new)
+              path.write_text(new, encoding="utf-8")
+              print("fixed", path)
+
+          for p in [
+              Path("hanhua_v3/runtime/lang0_gbk_patch.py"),
+              Path("hanhua_v3/runtime/tbl_utf16_patch.py"),
+          ]:
+              fix(p)
+          PY
+
+      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
