@@ -1,0 +1,24 @@
+name: Restore fixups
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download full table
+        run: |
+          curl -fsSL -o hanhua_v3/runtime/taiwan_fixups.py "https://litter.catbox.moe/lxu9a9.py"
+          python3 -c "import ast,re; t=open('hanhua_v3/runtime/taiwan_fixups.py',encoding='utf-8').read(); ast.parse(t); assert '重新整理' not in t or t.count('重新整理')==1; n=len(re.findall(r'\(\"\', t)); assert n>=180, n; print('pairs', n)"
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hanhua_v3/runtime/taiwan_fixups.py
+          git commit -m "fix: restore full taiwan_fixups; keep 刷新 short for lang0" || exit 0
+          git push
