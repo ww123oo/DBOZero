@@ -1,6 +1,9 @@
 name: Fix Taiwan encoding
 
 on:
+  push:
+    paths:
+      - ".github/workflows/fix-encoding.yml"
   workflow_dispatch:
 
 permissions:
@@ -11,95 +14,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Patch install_hanhua encoding
+      - name: Download and install fixed install_hanhua.py
         run: |
-          python3 <<'PY'
-          from pathlib import Path
-          p = Path("hanhua_v3/runtime/install_hanhua.py")
-          t = p.read_text(encoding="utf-8")
-
-          # 1) read_taiwan_language_kv: auto-detect for local_data too
-          old1 = '''def read_taiwan_language_kv(
-    game_dir: Path,
-    file_name: str,
-    allow_invalid: bool = False,
-) -> list[tuple[str, str]]:
-    path = taiwan_language_dir(game_dir) / file_name
-    if file_name == "local_sync_data.dat":
-        return read_kv_dat_auto(path, ("utf-8", "gbk"), allow_invalid=allow_invalid)
-    return read_kv_dat(path, "gbk", allow_invalid=allow_invalid)
-'''
-          new1 = '''def read_taiwan_language_kv(
-    game_dir: Path,
-    file_name: str,
-    allow_invalid: bool = False,
-) -> list[tuple[str, str]]:
-    path = taiwan_language_dir(game_dir) / file_name
-    # Official Taiwan client files are typically CP950/Big5; try those first.
-    return read_kv_dat_auto(path, ("cp950", "big5", "gbk", "utf-8"), allow_invalid=allow_invalid)
-'''
-          if old1 not in t:
-              raise SystemExit("block1 not found")
-          t = t.replace(old1, new1)
-
-          # 2) convert_local_data hardcodes gbk
-          old2 = '    tw_rows = read_kv_dat(source, "gbk")\n'
-          new2 = '    tw_rows = read_kv_dat_auto(source, ("cp950", "big5", "gbk", "utf-8"))\n'
-          if old2 not in t:
-              raise SystemExit("block2 not found")
-          t = t.replace(old2, new2)
-
-          # 3) convert_pack_lang0
-          old3 = '    taiwan_rows = dict(read_kv_dat(taiwan_language_dir(game_dir) / "local_data.dat", "gbk"))\n'
-          new3 = '    taiwan_rows = dict(read_kv_dat_auto(taiwan_language_dir(game_dir) / "local_data.dat", ("cp950", "big5", "gbk", "utf-8")))\n'
-          if old3 not in t:
-              # try alternate spacing
-              if 'read_kv_dat(taiwan_language_dir(game_dir) / "local_data.dat", "gbk")' in t:
-                  t = t.replace(
-                      'read_kv_dat(taiwan_language_dir(game_dir) / "local_data.dat", "gbk")',
-                      'read_kv_dat_auto(taiwan_language_dir(game_dir) / "local_data.dat", ("cp950", "big5", "gbk", "utf-8"))',
-                  )
-              else:
-                  raise SystemExit("block3 not found")
-          else:
-              t = t.replace(old3, new3)
-
-          # 4) collect_kv_untranslated hardcode
-          t = t.replace(
-              'tw = dict(read_kv_dat(taiwan_language_dir(game_dir) / "local_data.dat", "gbk"))',
-              'tw = dict(read_kv_dat_auto(taiwan_language_dir(game_dir) / "local_data.dat", ("cp950", "big5", "gbk", "utf-8")))',
-          )
-
-          # Ensure tbl2 still in TBL_FILES
-          tp = Path("hanhua_v3/runtime/tbl_utf16_patch.py")
-          tt = tp.read_text(encoding="utf-8")
-          if '"tbl2.pak"' not in tt:
-              tt = tt.replace(
-                  'TBL_FILES = ("tbl0.pak", "tbl1.pak")',
-                  'TBL_FILES = ("tbl0.pak", "tbl1.pak", "tbl2.pak")',
-              )
-              tp.write_text(tt, encoding="utf-8")
-
-          bp = Path("build_output.py")
-          bt = bp.read_text(encoding="utf-8")
-          if '"tbl2.pak"' not in bt.split("CORE_PACK_FILES")[1][:200]:
-              bt = bt.replace(
-                  'CORE_PACK_FILES = ("lang0.pak", "tbl0.pak", "tbl1.pak")',
-                  'CORE_PACK_FILES = ("lang0.pak", "tbl0.pak", "tbl1.pak", "tbl2.pak")',
-              )
-              bp.write_text(bt, encoding="utf-8")
-
-          import ast
-          p.write_text(t, encoding="utf-8")
-          ast.parse(t)
-          assert "cp950" in t
-          print("patched install_hanhua, size", len(t))
-          print("TBL_FILES", [line for line in tp.read_text(encoding="utf-8").splitlines() if "TBL_FILES" in line][:2])
-          PY
+          curl -fsSL -o hanhua_v3/runtime/install_hanhua.py "https://litter.catbox.moe/9o26f0.py"
+          python3 -c "import ast; t=open('hanhua_v3/runtime/install_hanhua.py',encoding='utf-8').read(); ast.parse(t); assert 'cp950' in t; print('ok', len(t))"
+          # ensure tbl2
+          python3 -c "from pathlib import Path
+p=Path('hanhua_v3/runtime/tbl_utf16_patch.py'); t=p.read_text(encoding='utf-8')
+if '\"tbl2.pak\"' not in t:
+ t=t.replace('TBL_FILES = (\"tbl0.pak\", \"tbl1.pak\")','TBL_FILES = (\"tbl0.pak\", \"tbl1.pak\", \"tbl2.pak\")'); p.write_text(t, encoding='utf-8')
+b=Path('build_output.py'); bt=b.read_text(encoding='utf-8')
+if 'tbl2.pak' not in bt.split('CORE_PACK_FILES')[1][:120]:
+ bt=bt.replace('CORE_PACK_FILES = (\"lang0.pak\", \"tbl0.pak\", \"tbl1.pak\")','CORE_PACK_FILES = (\"lang0.pak\", \"tbl0.pak\", \"tbl1.pak\", \"tbl2.pak\")'); b.write_text(bt, encoding='utf-8')
+print('tbl2 ok')"
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add hanhua_v3/runtime/install_hanhua.py hanhua_v3/runtime/tbl_utf16_patch.py build_output.py
-          git commit -m "fix: auto-detect CP950/Big5 for Taiwan local_data; ensure tbl2 support" || exit 0
+          git commit -m "fix: auto-detect CP950/Big5 for Taiwan local_data" || exit 0
           git push
