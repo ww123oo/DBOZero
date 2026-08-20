@@ -1,32 +1,22 @@
-name: Apply cli and encoding fixes
-
+name: Apply taiwan fixups
 on:
   push:
     paths:
       - ".github/workflows/fix-encoding.yml"
   workflow_dispatch:
-
 permissions:
   contents: write
-
 jobs:
   apply:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install fixed files
-        run: |
-          curl -fsSL -o hanhua_v3/cli.py "https://litter.catbox.moe/f8frdw.py"
-          curl -fsSL -o hanhua_v3/runtime/install_hanhua.py "https://litter.catbox.moe/9o26f0.py"
-          python3 -c "import ast
-ast.parse(open('hanhua_v3/cli.py',encoding='utf-8').read())
-ast.parse(open('hanhua_v3/runtime/install_hanhua.py',encoding='utf-8').read())
-assert 'cp950' in open('hanhua_v3/runtime/install_hanhua.py',encoding='utf-8').read()
-print('ok')"
-      - name: Commit
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add hanhua_v3/cli.py hanhua_v3/runtime/install_hanhua.py
-          git commit -m "fix: no mandatory Git checkpoint; CP950 auto-detect for Taiwan files" || exit 0
+      - run: |
+          curl -fsSL -o hanhua_v3/runtime/taiwan_fixups.py https://litter.catbox.moe/305bfk.py
+          python3 -c "import ast; t=open('hanhua_v3/runtime/taiwan_fixups.py',encoding='utf-8').read(); ast.parse(t); assert '賬號' in t and '格鬥家' in t; print('ok', t.count('(\"'))"
+      - run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add hanhua_v3/runtime/taiwan_fixups.py
+          git commit -m "fix(taiwan): 賬→帳, 格斗→格鬥, 战斗→戰鬥" || exit 0
           git push
