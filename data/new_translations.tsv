@@ -697,7 +697,7 @@ UI	lang0.pak	DST_DRAGONBALL_SCRAMBLE_SEASON_REWARD_COOLTIME_NFY	Battle Dragon Ba
 UI	lang0.pak	DST_DRAGONBALL_SCRAMBLE_SEASON_REWARD_LIMIT_OVER_NFY	"[align = ""center""]Dragon Ball Scramble Info[br][br]Scramble full[br]no compensation in this channel"		"[align = ""center""]龙珠争夺战信息[br][br]争夺战已满[br]没有补偿在此频道"	ok
 UI	lang0.pak	DST_DRAGONBALL_SCRAMBLE_TOOLTIP	%d Star Battle Dragon Ball		%d 星战斗龙珠	ok
 UI	lang0.pak	DST_DRGONBALL_SCRAMBLE_SEASON_REFRESH_NFY	Battle Dragon Ball have been compensated	可以开始领取争夺龙珠的奖励了。	战斗龙珠已发放补偿	ok
-UI	lang0.pak	DST_DROPITEM_ZENNY	%s Zeni	%s索尼	%s 索	ok
+UI	lang0.pak	DST_DROPITEM_ZENNY	%s Zeni	%s索尼	%s 索尼	ok
 UI	lang0.pak	DST_DUALDST_GUN	Dual Gun	双枪	Dual 枪	ok
 UI	lang0.pak	DST_DUNGEON_DIRECT_ENTER	Enter	副本入场	进入	ok
 UI	lang0.pak	DST_DUNGEON_QUEUE_READY	Dungeon Queue Ready	副本伫列确认	副本匹配就绪	ok
@@ -1563,6 +1563,12 @@ UI	lang0.pak	DST_MINIMAP_SHOW_WORLDMAP	Worldmap	世界地图	世界地图	ok
 UI	lang0.pak	DST_MINIMAP_UNKNOWN	Unknown	未知的地方	未知	ok
 UI	lang0.pak	DST_MINIMAP_ZOOM_IN	Zoom In	小地图放大	放大	ok
 UI	lang0.pak	DST_MINIMAP_ZOOM_OUT	Zoom Out	小地图缩小	缩小	ok
+UI	lang0.pak	DST_MINIMAP_PERFORMANCE_MODE	Performance Mode: hides effects, other players, pets and mascots for maximum FPS.			untranslated
+UI	lang0.pak	DST_MINIMAP_PERFORMANCE_MODE_ON	Performance Mode ON - effects and other players hidden.			untranslated
+UI	lang0.pak	DST_MINIMAP_PERFORMANCE_MODE_OFF	Performance Mode OFF - graphics restored.			untranslated
+UI	lang0.pak	DST_MINIMAP_AUTOCOLLECT	Auto Collect: picks up nearby items automatically.			untranslated
+UI	lang0.pak	DST_MINIMAP_AUTOCOLLECT_ON	Auto Collect ON - items are picked up automatically.			untranslated
+UI	lang0.pak	DST_MINIMAP_AUTOCOLLECT_OFF	Auto Collect OFF - items stay on the ground.			untranslated
 UI	lang0.pak	DST_MOB_GRADE_BOSS	Boss	BOSS级怪物	首领	ok
 UI	lang0.pak	DST_MOB_GRADE_HERO	Hero	HERO级怪物	Hero	ok
 UI	lang0.pak	DST_MOB_GRADE_SUPER	Super	SUPER级怪物	优质	ok
@@ -3155,6 +3161,14 @@ UI	lang0.pak	DST_YADRAT_MB_ITEM_USE_HLS_ITEM_TYPE_GMT	"[align = ""center""]Add 1
 UI	lang0.pak	DST_YADRAT_MB_ITEM_USE_HLS_ITEM_TYPE_PACKAGE	Push package to the guild bank?	您要在亚德拉特仓库中打开套装吗?	您要在亚德拉特仓库中打开套装吗?	ok
 UI	lang0.pak	DST_YADRAT_MB_ITEM_USE_HLS_ITEM_TYPE_WAGUCOIN	"[align = ""center""][font size = ""12"" color=""f4d762""] Receive Cash Coins[/font][br][br][font size = ""10"" color=""269eff""]Use to charge your credit.[/font][br][br][font size = ""10"" color=""f36a7c""]After you import it to your[br]inventory you must use it to[br]charge your credit for first.[br]After this you can use in shop.[/font][br][br][font size = ""10"" color=""ffffff""]Are you sure you want to import it?[/font]"		"[align = ""center""][font size = ""12"" color=""f4d762""] 领取现金币[/font][br][br][font size = ""10"" color=""269eff""]使用充值你的点数。[/font][br][br][font size = ""10"" color=""f36a7c""]之后你导入它到你的[br]背包你必须使用它到[br]充值你的先充值点数。[br]之后此你可以使用在商店。[/font][br][br][font size = ""10"" color=""ffffff""]确定是否要导入它？[/font]"	ok
 UI	lang0.pak	DST_YARDRAT	Storage	亚德拉特仓库	Storage	ok
+UI	lang0.pak	DST_YARDRAT_BTN_CLAIM_ALL	CLAIM PAGE			untranslated
+UI	lang0.pak	DST_YARDRAT_BTN_CLAIM_WORKING	CLAIMING...			untranslated
+UI	lang0.pak	DST_YARDRAT_BTN_CLAIM_WAIT	WAIT %ds			untranslated
+UI	lang0.pak	DST_YARDRAT_MB_CLAIM_ALL	"[align = ""center""][font size = ""12"" color=""f4d762""]Claim Page[/font][br][br][font size = ""10"" color=""269eff""]Send all %d items on this page to your inventory.[/font][br][br][font size = ""10"" color=""9aa7b4""]Stackable items will be merged automatically.[/font][br][font size = ""10"" color=""f36a7c""]Items that do not fit will stay in storage.[/font]"			untranslated
+UI	lang0.pak	DST_YARDRAT_BULK_MOVE_SUCCESS	Claimed %d items from this page.			untranslated
+UI	lang0.pak	DST_YARDRAT_BULK_MOVE_PARTIAL	Claimed %d items. %d stayed in storage: not enough inventory space.			untranslated
+UI	lang0.pak	DST_YARDRAT_BULK_MOVE_NOTHING	There is nothing to claim on this page.			untranslated
+UI	lang0.pak	DST_YARDRAT_BULK_MOVE_COOLDOWN	Please wait a moment before claiming another page.			untranslated
 UI	lang0.pak	DST_YARDRAT_MOVE_SUCCESS	The Item had been moved.		该道具已移动。	ok
 UI	lang0.pak	DST_YARDRAT_TAB_EQUIPMENT	Equipment	装备	装备	ok
 UI	lang0.pak	DST_YARDRAT_TAB_FUNCTIONAL	Craft	功能性	工艺	ok
@@ -3235,6 +3249,20 @@ UI	lang0.pak	DST_ITEMASCEND_SUCCESS	Ascension succeeded!		升阶成功！	ok
 UI	lang0.pak	DST_ITEMASCEND_FAIL	Ascension failed. Success rate increased.		升阶失败，成功率已提升。	ok
 UI	lang0.pak	DST_ITEMASCEND_MAXRANK	This item is already at the maximum rarity.	该装备已达到最高稀有度。	该装备已达到最高稀有度。	ok
 UI	lang0.pak	DST_ITEMASCEND_CONFIRM	"[align = ""center""][font size = ""12"" color=""f4d762""]Confirm Ascension[/font][br][br][font size = ""10"" color=""ffffff""]Attempt to ascend this item now?[/font][br][br][font size = ""10"" color=""f36a7c""]On failure, only the materials and zenny[br]will be lost - the item itself is kept[br]and your next success rate will increase.[/font][br][br][font size = ""10"" color=""269eff""]Current success rate: %s%%[/font]"		"[align = ""center""][font size = ""12"" color=""f4d762""]确认升阶[/font][br][br][font size = ""10"" color=""ffffff""]现在尝试升阶该装备吗？[/font][br][br][font size = ""10"" color=""f36a7c""]失败时只会消耗材料和索尼，[br]装备本身会保留，[br]下次升阶成功率也会提高。[/font][br][br][font size = ""10"" color=""269eff""]当前成功率：%s%%[/font]"	ok
+UI	lang0.pak	DST_SIGNIN_TITLE	Daily Sign-In			untranslated
+UI	lang0.pak	DST_SIGNIN_BTN_CLAIM	CLAIM			untranslated
+UI	lang0.pak	DST_SIGNIN_PROGRESS	Checked in: %u / %u days			untranslated
+UI	lang0.pak	DST_SIGNIN_REMAIN	Season ends in %ud %uh			untranslated
+UI	lang0.pak	DST_SIGNIN_NO_SEASON	No daily sign-in event is running right now.			untranslated
+UI	lang0.pak	DST_SIGNIN_MSG_SUCCESS	Reward claimed. Come back tomorrow!			untranslated
+UI	lang0.pak	DST_SIGNIN_MSG_ALREADY	You already claimed today's reward.			untranslated
+UI	lang0.pak	DST_SIGNIN_MSG_COMPLETE	You completed this season's calendar.			untranslated
+UI	lang0.pak	DST_SIGNIN_MSG_LOW_LEVEL	Your level is below the event requirement.			untranslated
+UI	lang0.pak	DST_SIGNIN_MSG_INVENTORY_FULL	Free up bag space to receive the reward.			untranslated
+UI	lang0.pak	DST_SIGNIN_MSG_IN_PROGRESS	Please wait, the previous claim is still processing.			untranslated
+UI	lang0.pak	DST_SIGNIN_MSG_FAIL	The reward could not be claimed.			untranslated
+UI	lang0.pak	DST_SIGNIN_MSG_LOCKED_DAY	Claim the highlighted day first.			untranslated
+UI	lang0.pak	DST_SIGNIN_PACK_LABEL	COMPLETION PACK			untranslated
 UI	lang0.pak	AIR_CANNOT_FLY_JUMP_NOT_ENOUGH_AP	Flight requires at least 10AP.	为使用舞空术，至少需要 10的 AP	飞行需要在 10AP.	ok
 UI	lang0.pak	AIR_CANNOT_USE_ITEM_NO_HAVE_AIR_SKILL	You need the flight ability to use that.	没有学习舞空术无法使用此道具.	你需要飞行能力使用该。	ok
 UI	lang0.pak	AUTH_AUTHKEY_FAIL	"[align = ""center""][font size = ""12"" color=""f4d762""]Authentication Confirmation[/font][br][br][font size = ""10"" color=""f36a7c""]Authentication failed.[/font]"		"[align = ""center""][font size = ""12"" color=""f4d762""]验证确认[/font][br][br][font size = ""10"" color=""f36a7c""]验证失败。[/font]"	ok
@@ -4610,12 +4638,12 @@ TBL	tbl0.pak	*	Green Christmas Hat		绿色圣诞帽子	wildcard_utf16
 TBL	tbl0.pak	*	Pink Christmas Hat		粉色圣诞帽子	wildcard_utf16
 TBL	tbl0.pak	*	Purple Christmas Hat		紫色圣诞帽子	wildcard_utf16
 TBL	tbl0.pak	*	Yellow Christmas Hat		黄色圣诞帽子	wildcard_utf16
-TBL	tbl0.pak	*	GM Only Item			wildcard_utf16
+TBL	tbl0.pak	*	GM Only Item		GM专用道具	wildcard_utf16
 TBL	tbl0.pak	*	Broly Normal Form		布罗利普通形态	wildcard_utf16
-TBL	tbl0.pak	*	Flexarot Lv1			wildcard_utf16
-TBL	tbl0.pak	*	Flexarot Lv2			wildcard_utf16
-TBL	tbl0.pak	*	Flexarot Lv3			wildcard_utf16
-TBL	tbl0.pak	*	Flexarot Lv4			wildcard_utf16
+TBL	tbl0.pak	*	Flexarot Lv1		弗莱克萨罗特Lv1	wildcard_utf16
+TBL	tbl0.pak	*	Flexarot Lv2		弗莱克萨罗特Lv2	wildcard_utf16
+TBL	tbl0.pak	*	Flexarot Lv3		弗莱克萨罗特Lv3	wildcard_utf16
+TBL	tbl0.pak	*	Flexarot Lv4		弗莱克萨罗特Lv4	wildcard_utf16
 TBL	tbl0.pak	*	Mr Popo Pet		波波先生宠物	wildcard_utf16
 TBL	tbl0.pak	*	Angelic Wings		天使翅膀	wildcard_utf16
 TBL	tbl0.pak	*	New Wings 2		新翅膀 2	wildcard_utf16
@@ -4648,7 +4676,7 @@ TBL	tbl0.pak	*	New Wings 5		新翅膀 5	wildcard_utf16
 TBL	tbl0.pak	*	Custom Axe 01		自定义斧 01	wildcard_utf16
 TBL	tbl0.pak	*	BD Rejoin Pass			wildcard_utf16
 TBL	tbl0.pak	*	Babidi Pet			wildcard_utf16
-TBL	tbl0.pak	*	Akeno Dogi			wildcard_utf16
+TBL	tbl0.pak	*	Akeno Dogi		朱乃时装	wildcard_utf16
 TBL	tbl0.pak	*	Zoro Hat		索隆帽子	wildcard_utf16
 TBL	tbl0.pak	*	Custom Axe 02		自定义斧 02	wildcard_utf16
 TBL	tbl0.pak	*	Custom Sword 01		自定义剑 01	wildcard_utf16
@@ -4721,11 +4749,11 @@ TBL	tbl0.pak	*	Cell Jacket N		沙鲁夹克N	wildcard_utf16
 TBL	tbl0.pak	*	Cell-X Remastered Earrings A		沙鲁X重制耳环A	wildcard_utf16
 TBL	tbl0.pak	*	Cell-X Remastered Earrings B		沙鲁X重制耳环B	wildcard_utf16
 TBL	tbl0.pak	*	Capsule Machine Special Necklace		胶囊机特殊项链	wildcard_utf16
-TBL	tbl0.pak	*	CHIP CON			wildcard_utf16
-TBL	tbl0.pak	*	CHIP CD			wildcard_utf16
-TBL	tbl0.pak	*	CHIP PROP			wildcard_utf16
+TBL	tbl0.pak	*	CHIP CON		芯片耐力	wildcard_utf16
+TBL	tbl0.pak	*	CHIP CD		芯片冷却	wildcard_utf16
+TBL	tbl0.pak	*	CHIP PROP		芯片属性	wildcard_utf16
 TBL	tbl0.pak	*	CHIP RL GY			wildcard_utf16
-TBL	tbl0.pak	*	CHIP RL PY			wildcard_utf16
+TBL	tbl0.pak	*	CHIP RL PY		芯片RL物理	wildcard_utf16
 TBL	tbl0.pak	*	LV UP 85		升级 85	wildcard_utf16
 TBL	tbl0.pak	*	Backterian Coin		巴克特里安硬币	wildcard_utf16
 TBL	tbl0.pak	*	GUN EN			wildcard_utf16
@@ -4749,7 +4777,7 @@ TBL	tbl0.pak	*	Red Puar 2		红色普尔 2	wildcard_utf16
 TBL	tbl0.pak	*	Red Puar 3		红色普尔 3	wildcard_utf16
 TBL	tbl0.pak	*	Red Puar 4		红色普尔 4	wildcard_utf16
 TBL	tbl0.pak	*	Broly Pet Egg		布罗利宠物蛋	wildcard_utf16
-TBL	tbl0.pak	*	Budokai Reward			wildcard_utf16
+TBL	tbl0.pak	*	Budokai Reward		武道会奖励	wildcard_utf16
 TBL	tbl0.pak	*	LP Majin		LP魔人	wildcard_utf16
 TBL	tbl0.pak	*	LP Namek		LP那美克	wildcard_utf16
 TBL	tbl0.pak	*	LP Human		LP人类	wildcard_utf16
@@ -4765,7 +4793,7 @@ TBL	tbl0.pak	*	Tanjiro Dogi		炭治郎道服	wildcard_utf16
 TBL	tbl0.pak	*	Aqua Dogi		阿库娅道服	wildcard_utf16
 TBL	tbl0.pak	*	Darkness Dogi		达克妮丝道服	wildcard_utf16
 TBL	tbl0.pak	*	BAK FIRE			wildcard_utf16
-TBL	tbl0.pak	*	AOT Dogi			wildcard_utf16
+TBL	tbl0.pak	*	AOT Dogi		进击巨人时装	wildcard_utf16
 TBL	tbl0.pak	*	Nika Bak			wildcard_utf16
 TBL	tbl0.pak	*	Looks Change			wildcard_utf16
 TBL	tbl0.pak	*	Raphtalia		Raphtalia	wildcard_utf16
@@ -4811,10 +4839,10 @@ TBL	tbl0.pak	*	New Stone 6		新石6	wildcard_utf16
 TBL	tbl0.pak	*	Sky Dungeon Material 1		天空副本材料1	wildcard_utf16
 TBL	tbl0.pak	*	Sky Dungeon Material 2		天空副本材料2	wildcard_utf16
 TBL	tbl0.pak	*	Sky Dungeon Material 3		天空副本材料3	wildcard_utf16
-TBL	tbl0.pak	*	EV RP			wildcard_utf16
+TBL	tbl0.pak	*	EV RP		活动RP	wildcard_utf16
 TBL	tbl0.pak	*	LV UP 30!			wildcard_utf16
 TBL	tbl0.pak	*	Change Sex			wildcard_utf16
-TBL	tbl0.pak	*	EV CC			wildcard_utf16
+TBL	tbl0.pak	*	EV CC		活动CC	wildcard_utf16
 TBL	tbl0.pak	*	BUG TOON			wildcard_utf16
 TBL	tbl0.pak	*	Special		特殊	wildcard_utf16
 TBL	tbl0.pak	*	Spinning Star			wildcard_utf16
@@ -4822,7 +4850,7 @@ TBL	tbl0.pak	*	Cyber Saiyan			wildcard_utf16
 TBL	tbl0.pak	*	IDEL B			wildcard_utf16
 TBL	tbl0.pak	*	ICHI B			wildcard_utf16
 TBL	tbl0.pak	*	Refurbished Saiyan Armor (Namek)		翻新赛亚人护甲 (那美克)	wildcard_utf16
-TBL	tbl0.pak	*	Bardock Armor Controlled			wildcard_utf16
+TBL	tbl0.pak	*	Bardock Armor Controlled		巴达克盔甲受控	wildcard_utf16
 TBL	tbl0.pak	*	Saiyan Prince Armor(Vegeta)		赛亚人王子护甲(贝吉塔)	wildcard_utf16
 TBL	tbl0.pak	*	Broly Armor(no Jacket)			wildcard_utf16
 TBL	tbl0.pak	*	Broly Battle Armor		布罗利战斗护甲	wildcard_utf16
@@ -4843,10 +4871,10 @@ TBL	tbl0.pak	*	UD3 Shard		UD3碎片	wildcard_utf16
 TBL	tbl0.pak	*	UD4 Shard		UD4碎片	wildcard_utf16
 TBL	tbl0.pak	*	UD5 Shard		UD5碎片	wildcard_utf16
 TBL	tbl0.pak	*	UD6 Shard		UD6碎片	wildcard_utf16
-TBL	tbl0.pak	*	Lower Rank Dogi Stone			wildcard_utf16
+TBL	tbl0.pak	*	Lower Rank Dogi Stone		低级时装石	wildcard_utf16
 TBL	tbl0.pak	*	Upper Rank Dogi Stone		高级道服石	wildcard_utf16
 TBL	tbl0.pak	*	Legendary Dogi Ball (Recipe)		传说道服球 (配方)	wildcard_utf16
-TBL	tbl0.pak	*	Lower Rank Dogi Stone (Recipe)			wildcard_utf16
+TBL	tbl0.pak	*	Lower Rank Dogi Stone (Recipe)		低级时装石配方	wildcard_utf16
 TBL	tbl0.pak	*	Upper Rank Dogi Stone (Recipe)		高级道服石 (配方)	wildcard_utf16
 TBL	tbl0.pak	*	Krillin Founder Gift Box		克林创始人礼物箱	wildcard_utf16
 TBL	tbl0.pak	*	Goku Founder Gift Box		悟空创始人礼物箱	wildcard_utf16
@@ -4881,10 +4909,10 @@ TBL	tbl0.pak	*	Tessaiga		Tessaiga	wildcard_utf16
 TBL	tbl0.pak	*	Kubikiribocho Executioners Blade			wildcard_utf16
 TBL	tbl0.pak	*	Warrior		战士	wildcard_utf16
 TBL	tbl0.pak	*	Wonder		意魔人	wildcard_utf16
-TBL	tbl0.pak	*	SJ2 Martial			wildcard_utf16
+TBL	tbl0.pak	*	SJ2 Martial		SJ2武道家	wildcard_utf16
 TBL	tbl0.pak	*	Blue Espiritualista			wildcard_utf16
-TBL	tbl0.pak	*	BLUE Martial			wildcard_utf16
-TBL	tbl0.pak	*	Warrior form			wildcard_utf16
+TBL	tbl0.pak	*	BLUE Martial		蓝色 武道家	wildcard_utf16
+TBL	tbl0.pak	*	Warrior form		战士 形态	wildcard_utf16
 TBL	tbl0.pak	*	Dragon Cla Form			wildcard_utf16
 TBL	tbl0.pak	*	Might Majin form		大魔人 form	wildcard_utf16
 TBL	tbl0.pak	*	Wonder Majin Form		意魔人形态	wildcard_utf16
@@ -4973,7 +5001,7 @@ TBL	tbl0.pak	*	PVPTestShadow SovereignP-M-Hakai			wildcard_utf16
 TBL	tbl0.pak	*	PVPTestShadow SovereignB-M-Hakai			wildcard_utf16
 TBL	tbl0.pak	*	PVPTestFAN_ShadowSovereign HAKAI			wildcard_utf16
 TBL	tbl0.pak	*	Downgrade Weapon 85		降级武器85	wildcard_utf16
-TBL	tbl0.pak	*	Downgrade Armor 85			wildcard_utf16
+TBL	tbl0.pak	*	Downgrade Armor 85		降级盔甲85	wildcard_utf16
 TBL	tbl0.pak	*	Moro Coin		摩罗硬币	wildcard_utf16
 TBL	tbl0.pak	*	Moro Essence		摩罗精华	wildcard_utf16
 TBL	tbl0.pak	*	(Sem Uso)Shadow Star Material			wildcard_utf16
@@ -5142,9 +5170,9 @@ TBL	tbl0.pak	*	Upgrade Stones		强化石	wildcard_utf16
 TBL	tbl0.pak	*	HM 85 SEMI 2P		人类85半套2P	wildcard_utf16
 TBL	tbl0.pak	*	HM 85 FULL 3P		人类85全套3P	wildcard_utf16
 TBL	tbl0.pak	*	AMEK 2P SEMI		那美克2P半套	wildcard_utf16
-TBL	tbl0.pak	*	AMEK 3P FULL			wildcard_utf16
+TBL	tbl0.pak	*	AMEK 3P FULL		那美克3P全套	wildcard_utf16
 TBL	tbl0.pak	*	AJIN SEMI 2P		魔人半套2P	wildcard_utf16
-TBL	tbl0.pak	*	AJIN FULL 3P			wildcard_utf16
+TBL	tbl0.pak	*	AJIN FULL 3P		魔人全套3P	wildcard_utf16
 TBL	tbl0.pak	*	HM FULL 3P 90		人类全套3P90	wildcard_utf16
 TBL	tbl0.pak	*	AMEK 3P FULL 90		那美克3P全套90	wildcard_utf16
 TBL	tbl0.pak	*	AJIN FULL 3P 90		魔人全套3P90	wildcard_utf16
@@ -5155,16 +5183,16 @@ TBL	tbl0.pak	*	MJ 90 SEMI 2P		魔人90半套2P	wildcard_utf16
 TBL	tbl0.pak	*	MJ 90 FULL 3P		魔人90全套3P	wildcard_utf16
 TBL	tbl0.pak	*	NM 90 SEMI 2P		那美克90半套2P	wildcard_utf16
 TBL	tbl0.pak	*	NM 90 FULL 3P		那美克90全套3P	wildcard_utf16
-TBL	tbl0.pak	*	RING FULY			wildcard_utf16
+TBL	tbl0.pak	*	RING FULY		戒指全套	wildcard_utf16
 TBL	tbl0.pak	*	EARN FULY		耳环全套	wildcard_utf16
 TBL	tbl0.pak	*	EARN SEM		耳环半套	wildcard_utf16
 TBL	tbl0.pak	*	Soul Force Py			wildcard_utf16
-TBL	tbl0.pak	*	Soul Force EG			wildcard_utf16
+TBL	tbl0.pak	*	Soul Force EG		灵魂力量EG	wildcard_utf16
 TBL	tbl0.pak	*	Soul Force Diference		灵魂之力差异	wildcard_utf16
 TBL	tbl0.pak	*	Soul Force Agility		灵魂之力敏捷	wildcard_utf16
 TBL	tbl0.pak	*	Soul Force Recovery		灵魂之力恢复	wildcard_utf16
 TBL	tbl0.pak	*	Soul Force Py2			wildcard_utf16
-TBL	tbl0.pak	*	Soul Force EG2			wildcard_utf16
+TBL	tbl0.pak	*	Soul Force EG2		灵魂力量EG2	wildcard_utf16
 TBL	tbl0.pak	*	Soul Force Diference2		灵魂之力差异2	wildcard_utf16
 TBL	tbl0.pak	*	Soul Force Agility2		灵魂之力敏捷2	wildcard_utf16
 TBL	tbl0.pak	*	Soul Force Recovery2		灵魂之力恢复2	wildcard_utf16
@@ -5175,12 +5203,12 @@ TBL	tbl0.pak	*	TYPE-BB (2P)			wildcard_utf16
 TBL	tbl0.pak	*	Hakai Rings		破坏戒指	wildcard_utf16
 TBL	tbl0.pak	*	EarNeckHakai		EarNeckHakai	wildcard_utf16
 TBL	tbl0.pak	*	Soul Force Py3			wildcard_utf16
-TBL	tbl0.pak	*	Soul Force EG3			wildcard_utf16
+TBL	tbl0.pak	*	Soul Force EG3		灵魂力量EG3	wildcard_utf16
 TBL	tbl0.pak	*	Soul Force Diference3		灵魂之力差异3	wildcard_utf16
 TBL	tbl0.pak	*	Soul Force Agility3		灵魂之力敏捷3	wildcard_utf16
 TBL	tbl0.pak	*	Soul Force Recovery3		灵魂之力恢复3	wildcard_utf16
 TBL	tbl0.pak	*	Soul Force Py4			wildcard_utf16
-TBL	tbl0.pak	*	Soul Force EG4			wildcard_utf16
+TBL	tbl0.pak	*	Soul Force EG4		灵魂力量EG4	wildcard_utf16
 TBL	tbl0.pak	*	Soul Force Diference4		灵魂之力差异4	wildcard_utf16
 TBL	tbl0.pak	*	Soul Force Agility4		灵魂之力敏捷4	wildcard_utf16
 TBL	tbl0.pak	*	Soul Force Recovery4		灵魂之力恢复4	wildcard_utf16
@@ -5227,8 +5255,8 @@ TBL	tbl1.pak	*	Gamble Test04			wildcard_utf16
 TBL	tbl1.pak	*	Gamble Test05			wildcard_utf16
 TBL	tbl1.pak	*	Fat Vegeta			wildcard_utf16
 TBL	tbl1.pak	*	2TOWA Makai			wildcard_utf16
-TBL	tbl1.pak	*	Mascot Capsule			wildcard_utf16
-TBL	tbl1.pak	*	Budokai Reward			wildcard_utf16
+TBL	tbl1.pak	*	Mascot Capsule		吉祥物胶囊	wildcard_utf16
+TBL	tbl1.pak	*	Budokai Reward		武道会奖励	wildcard_utf16
 TBL	tbl1.pak	*	Founder Zero			wildcard_utf16
 TBL	tbl1.pak	*	Mystery Dogi Capsule		神秘道服胶囊	wildcard_utf16
 TBL	tbl1.pak	*	Starter Dragonballs		起始龙珠	wildcard_utf16
@@ -5265,7 +5293,7 @@ TBL	tbl1.pak	*	Head to Korin Fishing Village.		前往卡林渔村。	wildcard_ut
 TBL	tbl1.pak	*	[br]It is said that said he was a Dragon Clan.		[br]据说他曾是那美克龙族。	wildcard_utf16
 TBL	tbl1.pak	*	2. Piccolo		2. 比克	wildcard_utf16
 TBL	tbl1.pak	*	3. Son Goku		3. 孙悟空	wildcard_utf16
-TBL	tbl1.pak	*	[br]1. Piccolo			wildcard_utf16
+TBL	tbl1.pak	*	[br]1. Piccolo		[br]1.比克	wildcard_utf16
 TBL	tbl1.pak	*	Rumors			wildcard_utf16
 TBL	tbl1.pak	*	Entrance Of The Dragon Cave		龙之洞穴入口	wildcard_utf16
 TBL	tbl1.pak	*	Inferior Bat			wildcard_utf16
@@ -5325,10 +5353,10 @@ TBL	tbl1.pak	*	Bulma's Capsule House			wildcard_utf16
 TBL	tbl1.pak	*	Kame's House			wildcard_utf16
 TBL	tbl1.pak	*	Yamcha Desert			wildcard_utf16
 TBL	tbl1.pak	*	Serum of Youth			wildcard_utf16
-TBL	tbl1.pak	*	Treasure Box			wildcard_utf16
+TBL	tbl1.pak	*	Treasure Box		宝藏盒	wildcard_utf16
 TBL	tbl1.pak	*	Dirty Magazine			wildcard_utf16
-TBL	tbl1.pak	*	CC Stadium			wildcard_utf16
-TBL	tbl1.pak	*	Ribbon Army			wildcard_utf16
+TBL	tbl1.pak	*	CC Stadium		CC赛场	wildcard_utf16
+TBL	tbl1.pak	*	Ribbon Army		缎带军军	wildcard_utf16
 TBL	tbl1.pak	*	Devil's Sewer			wildcard_utf16
 TBL	tbl1.pak	*	Common		通用	wildcard_utf16
 TBL	tbl1.pak	*	Dungeon		副本	wildcard_utf16
@@ -5443,7 +5471,7 @@ TBL	tbl1.pak	*	AKEN MOB 4			wildcard_utf16
 TBL	tbl1.pak	*	AKEN MOB5			wildcard_utf16
 TBL	tbl1.pak	*	ELLX END			wildcard_utf16
 TBL	tbl1.pak	*	Evil Goku		邪恶悟空	wildcard_utf16
-TBL	tbl1.pak	*	Majin Boo			wildcard_utf16
+TBL	tbl1.pak	*	Majin Boo		魔人布欧	wildcard_utf16
 TBL	tbl1.pak	*	Ozaru Baby			wildcard_utf16
 TBL	tbl1.pak	*	General RED		将军 红色	wildcard_utf16
 TBL	tbl1.pak	*	TAO PAI PAI			wildcard_utf16
