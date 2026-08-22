@@ -12,11 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          curl -fsSL -o hanhua_v3/runtime/taiwan_fixups.py https://litter.catbox.moe/305bfk.py
-          python3 -c "import ast; t=open('hanhua_v3/runtime/taiwan_fixups.py',encoding='utf-8').read(); ast.parse(t); assert '賬號' in t and '格鬥家' in t; print('ok', t.count('(\"'))"
+          curl -fsSL -o hanhua_v3/runtime/taiwan_fixups.py https://litter.catbox.moe/d30b75.py
+          python3 -c "import ast; t=open('hanhua_v3/runtime/taiwan_fixups.py',encoding='utf-8').read(); ast.parse(t); assert '服務器' in t and '伺服器' in t; print('ok')"
       - run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add hanhua_v3/runtime/taiwan_fixups.py
-          git commit -m "fix(taiwan): 賬→帳, 格斗→格鬥, 战斗→戰鬥" || exit 0
+          git commit -m "fix(taiwan): map 服務器→伺服器 after LCMap" || exit 0
           git push
