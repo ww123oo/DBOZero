@@ -1,12 +1,29 @@
 #!/usr/bin/env python3
-"""Merge translations_to_merge.tsv into data/new_translations.tsv by 原文."""
+"""Merge translations_to_merge.tsv into data/new_translations.tsv by 原文.
+If data/merge_parts/part*.tsv exist, combine them first.
+"""
 from pathlib import Path
 import csv
 import sys
 
 root = Path(__file__).resolve().parents[1]
+parts_dir = root / "data" / "merge_parts"
 merge_path = root / "data" / "translations_to_merge.tsv"
 target = root / "data" / "new_translations.tsv"
+
+parts = sorted(parts_dir.glob("part*.tsv")) if parts_dir.exists() else []
+if parts:
+    lines = []
+    for i, p in enumerate(parts):
+        rows = p.read_text(encoding="utf-8-sig").splitlines()
+        if not rows:
+            continue
+        if i == 0:
+            lines.extend(rows)
+        else:
+            lines.extend(rows[1:] if ("原文" in rows[0] or "填写" in rows[0]) else rows)
+    merge_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(f"combined {len(parts)} parts -> {merge_path} ({len(lines)} lines)")
 
 if not merge_path.exists():
     print("missing", merge_path)
