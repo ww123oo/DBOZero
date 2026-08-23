@@ -1,28 +1,29 @@
-# merge_parts
+# 翻译合并说明
 
-分段翻译对照表（原文 → 填写中文）。
+## 目标
 
-## 本机用法
+最终要改的是 **`data/new_translations.tsv`** 的「填写中文」列（约 3.5MB）。
 
-1. `git pull`
-2. 若仓库内已有 `part1.tsv`～`part4.tsv`：
+因 GitHub API 单次推送限制，仓库里只能先放对照表 + 脚本；**不会自动改掉主表**。
 
-```powershell
-python scripts/combine_merge_parts.py
-python scripts/merge_translations.py
-dboc build --force
-```
-
-3. 若只有 `parts_a.b64` / `parts_b.b64`：
+## 本机（推荐）
 
 ```powershell
-python scripts/decode_merge_parts.py
+cd J:\OpenDBO-Localization-main\DBOZero-main
+git pull
 python scripts/merge_translations.py
-dboc build --force
+git add data/new_translations.tsv
+git commit -m "fill 填写中文"
+git push
 ```
 
-## 说明
+## 或：直接覆盖主表
 
-- 完整约 1700+ 组优质中文对在对话产物 `translations_to_merge.tsv`。
-- 上传时因单次 API 体积限制，GitHub 上可能需分段或压缩包。
-- `merge_translations.py` 会：合并 parts → 写入 `data/translations_to_merge.tsv` → 填入 `data/new_translations.tsv` 空白「填写中文」。
+1. 下载对话产物 `new_translations_merged.tsv`
+2. 覆盖为 `data/new_translations.tsv`
+3. `git add` / `commit` / `push`
+
+## 对照表
+
+- `data/translations_to_merge.tsv` — 精简版
+- 完整约 1770 组：对话产物 `translations_to_merge.tsv`
