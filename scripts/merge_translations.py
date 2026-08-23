@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""Merge translations_to_merge.tsv into data/new_translations.tsv by 原文.
-If data/merge_parts/part*.tsv exist, combine them first.
-"""
+"""把 data/translations_to_merge.tsv（或 merge_parts）合并进 data/new_translations.tsv 的「填写中文」列。"""
 from pathlib import Path
 import csv
 import sys
@@ -9,7 +7,7 @@ import sys
 root = Path(__file__).resolve().parents[1]
 parts_dir = root / "data" / "merge_parts"
 merge_path = root / "data" / "translations_to_merge.tsv"
-target = root / "data" / "new_translations.tsv"
+target = root / "data" / "new_translations.tsv"  # 最终写入这里
 
 parts = sorted(parts_dir.glob("part*.tsv")) if parts_dir.exists() else []
 if parts:
@@ -58,4 +56,4 @@ with target.open("w", encoding="utf-8-sig", newline="") as f:
     w.writeheader()
     w.writerows(rows)
 
-print(f"merged {filled} rows from {len(M)} keys into {target}")
+print(f"OK: 已写入 data/new_translations.tsv（填写中文），新增/补全 {filled} 行，对照表键 {len(M)} 个")
