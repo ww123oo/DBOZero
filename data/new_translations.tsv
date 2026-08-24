@@ -742,7 +742,7 @@ UI	lang0.pak	DST_DWC_CARD_TARGET_TOOLTIP	Attack		攻击	ok
 UI	lang0.pak	DST_DWC_CHOOSE_TITLE	Select Target		选择目标	ok
 UI	lang0.pak	DST_DWC_CLEAR_CARD_TOOLTIP	Confirm access to the card		确认访问到卡片	ok
 UI	lang0.pak	DST_DWC_CONDITION	Target Condition		目标条件	ok
-UI	lang0.pak	DST_DWC_CONDITION_RB_STRAIGHTWIN	%d Streak		%d Streak	ok
+UI	lang0.pak	DST_DWC_CONDITION_RB_STRAIGHTWIN	%d Streak		%d 连胜	ok
 UI	lang0.pak	DST_DWC_CONDITION_STATE	Condition Status		Condition 状态	ok
 UI	lang0.pak	DST_DWC_ENTER_CONDITION	Entrance Conditions		入口条件	ok
 UI	lang0.pak	DST_DWC_ENTER_CONFIRM	"[align = ""center""]Dragon World Challenge (DWC) Entry[br][br]Remaining # of entries this week: %d[br][br]You can't withdraw.[br]Do you want to enter?[br]"		"[align = ""center""]龙界挑战（DWC）入场[br][br]本周剩余入场次数：%d[br][br]进入后无法退出。[br]确定要进入吗？[br]"	ok
@@ -854,9 +854,9 @@ UI	lang0.pak	DST_GUILD_PASSIVE_COST	Cost: %u rep + %u zeni		消耗：%u 声望 �
 UI	lang0.pak	DST_GUILD_PASSIVE_MAX_LEVEL	Max level reached		已达最高等级	untranslated
 UI	lang0.pak	DST_GUILD_PASSIVE_POINTS	Points: %d / %d  (Available: %d)		点数：%d／%d（可用：%d）	untranslated
 UI	lang0.pak	DST_GUILD_PASSIVE_REPUTATION	Reputation:		声望：	untranslated
-UI	lang0.pak	DST_GUILD_PASSIVE_UPGRADE_CONFIRM	"[align = ""center""][font size = ""12"" color=""f4d762""]Upgrade Guild Passive[/font][br][br][font size = ""10"" color=""269eff""]%s[/font][br][br][font size = ""10"" color=""ffffff""]Reputation: %u[br]Zeni: %u[/font][br][br][font size = ""10"" color=""ffffff""]Confirm upgrade?[/font]"			untranslated
+UI	lang0.pak	DST_GUILD_PASSIVE_UPGRADE_CONFIRM	"[align = ""center""][font size = ""12"" color=""f4d762""]Upgrade Guild Passive[/font][br][br][font size = ""10"" color=""269eff""]%s[/font][br][br][font size = ""10"" color=""ffffff""]Reputation: %u[br]Zeni: %u[/font][br][br][font size = ""10"" color=""ffffff""]Confirm upgrade?[/font]"		"[align = ""center""][font size = ""12"" color=""f4d762""]升级公会被动[/font][br][br][font size = ""10"" color=""269eff""]%s[/font][br][br][font size = ""10"" color=""ffffff""]声望：%u[br]索尼：%u[/font][br][br][font size = ""10"" color=""ffffff""]确认升级？[/font]"	untranslated
 UI	lang0.pak	DST_GUILD_PASSIVE_RESET_BTN	Reset		重置	ok
-UI	lang0.pak	DST_GUILD_PASSIVE_RESET_CONFIRM	"[align = ""center""][font size = ""12"" color=""f4d762""]Reset Guild Passives[/font][br][br][font size = ""10"" color=""ffffff""]Reputation: %u[br]Zeni: %u[br]Points returned: %d[/font][br][br][font size = ""10"" color=""ff6666""]Spent rep/zeni is NOT refunded.[br]Confirm reset?[/font]"			untranslated
+UI	lang0.pak	DST_GUILD_PASSIVE_RESET_CONFIRM	"[align = ""center""][font size = ""12"" color=""f4d762""]Reset Guild Passives[/font][br][br][font size = ""10"" color=""ffffff""]Reputation: %u[br]Zeni: %u[br]Points returned: %d[/font][br][br][font size = ""10"" color=""ff6666""]Spent rep/zeni is NOT refunded.[br]Confirm reset?[/font]"		"[align = ""center""][font size = ""12"" color=""f4d762""]重置公会被动[/font][br][br][font size = ""10"" color=""ffffff""]声望：%u[br]索尼：%u[br]返还点数：%d[/font][br][br][font size = ""10"" color=""ff6666""]已消耗的声望／索尼不予退还。[br]确认重置？[/font]"	untranslated
 UI	lang0.pak	DST_GUILD_PASSIVE_RESET_COOLDOWN	Reset available in: %s		重置可用时间：%s	untranslated
 UI	lang0.pak	DST_GUILD_PASSIVE_NOTHING_RESET	No points to reset		没有可重置的点数	untranslated
 UI	lang0.pak	DST_GUILD_PASSIVE_RESET_DONE	Guild passives reset. %d points returned.		公会被动已重置。返还 %d 点。	untranslated
@@ -1074,11 +1074,11 @@ UI	lang0.pak	DST_ITEMUPGRADE_INFO_CORE_SLOT	HoiPoi prevent destruction		HoiPoi	o
 UI	lang0.pak	DST_ITEMUPGRADE_INFO_DEFENCE	Defense		防御	ok
 UI	lang0.pak	DST_ITEMUPGRADE_INFO_HOIPOI_SLOT_ATTR	 mean		mean	ok
 UI	lang0.pak	DST_ITEMUPGRADE_INFO_HOIPOI_SLOT_ATTR_BETTER	 %.0f%% Gain		 %.0f%% 提升	ok
-UI	lang0.pak	DST_ITEMUPGRADE_INFO_HOIPOI_SLOT_ATTR_WORSE	 %.0f%% Loss		 %.0f%% Loss	ok
+UI	lang0.pak	DST_ITEMUPGRADE_INFO_HOIPOI_SLOT_ATTR_WORSE	 %.0f%% Loss		%.0f%% 损失	ok
 UI	lang0.pak	DST_ITEMUPGRADE_INFO_HOIPOI_SLOT_EMPTY_LINE1	If changed successful:		如果已更改成功:	ok
 UI	lang0.pak	DST_ITEMUPGRADE_INFO_HOIPOI_SLOT_EMPTY_LINE2_1	 against 		against	ok
 UI	lang0.pak	DST_ITEMUPGRADE_INFO_HOIPOI_SLOT_EMPTY_LINE3	Fail mean attribute cleared.		失败属性清除。	ok
-UI	lang0.pak	DST_ITEMUPGRADE_INFO_HOIPOI_SLOT_EMPTY_TITLE	 assigned		assigned	ok
+UI	lang0.pak	DST_ITEMUPGRADE_INFO_HOIPOI_SLOT_EMPTY_TITLE	 assigned		已指定	ok
 UI	lang0.pak	DST_ITEMUPGRADE_INFO_HOIPOI_SLOT_IN_1_BLACKCHANGE	%s will be downgraded.		%s 将被降级。	ok
 UI	lang0.pak	DST_ITEMUPGRADE_INFO_HOIPOI_SLOT_IN_1_CHANGE	If Successful item: %s will get different stats.		如果成功道具：%s 将获得不同。	ok
 UI	lang0.pak	DST_ITEMUPGRADE_INFO_HOIPOI_SLOT_IN_1_NO_BLACKCHANGE	Downgrade won't change stats.		降级将不更改。	ok
@@ -1676,7 +1676,7 @@ UI	lang0.pak	DST_NETSTORE	Netstore	时间仓库	时间仓库	ok
 UI	lang0.pak	DST_NOTICE_URL	https://opendbo.org/news		://./	ok
 UI	lang0.pak	DST_NOTIFY_CHANGE_CLASS	Class change: %s to %s 		职业更改：%s 到 %s 	ok
 UI	lang0.pak	DST_NOTIFY_GAIN_EXP	+%u EXP		+%u EXP	ok
-UI	lang0.pak	DST_NOTIFY_GAIN_EXP_AND_BONUS	+%u(+%u)EXP		+%u(+%u)EXP	ok
+UI	lang0.pak	DST_NOTIFY_GAIN_EXP_AND_BONUS	+%u(+%u)EXP		＋%u（＋%u）经验	ok
 UI	lang0.pak	DST_NOTIFY_GAIN_MIX_EXP	Gain (%u) EXP.		获得（%u）经验。	ok
 UI	lang0.pak	DST_NOTIFY_GAIN_MIX_EXP_FAIL	No EXP gained.		无EXP。	ok
 UI	lang0.pak	DST_NOTIFY_GAIN_MIX_EXP_MAX	Max EXP reached.		最大EXP已达到。	ok
@@ -1799,7 +1799,7 @@ UI	lang0.pak	DST_OPTION_TOOLTIP_PERFORMANCE_MODE	Disables all visual effects for
 UI	lang0.pak	DST_OPTION_PERF_HIDE_MASCOT_TOOLTIP	Hides other players' mascots and pet summons		隐藏其他玩家的吉祥物和宠物召唤物	ok
 UI	lang0.pak	DST_OPTION_PERF_HIDE_PLAYER_EFFECTS_TOOLTIP	Hides all combat effects from other players (skills, attacks, projectiles). Only your own effects will be visible.		Hides 全部战斗效果来自其他玩家 (技能，，). 专用你的效果将。	ok
 UI	lang0.pak	DST_OPTION_PERF_HIDE_HIT_TEXTURE	Hide Hit Texture Effects		隐藏受击贴图特效	untranslated
-UI	lang0.pak	DST_OPTION_PERF_HIDE_HIT_TEXTURE_TOOLTIP	Hides hit visuals on all targets (PC, mob, NPC): impact flash (GME), word text (BASH, etc.) and Miss/Critical/Block popups. Damage numbers and hit sounds remain. Click  to apply.			untranslated
+UI	lang0.pak	DST_OPTION_PERF_HIDE_HIT_TEXTURE_TOOLTIP	Hides hit visuals on all targets (PC, mob, NPC): impact flash (GME), word text (BASH, etc.) and Miss/Critical/Block popups. Damage numbers and hit sounds remain. Click  to apply.		隐藏所有目标（玩家、怪物、NPC）的受击画面：冲击闪光（GME）、文字（BASH 等）以及未击中／暴击命中／格挡弹出。伤害数字与受击音效保留。点击后套用。	untranslated
 UI	lang0.pak	DST_OPTION_INFO_TOOLTIP_COSTUME_RENDER	Possibility to hide/show Costumes		Possibility 到隐藏/显示 Costumes	ok
 UI	lang0.pak	DST_ITEM_CAN_NOT_MOVE_ERROR_PACKET_SEND	Title Status/Effect has been setted.		称号状态/效果已生效。	ok
 UI	lang0.pak	DST_ITEM_CAN_NOT_MOVE_ERROR_PACKET_SEND2	Title Effect has been setted.		称号效果已生效。	ok
@@ -2102,7 +2102,7 @@ UI	lang0.pak	DST_QUESTREWARD_CHANGE_ADULT	Grow Up		Grow 上	ok
 UI	lang0.pak	DST_QUESTREWARD_CONVERT_CLASS_RIGHT	Master Class		大师职业	ok
 UI	lang0.pak	DST_QUESTREWARD_INFO_CLASS	Class Change: %s		职业更改：%s	ok
 UI	lang0.pak	DST_QUESTREWARD_INFO_EXP	%d EXP		%d EXP	ok
-UI	lang0.pak	DST_QUESTREWARD_INFO_REPUTATION	%d Rep		%d Rep	ok
+UI	lang0.pak	DST_QUESTREWARD_INFO_REPUTATION	%d Rep		%d 声望	ok
 UI	lang0.pak	DST_QUESTREWARD_INFO_ZENNY	%s Zeni		%s 索	ok
 UI	lang0.pak	DST_QUESTREWARD_PROB_REWARD	Reward		奖励	ok
 UI	lang0.pak	DST_QUESTREWARD_TEXT_BASIC	Reward		奖励	ok
@@ -3099,7 +3099,7 @@ UI	lang0.pak	DST_NAMEK_SIGN	Revealer	那美坎印记	揭示者	ok
 UI	lang0.pak	DST_WORLDMAP_PORTAL_NOT_REG	This Portal isn't registered.	无法登录的地点.	无法登录的地点.	ok
 UI	lang0.pak	DST_WORLDMAP_PORUNGAROCKS	Porunga Rocks	波路亚巨石北部	波伦加 Rocks	ok
 UI	lang0.pak	DST_WORLDMAP_QUEST_SEARCH_TOOLTIP	Turn ON/OFF for Quest search		开启/关闭任务搜索	ok
-UI	lang0.pak	DST_WORLDMAP_RECOMMENDED_LEVEL	Lv. %d ~ %d		Lv. %d ~ %d	ok
+UI	lang0.pak	DST_WORLDMAP_RECOMMENDED_LEVEL	Lv. %d ~ %d		Lv. %d ～ %d	ok
 UI	lang0.pak	DST_WORLDMAP_SEARCH_NOT_QUEST	No NPC with Quest found.		无NPC使用任务找到。	ok
 UI	lang0.pak	DST_WORLDMAP_SEARCH_NPC_DOJO	Dojo	流派/道场	道场	ok
 UI	lang0.pak	DST_WORLDMAP_SEARCH_NPC_ITEMBIND	Vending Machine	道具封印贩卖机	道具封印贩卖机	ok
@@ -7086,7 +7086,7 @@ TBL	tbl1.pak	*	P Lotus Dragon Gloves		P 莲花龙手套	wildcard_utf16
 TBL	tbl1.pak	*	LRAllows the user to become synchronized with\none of Buddhism's Five Divine Powers.			wildcard_utf16
 TBL	tbl1.pak	*	P Jet Turbine Gloves			wildcard_utf16
 TBL	tbl1.pak	*	P Turbo Gloves Z			wildcard_utf16
-TBL	tbl1.pak	*	LGPrinted z representing the strongest Warrior, performance is very good.			wildcard_utf16
+TBL	tbl1.pak	*	LGPrinted z representing the strongest Warrior, performance is very good.		印有代表最强战士的 Z，性能优秀。	wildcard_utf16
 TBL	tbl1.pak	*	P Smash Gloves Z			wildcard_utf16
 TBL	tbl1.pak	*	LOPrinted Z representing the strongest Warrior,\nto enhance the improved version.			wildcard_utf16
 TBL	tbl1.pak	*	P Wind Breaker Gloves			wildcard_utf16
@@ -7108,7 +7108,7 @@ TBL	tbl1.pak	*	Lotus Dragon Gloves		莲花龙手套	wildcard_utf16
 TBL	tbl1.pak	*	Jet Turbine Gloves			wildcard_utf16
 TBL	tbl1.pak	*	Z Turbo Gloves			wildcard_utf16
 TBL	tbl1.pak	*	Z Smash Gloves			wildcard_utf16
-TBL	tbl1.pak	*	LHThis enhanced custom version was represented by the strongest Z-Warrior.			wildcard_utf16
+TBL	tbl1.pak	*	LHThis enhanced custom version was represented by the strongest Z-Warrior.		此强化定制版以最强 Z 战士为代表。	wildcard_utf16
 TBL	tbl1.pak	*	Wind Breaking Gloves			wildcard_utf16
 TBL	tbl1.pak	*	CC Mach Punch Gloves			wildcard_utf16
 TBL	tbl1.pak	*	E Mining Gloves		E 采矿手套	wildcard_utf16
@@ -7199,7 +7199,7 @@ TBL	tbl1.pak	*	Galaxia Staff			wildcard_utf16
 TBL	tbl1.pak	*	Gamma Limited Staff			wildcard_utf16
 TBL	tbl1.pak	*	Limited ETA Staff			wildcard_utf16
 TBL	tbl1.pak	*	E Z Turbo Staff			wildcard_utf16
-TBL	tbl1.pak	*	MGPrinted z representing the strongest Warrior, performance is very good.			wildcard_utf16
+TBL	tbl1.pak	*	MGPrinted z representing the strongest Warrior, performance is very good.		印有代表最强战士的 Z，性能优秀。	wildcard_utf16
 TBL	tbl1.pak	*	E Z Smash Staff			wildcard_utf16
 TBL	tbl1.pak	*	MZPrinted z representing the strongest Warrior, performance is very good.\nAdvanced Version.			wildcard_utf16
 TBL	tbl1.pak	*	CC Handsome Staff			wildcard_utf16
@@ -18557,15 +18557,15 @@ TBL	tbl1.pak	*	Tatsumaki Clothes			wildcard_utf16
 TBL	tbl1.pak	*	Featuring One Punch Man			wildcard_utf16
 TBL	tbl1.pak	*	Neliel Hair			wildcard_utf16
 TBL	tbl1.pak	*	Ruby Ki Soul			wildcard_utf16
-TBL	tbl1.pak	*	An evolution of the Third Spinel Dragon Soul. It shines like a Warrior Soul.			wildcard_utf16
+TBL	tbl1.pak	*	An evolution of the Third Spinel Dragon Soul. It shines like a Warrior Soul.		尖晶石龙魂第三阶段的进化。如战士之魂般闪耀。	wildcard_utf16
 TBL	tbl1.pak	*	Quartz Ki Soul			wildcard_utf16
-TBL	tbl1.pak	*	An evolution of the Third Turquoise Dragon Soul. It shines like a Warrior Soul.			wildcard_utf16
+TBL	tbl1.pak	*	An evolution of the Third Turquoise Dragon Soul. It shines like a Warrior Soul.		绿松石龙魂第三阶段的进化。如战士之魂般闪耀。	wildcard_utf16
 TBL	tbl1.pak	*	Amethyst Ki Soul			wildcard_utf16
-TBL	tbl1.pak	*	An evolution of the Third Fluorite Dragon Soul. It shines like a Warrior Soul.			wildcard_utf16
+TBL	tbl1.pak	*	An evolution of the Third Fluorite Dragon Soul. It shines like a Warrior Soul.		萤石龙魂第三阶段的进化。如战士之魂般闪耀。	wildcard_utf16
 TBL	tbl1.pak	*	Sun Ki Soul			wildcard_utf16
-TBL	tbl1.pak	*	An evolution of the Third Universal Dragon Soul. It shines like a Warrior Soul.			wildcard_utf16
+TBL	tbl1.pak	*	An evolution of the Third Universal Dragon Soul. It shines like a Warrior Soul.		宇宙龙魂第三阶段的进化。如战士之魂般闪耀。	wildcard_utf16
 TBL	tbl1.pak	*	Nature Ki Soul			wildcard_utf16
-TBL	tbl1.pak	*	An evolution of the Third Emerald Dragon Soul. It shines like a Warrior Soul.			wildcard_utf16
+TBL	tbl1.pak	*	An evolution of the Third Emerald Dragon Soul. It shines like a Warrior Soul.		翡翠龙魂第三阶段的进化。如战士之魂般闪耀。	wildcard_utf16
 TBL	tbl1.pak	*	Ruby Ki Soul Recipe		Ruby Ki Soul配方	wildcard_utf16
 TBL	tbl1.pak	*	Quartz Ki Soul Recipe		Quartz Ki Soul配方	wildcard_utf16
 TBL	tbl1.pak	*	Amethyst Ki Soul Recipe		Amethyst Ki Soul配方	wildcard_utf16
@@ -35048,7 +35048,7 @@ TBL	tbl2.pak	*	P Lotus Dragon Gloves		P莲花龙手套	wildcard_utf16
 TBL	tbl2.pak	*	LRAllows the user to become synchronized with\none of Buddhism's Five Divine Powers.			wildcard_utf16
 TBL	tbl2.pak	*	P Jet Turbine Gloves			wildcard_utf16
 TBL	tbl2.pak	*	P Turbo Gloves Z			wildcard_utf16
-TBL	tbl2.pak	*	LGPrinted z representing the strongest Warrior, performance is very good.			wildcard_utf16
+TBL	tbl2.pak	*	LGPrinted z representing the strongest Warrior, performance is very good.		印有代表最强战士的 Z，性能优秀。	wildcard_utf16
 TBL	tbl2.pak	*	P Smash Gloves Z			wildcard_utf16
 TBL	tbl2.pak	*	LOPrinted Z representing the strongest Warrior,\nto enhance the improved version.			wildcard_utf16
 TBL	tbl2.pak	*	P Wind Breaker Gloves			wildcard_utf16
@@ -35070,7 +35070,7 @@ TBL	tbl2.pak	*	Lotus Dragon Gloves		莲花龙手套	wildcard_utf16
 TBL	tbl2.pak	*	Jet Turbine Gloves			wildcard_utf16
 TBL	tbl2.pak	*	Z Turbo Gloves			wildcard_utf16
 TBL	tbl2.pak	*	Z Smash Gloves			wildcard_utf16
-TBL	tbl2.pak	*	LHThis enhanced custom version was represented by the strongest Z-Warrior.			wildcard_utf16
+TBL	tbl2.pak	*	LHThis enhanced custom version was represented by the strongest Z-Warrior.		此强化定制版以最强 Z 战士为代表。	wildcard_utf16
 TBL	tbl2.pak	*	Wind Breaking Gloves			wildcard_utf16
 TBL	tbl2.pak	*	CC Mach Punch Gloves			wildcard_utf16
 TBL	tbl2.pak	*	E Mining Gloves			wildcard_utf16
@@ -35161,7 +35161,7 @@ TBL	tbl2.pak	*	Galaxia Staff			wildcard_utf16
 TBL	tbl2.pak	*	Gamma Limited Staff			wildcard_utf16
 TBL	tbl2.pak	*	Limited ETA Staff			wildcard_utf16
 TBL	tbl2.pak	*	E Z Turbo Staff			wildcard_utf16
-TBL	tbl2.pak	*	MGPrinted z representing the strongest Warrior, performance is very good.			wildcard_utf16
+TBL	tbl2.pak	*	MGPrinted z representing the strongest Warrior, performance is very good.		印有代表最强战士的 Z，性能优秀。	wildcard_utf16
 TBL	tbl2.pak	*	E Z Smash Staff			wildcard_utf16
 TBL	tbl2.pak	*	MZPrinted z representing the strongest Warrior, performance is very good.\nAdvanced Version.			wildcard_utf16
 TBL	tbl2.pak	*	CC Handsome Staff			wildcard_utf16
@@ -46615,15 +46615,15 @@ TBL	tbl2.pak	*	Tatsumaki Clothes			wildcard_utf16
 TBL	tbl2.pak	*	Featuring One Punch Man			wildcard_utf16
 TBL	tbl2.pak	*	Neliel Hair			wildcard_utf16
 TBL	tbl2.pak	*	Ruby Ki Soul			wildcard_utf16
-TBL	tbl2.pak	*	An evolution of the Third Spinel Dragon Soul. It shines like a Warrior Soul.			wildcard_utf16
+TBL	tbl2.pak	*	An evolution of the Third Spinel Dragon Soul. It shines like a Warrior Soul.		尖晶石龙魂第三阶段的进化。如战士之魂般闪耀。	wildcard_utf16
 TBL	tbl2.pak	*	Quartz Ki Soul			wildcard_utf16
-TBL	tbl2.pak	*	An evolution of the Third Turquoise Dragon Soul. It shines like a Warrior Soul.			wildcard_utf16
+TBL	tbl2.pak	*	An evolution of the Third Turquoise Dragon Soul. It shines like a Warrior Soul.		绿松石龙魂第三阶段的进化。如战士之魂般闪耀。	wildcard_utf16
 TBL	tbl2.pak	*	Amethyst Ki Soul			wildcard_utf16
-TBL	tbl2.pak	*	An evolution of the Third Fluorite Dragon Soul. It shines like a Warrior Soul.			wildcard_utf16
+TBL	tbl2.pak	*	An evolution of the Third Fluorite Dragon Soul. It shines like a Warrior Soul.		萤石龙魂第三阶段的进化。如战士之魂般闪耀。	wildcard_utf16
 TBL	tbl2.pak	*	Sun Ki Soul			wildcard_utf16
-TBL	tbl2.pak	*	An evolution of the Third Universal Dragon Soul. It shines like a Warrior Soul.			wildcard_utf16
+TBL	tbl2.pak	*	An evolution of the Third Universal Dragon Soul. It shines like a Warrior Soul.		宇宙龙魂第三阶段的进化。如战士之魂般闪耀。	wildcard_utf16
 TBL	tbl2.pak	*	Nature Ki Soul			wildcard_utf16
-TBL	tbl2.pak	*	An evolution of the Third Emerald Dragon Soul. It shines like a Warrior Soul.			wildcard_utf16
+TBL	tbl2.pak	*	An evolution of the Third Emerald Dragon Soul. It shines like a Warrior Soul.		翡翠龙魂第三阶段的进化。如战士之魂般闪耀。	wildcard_utf16
 TBL	tbl2.pak	*	Ruby Ki Soul Recipe		Ruby Ki Soul配方	wildcard_utf16
 TBL	tbl2.pak	*	Quartz Ki Soul Recipe		Quartz Ki Soul配方	wildcard_utf16
 TBL	tbl2.pak	*	Amethyst Ki Soul Recipe		Amethyst Ki Soul配方	wildcard_utf16
