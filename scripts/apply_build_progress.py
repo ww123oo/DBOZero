@@ -41,46 +41,43 @@ new = """    stats: dict[str, dict[str, int]] = {}
     taiwan_sources = {"""
 text = text.replace(old, new, 1)
 
-text = text.replace(
-    """    taiwan_stats = maybe_build_target(
+pairs = [
+(
+"""    taiwan_stats = maybe_build_target(
         manifest=manifest,
         target_id=\"DBOZero/localize/Taiwan/language\",""",
-    """    tick(\"localize/Taiwan/language\")
+"""    tick(\"localize/Taiwan/language\")
     taiwan_stats = maybe_build_target(
         manifest=manifest,
         target_id=\"DBOZero/localize/Taiwan/language\",""",
-    1,
-)
-text = text.replace(
-    """    stats[\"pack/lang0.pak\"] = maybe_build_target(
+),
+(
+"""    stats[\"pack/lang0.pak\"] = maybe_build_target(
         manifest=manifest,
         target_id=\"DBOZero/pack/lang0.pak\",""",
-    """    tick(\"pack/lang0.pak\")
+"""    tick(\"pack/lang0.pak\")
     stats[\"pack/lang0.pak\"] = maybe_build_target(
         manifest=manifest,
         target_id=\"DBOZero/pack/lang0.pak\",""",
-    1,
-)
-text = text.replace(
-    """    for file_name in tbl_utf16_patch.TBL_FILES:
+),
+(
+"""    for file_name in tbl_utf16_patch.TBL_FILES:
         source_tbl = tbl_utf16_patch.tbl_path(source_dir, file_name)""",
-    """    for file_name in tbl_utf16_patch.TBL_FILES:
+"""    for file_name in tbl_utf16_patch.TBL_FILES:
         tick(f\"pack/{file_name}\")
         source_tbl = tbl_utf16_patch.tbl_path(source_dir, file_name)""",
-    1,
-)
-text = text.replace(
-    """        gui0_stats = maybe_build_target(
+),
+(
+"""        gui0_stats = maybe_build_target(
             manifest=manifest,
             target_id=\"DBOZero/pack/gui0.pak\",""",
-    """        tick(\"pack/gui0.pak\")
+"""        tick(\"pack/gui0.pak\")
         gui0_stats = maybe_build_target(
             manifest=manifest,
             target_id=\"DBOZero/pack/gui0.pak\",""",
-    1,
-)
-text = text.replace(
-    """    copy_missing_pack_files(source_dir, pack_dir)
+),
+(
+"""    copy_missing_pack_files(source_dir, pack_dir)
 
     readme_writer(out_dir)
     if gui0_stats:
@@ -88,7 +85,7 @@ text = text.replace(
     write_build_manifest(out_dir, manifest)
     return stats
 """,
-    """    else:
+"""    else:
         tick(\"pack/gui0.pak (略過)\")
     tick(\"copy pack files\")
     copy_missing_pack_files(source_dir, pack_dir)
@@ -101,10 +98,9 @@ text = text.replace(
     write_build_manifest(out_dir, manifest)
     return stats
 """,
-    1,
-)
-
-old_v = """    stats = build_one(
+),
+(
+"""    stats = build_one(
         source_dir,
         job.out_dir,
         translations,
@@ -117,8 +113,8 @@ old_v = """    stats = build_one(
         gui_font=gui_font,
     )
     return job.label, job.out_dir, job.ansi_encoding, stats
-"""
-new_v = """    progress = BuildProgress(9, label=job.label)
+""",
+"""    progress = BuildProgress(9, label=job.label)
     print(f\"=== 開始構建 {job.label} ({job.ansi_encoding}) → {job.out_dir} ===\", flush=True)
     stats = build_one(
         source_dir,
@@ -135,36 +131,37 @@ new_v = """    progress = BuildProgress(9, label=job.label)
     )
     print(f\"=== 完成 {job.label} ===\", flush=True)
     return job.label, job.out_dir, job.ansi_encoding, stats
-"""
-if old_v not in text:
-    print("run_build_variant body not found", file=sys.stderr)
-    sys.exit(1)
-text = text.replace(old_v, new_v, 1)
-
-text = text.replace(
-    """    require_source_layout(source_dir)
+""",
+),
+(
+"""    require_source_layout(source_dir)
     translations = load_translation_sets(args.data_dir)
 """,
-    """    require_source_layout(source_dir)
+"""    require_source_layout(source_dir)
     print(\"[準備] 載入翻譯表…\", flush=True)
     translations = load_translation_sets(args.data_dir)
     print(f\"[準備] 主表 {translations.master_rows} 列，佇列已填 {translations.queue_rows} 列\", flush=True)
 """,
-    1,
-)
-text = text.replace(
-    """    if not args.no_validate:
+),
+(
+"""    if not args.no_validate:
         for label, out_dir, ansi_encoding, _stats in built:
             validate_basic(source_dir, out_dir, label, ansi_encoding)
 """,
-    """    if not args.no_validate:
+"""    if not args.no_validate:
         print(\"[驗證] 檢查輸出檔案…\", flush=True)
         for i, (label, out_dir, ansi_encoding, _stats) in enumerate(built, 1):
             print(f\"[驗證] ({i}/{len(built)}) {label}\", flush=True)
             validate_basic(source_dir, out_dir, label, ansi_encoding)
 """,
-    1,
-)
+),
+]
+
+for a, b in pairs:
+    if a not in text:
+        print("pattern not found:", repr(a[:60]), file=sys.stderr)
+        sys.exit(1)
+    text = text.replace(a, b, 1)
 
 path.write_text(text, encoding="utf-8")
 print(f"patched {path}")
