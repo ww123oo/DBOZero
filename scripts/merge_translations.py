@@ -12,6 +12,7 @@ merge_files = [
     root / "data" / "ui_long_delta.tsv",
     root / "data" / "length_fix_delta.tsv",
     root / "data" / "ui_batch_delta.tsv",
+    root / "data" / "tbl_batch_delta.tsv",
 ]
 
 M = {}
@@ -23,7 +24,7 @@ for mp in merge_files:
             en = (r.get("原文") or "").strip().replace("\\n", "\n")
             zh = (r.get("填写中文") or "").strip().replace("\\n", "\n")
             if en and zh:
-                M[en] = zh  # later files override earlier
+                M[en] = zh
     print(f"loaded {mp.name}: keys {len(M)}")
 
 if not M:
