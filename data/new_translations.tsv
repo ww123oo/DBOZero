@@ -594,7 +594,7 @@ UI	lang0.pak	DST_DOJO_INFO_INFO	Info		信息	ok
 UI	lang0.pak	DST_DOJO_INFO_NOTICE_INPUT	Note in		提示在	ok
 UI	lang0.pak	DST_DOJO_INFO_PUBLIC_SECURITY	Status		状态	ok
 UI	lang0.pak	DST_DOJO_INFO_SET_TENKAI_SEED_PLAYER	Seed Exhibitors		种子选手	ok
-UI	lang0.pak	DST_DOJO_INFO_TENKAI_SEED_PLAYER	Exhibitors		Exhibitors	ok
+UI	lang0.pak	DST_DOJO_INFO_TENKAI_SEED_PLAYER	Exhibitors		参展者	ok
 UI	lang0.pak	DST_DOJO_LOST_DOJO	%s Guild %s took ownership of the Dojo.	%s 派别被夺走了 %s 道场的所有权。	%s 派别被夺走了 %s 道场的所有权。	ok
 UI	lang0.pak	DST_DOJO_LOST_DOJO_COLOR	Uniform color reset.	失去道场所有权时道服颜色也会初始化。	道服颜色重置。	ok
 UI	lang0.pak	DST_DOJO_NAME	Name	道场姓名	名称	ok
@@ -734,7 +734,7 @@ UI	lang0.pak	DST_DWC_CARD_CLEAR_TOOLTIP	Current available attacks		当前可用	
 UI	lang0.pak	DST_DWC_CARD_GRADE	Card Grade		卡片等级	ok
 UI	lang0.pak	DST_DWC_CARD_GRADE_00	ALL		全	ok
 UI	lang0.pak	DST_DWC_CARD_GRADE_01	Common		通用	ok
-UI	lang0.pak	DST_DWC_CARD_GRADE_02	Uncommon		Uncommon	ok
+UI	lang0.pak	DST_DWC_CARD_GRADE_02	Uncommon		非普通	ok
 UI	lang0.pak	DST_DWC_CARD_GRADE_03	Unique		Unique	ok
 UI	lang0.pak	DST_DWC_CARD_GRADE_04	Rare		稀有	ok
 UI	lang0.pak	DST_DWC_CARD_GRADE_05	Legendary		传说	ok
@@ -849,21 +849,21 @@ UI	lang0.pak	DST_GMT_TITLE_ZENNY	Bonus Zeni	额外获得索尼	索尼加成	ok
 UI	lang0.pak	DST_GMT_ZENNY_FOR_BENEFIT	%u%% Zeni Bonus [%02d:00 - %02d:00]		%u%% 索尼加成 [%02d:00 - %02d:00]	ok
 UI	lang0.pak	DST_GUARD_GAUGE_CANNOT_USE	Guard is in cooldown	冷却时间结束后方可重复使用防卫技能。	防御正在冷却	ok
 UI	lang0.pak	DST_GUARD_GAUGE_CAN_USE	Can Use Guard	可以使用防卫技能。	可以使用守卫	ok
-UI	lang0.pak	DST_GUILD_PASSIVE_CHANGE_NFY	%s upgraded a guild passive.			untranslated
-UI	lang0.pak	DST_GUILD_PASSIVE_COST	Cost: %u rep + %u zeni			untranslated
-UI	lang0.pak	DST_GUILD_PASSIVE_MAX_LEVEL	Max level reached			untranslated
-UI	lang0.pak	DST_GUILD_PASSIVE_POINTS	Points: %d / %d  (Available: %d)			untranslated
-UI	lang0.pak	DST_GUILD_PASSIVE_REPUTATION	Reputation:			untranslated
+UI	lang0.pak	DST_GUILD_PASSIVE_CHANGE_NFY	%s upgraded a guild passive.		%s 升级了公会被动。	untranslated
+UI	lang0.pak	DST_GUILD_PASSIVE_COST	Cost: %u rep + %u zeni		消耗：%u 声望 ＋ %u 索尼	untranslated
+UI	lang0.pak	DST_GUILD_PASSIVE_MAX_LEVEL	Max level reached		已达最高等级	untranslated
+UI	lang0.pak	DST_GUILD_PASSIVE_POINTS	Points: %d / %d  (Available: %d)		点数：%d／%d（可用：%d）	untranslated
+UI	lang0.pak	DST_GUILD_PASSIVE_REPUTATION	Reputation:		声望：	untranslated
 UI	lang0.pak	DST_GUILD_PASSIVE_UPGRADE_CONFIRM	"[align = ""center""][font size = ""12"" color=""f4d762""]Upgrade Guild Passive[/font][br][br][font size = ""10"" color=""269eff""]%s[/font][br][br][font size = ""10"" color=""ffffff""]Reputation: %u[br]Zeni: %u[/font][br][br][font size = ""10"" color=""ffffff""]Confirm upgrade?[/font]"			untranslated
 UI	lang0.pak	DST_GUILD_PASSIVE_RESET_BTN	Reset		重置	ok
 UI	lang0.pak	DST_GUILD_PASSIVE_RESET_CONFIRM	"[align = ""center""][font size = ""12"" color=""f4d762""]Reset Guild Passives[/font][br][br][font size = ""10"" color=""ffffff""]Reputation: %u[br]Zeni: %u[br]Points returned: %d[/font][br][br][font size = ""10"" color=""ff6666""]Spent rep/zeni is NOT refunded.[br]Confirm reset?[/font]"			untranslated
-UI	lang0.pak	DST_GUILD_PASSIVE_RESET_COOLDOWN	Reset available in: %s			untranslated
-UI	lang0.pak	DST_GUILD_PASSIVE_NOTHING_RESET	No points to reset			untranslated
-UI	lang0.pak	DST_GUILD_PASSIVE_RESET_DONE	Guild passives reset. %d points returned.			untranslated
+UI	lang0.pak	DST_GUILD_PASSIVE_RESET_COOLDOWN	Reset available in: %s		重置可用时间：%s	untranslated
+UI	lang0.pak	DST_GUILD_PASSIVE_NOTHING_RESET	No points to reset		没有可重置的点数	untranslated
+UI	lang0.pak	DST_GUILD_PASSIVE_RESET_DONE	Guild passives reset. %d points returned.		公会被动已重置。返还 %d 点。	untranslated
 UI	lang0.pak	DST_GUN	Gun	枪	枪	ok
 UI	lang0.pak	DST_GUN_MANIA	Gun Maniac		枪械狂热者	ok
 UI	lang0.pak	DST_HELPWND_GOLIST	Jump To		Jump 到	ok
-UI	lang0.pak	DST_HELPWND_HELPCONTENTS	Contents		Contents	ok
+UI	lang0.pak	DST_HELPWND_HELPCONTENTS	Contents		目录	ok
 UI	lang0.pak	DST_HELPWND_PETITION_TO_GM	GM Help		GM帮助	ok
 UI	lang0.pak	DST_HELPWND_TITLE	Help		帮助	ok
 UI	lang0.pak	DST_HELPWND_TOP_TITLE	Dragon Ball Online Guide		龙珠Online 指南	ok
@@ -896,7 +896,7 @@ UI	lang0.pak	DST_HLS_ITEM_BUY_SUCCESS	Item Bought		购买成功	ok
 UI	lang0.pak	DST_HLS_ITEM_GIFT_SUCCESS	Item Gifted		道具 Gifted	ok
 UI	lang0.pak	DST_HLS_ITEM_NOT_CONFIRM_GIFT	Gift Not Confirmed		礼物不 Confirmed	ok
 UI	lang0.pak	DST_HLS_ITEM_TOOLTIP_DURATION_TYPE_LIMIT	Limit		限制	ok
-UI	lang0.pak	DST_HLS_ITEM_TOOLTIP_DURATION_TYPE_NOLIMIT	Consumable		Consumable	ok
+UI	lang0.pak	DST_HLS_ITEM_TOOLTIP_DURATION_TYPE_NOLIMIT	Consumable		消耗品	ok
 UI	lang0.pak	DST_HLS_ITEM_TOOLTIP_PACKAGE	Package		Package	ok
 UI	lang0.pak	DST_HLS_ITEM_TOOLTIP_PACKAGE_ITEM	%s %d more		%s %d 更多	ok
 UI	lang0.pak	DST_HLS_ITEM_TYPE_ACCOUNT_STORE	Extend Time of Bank Account	增加仓库使用期限。	增加仓库使用期限。	ok
@@ -961,13 +961,13 @@ UI	lang0.pak	DST_HOIPOIMIX_RECIPE_FILTER_SPECIAL	Special	特殊	特殊	ok
 UI	lang0.pak	DST_HOIPOIMIX_RECIPE_FILTER_TOTAL	Total	全部	全部	ok
 UI	lang0.pak	DST_HOIPOIMIX_RECIPE_FILTER_EVENT	Events	活动	活动	ok
 UI	lang0.pak	DST_HOIPOIMIX_RECIPE_TAB	Recipes	食谱	食谱	ok
-UI	lang0.pak	DST_HOIPOIMIX_REGISTER_RECIPE	%s Recorded	%s已登录史考特。	%s Recorded	ok
+UI	lang0.pak	DST_HOIPOIMIX_REGISTER_RECIPE	%s Recorded	%s已登录史考特。	%s 已记录	ok
 UI	lang0.pak	DST_HOIPOIMIX_REGISTER_SKILL	%s crafting learned.	习得了%s 制造技术。	习得了%s 制造技术。	ok
 UI	lang0.pak	DST_HOIPOIMIX_REQUIRED_LEVEL	Required Lv.%d	制造所需的搅拌等级 : %d	需要 Lv.%d	ok
 UI	lang0.pak	DST_HOIPOIMIX_REQUIRED_ZENNY	Cost: %d	制造费用 : %d	费用：%d	ok
 UI	lang0.pak	DST_HOIPOIMIX_REQUIRED_ZENNY_ON_MIXMACHINE	[Off] repair: %d	[搅拌机折扣] 制造费用 : %d	[下车] 修理：%d	ok
 UI	lang0.pak	DST_HOIPOIMIX_SKILL_RESET_MSGBOX	"[align = ""center""]Crafting Reset[br][br]If you lose Crafting[br]you can't make the Items anymore[br][br]you lose : %s[br][br]if you drop crafting[br]all recipes delete[br][br]Unlearn this crafting specialty?"		"[align = ""center""]制作重置[br][br]放弃制作后，[br]将无法继续制作相关道具。[br][br]将失去：%s[br][br]放弃制作后，[br]所有配方都会被删除。[br][br]确定要遗忘该制作专精吗？"	ok
-UI	lang0.pak	DST_HOIPOIMIX_SKILL_RESET_RESULT	%s Unlearned	放弃了%s 制造技术。	%s Unlearned	ok
+UI	lang0.pak	DST_HOIPOIMIX_SKILL_RESET_RESULT	%s Unlearned	放弃了%s 制造技术。	%s 已遗忘	ok
 UI	lang0.pak	DST_HOIPOIMIX_SKILL_SET_MSGBOX	"[align = ""center""]Learn crafting:[br][br]Through crafting[br]Items can be created.[br][br]For this crafting specialty[br]you require:[br][br]To learn crafting: %s[br][br]Level : %d or higher[br]Zeni : %s[br][br]Craft as follow:[br]1. Learn crafting Technique[br]2. Get Recipe[br]3. Get Materials[br]4. Mix in Mix Machine[br][br]Do you want to learn this specialty?"		"[align = ""center""]学习制作：[br][br]学习制作后，[br]即可制作道具。[br][br]学习该制作专精需要：[br][br]制作技能：%s[br][br]等级：%d 或以上[br]索尼：%s[br][br]制作流程：[br]1. 学习制作技术[br]2. 获得配方[br]3. 获得材料[br]4. 在合成机中合成[br][br]确定要学习该专精吗？"	ok
 UI	lang0.pak	DST_HOIPOIMIX_TOOLTIP_CALC	Set number of items to craft		套装数量的道具到制作	ok
 UI	lang0.pak	DST_HOIPOIMIX_TOOLTIP_CREATE	Press Space exactly when blue bar is between the green lines.		按下空间当蓝色是绿色。	ok
@@ -1551,7 +1551,7 @@ UI	lang0.pak	DST_MASCOT_RING_ITEM_EQUIP_DESC	Ring can be equipped to summon Pet.
 UI	lang0.pak	DST_MASCOT_RING_NEED_MAIL_PARTS	Your Pet needs the Mail Ring to do this.		你的宠物邮件擂台到执行此。	ok
 UI	lang0.pak	DST_MASCOT_RING_TOOLTIP_SP_NEED_CONTINUOS	Need VP: %s always uses 1 VP		需要 VP：%s 1 VP	ok
 UI	lang0.pak	DST_MASCOT_RING_TOOLTIP_SP_NEED_EACHTIME	Need VP: %d VP each time		需要 VP：%d VP每时间	ok
-UI	lang0.pak	DST_MECH_MANIA	Mech Maniac		Mech Maniac	ok
+UI	lang0.pak	DST_MECH_MANIA	Mech Maniac		机械狂热者	ok
 UI	lang0.pak	DST_MINIMAP_CHECK_POINT	Check Point	确认点数	确认点数	ok
 UI	lang0.pak	DST_MINIMAP_HIDDEN	Hidden	隐藏物体	隐藏	ok
 UI	lang0.pak	DST_MINIMAP_MINIMIZE	Minimize	小地图最小化	最小化	ok
@@ -1620,7 +1620,7 @@ UI	lang0.pak	DST_MULTIDIALOG_GUILDFUNCTION_MAX_MEMBER_90	Max Members (170)	解�
 UI	lang0.pak	DST_MULTIDIALOG_GUILDFUNCTION_MAX_SECOND_MASTER_1	Jr. Masters (1)	任命师范(最大多1人)	副会长（1）	ok
 UI	lang0.pak	DST_MULTIDIALOG_GUILDFUNCTION_MAX_SECOND_MASTER_2	Jr. Masters (2)	任命师范(最大2人)	副会长（2）	ok
 UI	lang0.pak	DST_MULTIDIALOG_GUILDFUNCTION_MAX_SECOND_MASTER_3	Jr. Masters (3)	任命师范(最大3人)	副会长（3）	ok
-UI	lang0.pak	DST_MULTIDIALOG_GUILDFUNCTION_MAX_SECOND_MASTER_4	Jr. Masters (4)	任命师范(最大4人)	Jr. Masters (4)	ok
+UI	lang0.pak	DST_MULTIDIALOG_GUILDFUNCTION_MAX_SECOND_MASTER_4	Jr. Masters (4)	任命师范(最大4人)	副会长（4）	ok
 UI	lang0.pak	DST_MULTIDIALOG_GUILDFUNCTION_NOTICE	Notice		公告	ok
 UI	lang0.pak	DST_MULTIDIALOG_GUILDFUNCTION_POST	Guild Mail	流派信件	流派信件	ok
 UI	lang0.pak	DST_MULTIDIALOG_GUILDFUNCTION_SET_EMBLEM	Set Emblem	流派纹章使用	设徽章	ok
@@ -1677,11 +1677,11 @@ UI	lang0.pak	DST_NOTICE_URL	https://opendbo.org/news		://./	ok
 UI	lang0.pak	DST_NOTIFY_CHANGE_CLASS	Class change: %s to %s 		职业更改：%s 到 %s 	ok
 UI	lang0.pak	DST_NOTIFY_GAIN_EXP	+%u EXP		+%u EXP	ok
 UI	lang0.pak	DST_NOTIFY_GAIN_EXP_AND_BONUS	+%u(+%u)EXP		+%u(+%u)EXP	ok
-UI	lang0.pak	DST_NOTIFY_GAIN_MIX_EXP	Gain (%u) EXP.		Gain (%u) EXP.	ok
+UI	lang0.pak	DST_NOTIFY_GAIN_MIX_EXP	Gain (%u) EXP.		获得（%u）经验。	ok
 UI	lang0.pak	DST_NOTIFY_GAIN_MIX_EXP_FAIL	No EXP gained.		无EXP。	ok
 UI	lang0.pak	DST_NOTIFY_GAIN_MIX_EXP_MAX	Max EXP reached.		最大EXP已达到。	ok
 UI	lang0.pak	DST_NOTIFY_GET_ITEM	Obtained: %dx %s		已获得：%d %s	ok
-UI	lang0.pak	DST_NOTIFY_GET_QUEST_ITEM	%s Updated ( %d / %d )		%s Updated ( %d / %d )	ok
+UI	lang0.pak	DST_NOTIFY_GET_QUEST_ITEM	%s Updated ( %d / %d )		%s 已更新（ %d／%d ）	ok
 UI	lang0.pak	DST_NOTIFY_GET_QUEST_MOB	%s ( %d / %d )		%s ( %d / %d )	ok
 UI	lang0.pak	DST_NOTIFY_GET_REPUTATION	+%u Reputation		+%u 声望	ok
 UI	lang0.pak	DST_NOTIFY_GET_UNIDENTIFIED_ITEM	Mystery Item		未知物品	ok
@@ -1798,7 +1798,7 @@ UI	lang0.pak	DST_FPS_LIMIT_TITLE	FPS	帧率上限	FPS	ok
 UI	lang0.pak	DST_OPTION_TOOLTIP_PERFORMANCE_MODE	Disables all visual effects for maximum performance (Overrides Player Filter, hides all players, pets and mascots)		Disables 全部效果用于最大 (Overrides 玩家 Filter, 全部玩家，和 )	ok
 UI	lang0.pak	DST_OPTION_PERF_HIDE_MASCOT_TOOLTIP	Hides other players' mascots and pet summons		隐藏其他玩家的吉祥物和宠物召唤物	ok
 UI	lang0.pak	DST_OPTION_PERF_HIDE_PLAYER_EFFECTS_TOOLTIP	Hides all combat effects from other players (skills, attacks, projectiles). Only your own effects will be visible.		Hides 全部战斗效果来自其他玩家 (技能，，). 专用你的效果将。	ok
-UI	lang0.pak	DST_OPTION_PERF_HIDE_HIT_TEXTURE	Hide Hit Texture Effects			untranslated
+UI	lang0.pak	DST_OPTION_PERF_HIDE_HIT_TEXTURE	Hide Hit Texture Effects		隐藏受击贴图特效	untranslated
 UI	lang0.pak	DST_OPTION_PERF_HIDE_HIT_TEXTURE_TOOLTIP	Hides hit visuals on all targets (PC, mob, NPC): impact flash (GME), word text (BASH, etc.) and Miss/Critical/Block popups. Damage numbers and hit sounds remain. Click  to apply.			untranslated
 UI	lang0.pak	DST_OPTION_INFO_TOOLTIP_COSTUME_RENDER	Possibility to hide/show Costumes		Possibility 到隐藏/显示 Costumes	ok
 UI	lang0.pak	DST_ITEM_CAN_NOT_MOVE_ERROR_PACKET_SEND	Title Status/Effect has been setted.		称号状态/效果已生效。	ok
@@ -1917,7 +1917,7 @@ UI	lang0.pak	DST_PARTY_ROLE_SELECT_REMAIN_TIME	%02d : %02d : %02d		%02d ：%02d 
 UI	lang0.pak	DST_PARTY_ROLE_TITLE	Select Party Role	选择队伍角色	选择队伍角色	ok
 UI	lang0.pak	DST_PARTY_STOP_CHARM	Charm (%s) disabled.	队伍护身符(%s)已解除。	Charm (%s) 已禁用。	ok
 UI	lang0.pak	DST_PARTY_UNREG_VICTIM_ITEM	Charm (%s) disabled.	队伍护身符(%s)已经解除了。	Charm (%s) 已禁用。	ok
-UI	lang0.pak	DST_PERMANENT_COMMERCIAL_ITEM	Permanent		Permanent	ok
+UI	lang0.pak	DST_PERMANENT_COMMERCIAL_ITEM	Permanent		永久	ok
 UI	lang0.pak	DST_PETITION_CANCEL_PETITION	Cancel GM Request	GM商谈取消	GM商谈取消	ok
 UI	lang0.pak	DST_PETITION_CATEGORY1_ACCUSE	Abuse	申诉不法玩家	Abuse	ok
 UI	lang0.pak	DST_PETITION_CATEGORY1_BUG	Bugs	申诉Bug	Bugs	ok
@@ -1985,7 +1985,7 @@ UI	lang0.pak	DST_POPUPMENU_PARTY_GRADE_ITEM	By Rating	筛选等级后依序分�
 UI	lang0.pak	DST_POPUPMENU_PARTY_LEADER_CHANGE	Appoint Leader	委任队长	委任队长	ok
 UI	lang0.pak	DST_POPUPMENU_PARTY_LEAVE	Leave Party	退出队伍	退出队伍	ok
 UI	lang0.pak	DST_POPUPMENU_PARTY_MENU_SWITCH_MEMBER	Toggle Members	显示/隐藏队员	显示/隐藏队员	ok
-UI	lang0.pak	DST_POPUPMENU_PARTY_MENU_SWITCH_MEMBER_BUFF	Toggle Buffs	显示/隐藏球员BUFF	Toggle Buffs	ok
+UI	lang0.pak	DST_POPUPMENU_PARTY_MENU_SWITCH_MEMBER_BUFF	Toggle Buffs	显示/隐藏球员BUFF	切换增益	ok
 UI	lang0.pak	DST_POPUPMENU_PARTY_USE_INVEN	Use Party Inventory	使用队伍背包	使用队伍背包	ok
 UI	lang0.pak	DST_POPUPMENU_PICKUP	Pickup	捡拾	捡拾	ok
 UI	lang0.pak	DST_POPUPMENU_PULLOUT	Pull Out	登录取消	登录取消	ok
@@ -2140,7 +2140,7 @@ UI	lang0.pak	DST_QUEST_PREV_INVENTORY	Previous		上一步	ok
 UI	lang0.pak	DST_QUEST_PROGRESS_INFO	Progress		进行中	ok
 UI	lang0.pak	DST_QUEST_PROGRESS_WINDOW_TITLE	Quest Info		任务信息	ok
 UI	lang0.pak	DST_QUEST_PROPOSAL_WINDOW_TITLE	Quest Offers		任务 Offers	ok
-UI	lang0.pak	DST_QUEST_RECIEVER	Receiver		Receiver	ok
+UI	lang0.pak	DST_QUEST_RECIEVER	Receiver		接收者	ok
 UI	lang0.pak	DST_QUEST_REJECT_BTN	Reject		拒绝	ok
 UI	lang0.pak	DST_QUEST_REMAIN_TIME	Time Left %02d:%02d		时间剩余 %02d:%02d	ok
 UI	lang0.pak	DST_QUEST_REWARD_BTN	Reward		奖励	ok
@@ -2189,7 +2189,7 @@ UI	lang0.pak	DST_RANKBATTLE_CANCELED	Rank Cancelled	申请的排名战已取消�
 UI	lang0.pak	DST_RANKBATTLE_DIRECT_REGISTER	Sign in	立即登录	报名在	ok
 UI	lang0.pak	DST_RANKBATTLE_MATCH_READY	Get ready to battle	排名战准备中无法开启公告栏。	获得准备到战斗	ok
 UI	lang0.pak	DST_RANKBATTLE_MEMBER_FAINT	%s Fainted.	%s 昏过去了。	%s 倒下。	ok
-UI	lang0.pak	DST_RANKBATTLE_MEMBER_GIVEUP	%s Fled	%s 逃走了。	%s Fled	ok
+UI	lang0.pak	DST_RANKBATTLE_MEMBER_GIVEUP	%s Fled	%s 逃走了。	%s 已逃跑	ok
 UI	lang0.pak	DST_RANKBATTLE_MEMBER_OUTOFAREA	%s Out of Area	%s 现在在场外。	%s 出的区域	ok
 UI	lang0.pak	DST_RANKBATTLE_MUST_SELECT_ROOMID	Choose Battle Room Challenge.	请选择要挑战的排名战房间。	请选择要挑战的排名战房间。	ok
 UI	lang0.pak	DST_RANKBATTLE_NOTIFY_COUNT	Waiting for the end of the Ranked Battle.		等待中用于结束的排位战。	ok
@@ -2369,10 +2369,10 @@ UI	lang0.pak	DST_SCOUTERPARTS_INFO_REMOTE_TMP	Remote Auction		远程拍卖	ok
 UI	lang0.pak	DST_SCOUTERPARTS_ITEM_IDENTIFICATION	Identify Item	道具监定	道具监定	ok
 UI	lang0.pak	DST_SCOUTERPARTS_MAIL_CONNECTOR	Mailbox Access		邮箱访问	ok
 UI	lang0.pak	DST_SCOUTERPARTS_MAIL_TRANSMITTER	Mailbox Access + Item transfer		邮箱访问 + 道具转移	ok
-UI	lang0.pak	DST_SCOUTERPARTS_PC_INFO_JAMMING	Avoid Inspect		Avoid Inspect	ok
-UI	lang0.pak	DST_SCOUTERPARTS_PC_INFO_VIEWER	Inspect Others		Inspect Others	ok
+UI	lang0.pak	DST_SCOUTERPARTS_PC_INFO_JAMMING	Avoid Inspect		防查看	ok
+UI	lang0.pak	DST_SCOUTERPARTS_PC_INFO_VIEWER	Inspect Others		查看他人	ok
 UI	lang0.pak	DST_SCOUTERPARTS_QUEST_SEARCH	Quest Search		任务搜索	ok
-UI	lang0.pak	DST_SCOUTERPARTS_SPECIAL_START	Predicts:%d%% Accuracy	预测合成效率: %d%% 精确度	Predicts:%d%% Accuracy	ok
+UI	lang0.pak	DST_SCOUTERPARTS_SPECIAL_START	Predicts:%d%% Accuracy	预测合成效率: %d%% 精确度	预测：%d%% 命中率	ok
 UI	lang0.pak	DST_SCOUTER_BA	Passive	被动	被动	ok
 UI	lang0.pak	DST_SCOUTER_BACK	Runs	回避	回避	ok
 UI	lang0.pak	DST_SCOUTER_BALL	May Drop a Dragon Ball	可能会掉落龙珠	可能会掉落龙珠	ok
@@ -2503,7 +2503,7 @@ UI	lang0.pak	DST_SIDEICON_HINT_CLASS_CHANGE_TITLE	Class Change	转职	转职	ok
 UI	lang0.pak	DST_SIDEICON_HINT_FRIEND_TITLE	Friend Login		好友登录	ok
 UI	lang0.pak	DST_SIDEICON_HINT_GIFT_TEXT	Cash Shop Item received.	您有现金道具礼物。	您有现金道具礼物。	ok
 UI	lang0.pak	DST_SIDEICON_HINT_GIFT_TITLE	Gift Received	礼物提示	礼物提示	ok
-UI	lang0.pak	DST_SIDEICON_HINT_HELP_MORE	Shortcuts		Shortcuts	ok
+UI	lang0.pak	DST_SIDEICON_HINT_HELP_MORE	Shortcuts		快捷方式	ok
 UI	lang0.pak	DST_SIDEICON_HINT_NEWMAIL_TEXT	You have Mail		你已邮件	ok
 UI	lang0.pak	DST_SIDEICON_HINT_NEWMAIL_TITLE	New Mail		新邮件	ok
 UI	lang0.pak	DST_SIDEICON_HINT_SKILL_UPGRADE_TEXT	%s to upgrade skills, check skills		%s 到升级技能，确认技能	ok
@@ -2655,7 +2655,7 @@ UI	lang0.pak	DST_STATS_SEC_BASE	BASE	基础	基础	ok
 UI	lang0.pak	DST_STATS_SEC_RECOVERY	RECOVERY	恢复	恢复	ok
 UI	lang0.pak	DST_STATS_SEC_CC	COND.		COND.	ok
 UI	lang0.pak	DST_STATS_CC_HDR_VAL	R/D/D		R/D/D	ok
-UI	lang0.pak	DST_STATS_CC_PARALYZE	Paralyze		Paralyze	ok
+UI	lang0.pak	DST_STATS_CC_PARALYZE	Paralyze		麻痹	ok
 UI	lang0.pak	DST_STATS_CC_TERROR	Terror		Terror	ok
 UI	lang0.pak	DST_STATS_CC_CONFUSE	Confuse		Confuse	ok
 UI	lang0.pak	DST_STATS_CC_STONE	Stone		Stone	ok
@@ -2869,7 +2869,7 @@ UI	lang0.pak	DST_SYSTEMMSG_STEAL_LP	%s use %s to steal %d LP.		%s 使用 %s 到 
 UI	lang0.pak	DST_SYSTEMMSG_TRADE_BLACKLIST	Can't trade with Blacklisted User.		无法交易使用黑名单用户。	ok
 UI	lang0.pak	DST_SYSTEMMSG_WHISPER_BLACKLIST	Can't whisper Blacklisted User.		无法密语黑名单用户。	ok
 UI	lang0.pak	DST_SYS_EFFECT_CONFIRM_USE_BOOSTER_MSG	"[align = ""center""][font size = ""12"" color=""f4d762""]Consume[/font][br][br][font size = ""10"" color=""269eff""]Use %s?[/font][br][br][font size = ""10"" color=""f4d762""]Can't be undone.[/font]"		"[align = ""center""][font size = ""12"" color=""f4d762""]消耗[/font][br][br][font size = ""10"" color=""269eff""]使用 %s([/font][br][br][font size = ""10"" color=""f4d762""]无法。[/font]"	ok
-UI	lang0.pak	DST_TAB_PASSIVE	Passives			untranslated
+UI	lang0.pak	DST_TAB_PASSIVE	Passives		被动	untranslated
 UI	lang0.pak	DST_TAB_PARTY	Party	队伍	队伍	ok
 UI	lang0.pak	DST_TAB_RAID	Raid	大型副本	Raid	ok
 UI	lang0.pak	DST_TARGET_CANNOT_TARGETING_FOR_SCOUTER	Power Level Unknown	无法测量自己的战斗力。	力量等级未知	ok
@@ -2924,7 +2924,7 @@ UI	lang0.pak	DST_TMQ_STATUS_CAN_SEE_SENARIO	TMQ	观赏时光机任务剧情。	T
 UI	lang0.pak	DST_TMQ_STATUS_CAN_SEE_STAGE_INFO	TMQ Stage		TMQ阶段	ok
 UI	lang0.pak	DST_TMQ_STATUS_EXPLAIN_COUPON	TMQ Coupon 'GBT-Hope'		TMQ券 'GBT-Hope'	ok
 UI	lang0.pak	DST_TMQ_STATUS_EXPLAIN_INDICATOR	TMQ	查看时光机中提供的各种任务。	TMQ	ok
-UI	lang0.pak	DST_TMQ_STATUS_EXPLAIN_POINT	Maxium Coupons	奖励条集满100%时可获得一个时光机礼券。	Maxium Coupons	ok
+UI	lang0.pak	DST_TMQ_STATUS_EXPLAIN_POINT	Maxium Coupons	奖励条集满100%时可获得一个时光机礼券。	最大兑换券	ok
 UI	lang0.pak	DST_TMQ_STATUS_INFO	Info		信息	ok
 UI	lang0.pak	DST_TMQ_STATUS_LASTEST_RECORD	Last Record	最快纪录	最快纪录	ok
 UI	lang0.pak	DST_TMQ_STATUS_MUST_SELECT_ADDITION_REWARD	Select Another Reward	请选择要领取的奖励。	请选择要领取的奖励。	ok
@@ -3095,7 +3095,7 @@ UI	lang0.pak	DST_WORLDMAP_KARIN	Korin	凯里	凯里	ok
 UI	lang0.pak	DST_WORLDMAP_MUSH_NORTH	Mushroom Rocks North	蘑菇巨石北部	蘑菇巨石北部	ok
 UI	lang0.pak	DST_WORLDMAP_MUSH_SOUTH	Mushroom Rocks South	蘑菇巨石南部	蘑菇巨石南部	ok
 UI	lang0.pak	DST_WORLDMAP_PORTAL	Portals	瞬间移动地点	Portals	ok
-UI	lang0.pak	DST_NAMEK_SIGN	Revealer	那美坎印记	Revealer	ok
+UI	lang0.pak	DST_NAMEK_SIGN	Revealer	那美坎印记	揭示者	ok
 UI	lang0.pak	DST_WORLDMAP_PORTAL_NOT_REG	This Portal isn't registered.	无法登录的地点.	无法登录的地点.	ok
 UI	lang0.pak	DST_WORLDMAP_PORUNGAROCKS	Porunga Rocks	波路亚巨石北部	波伦加 Rocks	ok
 UI	lang0.pak	DST_WORLDMAP_QUEST_SEARCH_TOOLTIP	Turn ON/OFF for Quest search		开启/关闭任务搜索	ok
@@ -3129,7 +3129,7 @@ UI	lang0.pak	DST_WORLD_CONCEPT_CCBD	Can't use during Dungeon	CC竞技副本进�
 UI	lang0.pak	DST_WORLD_CONCEPT_DOJO_SCRAMBLE	Dojo Scramble	道场争夺战进行中无法使用。	道场争夺战	ok
 UI	lang0.pak	DST_WORLD_CONCEPT_DRAGONBALL_SCRAMBLE	Dragon Ball Scramble started	参与七龙珠争夺战的状态下无法使用。	龙珠争夺战已开始	ok
 UI	lang0.pak	DST_WORLD_CONCEPT_FREEBATTLE	You can't leave during battle	自由对战进行中无法使用。	自由对战进行中无法使用。	ok
-UI	lang0.pak	DST_WORLD_CONCEPT_FREE_PVP_ZONE	PvP Zone	无法在对战练习场进行的行动。	PvP Zone	ok
+UI	lang0.pak	DST_WORLD_CONCEPT_FREE_PVP_ZONE	PvP Zone	无法在对战练习场进行的行动。	PvP 区域	ok
 UI	lang0.pak	DST_WORLD_CONCEPT_NPC_COMMUNICATION	Can't use during NPC.	与NPC对话中无法使用。	与NPC对话中无法使用。	ok
 UI	lang0.pak	DST_WORLD_CONCEPT_PARTY_DUNGEON	Dungeon Progress	极限副本进行中无法使用。	副本进行中	ok
 UI	lang0.pak	DST_WORLD_CONCEPT_PLAY_DIRECT	Can't proceed during this event.	活动进行中无法使用。	活动进行中无法使用。	ok
@@ -3194,7 +3194,7 @@ UI	lang0.pak	DST_BUDOKAI_NOTICE_TEAM_WINNER	Team Winner		团队获胜者	ok
 UI	lang0.pak	DST_BUDOKAI_NOTICE_WAIT_GUIDE	Please Wait		请等待	ok
 UI	lang0.pak	DST_CHANGESEX_MSG	Are you sure you want to change gender?		确定是否要更改性别？	ok
 UI	lang0.pak	DST_EXP_LOCK	Lock EXP	经验锁：当前已开启	锁定EXP	ok
-UI	lang0.pak	DST_EXP_UNLOCK	Unlock EXP	经验锁：当前已关闭	Unlock EXP	ok
+UI	lang0.pak	DST_EXP_UNLOCK	Unlock EXP	经验锁：当前已关闭	解锁经验	ok
 UI	lang0.pak	DST_GAME_MASTER	Game Master	游戏管理员	游戏管理员	ok
 UI	lang0.pak	DST_GAME_MASTER_TBLIDX	GM Table Index		GM 表格 Index	ok
 UI	lang0.pak	DST_HOIPOIMIX_RECIPE_FILTER_EVENT	Event	活动	活动	ok
@@ -3204,7 +3204,7 @@ UI	lang0.pak	DST_ITEMUPGRADE_RESTLT_HEIGHT	Height	请放置未强化的道具	He
 UI	lang0.pak	DST_LOBBY_SERVER_INDEX	Server %d		服务器 %d	ok
 UI	lang0.pak	DST_OBSERVER_DBOTABLETOOLS	DBO Table Tools	table工具	table工具	ok
 UI	lang0.pak	DST_PAY_REGISTER	Register Payment		报名 Payment	ok
-UI	lang0.pak	DST_PAY_WEB	Web Payment		Web Payment	ok
+UI	lang0.pak	DST_PAY_WEB	Web Payment		网页支付	ok
 UI	lang0.pak	DST_RECIPE_INVALID	Invalid Recipe		配方无效。	ok
 UI	lang0.pak	DST_RECIPE_LOGIN	Recipe Login	请登录配方	请登录配方	ok
 UI	lang0.pak	DST_REMOVE_ALL_PART	Remove All Parts	卸载晶片	卸载晶片	ok
@@ -3712,16 +3712,16 @@ UI	lang0.pak	GAME_ITEM_MAX_WATT_OVER	Scouter is overloaded.		探测器是。	ok
 UI	lang0.pak	GAME_ITEM_NEED_LESS_LEVEL	Need less level		需要低于等级	ok
 UI	lang0.pak	GAME_ITEM_NEED_MORE_LEVEL	Need more level		需要更多等级	ok
 UI	lang0.pak	GAME_ITEM_NEED_LESS_RESETS	Need less Resets		需要低于重置	ok
-UI	lang0.pak	GAME_GUILD_PASSIVE_INVALID	Invalid guild passive.			untranslated
-UI	lang0.pak	GAME_GUILD_PASSIVE_MAX_LEVEL	This guild passive is already at max level.			untranslated
-UI	lang0.pak	GAME_GUILD_PASSIVE_NEED_MORE_GUILD_POINT	Not enough guild reputation.			untranslated
+UI	lang0.pak	GAME_GUILD_PASSIVE_INVALID	Invalid guild passive.		无效的公会被动。	untranslated
+UI	lang0.pak	GAME_GUILD_PASSIVE_MAX_LEVEL	This guild passive is already at max level.		此公会被动已达最高等级。	untranslated
+UI	lang0.pak	GAME_GUILD_PASSIVE_NEED_MORE_GUILD_POINT	Not enough guild reputation.		公会声望不足。	untranslated
 UI	lang0.pak	GAME_GUILD_PASSIVE_NEED_MORE_ZENNY	Not enough Zeni.		索尼不足.	ok
-UI	lang0.pak	GAME_GUILD_PASSIVE_NOTHING_TO_RESET	No guild passive points to reset.			untranslated
-UI	lang0.pak	GAME_GUILD_PASSIVE_POINT_LIMIT	Not enough guild passive points available.			untranslated
-UI	lang0.pak	GAME_GUILD_PASSIVE_PREREQUISITE	Upgrade the required guild passive first.			untranslated
-UI	lang0.pak	GAME_GUILD_PASSIVE_RESET_COOLDOWN	Guild passive reset is on cooldown.			untranslated
-UI	lang0.pak	GAME_GUILD_PASSIVE_RESET_IN_PROGRESS	Guild passive reset already in progress.			untranslated
-UI	lang0.pak	GAME_GUILD_PASSIVE_UPGRADE_IN_PROGRESS	Guild passive upgrade already in progress.			untranslated
+UI	lang0.pak	GAME_GUILD_PASSIVE_NOTHING_TO_RESET	No guild passive points to reset.		没有可重置的公会被动点数。	untranslated
+UI	lang0.pak	GAME_GUILD_PASSIVE_POINT_LIMIT	Not enough guild passive points available.		公会被动点数不足。	untranslated
+UI	lang0.pak	GAME_GUILD_PASSIVE_PREREQUISITE	Upgrade the required guild passive first.		请先升级所需的公会被动。	untranslated
+UI	lang0.pak	GAME_GUILD_PASSIVE_RESET_COOLDOWN	Guild passive reset is on cooldown.		公会被动重置冷却中。	untranslated
+UI	lang0.pak	GAME_GUILD_PASSIVE_RESET_IN_PROGRESS	Guild passive reset already in progress.		公会被动重置进行中。	untranslated
+UI	lang0.pak	GAME_GUILD_PASSIVE_UPGRADE_IN_PROGRESS	Guild passive upgrade already in progress.		公会被动升级进行中。	untranslated
 UI	lang0.pak	GAME_ITEM_NEED_MORE_PARAMETER	Need more parameter		需要更多	ok
 UI	lang0.pak	GAME_ITEM_NOT_BATTLE_AVAILABLE_LOCATION	Can't use it in this battle area.		无法使用它在此战斗区域。	ok
 UI	lang0.pak	GAME_ITEM_NOT_BEAD	It isn't a bead item.		它未道具。	ok
@@ -4638,8 +4638,8 @@ TBL	tbl0.pak	*	SJ4 Gogeta Wig		SJ4 悟吉塔假发	wildcard_utf16
 TBL	tbl0.pak	*	SJ4 Xeno Goku Wig		SJ4 异时空悟空假发	wildcard_utf16
 TBL	tbl0.pak	*	Xeno Pan Wig		异时空小芳假发	wildcard_utf16
 TBL	tbl0.pak	*	Mai's Hat		小舞的帽子	wildcard_utf16
-TBL	tbl0.pak	*	JB Vegito Wig			wildcard_utf16
-TBL	tbl0.pak	*	SJ Rose Wig			wildcard_utf16
+TBL	tbl0.pak	*	JB Vegito Wig		JB 贝吉特假发	wildcard_utf16
+TBL	tbl0.pak	*	SJ Rose Wig		SJ 玫粉假发	wildcard_utf16
 TBL	tbl0.pak	*	SJ4 Gohan Wig		SJ4 悟饭假发	wildcard_utf16
 TBL	tbl0.pak	*	UI Goku Wig		UI 悟空假发	wildcard_utf16
 TBL	tbl0.pak	*	Majin Mark		魔人印记	wildcard_utf16
@@ -4650,15 +4650,15 @@ TBL	tbl0.pak	*	Baby Vegeta Backpack		贝比贝吉塔背包	wildcard_utf16
 TBL	tbl0.pak	*	Damaged Goku Gi		破损悟空武道服	wildcard_utf16
 TBL	tbl0.pak	*	Vegeta Buu Saga Gi		布欧篇贝吉塔武道服	wildcard_utf16
 TBL	tbl0.pak	*	Gohan Buu Saga Gi		布欧篇悟饭武道服	wildcard_utf16
-TBL	tbl0.pak	*	Damaged Future Trunks Outfit		Damaged Future Trunks Outfit	wildcard_utf16
+TBL	tbl0.pak	*	Damaged Future Trunks Outfit		受损的未来特兰克斯服装	wildcard_utf16
 TBL	tbl0.pak	*	End of Z Goku Gi		Z结局悟空武道服	wildcard_utf16
 TBL	tbl0.pak	*	End of Z Vegeta Outfit		Z结局贝吉塔服装	wildcard_utf16
 TBL	tbl0.pak	*	Bulma Outfit		布尔玛服装	wildcard_utf16
-TBL	tbl0.pak	*	Trunks Tank Top Outfit		Trunks Tank Top Outfit	wildcard_utf16
+TBL	tbl0.pak	*	Trunks Tank Top Outfit		特兰克斯背心服装	wildcard_utf16
 TBL	tbl0.pak	*	Future Gohan Gi		未来悟饭武道服	wildcard_utf16
 TBL	tbl0.pak	*	Saiyan Female Armor		赛亚人女性护甲	wildcard_utf16
 TBL	tbl0.pak	*	Multiverse Bardock Armor		多元宇宙巴达克护甲	wildcard_utf16
-TBL	tbl0.pak	*	Time Patrol Trunks Outfit		Time Patrol Trunks Outfit	wildcard_utf16
+TBL	tbl0.pak	*	Time Patrol Trunks Outfit		时间巡逻队特兰克斯服装	wildcard_utf16
 TBL	tbl0.pak	*	CC Soldier Uniform			wildcard_utf16
 TBL	tbl0.pak	*	Swordmaster Outfit		剑术大师服装	wildcard_utf16
 TBL	tbl0.pak	*	Budo Champion Dogi B		武道冠军道服 B	wildcard_utf16
@@ -4679,16 +4679,16 @@ TBL	tbl0.pak	*	Mai's Outfit		小舞的服装	wildcard_utf16
 TBL	tbl0.pak	*	Goku Black Gi		黑悟空武道服	wildcard_utf16
 TBL	tbl0.pak	*	Goku Black Heroes Gi		黑悟空英雄武道服	wildcard_utf16
 TBL	tbl0.pak	*	Android 17 Super Outfit		人造人17号超级服装	wildcard_utf16
-TBL	tbl0.pak	*	Android 18 Tracksuit			wildcard_utf16
+TBL	tbl0.pak	*	Android 18 Tracksuit		人造人18号运动服	wildcard_utf16
 TBL	tbl0.pak	*	Pride Trooper Outfit		骄傲战队服装	wildcard_utf16
 TBL	tbl0.pak	*	Caulifla Outfit		卡莉芙拉服装	wildcard_utf16
-TBL	tbl0.pak	*	SAB Goku Outfit			wildcard_utf16
-TBL	tbl0.pak	*	SAB Vegeta Outfit			wildcard_utf16
+TBL	tbl0.pak	*	SAB Goku Outfit		SAB 悟空服装	wildcard_utf16
+TBL	tbl0.pak	*	SAB Vegeta Outfit		SAB 贝吉塔服装	wildcard_utf16
 TBL	tbl0.pak	*	God of Destruction Outfit		破坏神服装	wildcard_utf16
 TBL	tbl0.pak	*	Zeno Outfit		全王服装	wildcard_utf16
 TBL	tbl0.pak	*	SJ4 Gohan Gi		SJ4 悟饭武道服	wildcard_utf16
 TBL	tbl0.pak	*	Alternate Broly Armor		异变布罗利护甲	wildcard_utf16
-TBL	tbl0.pak	*	Bulchi Outfit			wildcard_utf16
+TBL	tbl0.pak	*	Bulchi Outfit		布尔琪服装	wildcard_utf16
 TBL	tbl0.pak	*	Xeno Piccolo Gi		异时空比克武道服	wildcard_utf16
 TBL	tbl0.pak	*	Krillin Buu Saga Outfit		克林布欧篇服装	wildcard_utf16
 TBL	tbl0.pak	*	Black Christmas Costume		黑色圣诞服装	wildcard_utf16
@@ -4713,7 +4713,7 @@ TBL	tbl0.pak	*	Mihawk Dogi		米霍克道服	wildcard_utf16
 TBL	tbl0.pak	*	Love Warrior Outfit		爱之战士服装	wildcard_utf16
 TBL	tbl0.pak	*	Whitebeard Dogi		白胡子道服	wildcard_utf16
 TBL	tbl0.pak	*	Shanks Dogi		香克斯道服	wildcard_utf16
-TBL	tbl0.pak	*	Johnny Stars Dogi			wildcard_utf16
+TBL	tbl0.pak	*	Johnny Stars Dogi		约翰尼斯塔道服	wildcard_utf16
 TBL	tbl0.pak	*	Zoro Dogi		索隆道服	wildcard_utf16
 TBL	tbl0.pak	*	Epic Weapon Upgrade Stone U75		史诗武器升级石U75	wildcard_utf16
 TBL	tbl0.pak	*	Epic Armor Upgrade Stone U75		史诗防具强化石 U75	wildcard_utf16
@@ -4721,14 +4721,14 @@ TBL	tbl0.pak	*	Namek Training Dogi		那美克训练道服	wildcard_utf16
 TBL	tbl0.pak	*	Bardock Broly Dogi		巴达克布罗利道服	wildcard_utf16
 TBL	tbl0.pak	*	Turles Dogi		达列斯道服	wildcard_utf16
 TBL	tbl0.pak	*	Hellish Wings		地狱翅膀	wildcard_utf16
-TBL	tbl0.pak	*	Xicor Dogi			wildcard_utf16
+TBL	tbl0.pak	*	Xicor Dogi		希克道服	wildcard_utf16
 TBL	tbl0.pak	*	Mihawk Custom Sword		米霍克自定义剑	wildcard_utf16
 TBL	tbl0.pak	*	Mihawk Hat		米霍克帽子	wildcard_utf16
 TBL	tbl0.pak	*	Staff Of Love		爱之杖	wildcard_utf16
 TBL	tbl0.pak	*	Grizzly Bear Outfit		灰熊服装	wildcard_utf16
 TBL	tbl0.pak	*	Grizzly Bear Head		灰熊头部	wildcard_utf16
 TBL	tbl0.pak	*	BD Trading Coupon		BD 交易券	wildcard_utf16
-TBL	tbl0.pak	*	Fantasma Hat			wildcard_utf16
+TBL	tbl0.pak	*	Fantasma Hat		幻影帽	wildcard_utf16
 TBL	tbl0.pak	*	Whitebeard Hat		白胡子帽子	wildcard_utf16
 TBL	tbl0.pak	*	Staff Whitebeard		白胡子法杖	wildcard_utf16
 TBL	tbl0.pak	*	New Wings 5		新翅膀 5	wildcard_utf16
@@ -4790,7 +4790,7 @@ TBL	tbl0.pak	*	P Bacterian Force Gloves		P 巴克特里安力量手套	wildcard_
 TBL	tbl0.pak	*	Bacterian Chunk Staff			wildcard_utf16
 TBL	tbl0.pak	*	Bacterian Spiked Claws			wildcard_utf16
 TBL	tbl0.pak	*	Bacterian Heavy Axe			wildcard_utf16
-TBL	tbl0.pak	*	Bacterian Rolling Scroll			wildcard_utf16
+TBL	tbl0.pak	*	Bacterian Rolling Scroll		细菌人滚动卷轴	wildcard_utf16
 TBL	tbl0.pak	*	Bacterian Skull Gem			wildcard_utf16
 TBL	tbl0.pak	*	Bacterian Slim Stick			wildcard_utf16
 TBL	tbl0.pak	*	Bacterian Short Wand		巴克特里安短魔杖	wildcard_utf16
@@ -4900,9 +4900,9 @@ TBL	tbl0.pak	*	Cyber Saiyan			wildcard_utf16
 TBL	tbl0.pak	*	IDEL B			wildcard_utf16
 TBL	tbl0.pak	*	ICHI B			wildcard_utf16
 TBL	tbl0.pak	*	Refurbished Saiyan Armor (Namek)		翻新赛亚人护甲 (那美克)	wildcard_utf16
-TBL	tbl0.pak	*	Bardock Armor Controlled			wildcard_utf16
+TBL	tbl0.pak	*	Bardock Armor Controlled		巴达克铠甲（控制版）	wildcard_utf16
 TBL	tbl0.pak	*	Saiyan Prince Armor(Vegeta)		赛亚人王子护甲(贝吉塔)	wildcard_utf16
-TBL	tbl0.pak	*	Broly Armor(no Jacket)			wildcard_utf16
+TBL	tbl0.pak	*	Broly Armor(no Jacket)		布罗利铠甲（无外套）	wildcard_utf16
 TBL	tbl0.pak	*	Broly Battle Armor		布罗利战斗护甲	wildcard_utf16
 TBL	tbl0.pak	*	Xeno Vegeta Armor		异时空贝吉塔护甲	wildcard_utf16
 TBL	tbl0.pak	*	Super Buu (Gohan Absorbed)			wildcard_utf16
@@ -4940,13 +4940,13 @@ TBL	tbl0.pak	*	Goku Founder Dogi		悟空创始人道服	wildcard_utf16
 TBL	tbl0.pak	*	Super Saiyan Founder Dogi		超级赛亚人创始人道服	wildcard_utf16
 TBL	tbl0.pak	*	Change Gender			wildcard_utf16
 TBL	tbl0.pak	*	Bardock Outfit		巴达克套装	wildcard_utf16
-TBL	tbl0.pak	*	Fused Zamasu Outfit			wildcard_utf16
+TBL	tbl0.pak	*	Fused Zamasu Outfit		合体扎马斯服装	wildcard_utf16
 TBL	tbl0.pak	*	Kid Gohan Outfit		少年悟饭服装	wildcard_utf16
-TBL	tbl0.pak	*	Suit Blue Tie			wildcard_utf16
-TBL	tbl0.pak	*	Suit Red Tie			wildcard_utf16
-TBL	tbl0.pak	*	Suit Yellow Tie			wildcard_utf16
+TBL	tbl0.pak	*	Suit Blue Tie		西装蓝领带	wildcard_utf16
+TBL	tbl0.pak	*	Suit Red Tie		西装红领带	wildcard_utf16
+TBL	tbl0.pak	*	Suit Yellow Tie		西装黄领带	wildcard_utf16
 TBL	tbl0.pak	*	Gogeta Outfit		悟吉塔套装	wildcard_utf16
-TBL	tbl0.pak	*	Yadrat Dogi (Original Color)			wildcard_utf16
+TBL	tbl0.pak	*	Yadrat Dogi (Original Color)		亚德拉特道服（原色）	wildcard_utf16
 TBL	tbl0.pak	*	CC 150 Hell Pass			wildcard_utf16
 TBL	tbl0.pak	*	FOC Physical			wildcard_utf16
 TBL	tbl0.pak	*	FOC Energy			wildcard_utf16
@@ -5451,14 +5451,14 @@ TBL	tbl1.pak	*	Kraken Ring Remastered (D)!			wildcard_utf16
 TBL	tbl1.pak	*	Cell-X Remastered Earrings (A)!			wildcard_utf16
 TBL	tbl1.pak	*	Cell-X Remastered Earrings (B)!			wildcard_utf16
 TBL	tbl1.pak	*	Tobi Mask		Tobi 面具	wildcard_utf16
-TBL	tbl1.pak	*	Featuring Naruto.			wildcard_utf16
+TBL	tbl1.pak	*	Featuring Naruto.		收录《火影忍者》。	wildcard_utf16
 TBL	tbl1.pak	*	Saiyan Armor Female		赛亚人护甲女性	wildcard_utf16
-TBL	tbl1.pak	*	Kairi Clothes			wildcard_utf16
-TBL	tbl1.pak	*	Super Brolly Movie Outfit			wildcard_utf16
+TBL	tbl1.pak	*	Kairi Clothes		凯里服装	wildcard_utf16
+TBL	tbl1.pak	*	Super Brolly Movie Outfit		超级布罗利电影服装	wildcard_utf16
 TBL	tbl1.pak	*	Super Movie Brolly Clothes..			wildcard_utf16
 TBL	tbl1.pak	*	Mirai Gohan Outfit		未来悟饭服装	wildcard_utf16
 TBL	tbl1.pak	*	Used by Gohan in Mirai Trunks Time Line.		Used by Gohan in Mirai Trunks Time Line.	wildcard_utf16
-TBL	tbl1.pak	*	Gohan Super Heroes Outfit			wildcard_utf16
+TBL	tbl1.pak	*	Gohan Super Heroes Outfit		悟饭超级英雄服装	wildcard_utf16
 TBL	tbl1.pak	*	Gohan Super Beast Outfit.		悟饭超级野兽服装.	wildcard_utf16
 TBL	tbl1.pak	*	Caulifla Outfit		卡莉芙拉服装	wildcard_utf16
 TBL	tbl1.pak	*	Used by Saiyan Caulifla.			wildcard_utf16
@@ -5467,12 +5467,12 @@ TBL	tbl1.pak	*	Used by Saiyan Kale.			wildcard_utf16
 TBL	tbl1.pak	*	Kefla Outfit		凯芙拉服装	wildcard_utf16
 TBL	tbl1.pak	*	Shenron Coin		神龙硬币	wildcard_utf16
 TBL	tbl1.pak	*	Shinigami Outfit		死神服装	wildcard_utf16
-TBL	tbl1.pak	*	Featuring Bleach.			wildcard_utf16
+TBL	tbl1.pak	*	Featuring Bleach.		收录《死神》。	wildcard_utf16
 TBL	tbl1.pak	*	Neptune Outfit(Female)		涅普顿服装(女性)	wildcard_utf16
 TBL	tbl1.pak	*	Neptune Dogi.		海王星道服	wildcard_utf16
 TBL	tbl1.pak	*	Neptune Hair(Female)		涅普顿发型(女性)	wildcard_utf16
 TBL	tbl1.pak	*	Neptune Hair.		涅普顿发型.	wildcard_utf16
-TBL	tbl1.pak	*	Damaged Shinigami Outfit			wildcard_utf16
+TBL	tbl1.pak	*	Damaged Shinigami Outfit		受损的死神服装	wildcard_utf16
 TBL	tbl1.pak	*	Ichigo Damaged Clothes		一护破损服装	wildcard_utf16
 TBL	tbl1.pak	*	Beatiful Formal Clothes			wildcard_utf16
 TBL	tbl1.pak	*	Formal Clothes for Woman.			wildcard_utf16
@@ -5516,9 +5516,9 @@ TBL	tbl1.pak	*	Gordon Energy Clothes (Top)		Gordon Energy Clothes （上）	wild
 TBL	tbl1.pak	*	Chillapeare Pearl Necklace			wildcard_utf16
 TBL	tbl1.pak	*	Korin Brave Medal			wildcard_utf16
 TBL	tbl1.pak	*	Moori's Necklace			wildcard_utf16
-TBL	tbl1.pak	*	Korin Antique Necklace			wildcard_utf16
+TBL	tbl1.pak	*	Korin Antique Necklace		花梨古董项链	wildcard_utf16
 TBL	tbl1.pak	*	Korin Ring		卡林戒指	wildcard_utf16
-TBL	tbl1.pak	*	Korin Antique Ring			wildcard_utf16
+TBL	tbl1.pak	*	Korin Antique Ring		花梨古董戒指	wildcard_utf16
 TBL	tbl1.pak	*	Jenneu Earring			wildcard_utf16
 TBL	tbl1.pak	*	Jenin Earring			wildcard_utf16
 TBL	tbl1.pak	*	Korin Tower's Antique Earring			wildcard_utf16
@@ -5562,7 +5562,7 @@ TBL	tbl1.pak	*	Cosmo Drink			wildcard_utf16
 TBL	tbl1.pak	*	Green Bull			wildcard_utf16
 TBL	tbl1.pak	*	Z Drink		Z 饮料	wildcard_utf16
 TBL	tbl1.pak	*	Magical Drink			wildcard_utf16
-TBL	tbl1.pak	*	Mountain Spring Water			wildcard_utf16
+TBL	tbl1.pak	*	Mountain Spring Water		山泉水	wildcard_utf16
 TBL	tbl1.pak	*	Energy Club Drink		气功棒饮料	wildcard_utf16
 TBL	tbl1.pak	*	Medicinal Water			wildcard_utf16
 TBL	tbl1.pak	*	Leaf Water		叶水	wildcard_utf16
@@ -5641,7 +5641,7 @@ TBL	tbl1.pak	*	Tasty Immortal Fish			wildcard_utf16
 TBL	tbl1.pak	*	Cuckoo Fried Chicken			wildcard_utf16
 TBL	tbl1.pak	*	Grilled Dinosaur Meat			wildcard_utf16
 TBL	tbl1.pak	*	Corn Tea			wildcard_utf16
-TBL	tbl1.pak	*	Red Pants Tea			wildcard_utf16
+TBL	tbl1.pak	*	Red Pants Tea		红裤茶	wildcard_utf16
 TBL	tbl1.pak	*	Iced Lemon Tea			wildcard_utf16
 TBL	tbl1.pak	*	Two Flavored Storm Drink			wildcard_utf16
 TBL	tbl1.pak	*	Heaven's Pure Water			wildcard_utf16
@@ -5775,7 +5775,7 @@ TBL	tbl1.pak	*	Acquired Counter Attack Skill! (Wonder Majin)		已习得反击技
 TBL	tbl1.pak	*	Basic Capsule Kit		基础胶囊工具包	wildcard_utf16
 TBL	tbl1.pak	*	Small Capsule Kit		小型胶囊套件	wildcard_utf16
 TBL	tbl1.pak	*	Large Capsule Kit		大型胶囊套件	wildcard_utf16
-TBL	tbl1.pak	*	Extra Large Capsule Kit			wildcard_utf16
+TBL	tbl1.pak	*	Extra Large Capsule Kit		特大胶囊套件	wildcard_utf16
 TBL	tbl1.pak	*	Red Capsule Box N4		红色胶囊盒N4	wildcard_utf16
 TBL	tbl1.pak	*	Marble Exclusive Capsule Kit			wildcard_utf16
 TBL	tbl1.pak	*	Mental Discipline Card			wildcard_utf16
@@ -5885,7 +5885,7 @@ TBL	tbl1.pak	*	Rebirth Axe			wildcard_utf16
 TBL	tbl1.pak	*	Pure Saint Scroll		纯圣卷轴	wildcard_utf16
 TBL	tbl1.pak	*	Red Flame Scroll		红色火焰卷轴	wildcard_utf16
 TBL	tbl1.pak	*	Time and Space Scroll			wildcard_utf16
-TBL	tbl1.pak	*	Scroll of Emptiness			wildcard_utf16
+TBL	tbl1.pak	*	Scroll of Emptiness		空虚卷轴	wildcard_utf16
 TBL	tbl1.pak	*	Prism Demon Gem			wildcard_utf16
 TBL	tbl1.pak	*	Red Magic Flame Gem		红色魔法火焰宝石	wildcard_utf16
 TBL	tbl1.pak	*	Shaman Crystal Gem			wildcard_utf16
@@ -5932,7 +5932,7 @@ TBL	tbl1.pak	*	Spell Necklace			wildcard_utf16
 TBL	tbl1.pak	*	Cycle Necklace			wildcard_utf16
 TBL	tbl1.pak	*	Triangle Star			wildcard_utf16
 TBL	tbl1.pak	*	Tumulus Totem Necklace			wildcard_utf16
-TBL	tbl1.pak	*	Secret Garden Necklace			wildcard_utf16
+TBL	tbl1.pak	*	Secret Garden Necklace		秘密花园项链	wildcard_utf16
 TBL	tbl1.pak	*	Yahoi Spirit Necklace		雅霍伊精神项链	wildcard_utf16
 TBL	tbl1.pak	*	Superstar Necklace			wildcard_utf16
 TBL	tbl1.pak	*	Legendary Gem Necklace		传说宝石项链	wildcard_utf16
@@ -15361,7 +15361,7 @@ TBL	tbl1.pak	*	Frieza Dogi (Normal)		弗利萨道服 (普通)	wildcard_utf16
 TBL	tbl1.pak	*	Outfit		服装	wildcard_utf16
 TBL	tbl1.pak	*	Casual Majin Outfit		休闲魔人服装	wildcard_utf16
 TBL	tbl1.pak	*	CC Jet Outfit		CC 喷气服装	wildcard_utf16
-TBL	tbl1.pak	*	Fused Zamasu Outfit			wildcard_utf16
+TBL	tbl1.pak	*	Fused Zamasu Outfit		合体扎马斯服装	wildcard_utf16
 TBL	tbl1.pak	*	Kid Gohan Gi		少年悟饭武道服	wildcard_utf16
 TBL	tbl1.pak	*	Business Man Suit (Blue Tie)			wildcard_utf16
 TBL	tbl1.pak	*	Business Man Suit (Red Tie)			wildcard_utf16
@@ -17940,7 +17940,7 @@ TBL	tbl1.pak	*	Human Trailer Swordmaster			wildcard_utf16
 TBL	tbl1.pak	*	Chichi Adult			wildcard_utf16
 TBL	tbl1.pak	*	Evil Bunny [Head]			wildcard_utf16
 TBL	tbl1.pak	*	Refurbished Saiyan Armor (Saga Namek)		翻新赛亚人护甲 (篇那美克)	wildcard_utf16
-TBL	tbl1.pak	*	Bardock Armor Controlled			wildcard_utf16
+TBL	tbl1.pak	*	Bardock Armor Controlled		巴达克铠甲（控制版）	wildcard_utf16
 TBL	tbl1.pak	*	Refurbished Vegeta Armor (Cell Saga)		翻新贝吉塔护甲 (沙鲁篇)	wildcard_utf16
 TBL	tbl1.pak	*	Saiyan Prince Armor(Vegeta)		赛亚人王子护甲(贝吉塔)	wildcard_utf16
 TBL	tbl1.pak	*	Broly Armor(No Jacket)			wildcard_utf16
@@ -18206,7 +18206,7 @@ TBL	tbl1.pak	*	E Bacterian Force Gloves		E 巴克特里安力量手套	wildcard_
 TBL	tbl1.pak	*	Bacterian Chunk Staff			wildcard_utf16
 TBL	tbl1.pak	*	Bacterian Spiked Claws			wildcard_utf16
 TBL	tbl1.pak	*	Bacterian Heavy Axe			wildcard_utf16
-TBL	tbl1.pak	*	Bacterian Rolling Scroll			wildcard_utf16
+TBL	tbl1.pak	*	Bacterian Rolling Scroll		细菌人滚动卷轴	wildcard_utf16
 TBL	tbl1.pak	*	Bacterian Skull Gem			wildcard_utf16
 TBL	tbl1.pak	*	Bacterian Slim Stick			wildcard_utf16
 TBL	tbl1.pak	*	Bacterian Sharp Sword		巴克特里安利剑	wildcard_utf16
@@ -21936,7 +21936,7 @@ TBL	tbl1.pak	*	Capsule Explosion-ATK			wildcard_utf16
 TBL	tbl1.pak	*	Tanta Power Attack			wildcard_utf16
 TBL	tbl1.pak	*	Energy Shield			wildcard_utf16
 TBL	tbl1.pak	*	Defense Force Reduction			wildcard_utf16
-TBL	tbl1.pak	*	Paralyze			wildcard_utf16
+TBL	tbl1.pak	*	Paralyze		麻痹	wildcard_utf16
 TBL	tbl1.pak	*	Disease Medicine			wildcard_utf16
 TBL	tbl1.pak	*	Weakening Breath			wildcard_utf16
 TBL	tbl1.pak	*	Magic Explosion			wildcard_utf16
@@ -23962,7 +23962,7 @@ TBL	tbl1.pak	*	Poko Priest		波可导师	wildcard_utf16
 TBL	tbl1.pak	*	Dende Priest		天天导师	wildcard_utf16
 TBL	tbl1.pak	*	Swordsman		剑术师	wildcard_utf16
 TBL	tbl1.pak	*	Gun Maniac		枪械狂热者	wildcard_utf16
-TBL	tbl1.pak	*	Mech Maniac			wildcard_utf16
+TBL	tbl1.pak	*	Mech Maniac		机械狂热者	wildcard_utf16
 TBL	tbl1.pak	*	Ultimate Majin		奥迪魔	wildcard_utf16
 TBL	tbl1.pak	*	Grand Chef Majin		格兰魔	wildcard_utf16
 TBL	tbl1.pak	*	Plasma Majin		普利兹魔	wildcard_utf16
@@ -32737,8 +32737,8 @@ TBL	tbl2.pak	*	SJ4 Gogeta Wig			wildcard_utf16
 TBL	tbl2.pak	*	SJ4 Xeno Goku Wig			wildcard_utf16
 TBL	tbl2.pak	*	Xeno Pan Wig			wildcard_utf16
 TBL	tbl2.pak	*	Mai's Hat			wildcard_utf16
-TBL	tbl2.pak	*	JB Vegito Wig			wildcard_utf16
-TBL	tbl2.pak	*	SJ Rose Wig			wildcard_utf16
+TBL	tbl2.pak	*	JB Vegito Wig		JB 贝吉特假发	wildcard_utf16
+TBL	tbl2.pak	*	SJ Rose Wig		SJ 玫粉假发	wildcard_utf16
 TBL	tbl2.pak	*	SJ4 Gohan Wig			wildcard_utf16
 TBL	tbl2.pak	*	UI Goku Wig			wildcard_utf16
 TBL	tbl2.pak	*	Majin Mark			wildcard_utf16
@@ -32749,15 +32749,15 @@ TBL	tbl2.pak	*	Baby Vegeta Backpack			wildcard_utf16
 TBL	tbl2.pak	*	Damaged Goku Gi			wildcard_utf16
 TBL	tbl2.pak	*	Vegeta Buu Saga Gi			wildcard_utf16
 TBL	tbl2.pak	*	Gohan Buu Saga Gi			wildcard_utf16
-TBL	tbl2.pak	*	Damaged Future Trunks Outfit			wildcard_utf16
+TBL	tbl2.pak	*	Damaged Future Trunks Outfit		受损的未来特兰克斯服装	wildcard_utf16
 TBL	tbl2.pak	*	End of Z Goku Gi			wildcard_utf16
 TBL	tbl2.pak	*	End of Z Vegeta Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Bulma Outfit		布尔玛套装	wildcard_utf16
-TBL	tbl2.pak	*	Trunks Tank Top Outfit			wildcard_utf16
+TBL	tbl2.pak	*	Trunks Tank Top Outfit		特兰克斯背心服装	wildcard_utf16
 TBL	tbl2.pak	*	Future Gohan Gi			wildcard_utf16
 TBL	tbl2.pak	*	Saiyan Female Armor		赛亚人女性盔甲	wildcard_utf16
 TBL	tbl2.pak	*	Multiverse Bardock Armor			wildcard_utf16
-TBL	tbl2.pak	*	Time Patrol Trunks Outfit			wildcard_utf16
+TBL	tbl2.pak	*	Time Patrol Trunks Outfit		时间巡逻队特兰克斯服装	wildcard_utf16
 TBL	tbl2.pak	*	CC Soldier Uniform			wildcard_utf16
 TBL	tbl2.pak	*	Swordmaster Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Budo Champion Dogi B			wildcard_utf16
@@ -32778,16 +32778,16 @@ TBL	tbl2.pak	*	Mai's Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Goku Black Gi			wildcard_utf16
 TBL	tbl2.pak	*	Goku Black Heroes Gi			wildcard_utf16
 TBL	tbl2.pak	*	Android 17 Super Outfit		人造人17超级套装	wildcard_utf16
-TBL	tbl2.pak	*	Android 18 Tracksuit			wildcard_utf16
+TBL	tbl2.pak	*	Android 18 Tracksuit		人造人18号运动服	wildcard_utf16
 TBL	tbl2.pak	*	Pride Trooper Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Caulifla Outfit			wildcard_utf16
-TBL	tbl2.pak	*	SAB Goku Outfit			wildcard_utf16
-TBL	tbl2.pak	*	SAB Vegeta Outfit			wildcard_utf16
+TBL	tbl2.pak	*	SAB Goku Outfit		SAB 悟空服装	wildcard_utf16
+TBL	tbl2.pak	*	SAB Vegeta Outfit		SAB 贝吉塔服装	wildcard_utf16
 TBL	tbl2.pak	*	God of Destruction Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Zeno Outfit			wildcard_utf16
 TBL	tbl2.pak	*	SJ4 Gohan Gi			wildcard_utf16
 TBL	tbl2.pak	*	Alternate Broly Armor		异色布罗利盔甲	wildcard_utf16
-TBL	tbl2.pak	*	Bulchi Outfit			wildcard_utf16
+TBL	tbl2.pak	*	Bulchi Outfit		布尔琪服装	wildcard_utf16
 TBL	tbl2.pak	*	Xeno Piccolo Gi			wildcard_utf16
 TBL	tbl2.pak	*	Krillin Buu Saga Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Black Christmas Costume			wildcard_utf16
@@ -32818,7 +32818,7 @@ TBL	tbl2.pak	*	Mihawk Dogi			wildcard_utf16
 TBL	tbl2.pak	*	Love Warrior Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Whitebeard Dogi		白胡子时装	wildcard_utf16
 TBL	tbl2.pak	*	Shanks Dogi			wildcard_utf16
-TBL	tbl2.pak	*	Johnny Stars Dogi			wildcard_utf16
+TBL	tbl2.pak	*	Johnny Stars Dogi		约翰尼斯塔道服	wildcard_utf16
 TBL	tbl2.pak	*	Zoro Dogi			wildcard_utf16
 TBL	tbl2.pak	*	Epic Weapon Upgrade Stone U75		史诗武器升级石U75	wildcard_utf16
 TBL	tbl2.pak	*	Epic Armor Upgrade Stone U75		史诗盔甲升级石U75	wildcard_utf16
@@ -32826,14 +32826,14 @@ TBL	tbl2.pak	*	Namek Training Dogi			wildcard_utf16
 TBL	tbl2.pak	*	Bardock Broly Dogi		巴达克布罗利时装	wildcard_utf16
 TBL	tbl2.pak	*	Turles Dogi			wildcard_utf16
 TBL	tbl2.pak	*	Hellish Wings			wildcard_utf16
-TBL	tbl2.pak	*	Xicor Dogi			wildcard_utf16
+TBL	tbl2.pak	*	Xicor Dogi		希克道服	wildcard_utf16
 TBL	tbl2.pak	*	Mihawk Custom Sword			wildcard_utf16
 TBL	tbl2.pak	*	Mihawk Hat			wildcard_utf16
 TBL	tbl2.pak	*	Staff Of Love			wildcard_utf16
 TBL	tbl2.pak	*	Grizzly Bear Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Grizzly Bear Head			wildcard_utf16
 TBL	tbl2.pak	*	BD Trading Coupon			wildcard_utf16
-TBL	tbl2.pak	*	Fantasma Hat			wildcard_utf16
+TBL	tbl2.pak	*	Fantasma Hat		幻影帽	wildcard_utf16
 TBL	tbl2.pak	*	Whitebeard Hat		白胡子帽子	wildcard_utf16
 TBL	tbl2.pak	*	Staff Whitebeard		杖白胡子	wildcard_utf16
 TBL	tbl2.pak	*	New Wings 5		新翅膀5	wildcard_utf16
@@ -32895,7 +32895,7 @@ TBL	tbl2.pak	*	P Bacterian Force Gloves			wildcard_utf16
 TBL	tbl2.pak	*	Bacterian Chunk Staff			wildcard_utf16
 TBL	tbl2.pak	*	Bacterian Spiked Claws			wildcard_utf16
 TBL	tbl2.pak	*	Bacterian Heavy Axe			wildcard_utf16
-TBL	tbl2.pak	*	Bacterian Rolling Scroll			wildcard_utf16
+TBL	tbl2.pak	*	Bacterian Rolling Scroll		细菌人滚动卷轴	wildcard_utf16
 TBL	tbl2.pak	*	Bacterian Skull Gem			wildcard_utf16
 TBL	tbl2.pak	*	Bacterian Slim Stick			wildcard_utf16
 TBL	tbl2.pak	*	Bacterian Short Wand			wildcard_utf16
@@ -33022,7 +33022,7 @@ TBL	tbl2.pak	*	ICHI B			wildcard_utf16
 TBL	tbl2.pak	*	Refurbished Saiyan Armor (Namek)		翻新赛亚人盔甲(那美克)	wildcard_utf16
 TBL	tbl2.pak	*	Bardock Armor Controlled		巴达克盔甲受控	wildcard_utf16
 TBL	tbl2.pak	*	Saiyan Prince Armor(Vegeta)		赛亚人王子盔甲(贝吉塔)	wildcard_utf16
-TBL	tbl2.pak	*	Broly Armor(no Jacket)			wildcard_utf16
+TBL	tbl2.pak	*	Broly Armor(no Jacket)		布罗利铠甲（无外套）	wildcard_utf16
 TBL	tbl2.pak	*	Broly Battle Armor		布罗利战斗盔甲	wildcard_utf16
 TBL	tbl2.pak	*	Xeno Vegeta Armor		异次元贝吉塔盔甲	wildcard_utf16
 TBL	tbl2.pak	*	Super Buu (Gohan Absorbed)			wildcard_utf16
@@ -33065,13 +33065,13 @@ TBL	tbl2.pak	*	Goku Founder Dogi			wildcard_utf16
 TBL	tbl2.pak	*	Super Saiyan Founder Dogi			wildcard_utf16
 TBL	tbl2.pak	*	Change Gender			wildcard_utf16
 TBL	tbl2.pak	*	Bardock Outfit		巴达克套装	wildcard_utf16
-TBL	tbl2.pak	*	Fused Zamasu Outfit			wildcard_utf16
+TBL	tbl2.pak	*	Fused Zamasu Outfit		合体扎马斯服装	wildcard_utf16
 TBL	tbl2.pak	*	Kid Gohan Outfit			wildcard_utf16
-TBL	tbl2.pak	*	Suit Blue Tie			wildcard_utf16
-TBL	tbl2.pak	*	Suit Red Tie			wildcard_utf16
-TBL	tbl2.pak	*	Suit Yellow Tie			wildcard_utf16
+TBL	tbl2.pak	*	Suit Blue Tie		西装蓝领带	wildcard_utf16
+TBL	tbl2.pak	*	Suit Red Tie		西装红领带	wildcard_utf16
+TBL	tbl2.pak	*	Suit Yellow Tie		西装黄领带	wildcard_utf16
 TBL	tbl2.pak	*	Gogeta Outfit		悟吉塔套装	wildcard_utf16
-TBL	tbl2.pak	*	Yadrat Dogi (Original Color)			wildcard_utf16
+TBL	tbl2.pak	*	Yadrat Dogi (Original Color)		亚德拉特道服（原色）	wildcard_utf16
 TBL	tbl2.pak	*	CC 150 Hell Pass			wildcard_utf16
 TBL	tbl2.pak	*	FOC Physical			wildcard_utf16
 TBL	tbl2.pak	*	FOC Energy			wildcard_utf16
@@ -33443,26 +33443,26 @@ TBL	tbl2.pak	*	Kraken Ring Remastered (D)!			wildcard_utf16
 TBL	tbl2.pak	*	Cell-X Remastered Earrings (A)!			wildcard_utf16
 TBL	tbl2.pak	*	Cell-X Remastered Earrings (B)!			wildcard_utf16
 TBL	tbl2.pak	*	Tobi Mask			wildcard_utf16
-TBL	tbl2.pak	*	Featuring Naruto.			wildcard_utf16
+TBL	tbl2.pak	*	Featuring Naruto.		收录《火影忍者》。	wildcard_utf16
 TBL	tbl2.pak	*	Saiyan Armor Female		赛亚人盔甲女性	wildcard_utf16
-TBL	tbl2.pak	*	Kairi Clothes			wildcard_utf16
-TBL	tbl2.pak	*	Super Brolly Movie Outfit			wildcard_utf16
+TBL	tbl2.pak	*	Kairi Clothes		凯里服装	wildcard_utf16
+TBL	tbl2.pak	*	Super Brolly Movie Outfit		超级布罗利电影服装	wildcard_utf16
 TBL	tbl2.pak	*	Super Movie Brolly Clothes..			wildcard_utf16
 TBL	tbl2.pak	*	Mirai Gohan Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Used by Gohan in Mirai Trunks Time Line.			wildcard_utf16
-TBL	tbl2.pak	*	Gohan Super Heroes Outfit			wildcard_utf16
+TBL	tbl2.pak	*	Gohan Super Heroes Outfit		悟饭超级英雄服装	wildcard_utf16
 TBL	tbl2.pak	*	Gohan Super Beast Outfit.			wildcard_utf16
 TBL	tbl2.pak	*	Used by Saiyan Caulifla.			wildcard_utf16
 TBL	tbl2.pak	*	Kale Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Used by Saiyan Kale.			wildcard_utf16
 TBL	tbl2.pak	*	Kefla Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Shinigami Outfit			wildcard_utf16
-TBL	tbl2.pak	*	Featuring Bleach.			wildcard_utf16
+TBL	tbl2.pak	*	Featuring Bleach.		收录《死神》。	wildcard_utf16
 TBL	tbl2.pak	*	Neptune Outfit(Female)			wildcard_utf16
 TBL	tbl2.pak	*	Neptune Dogi.		海王星道服	wildcard_utf16
 TBL	tbl2.pak	*	Neptune Hair(Female)			wildcard_utf16
 TBL	tbl2.pak	*	Neptune Hair.			wildcard_utf16
-TBL	tbl2.pak	*	Damaged Shinigami Outfit			wildcard_utf16
+TBL	tbl2.pak	*	Damaged Shinigami Outfit		受损的死神服装	wildcard_utf16
 TBL	tbl2.pak	*	Ichigo Damaged Clothes			wildcard_utf16
 TBL	tbl2.pak	*	Beatiful Formal Clothes			wildcard_utf16
 TBL	tbl2.pak	*	Formal Clothes for Woman.			wildcard_utf16
@@ -33505,9 +33505,9 @@ TBL	tbl2.pak	*	Gordon Energy Clothes (Top)		Gordon Energy Clothes （上）	wild
 TBL	tbl2.pak	*	Chillapeare Pearl Necklace			wildcard_utf16
 TBL	tbl2.pak	*	Korin Brave Medal			wildcard_utf16
 TBL	tbl2.pak	*	Moori's Necklace			wildcard_utf16
-TBL	tbl2.pak	*	Korin Antique Necklace			wildcard_utf16
+TBL	tbl2.pak	*	Korin Antique Necklace		花梨古董项链	wildcard_utf16
 TBL	tbl2.pak	*	Korin Ring		卡林戒指	wildcard_utf16
-TBL	tbl2.pak	*	Korin Antique Ring			wildcard_utf16
+TBL	tbl2.pak	*	Korin Antique Ring		花梨古董戒指	wildcard_utf16
 TBL	tbl2.pak	*	Jenneu Earring			wildcard_utf16
 TBL	tbl2.pak	*	Jenin Earring			wildcard_utf16
 TBL	tbl2.pak	*	Korin Tower's Antique Earring			wildcard_utf16
@@ -33550,7 +33550,7 @@ TBL	tbl2.pak	*	Cosmo Drink		宇宙饮料	wildcard_utf16
 TBL	tbl2.pak	*	Green Bull		绿色公牛	wildcard_utf16
 TBL	tbl2.pak	*	Z Drink		Z饮料	wildcard_utf16
 TBL	tbl2.pak	*	Magical Drink			wildcard_utf16
-TBL	tbl2.pak	*	Mountain Spring Water			wildcard_utf16
+TBL	tbl2.pak	*	Mountain Spring Water		山泉水	wildcard_utf16
 TBL	tbl2.pak	*	Energy Club Drink		气功棒饮料	wildcard_utf16
 TBL	tbl2.pak	*	Medicinal Water		药用水	wildcard_utf16
 TBL	tbl2.pak	*	Leaf Water		叶水	wildcard_utf16
@@ -33629,7 +33629,7 @@ TBL	tbl2.pak	*	Tasty Immortal Fish			wildcard_utf16
 TBL	tbl2.pak	*	Cuckoo Fried Chicken			wildcard_utf16
 TBL	tbl2.pak	*	Grilled Dinosaur Meat			wildcard_utf16
 TBL	tbl2.pak	*	Corn Tea			wildcard_utf16
-TBL	tbl2.pak	*	Red Pants Tea			wildcard_utf16
+TBL	tbl2.pak	*	Red Pants Tea		红裤茶	wildcard_utf16
 TBL	tbl2.pak	*	Iced Lemon Tea			wildcard_utf16
 TBL	tbl2.pak	*	Two Flavored Storm Drink			wildcard_utf16
 TBL	tbl2.pak	*	Heaven's Pure Water			wildcard_utf16
@@ -33763,7 +33763,7 @@ TBL	tbl2.pak	*	Acquired Counter Attack Skill! (Wonder Majin)		已习得反击技
 TBL	tbl2.pak	*	Basic Capsule Kit		基础胶囊工具包	wildcard_utf16
 TBL	tbl2.pak	*	Small Capsule Kit			wildcard_utf16
 TBL	tbl2.pak	*	Large Capsule Kit			wildcard_utf16
-TBL	tbl2.pak	*	Extra Large Capsule Kit			wildcard_utf16
+TBL	tbl2.pak	*	Extra Large Capsule Kit		特大胶囊套件	wildcard_utf16
 TBL	tbl2.pak	*	Red Capsule Box N4		红色胶囊盒N4	wildcard_utf16
 TBL	tbl2.pak	*	Marble Exclusive Capsule Kit			wildcard_utf16
 TBL	tbl2.pak	*	Mental Discipline Card			wildcard_utf16
@@ -33871,7 +33871,7 @@ TBL	tbl2.pak	*	Rebirth Axe			wildcard_utf16
 TBL	tbl2.pak	*	Pure Saint Scroll		纯圣卷轴	wildcard_utf16
 TBL	tbl2.pak	*	Red Flame Scroll		红色火焰卷轴	wildcard_utf16
 TBL	tbl2.pak	*	Time and Space Scroll		时间和空间卷轴	wildcard_utf16
-TBL	tbl2.pak	*	Scroll of Emptiness			wildcard_utf16
+TBL	tbl2.pak	*	Scroll of Emptiness		空虚卷轴	wildcard_utf16
 TBL	tbl2.pak	*	Prism Demon Gem			wildcard_utf16
 TBL	tbl2.pak	*	Red Magic Flame Gem		红色魔法火焰宝石	wildcard_utf16
 TBL	tbl2.pak	*	Shaman Crystal Gem			wildcard_utf16
@@ -33919,7 +33919,7 @@ TBL	tbl2.pak	*	Spell Necklace			wildcard_utf16
 TBL	tbl2.pak	*	Cycle Necklace			wildcard_utf16
 TBL	tbl2.pak	*	Triangle Star			wildcard_utf16
 TBL	tbl2.pak	*	Tumulus Totem Necklace			wildcard_utf16
-TBL	tbl2.pak	*	Secret Garden Necklace			wildcard_utf16
+TBL	tbl2.pak	*	Secret Garden Necklace		秘密花园项链	wildcard_utf16
 TBL	tbl2.pak	*	Yahoi Spirit Necklace		雅霍伊精神项链	wildcard_utf16
 TBL	tbl2.pak	*	Superstar Necklace			wildcard_utf16
 TBL	tbl2.pak	*	Legendary Gem Necklace		传说宝石项链	wildcard_utf16
@@ -49880,7 +49880,7 @@ TBL	tbl2.pak	*	Capsule Explosion-ATK			wildcard_utf16
 TBL	tbl2.pak	*	Tanta Power Attack			wildcard_utf16
 TBL	tbl2.pak	*	Energy Shield			wildcard_utf16
 TBL	tbl2.pak	*	Defense Force Reduction			wildcard_utf16
-TBL	tbl2.pak	*	Paralyze			wildcard_utf16
+TBL	tbl2.pak	*	Paralyze		麻痹	wildcard_utf16
 TBL	tbl2.pak	*	Disease Medicine			wildcard_utf16
 TBL	tbl2.pak	*	Weakening Breath			wildcard_utf16
 TBL	tbl2.pak	*	Magic Explosion			wildcard_utf16
@@ -51777,7 +51777,7 @@ TBL	tbl2.pak	*	Dende Priest		天天导师	wildcard_utf16
 TBL	tbl2.pak	*	Fighter		格斗家	wildcard_utf16
 TBL	tbl2.pak	*	Swordsman		剑术家	wildcard_utf16
 TBL	tbl2.pak	*	Gun Maniac			wildcard_utf16
-TBL	tbl2.pak	*	Mech Maniac			wildcard_utf16
+TBL	tbl2.pak	*	Mech Maniac		机械狂热者	wildcard_utf16
 TBL	tbl2.pak	*	Ultimate Majin		奥迪魔	wildcard_utf16
 TBL	tbl2.pak	*	Grand Chef Majin		葛兰魔	wildcard_utf16
 TBL	tbl2.pak	*	Plasma Majin		普立兹魔	wildcard_utf16
