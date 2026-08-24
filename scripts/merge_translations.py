@@ -10,6 +10,7 @@ merge_files = [
     root / "data" / "translations_to_merge.tsv",
     root / "data" / "ui_equip_delta.tsv",
     root / "data" / "ui_long_delta.tsv",
+    root / "data" / "length_fix_delta.tsv",
 ]
 
 M = {}
@@ -21,7 +22,7 @@ for mp in merge_files:
             en = (r.get("原文") or "").strip().replace("\\n", "\n")
             zh = (r.get("填写中文") or "").strip().replace("\\n", "\n")
             if en and zh:
-                M[en] = zh
+                M[en] = zh  # later files override earlier
     print(f"loaded {mp.name}: keys {len(M)}")
 
 if not M:
@@ -39,9 +40,10 @@ with target.open(encoding="utf-8-sig") as f:
     for r in reader:
         en = (r.get("原文") or "").strip()
         cur = (r.get("填写中文") or "").strip()
-        if en in M and (not cur or cur == en or cur == "年龄 1000"):
-            r["填写中文"] = M[en]
-            filled += 1
+        if en in M:
+            if cur != M[en]:
+                r["填写中文"] = M[en]
+                filled += 1
         rows.append(r)
 
 with target.open("w", encoding="utf-8-sig", newline="") as f:
@@ -49,4 +51,4 @@ with target.open("w", encoding="utf-8-sig", newline="") as f:
     w.writeheader()
     w.writerows(rows)
 
-print(f"OK: data/new_translations.tsv filled {filled} from {len(M)} keys")
+print(f"OK: data/new_translations.tsv updated {filled} from {len(M)} keys")
