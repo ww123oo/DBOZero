@@ -12,6 +12,7 @@ merge_files = [
     root / "data" / "ui_long_delta.tsv",
     root / "data" / "length_fix_delta.tsv",
     root / "data" / "ui_batch_delta.tsv",
+    root / "data" / "ui_batch2_delta.tsv",
     root / "data" / "tbl_batch_delta.tsv",
     root / "data" / "tbl_batch2_delta.tsv",
     root / "data" / "tbl_batch3_delta.tsv",
