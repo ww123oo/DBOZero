@@ -23,6 +23,7 @@ merge_files = [
     root / "data" / "tbl_batch8_delta.tsv",
     root / "data" / "tbl_batch9_delta.tsv",
     root / "data" / "tbl_batch10_delta.tsv",
+    root / "data" / "tbl_batch11_delta.tsv",
 ]
 
 M = {}
