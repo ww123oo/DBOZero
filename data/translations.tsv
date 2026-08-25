@@ -3079,7 +3079,7 @@ taiwan	local_data.dat	DST_ITEM_ATTR_FUNNY	乐		火	accepted			new_element_attrs_
 taiwan	local_data.dat	DST_ITEM_ATTR_HONEST	真		冰	accepted			new_element_attrs_local_data_mirror
 taiwan	local_data.dat	DST_ITEM_ATTR_STRANGE	奇		雷	accepted			new_element_attrs_local_data_mirror
 taiwan	local_data.dat	DST_ITEM_ATTR_WILD	猛		风	accepted			new_element_attrs_local_data_mirror
-taiwan	local_data.dat	DST_STATS_HDR_ATTR	元素		属性	accepted			new_element_attrs_local_data_mirror
+taiwan	local_data.dat	DST_STATS_HDR_ATTR	元素		元素	accepted			new_element_attrs_local_data_mirror
 taiwan	local_data.dat	DST_STATS_LBL_HON_OFF	诚攻:		冰攻:	accepted			new_element_attrs_local_data_mirror
 taiwan	local_data.dat	DST_STATS_LBL_HON_DEF	诚防:		冰防:	accepted			new_element_attrs_local_data_mirror
 taiwan	local_data.dat	DST_STATS_LBL_STR_OFF	怪攻:		雷攻:	accepted			new_element_attrs_local_data_mirror
