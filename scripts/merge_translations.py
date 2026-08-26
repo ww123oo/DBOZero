@@ -17,6 +17,7 @@ merge_files = [
     root / "data" / "lang0_s2t_delta.tsv",
     root / "data" / "place_name_fix_delta.tsv",
     root / "data" / "term_advanced_fix_delta.tsv",
+    root / "data" / "term_wagu_fix_delta.tsv",
     root / "data" / "tbl_batch_delta.tsv",
     root / "data" / "tbl_batch2_delta.tsv",
     root / "data" / "tbl_batch3_delta.tsv",
