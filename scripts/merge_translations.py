@@ -16,6 +16,7 @@ merge_files = [
     root / "data" / "ui_batch3_delta.tsv",
     root / "data" / "lang0_s2t_delta.tsv",
     root / "data" / "place_name_fix_delta.tsv",
+    root / "data" / "term_advanced_fix_delta.tsv",
     root / "data" / "tbl_batch_delta.tsv",
     root / "data" / "tbl_batch2_delta.tsv",
     root / "data" / "tbl_batch3_delta.tsv",
@@ -48,6 +49,7 @@ merge_files = [
     root / "data" / "tbl_batch30_delta.tsv",
     root / "data" / "tbl_batch31_delta.tsv",
     root / "data" / "tbl_batch32_delta.tsv",
+    root / "data" / "tbl_batch33_delta.tsv",
 ]
 
 M = {}
