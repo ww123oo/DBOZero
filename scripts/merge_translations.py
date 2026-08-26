@@ -45,6 +45,7 @@ merge_files = [
     root / "data" / "tbl_batch27_delta.tsv",
     root / "data" / "tbl_batch28_delta.tsv",
     root / "data" / "tbl_batch29_delta.tsv",
+    root / "data" / "tbl_batch30_delta.tsv",
 ]
 
 M = {}
