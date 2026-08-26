@@ -1,7 +1,7 @@
 原文	填写中文
 Etc	Etc
 Job	Job
-Raid	Raid
+Raid	副本
 Age 1000	Age 1000
 %dW %dL %dD	%dW %dL %dD
 +%u(+%u)EXP	+%u(+%u)EXP
@@ -9,8 +9,8 @@ Gain (%u) EXP.	Gain (%u) EXP.
 %s: %s +%d EP.	%s: %s +%d EP.
 %s: %s +%d LP.	%s: %s +%d LP.
 No User to Reply	無可回覆
-HoiPoi Mine	膠囊礦
-Cost: %u rep + %u zeni	費:%u聲望+%uZ
+HoiPoi Mine	霍伊波伊礦
+Cost: %u rep + %u zeni	費:%u聲望+%u索尼
 %d Rep	%dRep
 %s Fled	%s逃
 %s charges %s.	%s蓄力%s
