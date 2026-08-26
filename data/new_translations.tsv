@@ -351,7 +351,7 @@ UI	lang0.pak	DST_CHAT_FAIL_TO_NO_PARTY	Not in a Party		不在队伍中	ok
 UI	lang0.pak	DST_CHAT_FAIL_TO_USE_WHISPER	To whisper enter [/w ID].		到密语进入 [/w ID].	ok
 UI	lang0.pak	DST_CHAT_FAIL_TO_WHISPER_NO_TARGET	%s isn't Online		%s 未 Online	ok
 UI	lang0.pak	DST_CHAT_FILTER	Menu	聊天选单	菜单	ok
-UI	lang0.pak	DST_CHAT_HAVE_NO_USER_TO_REPLY	No User to Reply	回应方不在游戏内。	没有可回复的使用者	ok
+UI	lang0.pak	DST_CHAT_HAVE_NO_USER_TO_REPLY	No User to Reply	回应方不在游戏内。	对方不在游戏内	ok
 UI	lang0.pak	DST_CHAT_HELP_TEXT	[/w ID] : whisper\n[/p] : Party Dialog\n[/g] : Style Dialog\n[/s] : cry\n[/r] : To reply to last whisper		[/w ID] ：密语\n[/p] ：队伍频道\n[/g] ：风格频道\n[/s] ：哭泣\n[/r] ：到回复到上一条密语	ok
 UI	lang0.pak	DST_CHAT_IME_KOR	end	中	中	ok
 UI	lang0.pak	DST_CHAT_MODE_COMMENT	Reply	意见	意见	ok
@@ -1934,7 +1934,7 @@ UI	lang0.pak	DST_PETITION_CATEGORY1_STUCK	Stuck character	卡点相关	卡点相
 UI	lang0.pak	DST_PETITION_CATEGORY2_ACCUSE_AUTOPROGRAM	Botting	外挂程式	外掛	ok
 UI	lang0.pak	DST_PETITION_CATEGORY2_ACCUSE_FRAUD	Scam	诈骗	诈骗	ok
 UI	lang0.pak	DST_PETITION_CATEGORY2_ACCUSE_PAPERING	Papering	洗版	洗版	ok
-UI	lang0.pak	DST_PETITION_CATEGORY2_BUG_ETC	Etc	其他	其他	ok
+UI	lang0.pak	DST_PETITION_CATEGORY2_BUG_ETC	Etc	其他	Etc	ok
 UI	lang0.pak	DST_PETITION_CATEGORY2_BUG_GRAPHIC	Graphics Bug	图片	图片	ok
 UI	lang0.pak	DST_PETITION_CATEGORY2_BUG_SYSTEM	System Bug		系统 Bug	ok
 UI	lang0.pak	DST_PETITION_CATEGORY2_GAME_INFO	Game Information		游戏資訊	ok
@@ -2231,7 +2231,7 @@ UI	lang0.pak	DST_RANKBOARD_RANKBATTLE_SUBJECT_RANK	Rank	排名	排名	ok
 UI	lang0.pak	DST_RANKBOARD_RANKBATTLE_SUBJECT_STRAIGHTWIN	Reputation	连胜	连胜	ok
 UI	lang0.pak	DST_RANKBOARD_TITLE	View Rankings	查看排名	查看排名	ok
 UI	lang0.pak	DST_RANKBOARD_TMQ_OVER_TIME	Overtime	整天	整天	ok
-UI	lang0.pak	DST_RANKBOARD_TMQ_SUBJECT_CLASS	Job	职业	職業	ok
+UI	lang0.pak	DST_RANKBOARD_TMQ_SUBJECT_CLASS	Job	职业	職	ok
 UI	lang0.pak	DST_RANKBOARD_TMQ_SUBJECT_CLEARTIME	Clear Time	完成时间	完成时间	ok
 UI	lang0.pak	DST_RANKBOARD_TMQ_SUBJECT_LEVEL	Lv.	等级	Lv.	ok
 UI	lang0.pak	DST_RANKBOARD_TMQ_SUBJECT_PARTYMEMBER	Members	队员	队员	ok
@@ -2527,7 +2527,7 @@ UI	lang0.pak	DST_SKILL_EP_CONSUMPTION	Cost: %5d EP	使用EP%5d	使用EP%5d	ok
 UI	lang0.pak	DST_SKILL_EXP	Rating: %41f %%	熟练度 : %41f %%	评级：%41f %%	ok
 UI	lang0.pak	DST_SKILL_FILTER_ACTION	Action	发动技能	操作	ok
 UI	lang0.pak	DST_SKILL_FILTER_ALL	All	全部	全	ok
-UI	lang0.pak	DST_SKILL_FILTER_ETC	Etc	其他动作	其他	ok
+UI	lang0.pak	DST_SKILL_FILTER_ETC	Etc	其他动作	Etc ok
 UI	lang0.pak	DST_SKILL_FILTER_HTB	HTB		HTB	ok
 UI	lang0.pak	DST_SKILL_FILTER_PASSIVE	Passive	被动技能	被动	ok
 UI	lang0.pak	DST_SKILL_FILTER_SOCIAL	Social	社交动作	社交	ok
@@ -2794,7 +2794,7 @@ UI	lang0.pak	DST_SYSTEMMSG_BUFF_DROPSKILL_DEFENDER	%s Buff expired: %s		%s 增�
 UI	lang0.pak	DST_SYSTEMMSG_BUFF_DROPSKILL_MULTI	BUFF %d disappeared.		增益 %d。	ok
 UI	lang0.pak	DST_SYSTEMMSG_CAN_NOT_DO_WITH_FAINTING	Can't while fainted.		无法时倒下。	ok
 UI	lang0.pak	DST_SYSTEMMSG_CASTING_ATTACKER	Charge: %s.		充值：%s.	ok
-UI	lang0.pak	DST_SYSTEMMSG_CASTING_DEFENDER	%s charges %s.		%s 正在蓄力 %s。	ok
+UI	lang0.pak	DST_SYSTEMMSG_CASTING_DEFENDER	%s charges %s.		%s正在蓄力%s。	ok
 UI	lang0.pak	DST_SYSTEMMSG_CHANGE_GREAT_NAMEK_ATTACKER	You are no longer a Great Namek!		你已没有更久巨大那美克！	ok
 UI	lang0.pak	DST_SYSTEMMSG_CHANGE_GREAT_NAMEK_DEFENDER	%s is no longer a Great Namek!		%s 是没有更久巨大那美克！	ok
 UI	lang0.pak	DST_SYSTEMMSG_CHANGE_EVIL_NAMEK_ATTACKER	You are no longer a Evil Namek!		你已没有更久邪恶那美克！	ok
@@ -2879,7 +2879,7 @@ UI	lang0.pak	DST_SYSTEMMSG_WHISPER_BLACKLIST	Can't whisper Blacklisted User.		�
 UI	lang0.pak	DST_SYS_EFFECT_CONFIRM_USE_BOOSTER_MSG	"[align = ""center""][font size = ""12"" color=""f4d762""]Consume[/font][br][br][font size = ""10"" color=""269eff""]Use %s?[/font][br][br][font size = ""10"" color=""f4d762""]Can't be undone.[/font]"		"[align = ""center""][font size = ""12"" color=""f4d762""]消耗[/font][br][br][font size = ""10"" color=""269eff""]使用 %s([/font][br][br][font size = ""10"" color=""f4d762""]无法。[/font]"	ok
 UI	lang0.pak	DST_TAB_PASSIVE	Passives		被动	ok
 UI	lang0.pak	DST_TAB_PARTY	Party	队伍	队伍	ok
-UI	lang0.pak	DST_TAB_RAID	Raid	大型副本	團隊副本	ok
+UI	lang0.pak	DST_TAB_RAID	Raid	大型副本	副本	ok
 UI	lang0.pak	DST_TARGET_CANNOT_TARGETING_FOR_SCOUTER	Power Level Unknown	无法测量自己的战斗力。	力量等级未知	ok
 UI	lang0.pak	DST_TARGET_MENU	Actions	目标选单	动作	ok
 UI	lang0.pak	DST_TARGET_NONE	No Target	没有指定物件。	无目标	ok
@@ -5475,14 +5475,14 @@ TBL	tbl1.pak	*	Majin Boo			wildcard_utf16
 TBL	tbl1.pak	*	Ozaru Baby			wildcard_utf16
 TBL	tbl1.pak	*	General RED			wildcard_utf16
 TBL	tbl1.pak	*	TAO PAI PAI			wildcard_utf16
-TBL	tbl1.pak	*	Piccolo Daimao			wildcard_utf16
+TBL	tbl1.pak	*	Piccolo Daimao		短笛大魔王	wildcard_utf16
 TBL	tbl1.pak	*	Vovo Gohan		沃沃悟飯	wildcard_utf16
 TBL	tbl1.pak	*	Moobsfranfran1			wildcard_utf16
 TBL	tbl1.pak	*	Moobsfranfran2			wildcard_utf16
 TBL	tbl1.pak	*	Moobsfranfran3			wildcard_utf16
 TBL	tbl1.pak	*	Moobsfranfran4			wildcard_utf16
 TBL	tbl1.pak	*	Freeza Plus		弗利萨Plus	wildcard_utf16
-TBL	tbl1.pak	*	Piccolo Plus			wildcard_utf16
+TBL	tbl1.pak	*	Piccolo Plus		短笛 Plus	wildcard_utf16
 TBL	tbl1.pak	*	UD2 1MOB			wildcard_utf16
 TBL	tbl1.pak	*	UD2 2Super		UD2 2超级	wildcard_utf16
 TBL	tbl1.pak	*	EUD2 3Ultra			wildcard_utf16
@@ -5654,8 +5654,8 @@ TBL	tbl2.pak	*	Warm Heart			wildcard_utf16
 TBL	tbl2.pak	*	Royal Soul			wildcard_utf16
 TBL	tbl2.pak	*	Shining Sun			wildcard_utf16
 TBL	tbl2.pak	*	Immortal Soul			wildcard_utf16
-TBL	tbl2.pak	*	Furious Dragon			wildcard_utf16
-TBL	tbl2.pak	*	Focused Dragon			wildcard_utf16
+TBL	tbl2.pak	*	Furious Dragon		狂怒之龍	wildcard_utf16
+TBL	tbl2.pak	*	Focused Dragon		專注之龍	wildcard_utf16
 TBL	tbl2.pak	*	Dragon Fury		龙狂怒	wildcard_utf16
 TBL	tbl2.pak	*	Dragon Curse			wildcard_utf16
 TBL	tbl2.pak	*	Blitz Fighter			wildcard_utf16
@@ -5756,7 +5756,7 @@ TBL	tbl2.pak	*	Jia Tela Dragon Clothes (Top)		賈特拉龍族服裝（上衣）	
 TBL	tbl2.pak	*	Gordon Martial Clothes (Top)		戈登武道服裝（上衣）	wildcard_utf16
 TBL	tbl2.pak	*	Gordon Energy Clothes (Top)		Gordon Energy Clothes （上）	wildcard_utf16
 TBL	tbl2.pak	*	Chillapeare Pearl Necklace		奇拉皮爾珍珠項鍊	wildcard_utf16
-TBL	tbl2.pak	*	Korin Brave Medal			wildcard_utf16
+TBL	tbl2.pak	*	Korin Brave Medal		花梨勇者勳章	wildcard_utf16
 TBL	tbl2.pak	*	Moori's Necklace		莫利的項鍊	wildcard_utf16
 TBL	tbl2.pak	*	Korin Antique Necklace		花梨古董项链	wildcard_utf16
 TBL	tbl2.pak	*	Korin Ring		卡林戒指	wildcard_utf16
@@ -5909,15 +5909,15 @@ TBL	tbl2.pak	*	Fruit Pop [Human]			wildcard_utf16
 TBL	tbl2.pak	*	Peach Juice [Human]			wildcard_utf16
 TBL	tbl2.pak	*	Red Bean Pop [Human]			wildcard_utf16
 TBL	tbl2.pak	*	Cold Noodles [Human]			wildcard_utf16
-TBL	tbl2.pak	*	Grilled Grind Kaboong [Namek]			wildcard_utf16
+TBL	tbl2.pak	*	Grilled Grind Kaboong [Namek]		烤研磨卡邦［那美克］	wildcard_utf16
 TBL	tbl2.pak	*	Roast Insect Brisket [Namek]		烤蟲胸肉［那美克］	wildcard_utf16
-TBL	tbl2.pak	*	Grilled Mole Cricket [Namek]			wildcard_utf16
-TBL	tbl2.pak	*	Ginseng Chicken Soup [Namek]			wildcard_utf16
+TBL	tbl2.pak	*	Grilled Mole Cricket [Namek]		烤螻蛄［那美克］	wildcard_utf16
+TBL	tbl2.pak	*	Ginseng Chicken Soup [Namek]		人參雞湯［那美克］	wildcard_utf16
 TBL	tbl2.pak	*	Cranberry Juice [Namek]			wildcard_utf16
 TBL	tbl2.pak	*	Watermelon Juice Concentrate [Namek]			wildcard_utf16
-TBL	tbl2.pak	*	Fruit Pop [Namek]			wildcard_utf16
-TBL	tbl2.pak	*	Peach Juice [Namek]			wildcard_utf16
-TBL	tbl2.pak	*	Red Bean Pop [Namek]			wildcard_utf16
+TBL	tbl2.pak	*	Fruit Pop [Namek]		水果汽水［那美克］	wildcard_utf16
+TBL	tbl2.pak	*	Peach Juice [Namek]		桃汁［那美克］	wildcard_utf16
+TBL	tbl2.pak	*	Red Bean Pop [Namek]		紅豆汽水［那美克］	wildcard_utf16
 TBL	tbl2.pak	*	Cold Noodles [Namek]			wildcard_utf16
 TBL	tbl2.pak	*	Grilled Grind Kaboong [Majin]			wildcard_utf16
 TBL	tbl2.pak	*	Insect Brisket [Majin]			wildcard_utf16
@@ -6019,7 +6019,7 @@ TBL	tbl2.pak	*	Small Capsule Kit			wildcard_utf16
 TBL	tbl2.pak	*	Large Capsule Kit			wildcard_utf16
 TBL	tbl2.pak	*	Extra Large Capsule Kit		特大胶囊套件	wildcard_utf16
 TBL	tbl2.pak	*	Red Capsule Box N4		红色胶囊盒N4	wildcard_utf16
-TBL	tbl2.pak	*	Marble Exclusive Capsule Kit			wildcard_utf16
+TBL	tbl2.pak	*	Marble Exclusive Capsule Kit		大理石專屬膠囊套組	wildcard_utf16
 TBL	tbl2.pak	*	Mental Discipline Card			wildcard_utf16
 TBL	tbl2.pak	*	Wagu Coin		瓦古幣	wildcard_utf16
 TBL	tbl2.pak	*	Seal Coin		封印硬币	wildcard_utf16
@@ -6070,7 +6070,7 @@ TBL	tbl2.pak	*	Metal Police Gloves			wildcard_utf16
 TBL	tbl2.pak	*	Wolf Gloves		狼手套	wildcard_utf16
 TBL	tbl2.pak	*	Craft Gloves			wildcard_utf16
 TBL	tbl2.pak	*	Pride Police Mitts			wildcard_utf16
-TBL	tbl2.pak	*	Namek Fish Mitts			wildcard_utf16
+TBL	tbl2.pak	*	Namek Fish Mitts		那美克魚手套	wildcard_utf16
 TBL	tbl2.pak	*	Mole Cricket Teeth Mitts			wildcard_utf16
 TBL	tbl2.pak	*	Gentle Police Gloves			wildcard_utf16
 TBL	tbl2.pak	*	Tiger Claw Gloves		虎爪手套	wildcard_utf16
@@ -6119,7 +6119,7 @@ TBL	tbl2.pak	*	Parunga Staff			wildcard_utf16
 TBL	tbl2.pak	*	Winning Claws			wildcard_utf16
 TBL	tbl2.pak	*	Volition Claws			wildcard_utf16
 TBL	tbl2.pak	*	Extinction Claws			wildcard_utf16
-TBL	tbl2.pak	*	Honorary Warrior Claws			wildcard_utf16
+TBL	tbl2.pak	*	Honorary Warrior Claws		榮譽戰士之爪	wildcard_utf16
 TBL	tbl2.pak	*	Punishment Axe			wildcard_utf16
 TBL	tbl2.pak	*	Glare Axe			wildcard_utf16
 TBL	tbl2.pak	*	Volition Axe		意志之斧	wildcard_utf16
@@ -6556,8 +6556,8 @@ TBL	tbl2.pak	*	Bright Magic Shoes			wildcard_utf16
 TBL	tbl2.pak	*	Murasaki Ninja Dogi			wildcard_utf16
 TBL	tbl2.pak	*	Yamcha's Outfit		雅木茶的套装	wildcard_utf16
 TBL	tbl2.pak	*	Kami's Outfit		天神的套装	wildcard_utf16
-TBL	tbl2.pak	*	Neko Majin Goku Outfit			wildcard_utf16
-TBL	tbl2.pak	*	Goku Gi (Roshi Emblem)			wildcard_utf16
+TBL	tbl2.pak	*	Neko Majin Goku Outfit		貓魔人悟空套裝	wildcard_utf16
+TBL	tbl2.pak	*	Goku Gi (Roshi Emblem)		悟空武道服（龜仙人標誌）	wildcard_utf16
 TBL	tbl2.pak	*	Android 16 Outfit		人造人16套装	wildcard_utf16
 TBL	tbl2.pak	*	Great Saiyaman's Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Supreme Kai Outfit			wildcard_utf16
@@ -6610,7 +6610,7 @@ TBL	tbl2.pak	*	Jingle Village Winter Cap A		铃铛村冬帽 A	wildcard_utf16
 TBL	tbl2.pak	*	Jingle Village Winter Cap B		铃铛村冬帽 B	wildcard_utf16
 TBL	tbl2.pak	*	Jingle Village Winter Cap C		铃铛村冬帽 C	wildcard_utf16
 TBL	tbl2.pak	*	Chichi Outfit (Female)			wildcard_utf16
-TBL	tbl2.pak	*	Piccolo Turban			wildcard_utf16
+TBL	tbl2.pak	*	Piccolo Turban		短笛頭巾	wildcard_utf16
 TBL	tbl2.pak	*	Sunglasses B			wildcard_utf16
 TBL	tbl2.pak	*	Teen Trunks  Outfit 1			wildcard_utf16
 TBL	tbl2.pak	*	Teen Trunks  Outfit 2			wildcard_utf16
@@ -6624,7 +6624,7 @@ TBL	tbl2.pak	*	Bunny Helmet			wildcard_utf16
 TBL	tbl2.pak	*	Chichi's Helmet (Female)			wildcard_utf16
 TBL	tbl2.pak	*	Crane Hermit Travel Top			wildcard_utf16
 TBL	tbl2.pak	*	Crane Hairstyles			wildcard_utf16
-TBL	tbl2.pak	*	Goku Gi (King Kai Emblem)			wildcard_utf16
+TBL	tbl2.pak	*	Goku Gi (King Kai Emblem)		悟空武道服（界王標誌）	wildcard_utf16
 TBL	tbl2.pak	*	Supreme Kai Wing Type A			wildcard_utf16
 TBL	tbl2.pak	*	Supreme Kai Wing Type B			wildcard_utf16
 TBL	tbl2.pak	*	Supreme Kai Wing Type C			wildcard_utf16
@@ -6638,10 +6638,10 @@ TBL	tbl2.pak	*	Maid Outfit 3			wildcard_utf16
 TBL	tbl2.pak	*	Googles			wildcard_utf16
 TBL	tbl2.pak	*	Goggles Description			wildcard_utf16
 TBL	tbl2.pak	*	Yardrat Outfit			wildcard_utf16
-TBL	tbl2.pak	*	Grampa Gohan's Outfit			wildcard_utf16
-TBL	tbl2.pak	*	Grandpa Gohan's Mask A			wildcard_utf16
-TBL	tbl2.pak	*	Grandpa Gohan's Mask B			wildcard_utf16
-TBL	tbl2.pak	*	Grandpa Gohan's Mask C			wildcard_utf16
+TBL	tbl2.pak	*	Grampa Gohan's Outfit		爺爺悟飯服裝	wildcard_utf16
+TBL	tbl2.pak	*	Grandpa Gohan's Mask A		爺爺悟飯面具 A	wildcard_utf16
+TBL	tbl2.pak	*	Grandpa Gohan's Mask B		爺爺悟飯面具 B	wildcard_utf16
+TBL	tbl2.pak	*	Grandpa Gohan's Mask C		爺爺悟飯面具 C	wildcard_utf16
 TBL	tbl2.pak	*	Great Saiyaman's Helmet			wildcard_utf16
 TBL	tbl2.pak	*	Commander Red's Eyepatch			wildcard_utf16
 TBL	tbl2.pak	*	Devil's Outfit		魔鬼的套装	wildcard_utf16
@@ -6661,12 +6661,12 @@ TBL	tbl2.pak	*	Love Balloon 3			wildcard_utf16
 TBL	tbl2.pak	*	Love Balloon 3 Description			wildcard_utf16
 TBL	tbl2.pak	*	Demon King Dabura Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Demon King Dabura Outfit Description			wildcard_utf16
-TBL	tbl2.pak	*	King Monkey Outfit Type 1			wildcard_utf16
-TBL	tbl2.pak	*	King Monkey Outfit Type 2			wildcard_utf16
-TBL	tbl2.pak	*	King Monkey Outfit Type 3			wildcard_utf16
-TBL	tbl2.pak	*	King Monkey Hat Type 1			wildcard_utf16
-TBL	tbl2.pak	*	King Monkey Hat Type 2			wildcard_utf16
-TBL	tbl2.pak	*	King Monkey Hat Type 3			wildcard_utf16
+TBL	tbl2.pak	*	King Monkey Outfit Type 1		猴王造型 Type 1	wildcard_utf16
+TBL	tbl2.pak	*	King Monkey Outfit Type 2		猴王造型 Type 2	wildcard_utf16
+TBL	tbl2.pak	*	King Monkey Outfit Type 3		猴王造型 Type 3	wildcard_utf16
+TBL	tbl2.pak	*	King Monkey Hat Type 1		猴王帽 Type 1	wildcard_utf16
+TBL	tbl2.pak	*	King Monkey Hat Type 2		猴王帽 Type 2	wildcard_utf16
+TBL	tbl2.pak	*	King Monkey Hat Type 3		猴王帽 Type 3	wildcard_utf16
 TBL	tbl2.pak	*	Goku Home Outfit		孙悟空回城套装	wildcard_utf16
 TBL	tbl2.pak	*	Goku Home Outfit Description		孙悟空回城套装说明	wildcard_utf16
 TBL	tbl2.pak	*	Bulma's Custom Outfit		布尔玛的定制套装	wildcard_utf16
@@ -6797,7 +6797,7 @@ TBL	tbl2.pak	*	Mermaid Hall Camera			wildcard_utf16
 TBL	tbl2.pak	*	Murasaki's Special Explosives			wildcard_utf16
 TBL	tbl2.pak	*	Slippery Oil			wildcard_utf16
 TBL	tbl2.pak	*	Mysterious Debris			wildcard_utf16
-TBL	tbl2.pak	*	Gigi Meite's Key			wildcard_utf16
+TBL	tbl2.pak	*	Gigi Meite's Key		吉吉·梅特的鑰匙	wildcard_utf16
 TBL	tbl2.pak	*	Oil & Gas Bomb			wildcard_utf16
 TBL	tbl2.pak	*	Yatsi's Bait			wildcard_utf16
 TBL	tbl2.pak	*	Mysterious Bouquet			wildcard_utf16
@@ -6834,14 +6834,14 @@ TBL	tbl2.pak	*	Dirty Pad			wildcard_utf16
 TBL	tbl2.pak	*	Mira's Army Bomb		米拉军炸弹	wildcard_utf16
 TBL	tbl2.pak	*	Small Bomb			wildcard_utf16
 TBL	tbl2.pak	*	High Performance Destruction Bomb			wildcard_utf16
-TBL	tbl2.pak	*	Mushroom Processing Plant Keys			wildcard_utf16
+TBL	tbl2.pak	*	Mushroom Processing Plant Keys		蘑菇加工廠鑰匙	wildcard_utf16
 TBL	tbl2.pak	*	Electric Wave Antenna			wildcard_utf16
 TBL	tbl2.pak	*	Kiri Research Log			wildcard_utf16
 TBL	tbl2.pak	*	Prison Key		监狱钥匙	wildcard_utf16
 TBL	tbl2.pak	*	Written Code			wildcard_utf16
 TBL	tbl2.pak	*	Numei's Wooden Statue			wildcard_utf16
 TBL	tbl2.pak	*	Rusty Handle			wildcard_utf16
-TBL	tbl2.pak	*	Korin Tribe's Spell			wildcard_utf16
+TBL	tbl2.pak	*	Korin Tribe's Spell		花梨族咒語	wildcard_utf16
 TBL	tbl2.pak	*	Howling Stick			wildcard_utf16
 TBL	tbl2.pak	*	Howling Sword			wildcard_utf16
 TBL	tbl2.pak	*	Howling Wand		嚎叫魔杖	wildcard_utf16
@@ -6914,11 +6914,11 @@ TBL	tbl2.pak	*	Bulba's Empowerment			wildcard_utf16
 TBL	tbl2.pak	*	Dragon Cage Key			wildcard_utf16
 TBL	tbl2.pak	*	Narakotton Purification Potion			wildcard_utf16
 TBL	tbl2.pak	*	CC Kiri Collecting Equipment			wildcard_utf16
-TBL	tbl2.pak	*	Large Gemstone			wildcard_utf16
+TBL	tbl2.pak	*	Large Gemstone		大寶石	wildcard_utf16
 TBL	tbl2.pak	*	Letter of Request for CC Battle Dungeon		请求用于CC战斗副本的信	wildcard_utf16
 TBL	tbl2.pak	*	Antidote Herb Syringe			wildcard_utf16
 TBL	tbl2.pak	*	CC Strategy Time Bomb			wildcard_utf16
-TBL	tbl2.pak	*	Regression Wave Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Regression Wave Capsule		回歸波動膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Powerful Spot Remover			wildcard_utf16
 TBL	tbl2.pak	*	Landscaping Herbicides			wildcard_utf16
 TBL	tbl2.pak	*	Nightmare System Controller			wildcard_utf16
@@ -6941,12 +6941,12 @@ TBL	tbl2.pak	*	Monkey Heaven Set Capsules		猴子天堂套装胶囊	wildcard_utf
 TBL	tbl2.pak	*	Arrogant Rabbit Boss Kit Capsule			wildcard_utf16
 TBL	tbl2.pak	*	Bunny Outfit Capsule			wildcard_utf16
 TBL	tbl2.pak	*	Safari Leather Capsule		狩獵皮膠囊	wildcard_utf16
-TBL	tbl2.pak	*	Orange Star High School Uniform Capsule			wildcard_utf16
-TBL	tbl2.pak	*	Rabbit Corps Uniform Capsule			wildcard_utf16
-TBL	tbl2.pak	*	Ox-King Set Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Orange Star High School Uniform Capsule		橙星高中制服膠囊	wildcard_utf16
+TBL	tbl2.pak	*	Rabbit Corps Uniform Capsule		兔軍團制服膠囊	wildcard_utf16
+TBL	tbl2.pak	*	Ox-King Set Capsule		牛魔王套裝膠囊	wildcard_utf16
 TBL	tbl2.pak	*	BD Capsule		BD胶囊	wildcard_utf16
 TBL	tbl2.pak	*	Refining Original Stone Capsule			wildcard_utf16
-TBL	tbl2.pak	*	Immortal Monkey King Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Immortal Monkey King Capsule		不朽美猴王膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Warm Mounted Rebels Capsule A		溫暖騎乘叛軍膠囊 A	wildcard_utf16
 TBL	tbl2.pak	*	DBO Anniversary Capsule			wildcard_utf16
 TBL	tbl2.pak	*	Challenger Football Package			wildcard_utf16
@@ -6957,9 +6957,9 @@ TBL	tbl2.pak	*	Assault Football Package			wildcard_utf16
 TBL	tbl2.pak	*	Flame Football Package			wildcard_utf16
 TBL	tbl2.pak	*	Devil Outfit Combination Capsule			wildcard_utf16
 TBL	tbl2.pak	*	Supreme Kai Combination Capsule		界王神合體膠囊	wildcard_utf16
-TBL	tbl2.pak	*	Monkey Heaven Set Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Monkey Heaven Set Capsule		猴子天堂套裝膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Arrogant Rabbit Boss Set Capsule			wildcard_utf16
-TBL	tbl2.pak	*	King Monkey Set Capsule			wildcard_utf16
+TBL	tbl2.pak	*	King Monkey Set Capsule		猴王套裝膠囊	wildcard_utf16
 TBL	tbl2.pak	*	God's Warrior Gift			wildcard_utf16
 TBL	tbl2.pak	*	God's Dragon Clan Gift		God's 那美克龙族 Gift	wildcard_utf16
 TBL	tbl2.pak	*	God's Martial Art Gift			wildcard_utf16
@@ -6967,7 +6967,7 @@ TBL	tbl2.pak	*	God's Spiritualist Gift		God's 气功师 Gift	wildcard_utf16
 TBL	tbl2.pak	*	God's Mighty Majin Gift			wildcard_utf16
 TBL	tbl2.pak	*	God's Wonder Majin Gift		God's 意魔人 Gift	wildcard_utf16
 TBL	tbl2.pak	*	Summer Joy Capsule		夏日歡樂膠囊	wildcard_utf16
-TBL	tbl2.pak	*	Full Moon Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Full Moon Capsule		滿月膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Weapon Upgrade Stone		武器升级石	wildcard_utf16
 TBL	tbl2.pak	*	Resurrection Popo [Other Character]			wildcard_utf16
 TBL	tbl2.pak	*	Resurrection Popo (Party)			wildcard_utf16
@@ -7085,8 +7085,8 @@ TBL	tbl2.pak	*	7 Star Event Dragon Ball		7星活动龙珠	wildcard_utf16
 TBL	tbl2.pak	*	Battle Dragon Ball		战斗龙珠	wildcard_utf16
 TBL	tbl2.pak	*	Brick Capsule			wildcard_utf16
 TBL	tbl2.pak	*	Detheka Mine Supply Control Key			wildcard_utf16
-TBL	tbl2.pak	*	Mira Supply Control Key			wildcard_utf16
-TBL	tbl2.pak	*	Kiri Supply Control Key			wildcard_utf16
+TBL	tbl2.pak	*	Mira Supply Control Key		米拉補給控制鑰匙	wildcard_utf16
+TBL	tbl2.pak	*	Kiri Supply Control Key		奇里補給控制鑰匙	wildcard_utf16
 TBL	tbl2.pak	*	Hamond Key		哈蒙德钥匙	wildcard_utf16
 TBL	tbl2.pak	*	Teremin Key		特雷敏钥匙	wildcard_utf16
 TBL	tbl2.pak	*	Moog Key		穆格钥匙	wildcard_utf16
@@ -7139,7 +7139,7 @@ TBL	tbl2.pak	*	Large Lunch T			wildcard_utf16
 TBL	tbl2.pak	*	Pocari Sweat [Water] N			wildcard_utf16
 TBL	tbl2.pak	*	Cool Surf [Peach] E			wildcard_utf16
 TBL	tbl2.pak	*	Cool Surf [Mango] T			wildcard_utf16
-TBL	tbl2.pak	*	Red Heart Detoxification Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Red Heart Detoxification Capsule		紅心解毒膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Health Potion (Small)			wildcard_utf16
 TBL	tbl2.pak	*	Health Potion (Medium)			wildcard_utf16
 TBL	tbl2.pak	*	Health Potion (Large)			wildcard_utf16
@@ -7197,7 +7197,7 @@ TBL	tbl2.pak	*	Liquid Fuel S3 [30 Days]		液体燃料S3[30天]	wildcard_utf16
 TBL	tbl2.pak	*	Yardrat's Memory			wildcard_utf16
 TBL	tbl2.pak	*	Seeds of Saibaman			wildcard_utf16
 TBL	tbl2.pak	*	Name Change Book			wildcard_utf16
-TBL	tbl2.pak	*	Guild Name Change Book			wildcard_utf16
+TBL	tbl2.pak	*	Guild Name Change Book		公會改名書	wildcard_utf16
 TBL	tbl2.pak	*	HL Capsule Box Z24		HL胶囊盒Z24	wildcard_utf16
 TBL	tbl2.pak	*	HL Capsule Box Z24 [30 Days]		HL胶囊盒Z24[30天]	wildcard_utf16
 TBL	tbl2.pak	*	HL Capsule Box Z24 [90 Days]		HL胶囊盒Z24[90天]	wildcard_utf16
@@ -7219,17 +7219,17 @@ TBL	tbl2.pak	*	General EXP Boost [1 Day]			wildcard_utf16
 TBL	tbl2.pak	*	Advanced EXP Boost [1 Day]			wildcard_utf16
 TBL	tbl2.pak	*	Clarity Potion			wildcard_utf16
 TBL	tbl2.pak	*	Rare Clarity Potion			wildcard_utf16
-TBL	tbl2.pak	*	HL Capsule Box Z20 [Permanent]			wildcard_utf16
-TBL	tbl2.pak	*	HL Capsule Box Z24 [Permanent]			wildcard_utf16
-TBL	tbl2.pak	*	HL Capsule Box Z28 [Permanent]			wildcard_utf16
-TBL	tbl2.pak	*	HL Capsule Box Z32 [Permanent]			wildcard_utf16
+TBL	tbl2.pak	*	HL Capsule Box Z20 [Permanent]		HL 膠囊禮包 Z20［永久］	wildcard_utf16
+TBL	tbl2.pak	*	HL Capsule Box Z24 [Permanent]		HL 膠囊禮包 Z24［永久］	wildcard_utf16
+TBL	tbl2.pak	*	HL Capsule Box Z28 [Permanent]		HL 膠囊禮包 Z28［永久］	wildcard_utf16
+TBL	tbl2.pak	*	HL Capsule Box Z32 [Permanent]		HL 膠囊禮包 Z32［永久］	wildcard_utf16
 TBL	tbl2.pak	*	General EXP Boost [2 Hours]			wildcard_utf16
 TBL	tbl2.pak	*	Advanced EXP Boost [2 Hours]			wildcard_utf16
 TBL	tbl2.pak	*	Goose Stew			wildcard_utf16
 TBL	tbl2.pak	*	Beautiful Fruit			wildcard_utf16
 TBL	tbl2.pak	*	HL Detoxification Pill		HL解毒药丸	wildcard_utf16
 TBL	tbl2.pak	*	HL Pain Treatment Pill		HL疼痛治疗药丸	wildcard_utf16
-TBL	tbl2.pak	*	Football Challenge Gift Box			wildcard_utf16
+TBL	tbl2.pak	*	Football Challenge Gift Box		足球挑戰禮物箱	wildcard_utf16
 TBL	tbl2.pak	*	Red Soccer Box		Red Soccer 礼包	wildcard_utf16
 TBL	tbl2.pak	*	New Vehicle Gift Set		新载具礼物套装	wildcard_utf16
 TBL	tbl2.pak	*	Newbie Support Gift Box		Newbie Support Gift 礼包	wildcard_utf16
@@ -7239,16 +7239,16 @@ TBL	tbl2.pak	*	Armor Package			wildcard_utf16
 TBL	tbl2.pak	*	White Stone Capsule [1x]			wildcard_utf16
 TBL	tbl2.pak	*	White Stone Capsule [5x]			wildcard_utf16
 TBL	tbl2.pak	*	White Stone Capsule [10x]			wildcard_utf16
-TBL	tbl2.pak	*	Pure Stone Capsule [1x]			wildcard_utf16
+TBL	tbl2.pak	*	Pure Stone Capsule [1x]		純淨石膠囊［1×］	wildcard_utf16
 TBL	tbl2.pak	*	Black Stone Capsule [1x]			wildcard_utf16
-TBL	tbl2.pak	*	Pure Stone Capsule [5x]			wildcard_utf16
+TBL	tbl2.pak	*	Pure Stone Capsule [5x]		純淨石膠囊［5×］	wildcard_utf16
 TBL	tbl2.pak	*	Black Stone Capsule [5x]			wildcard_utf16
 TBL	tbl2.pak	*	Stone Toy [5P]		石頭玩具［5P］	wildcard_utf16
 TBL	tbl2.pak	*	Stone Toy [10P]		石頭玩具［10P］	wildcard_utf16
 TBL	tbl2.pak	*	Stone Toy [20P]		石頭玩具［20P］	wildcard_utf16
-TBL	tbl2.pak	*	Protect Stone Capsule+ [1x]			wildcard_utf16
-TBL	tbl2.pak	*	Protect Stone Capsule+ [5x]			wildcard_utf16
-TBL	tbl2.pak	*	Protect Stone Capsule+ [10x]			wildcard_utf16
+TBL	tbl2.pak	*	Protect Stone Capsule+ [1x]		保護石膠囊＋［1×］	wildcard_utf16
+TBL	tbl2.pak	*	Protect Stone Capsule+ [5x]		保護石膠囊＋［5×］	wildcard_utf16
+TBL	tbl2.pak	*	Protect Stone Capsule+ [10x]		保護石膠囊＋［10×］	wildcard_utf16
 TBL	tbl2.pak	*	Yadrat Warehouse Key [7 Days]		亚德拉特仓库钥匙［7 天］	wildcard_utf16
 TBL	tbl2.pak	*	Yadrat Warehouse Key [30 Days]		亚德拉特仓库钥匙［30 天］	wildcard_utf16
 TBL	tbl2.pak	*	Yadrat Warehouse Key [90 Days]		亚德拉特仓库钥匙［90 天］	wildcard_utf16
@@ -7258,28 +7258,28 @@ TBL	tbl2.pak	*	Senior Warrior recruitment notice			wildcard_utf16
 TBL	tbl2.pak	*	Skill Reset Book [Vol 1]		技能重置書［第 1 卷］	wildcard_utf16
 TBL	tbl2.pak	*	Skill Reset Book [Vol 5]		技能重置書［第 5 卷］	wildcard_utf16
 TBL	tbl2.pak	*	Skill Reset Book [Vol 10]		技能重置書［第 10 卷］	wildcard_utf16
-TBL	tbl2.pak	*	General EXP Scroll [1 Day]			wildcard_utf16
-TBL	tbl2.pak	*	General EXP Scroll [7 Days]			wildcard_utf16
+TBL	tbl2.pak	*	General EXP Scroll [1 Day]		一般經驗卷軸［1 天］	wildcard_utf16
+TBL	tbl2.pak	*	General EXP Scroll [7 Days]		一般經驗卷軸［7 天］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced EXP Scroll [1 Day]			wildcard_utf16
 TBL	tbl2.pak	*	Advanced EXP Scroll [7 Days]			wildcard_utf16
 TBL	tbl2.pak	*	Advanced EXP Scroll [15 Days]			wildcard_utf16
 TBL	tbl2.pak	*	Advanced EXP Scroll [30 Days]			wildcard_utf16
-TBL	tbl2.pak	*	HL Life Pill X [x20]			wildcard_utf16
-TBL	tbl2.pak	*	HL Life Pill Y [x20]			wildcard_utf16
-TBL	tbl2.pak	*	HL Life Pill X-S [x30]			wildcard_utf16
-TBL	tbl2.pak	*	HL Life Pill Y-S [x30]			wildcard_utf16
-TBL	tbl2.pak	*	HL Magic Pill X [x20]			wildcard_utf16
-TBL	tbl2.pak	*	HL Magic Pill Y [x20]			wildcard_utf16
-TBL	tbl2.pak	*	HL Magic Pill X-S [x30]			wildcard_utf16
-TBL	tbl2.pak	*	HL Magic Pill Y-S [x30]			wildcard_utf16
+TBL	tbl2.pak	*	HL Life Pill X [x20]		HL 生命藥丸 X［×20］	wildcard_utf16
+TBL	tbl2.pak	*	HL Life Pill Y [x20]		HL 生命藥丸 Y［×20］	wildcard_utf16
+TBL	tbl2.pak	*	HL Life Pill X-S [x30]		HL 生命藥丸 X-S［×30］	wildcard_utf16
+TBL	tbl2.pak	*	HL Life Pill Y-S [x30]		HL 生命藥丸 Y-S［×30］	wildcard_utf16
+TBL	tbl2.pak	*	HL Magic Pill X [x20]		HL 魔力藥丸 X［×20］	wildcard_utf16
+TBL	tbl2.pak	*	HL Magic Pill Y [x20]		HL 魔力藥丸 Y［×20］	wildcard_utf16
+TBL	tbl2.pak	*	HL Magic Pill X-S [x30]		HL 魔力藥丸 X-S［×30］	wildcard_utf16
+TBL	tbl2.pak	*	HL Magic Pill Y-S [x30]		HL 魔力藥丸 Y-S［×30］	wildcard_utf16
 TBL	tbl2.pak	*	Goose Stew [x20]			wildcard_utf16
 TBL	tbl2.pak	*	Goose Stew [x30]			wildcard_utf16
 TBL	tbl2.pak	*	Beautiful Fruit [x20]			wildcard_utf16
 TBL	tbl2.pak	*	Beautiful Fruit [x30]			wildcard_utf16
-TBL	tbl2.pak	*	HL Detoxification Pill [x20]			wildcard_utf16
-TBL	tbl2.pak	*	HL Detoxification Pill S [x30]			wildcard_utf16
-TBL	tbl2.pak	*	HL Pain Treatment Pill [x20]			wildcard_utf16
-TBL	tbl2.pak	*	HL Pain Treatment Pill S [x30]			wildcard_utf16
+TBL	tbl2.pak	*	HL Detoxification Pill [x20]		HL 解毒藥丸［×20］	wildcard_utf16
+TBL	tbl2.pak	*	HL Detoxification Pill S [x30]		HL 解毒藥丸 S［×30］	wildcard_utf16
+TBL	tbl2.pak	*	HL Pain Treatment Pill [x20]		HL 止痛藥丸［×20］	wildcard_utf16
+TBL	tbl2.pak	*	HL Pain Treatment Pill S [x30]		HL 止痛藥丸 S［×30］	wildcard_utf16
 TBL	tbl2.pak	*	Strength Potion [20x]			wildcard_utf16
 TBL	tbl2.pak	*	Stamina Potion [20x]			wildcard_utf16
 TBL	tbl2.pak	*	Energy Potion [20x]			wildcard_utf16
@@ -7308,7 +7308,7 @@ TBL	tbl2.pak	*	Wagu Coin [1x]		瓦古幣［1×］	wildcard_utf16
 TBL	tbl2.pak	*	Wagu Coin [5x]		瓦古幣［5×］	wildcard_utf16
 TBL	tbl2.pak	*	Wagu Coin [10x]		瓦古幣［10×］	wildcard_utf16
 TBL	tbl2.pak	*	Flight Base Scroll		舞空基地卷轴	wildcard_utf16
-TBL	tbl2.pak	*	Flying Sprint Scroll			wildcard_utf16
+TBL	tbl2.pak	*	Flying Sprint Scroll		舞空衝刺卷軸	wildcard_utf16
 TBL	tbl2.pak	*	Secret Fly Accelerated Scroll		秘密舞空加速卷軸	wildcard_utf16
 TBL	tbl2.pak	*	Fly Accelerated Scroll (Test)			wildcard_utf16
 TBL	tbl2.pak	*	Flight Acceleration Scroll			wildcard_utf16
@@ -7539,7 +7539,7 @@ TBL	tbl2.pak	*	Blade Root			wildcard_utf16
 TBL	tbl2.pak	*	Crystal Wand		水晶短杖	wildcard_utf16
 TBL	tbl2.pak	*	Diamond Wand		钻石短杖	wildcard_utf16
 TBL	tbl2.pak	*	Green Wand		绿色短杖	wildcard_utf16
-TBL	tbl2.pak	*	Gemstone Wand			wildcard_utf16
+TBL	tbl2.pak	*	Gemstone Wand		寶石魔杖	wildcard_utf16
 TBL	tbl2.pak	*	Lucky Wand			wildcard_utf16
 TBL	tbl2.pak	*	Comet Wand		彗星短杖	wildcard_utf16
 TBL	tbl2.pak	*	Z Wand		Z短杖	wildcard_utf16
@@ -8853,12 +8853,12 @@ TBL	tbl2.pak	*	Original Scroll		原始卷轴	wildcard_utf16
 TBL	tbl2.pak	*	Dragon Scroll		龙卷轴	wildcard_utf16
 TBL	tbl2.pak	*	Crystal Gem EX		水晶宝石EX	wildcard_utf16
 TBL	tbl2.pak	*	Diamond Gem EX		钻石宝石EX	wildcard_utf16
-TBL	tbl2.pak	*	Moon Stone EX			wildcard_utf16
+TBL	tbl2.pak	*	Moon Stone EX		月亮石 EX	wildcard_utf16
 TBL	tbl2.pak	*	Dawn Gem EX			wildcard_utf16
 TBL	tbl2.pak	*	Crystallization Gem EX		結晶寶石 EX	wildcard_utf16
 TBL	tbl2.pak	*	Black Crystal Gem EX		黑色水晶宝石EX	wildcard_utf16
 TBL	tbl2.pak	*	Rainbow Light Gem		彩虹光宝石	wildcard_utf16
-TBL	tbl2.pak	*	Glory Stone EX			wildcard_utf16
+TBL	tbl2.pak	*	Glory Stone EX		榮耀石 EX	wildcard_utf16
 TBL	tbl2.pak	*	Color Gem EX			wildcard_utf16
 TBL	tbl2.pak	*	Dark Crystal Gem EX		黑暗水晶宝石EX	wildcard_utf16
 TBL	tbl2.pak	*	Huang Gang Gem		黄刚宝石	wildcard_utf16
@@ -8901,7 +8901,7 @@ TBL	tbl2.pak	*	Song of Yin Sword			wildcard_utf16
 TBL	tbl2.pak	*	Crystal Wand EX		水晶短杖EX	wildcard_utf16
 TBL	tbl2.pak	*	Diamond Wand EX		钻石短杖EX	wildcard_utf16
 TBL	tbl2.pak	*	Green Wand EX		绿色短杖EX	wildcard_utf16
-TBL	tbl2.pak	*	Gemstone Wand EX			wildcard_utf16
+TBL	tbl2.pak	*	Gemstone Wand EX		寶石魔杖 EX	wildcard_utf16
 TBL	tbl2.pak	*	Lucky Wand EX			wildcard_utf16
 TBL	tbl2.pak	*	Comet Wand EX		彗星短杖EX	wildcard_utf16
 TBL	tbl2.pak	*	Thunder Wand EX		雷霆短杖EX	wildcard_utf16
@@ -9000,7 +9000,7 @@ TBL	tbl2.pak	*	Unintentional Mask			wildcard_utf16
 TBL	tbl2.pak	*	Practitioner Martial Arts Clothes (Top) EX		修行者武道服装(上衣)EX	wildcard_utf16
 TBL	tbl2.pak	*	U,Practitioner Martial Arts Clothes (Pants) EX		U、修行者武道服装(裤子)EX	wildcard_utf16
 TBL	tbl2.pak	*	U,Practitioner Martial Arts Clothes (Shoes) EX		U、修行者武道服装(鞋子)EX	wildcard_utf16
-TBL	tbl2.pak	*	Martial Arts Skill Tutor Clothes (Top) EX			wildcard_utf16
+TBL	tbl2.pak	*	Martial Arts Skill Tutor Clothes (Top) EX		武道技能導師服裝（上衣）EX	wildcard_utf16
 TBL	tbl2.pak	*	U+Martial Arts Skill Tutor Clothes (Pants) EX		武道技能導師服裝（下裝）EX	wildcard_utf16
 TBL	tbl2.pak	*	U+Martial Arts Skill Tutor Clothes (Shoes) EX		武道技能導師服裝（鞋子）EX	wildcard_utf16
 TBL	tbl2.pak	*	Combat Intructor Gear (Top) EX			wildcard_utf16
@@ -12092,7 +12092,7 @@ TBL	tbl2.pak	*	Five in One Turtle Equip			wildcard_utf16
 TBL	tbl2.pak	*	Tyrant Ruby Clothes		暴君紅寶石服裝	wildcard_utf16
 TBL	tbl2.pak	*	God Immortal Bird Equip			wildcard_utf16
 TBL	tbl2.pak	*	Blarney Clothes			wildcard_utf16
-TBL	tbl2.pak	*	Korin Ghost Hunter Equip			wildcard_utf16
+TBL	tbl2.pak	*	Korin Ghost Hunter Equip		花梨獵鬼裝備	wildcard_utf16
 TBL	tbl2.pak	*	Red Flame Spirit Top		红色火焰精神上衣	wildcard_utf16
 TBL	tbl2.pak	*	Crane Clothes (Top)		鹤服装(上衣)	wildcard_utf16
 TBL	tbl2.pak	*	Green Dragon Scaled Pants		綠龍鱗下裝	wildcard_utf16
@@ -12182,7 +12182,7 @@ TBL	tbl2.pak	*	Ancient Namek Combat Clothes		古代那美克战斗服装	wildcar
 TBL	tbl2.pak	*	Squirm Battle Armor		Squirm 戰鬥鎧甲	wildcard_utf16
 TBL	tbl2.pak	*	Mighty Majin Air King Equip			wildcard_utf16
 TBL	tbl2.pak	*	Namek Noble Top		那美克贵族上衣	wildcard_utf16
-TBL	tbl2.pak	*	Magic Stone Ivory Equip			wildcard_utf16
+TBL	tbl2.pak	*	Magic Stone Ivory Equip		魔法石象牙裝備	wildcard_utf16
 TBL	tbl2.pak	*	Sticky Wood Warrior Top			wildcard_utf16
 TBL	tbl2.pak	*	Peace Preacher Suit			wildcard_utf16
 TBL	tbl2.pak	*	Copy Legend Top			wildcard_utf16
@@ -12271,8 +12271,8 @@ TBL	tbl2.pak	*	Emerald Satin Clothes			wildcard_utf16
 TBL	tbl2.pak	*	Noble Dragon Clan Tutor Clothes		高貴龍族導師服裝	wildcard_utf16
 TBL	tbl2.pak	*	Short Forest Clothes			wildcard_utf16
 TBL	tbl2.pak	*	Galaxy Rangers Clothes			wildcard_utf16
-TBL	tbl2.pak	*	Namek Sage Equip			wildcard_utf16
-TBL	tbl2.pak	*	Namek Priest Equip			wildcard_utf16
+TBL	tbl2.pak	*	Namek Sage Equip		那美克賢者裝備	wildcard_utf16
+TBL	tbl2.pak	*	Namek Priest Equip		那美克祭司裝備	wildcard_utf16
 TBL	tbl2.pak	*	Evil Instructor Clothes			wildcard_utf16
 TBL	tbl2.pak	*	Blood Armor			wildcard_utf16
 TBL	tbl2.pak	*	Green Roots Clothes			wildcard_utf16
@@ -12697,7 +12697,7 @@ TBL	tbl2.pak	*	Kakashi Hair and Mask			wildcard_utf16
 TBL	tbl2.pak	*	Jotaro Hat			wildcard_utf16
 TBL	tbl2.pak	*	Jotaro Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Naruto Outfit			wildcard_utf16
-TBL	tbl2.pak	*	Goku Drip			wildcard_utf16
+TBL	tbl2.pak	*	Goku Drip		悟空潮服	wildcard_utf16
 TBL	tbl2.pak	*	Rimuru Tempest Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Vip Box		VIP 礼包	wildcard_utf16
 TBL	tbl2.pak	*	Raphtalia Outfit			wildcard_utf16
@@ -12779,7 +12779,7 @@ TBL	tbl2.pak	*	Megumin Wand			wildcard_utf16
 TBL	tbl2.pak	*	Frieren Wand			wildcard_utf16
 TBL	tbl2.pak	*	Napoleon Magic Sword			wildcard_utf16
 TBL	tbl2.pak	*	Sai Scroll		赛亚卷轴	wildcard_utf16
-TBL	tbl2.pak	*	Naruto Sennin Scroll			wildcard_utf16
+TBL	tbl2.pak	*	Naruto Sennin Scroll		鳴人仙人卷軸	wildcard_utf16
 TBL	tbl2.pak	*	Sai Brush			wildcard_utf16
 TBL	tbl2.pak	*	Asta Sword			wildcard_utf16
 TBL	tbl2.pak	*	Guts Sword			wildcard_utf16
@@ -13210,7 +13210,7 @@ TBL	tbl2.pak	*	Science Staff Type P			wildcard_utf16
 TBL	tbl2.pak	*	Science Staff Type A			wildcard_utf16
 TBL	tbl2.pak	*	Clever Purification Staff			wildcard_utf16
 TBL	tbl2.pak	*	Z Hurricane Gloves		Z 颶風手套	wildcard_utf16
-TBL	tbl2.pak	*	God Dragon Hunting			wildcard_utf16
+TBL	tbl2.pak	*	God Dragon Hunting		神龍狩獵	wildcard_utf16
 TBL	tbl2.pak	*	Undecided Name			wildcard_utf16
 TBL	tbl2.pak	*	Sixth Sense Claws			wildcard_utf16
 TBL	tbl2.pak	*	Red Lion Claws			wildcard_utf16
@@ -13313,11 +13313,11 @@ TBL	tbl2.pak	*	Dragon Law Scroll R		龙法则卷轴R	wildcard_utf16
 TBL	tbl2.pak	*	Dragon Industry Scroll R			wildcard_utf16
 TBL	tbl2.pak	*	Dragon King Scroll R		龙王卷轴R	wildcard_utf16
 TBL	tbl2.pak	*	Taboo Scroll		禁忌卷轴	wildcard_utf16
-TBL	tbl2.pak	*	Imp Summon Scroll			wildcard_utf16
+TBL	tbl2.pak	*	Imp Summon Scroll		小惡魔召喚卷軸	wildcard_utf16
 TBL	tbl2.pak	*	Dragon Crystal Gem R		龙水晶宝石R	wildcard_utf16
 TBL	tbl2.pak	*	Dragon Blood Crystal Gem			wildcard_utf16
 TBL	tbl2.pak	*	Tiamat Eye R		提亚马特眼R	wildcard_utf16
-TBL	tbl2.pak	*	Namek Sodium Gem			wildcard_utf16
+TBL	tbl2.pak	*	Namek Sodium Gem		那美克鈉寶石	wildcard_utf16
 TBL	tbl2.pak	*	Crystal Hacked Bone Gem			wildcard_utf16
 TBL	tbl2.pak	*	Dragon Force Stick R		龙力量棍R	wildcard_utf16
 TBL	tbl2.pak	*	Day Dragon Stick			wildcard_utf16
@@ -13747,8 +13747,8 @@ TBL	tbl2.pak	*	Namek Axe		那美克斧	wildcard_utf16
 TBL	tbl2.pak	*	Z Spring Axe		Z 弹簧斧	wildcard_utf16
 TBL	tbl2.pak	*	Absolute Soul Axe		绝对灵魂斧	wildcard_utf16
 TBL	tbl2.pak	*	Soul Destroyer Axe			wildcard_utf16
-TBL	tbl2.pak	*	God Boundary Scroll			wildcard_utf16
-TBL	tbl2.pak	*	God Pedestal Scroll			wildcard_utf16
+TBL	tbl2.pak	*	God Boundary Scroll		神界卷軸	wildcard_utf16
+TBL	tbl2.pak	*	God Pedestal Scroll		神座卷軸	wildcard_utf16
 TBL	tbl2.pak	*	Diamond Gem		钻石宝石	wildcard_utf16
 TBL	tbl2.pak	*	Black Crystal Gem		黑色水晶宝石	wildcard_utf16
 TBL	tbl2.pak	*	Color Gem			wildcard_utf16
@@ -15033,7 +15033,7 @@ TBL	tbl2.pak	*	Powerful Combination Package A			wildcard_utf16
 TBL	tbl2.pak	*	Powerful Combination Package B			wildcard_utf16
 TBL	tbl2.pak	*	Gorgeous Combination Package A			wildcard_utf16
 TBL	tbl2.pak	*	Gorgeous Combination Package B			wildcard_utf16
-TBL	tbl2.pak	*	General Practice Capsule			wildcard_utf16
+TBL	tbl2.pak	*	General Practice Capsule		一般練習膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Advance Practice Capsule			wildcard_utf16
 TBL	tbl2.pak	*	Novice Support Package [1] (LV1-30)			wildcard_utf16
 TBL	tbl2.pak	*	Novice Support Package [2] (LV1-30)			wildcard_utf16
@@ -15045,7 +15045,7 @@ TBL	tbl2.pak	*	Advance Support Package [3] (LV31-50)			wildcard_utf16
 TBL	tbl2.pak	*	Advance Support Package [4] (LV31-50)			wildcard_utf16
 TBL	tbl2.pak	*	Summer Vacation Package (LV31-50)			wildcard_utf16
 TBL	tbl2.pak	*	Extra Practice Bundle			wildcard_utf16
-TBL	tbl2.pak	*	Flying Jet Squirrel [Permanent]			wildcard_utf16
+TBL	tbl2.pak	*	Flying Jet Squirrel [Permanent]		舞空噴射松鼠［永久］	wildcard_utf16
 TBL	tbl2.pak	*	Mini Bunny Bus (Red)			wildcard_utf16
 TBL	tbl2.pak	*	Mini Bunny Bus (Orange)			wildcard_utf16
 TBL	tbl2.pak	*	Mini Bunny Bus (Purple)			wildcard_utf16
@@ -15063,9 +15063,9 @@ TBL	tbl2.pak	*	Zeni Scouter (Copper)			wildcard_utf16
 TBL	tbl2.pak	*	Zeni Scouter (Silver)		索尼探测器(银色)	wildcard_utf16
 TBL	tbl2.pak	*	Zeni Scouter (Gold)		索尼探测器(黄金)	wildcard_utf16
 TBL	tbl2.pak	*	Gold Chest Key		黄金胸甲钥匙	wildcard_utf16
-TBL	tbl2.pak	*	Gold Chest Key [10x]			wildcard_utf16
-TBL	tbl2.pak	*	Platinum Box Key			wildcard_utf16
-TBL	tbl2.pak	*	Platinum Box Key [10x]			wildcard_utf16
+TBL	tbl2.pak	*	Gold Chest Key [10x]		金箱鑰匙［10×］	wildcard_utf16
+TBL	tbl2.pak	*	Platinum Box Key		白金箱鑰匙	wildcard_utf16
+TBL	tbl2.pak	*	Platinum Box Key [10x]		白金箱鑰匙［10×］	wildcard_utf16
 TBL	tbl2.pak	*	Extra EXP Boost [2 Hours]			wildcard_utf16
 TBL	tbl2.pak	*	Dogi Property Ball [1x]			wildcard_utf16
 TBL	tbl2.pak	*	Dogi Property Ball [5x]			wildcard_utf16
@@ -15077,8 +15077,8 @@ TBL	tbl2.pak	*	Seal Coin [5x]		封印幣［5×］	wildcard_utf16
 TBL	tbl2.pak	*	Seal Coin [10x]		封印幣［10×］	wildcard_utf16
 TBL	tbl2.pak	*	VP Recovery Box [1x]			wildcard_utf16
 TBL	tbl2.pak	*	VP Recovery Box [5x]			wildcard_utf16
-TBL	tbl2.pak	*	Medium VP Recovery Box [1x]			wildcard_utf16
-TBL	tbl2.pak	*	Medium VP Recovery Box [5x]			wildcard_utf16
+TBL	tbl2.pak	*	Medium VP Recovery Box [1x]		中級 VP 恢復禮包［1×］	wildcard_utf16
+TBL	tbl2.pak	*	Medium VP Recovery Box [5x]		中級 VP 恢復禮包［5×］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced VP Recovery Box [1x]			wildcard_utf16
 TBL	tbl2.pak	*	Advanced VP Recovery Box [5x]			wildcard_utf16
 TBL	tbl2.pak	*	High VP Recovery Box [1x]			wildcard_utf16
@@ -15093,14 +15093,14 @@ TBL	tbl2.pak	*	Autopot LP (500.000)		自动药 LP（500.000）	wildcard_utf16
 TBL	tbl2.pak	*	Autopot EP (100.000)			wildcard_utf16
 TBL	tbl2.pak	*	Autopot EP (300.000)			wildcard_utf16
 TBL	tbl2.pak	*	Autopot EP (500.000)			wildcard_utf16
-TBL	tbl2.pak	*	HL Life Pill X-S [30x]			wildcard_utf16
-TBL	tbl2.pak	*	HL Life Pill Y-S [30x]			wildcard_utf16
-TBL	tbl2.pak	*	HL Magic Pill X-S [30x]			wildcard_utf16
-TBL	tbl2.pak	*	HL Magic Pill Y-S [30x]			wildcard_utf16
+TBL	tbl2.pak	*	HL Life Pill X-S [30x]		HL 生命藥丸 X-S［30×］	wildcard_utf16
+TBL	tbl2.pak	*	HL Life Pill Y-S [30x]		HL 生命藥丸 Y-S［30×］	wildcard_utf16
+TBL	tbl2.pak	*	HL Magic Pill X-S [30x]		HL 魔力藥丸 X-S［30×］	wildcard_utf16
+TBL	tbl2.pak	*	HL Magic Pill Y-S [30x]		HL 魔力藥丸 Y-S［30×］	wildcard_utf16
 TBL	tbl2.pak	*	Delicious Foie Gras Stew [30x]			wildcard_utf16
 TBL	tbl2.pak	*	Icy Grain Fruit [30x]			wildcard_utf16
-TBL	tbl2.pak	*	HL Detoxification Pill S [30x]			wildcard_utf16
-TBL	tbl2.pak	*	HL Pain Treatment Pill S [30x]			wildcard_utf16
+TBL	tbl2.pak	*	HL Detoxification Pill S [30x]		HL 解毒藥丸 S［30×］	wildcard_utf16
+TBL	tbl2.pak	*	HL Pain Treatment Pill S [30x]		HL 止痛藥丸 S［30×］	wildcard_utf16
 TBL	tbl2.pak	*	Clarity Potion [10x]			wildcard_utf16
 TBL	tbl2.pak	*	Resurrection Popo (20x)			wildcard_utf16
 TBL	tbl2.pak	*	BD Shield [5x]			wildcard_utf16
@@ -15118,9 +15118,9 @@ TBL	tbl2.pak	*	High VP Recovery Potion [10x]			wildcard_utf16
 TBL	tbl2.pak	*	Quest Ring [1 Hour]		任务戒指［1 小时］	wildcard_utf16
 TBL	tbl2.pak	*	Quest Ring [3 Hour]		任务戒指［3 小时］	wildcard_utf16
 TBL	tbl2.pak	*	Spiritual Practice Card			wildcard_utf16
-TBL	tbl2.pak	*	OBT Comprehensive Capsule A			wildcard_utf16
-TBL	tbl2.pak	*	OBT Comprehensive Capsule B			wildcard_utf16
-TBL	tbl2.pak	*	OBT Comprehensive Capsule C			wildcard_utf16
+TBL	tbl2.pak	*	OBT Comprehensive Capsule A		OBT 綜合膠囊 A	wildcard_utf16
+TBL	tbl2.pak	*	OBT Comprehensive Capsule B		OBT 綜合膠囊 B	wildcard_utf16
+TBL	tbl2.pak	*	OBT Comprehensive Capsule C		OBT 綜合膠囊 C	wildcard_utf16
 TBL	tbl2.pak	*	Weapon Upgrade Stone U30 [20x]			wildcard_utf16
 TBL	tbl2.pak	*	Armor Upgrade Stone U30 [20x]		防具強化石 U30［20×］	wildcard_utf16
 TBL	tbl2.pak	*	CC Life Pill S [20x]			wildcard_utf16
@@ -15151,7 +15151,7 @@ TBL	tbl2.pak	*	CC Pill Capsule L		CC药丸胶囊L	wildcard_utf16
 TBL	tbl2.pak	*	Contains: CC Life Pill L [100x] and CC Magic Pill L [100x]		内含：CC 生命药丸 L ×100 与 CC 魔力药丸 L ×100	wildcard_utf16
 TBL	tbl2.pak	*	CC Life Pill Capsule (100x)			wildcard_utf16
 TBL	tbl2.pak	*	CC Magic Pill Capsule (100x)			wildcard_utf16
-TBL	tbl2.pak	*	Flying Jet Squirrel Capsule [30 Days]			wildcard_utf16
+TBL	tbl2.pak	*	Flying Jet Squirrel Capsule [30 Days]		舞空噴射松鼠膠囊［30 天］	wildcard_utf16
 TBL	tbl2.pak	*	CC Pill Capsule M		CC药丸胶囊M	wildcard_utf16
 TBL	tbl2.pak	*	Contains:CC Life Pill M [10x] and CC Magic Pill M [10x]		内含：CC 生命药丸 M ×10 与 CC 魔力药丸 M ×10	wildcard_utf16
 TBL	tbl2.pak	*	Contains:CC Life Pill L [20x] and CC Magic Pill L [20x]		内含：CC 生命药丸 L ×20 与 CC 魔力药丸 L ×20	wildcard_utf16
@@ -15159,13 +15159,13 @@ TBL	tbl2.pak	*	U30 Upgrade Capsule (5x)			wildcard_utf16
 TBL	tbl2.pak	*	U30 Upgrade Capsule (10x)			wildcard_utf16
 TBL	tbl2.pak	*	Weapon Upgrade Stone U38 [5x]			wildcard_utf16
 TBL	tbl2.pak	*	Armor Upgrade Stone U38 [5x]		防具強化石 U38［5×］	wildcard_utf16
-TBL	tbl2.pak	*	Goku Outfit (King Kai Emblem)			wildcard_utf16
+TBL	tbl2.pak	*	Goku Outfit (King Kai Emblem)		悟空服裝（界王標誌）	wildcard_utf16
 TBL	tbl2.pak	*	Bunny Sunglasses			wildcard_utf16
 TBL	tbl2.pak	*	Resurrection Popo [10x]			wildcard_utf16
 TBL	tbl2.pak	*	Senzu Beans [10x]			wildcard_utf16
 TBL	tbl2.pak	*	Half Senzu Bean [10x]			wildcard_utf16
-TBL	tbl2.pak	*	HL Life Pill Z [5x]			wildcard_utf16
-TBL	tbl2.pak	*	HL Magic Pill Z [5x]			wildcard_utf16
+TBL	tbl2.pak	*	HL Life Pill Z [5x]		HL 生命藥丸 Z［5×］	wildcard_utf16
+TBL	tbl2.pak	*	HL Magic Pill Z [5x]		HL 魔力藥丸 Z［5×］	wildcard_utf16
 TBL	tbl2.pak	*	Aloha Dogi Capsule			wildcard_utf16
 TBL	tbl2.pak	*	Turtle Shell Capsule		龜殼膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Tarzan Outfit Capsule		泰山造型膠囊	wildcard_utf16
@@ -15180,9 +15180,9 @@ TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U30 + Advanced Armor Upgrade Stone 
 TBL	tbl2.pak	*	HL Pill Capsule		HL药丸胶囊	wildcard_utf16
 TBL	tbl2.pak	*	HL Life Pill X-S + HL Magic Pill X-S		HL 生命药丸 X-S ＋ HL 魔力药丸 X-S	wildcard_utf16
 TBL	tbl2.pak	*	Yardrat's Memory [3x]			wildcard_utf16
-TBL	tbl2.pak	*	Flying Jet Squirrel [1 Day]			wildcard_utf16
-TBL	tbl2.pak	*	Flying Jet Squirrel [7 Days]			wildcard_utf16
-TBL	tbl2.pak	*	Flying Jet Squirrel [15 Days]			wildcard_utf16
+TBL	tbl2.pak	*	Flying Jet Squirrel [1 Day]		舞空噴射松鼠［1 天］	wildcard_utf16
+TBL	tbl2.pak	*	Flying Jet Squirrel [7 Days]		舞空噴射松鼠［7 天］	wildcard_utf16
+TBL	tbl2.pak	*	Flying Jet Squirrel [15 Days]		舞空噴射松鼠［15 天］	wildcard_utf16
 TBL	tbl2.pak	*	Detoxification Pill		解毒藥丸	wildcard_utf16
 TBL	tbl2.pak	*	Pain Treatment Pill		止痛藥丸	wildcard_utf16
 TBL	tbl2.pak	*	Super Saiyan Potion [Martial Art]		超級賽亞人藥水［武道］	wildcard_utf16
@@ -15226,8 +15226,8 @@ TBL	tbl2.pak	*	Platinum Chest			wildcard_utf16
 TBL	tbl2.pak	*	Pirate Captain Suit 1		海盗队长套装1	wildcard_utf16
 TBL	tbl2.pak	*	Pirate Captain Suit 2		海盗队长套装2	wildcard_utf16
 TBL	tbl2.pak	*	Tobi Ninja War			wildcard_utf16
-TBL	tbl2.pak	*	Grandpa Gohan's Outfit			wildcard_utf16
-TBL	tbl2.pak	*	Grandpa Gohan Mask A			wildcard_utf16
+TBL	tbl2.pak	*	Grandpa Gohan's Outfit		爺爺悟飯服裝	wildcard_utf16
+TBL	tbl2.pak	*	Grandpa Gohan Mask A		爺爺悟飯面具 A	wildcard_utf16
 TBL	tbl2.pak	*	Arale's Cap			wildcard_utf16
 TBL	tbl2.pak	*	Dr. Gero Hat		基罗博士帽子	wildcard_utf16
 TBL	tbl2.pak	*	Dr. Gero's Outfit			wildcard_utf16
@@ -15238,32 +15238,32 @@ TBL	tbl2.pak	*	King Yemma Hat			wildcard_utf16
 TBL	tbl2.pak	*	Bulma Space Outfit		布尔玛空间套装	wildcard_utf16
 TBL	tbl2.pak	*	Visor Cap			wildcard_utf16
 TBL	tbl2.pak	*	Chichi's Set Capsule			wildcard_utf16
-TBL	tbl2.pak	*	Ox-King's Set Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Ox-King's Set Capsule		牛魔王套裝膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Angel Halo & Angel Wings Type A Capsule		天使光环与天使翼 Type A 胶囊	wildcard_utf16
 TBL	tbl2.pak	*	Angel Halo & Angel Wings Type B Capsule		天使光环与天使翼 Type B 胶囊	wildcard_utf16
 TBL	tbl2.pak	*	Angel Halo & Angel Wings Type C Capsule		天使光环与天使翼 Type C 胶囊	wildcard_utf16
-TBL	tbl2.pak	*	Master Shen's Set Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Master Shen's Set Capsule		鶴仙人套裝膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Pirate Captain Set Type 1 Capsule		海盗队长套装类型1胶囊	wildcard_utf16
 TBL	tbl2.pak	*	Pirate Captain Set Type 2 Capsule		海盗队长套装类型2胶囊	wildcard_utf16
 TBL	tbl2.pak	*	Pirate Captain Set Type 3 Capsule		海盗队长套装类型3胶囊	wildcard_utf16
-TBL	tbl2.pak	*	Monster Carrot's Set Type A Capsule			wildcard_utf16
-TBL	tbl2.pak	*	Monster Carrot's Set Type B Capsule			wildcard_utf16
-TBL	tbl2.pak	*	Monster Carrot's Set Type C Capsule			wildcard_utf16
-TBL	tbl2.pak	*	Grandpa Gohan's Set Capsule			wildcard_utf16
-TBL	tbl2.pak	*	Rabbit Corps Set Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Monster Carrot's Set Type A Capsule		怪物胡蘿蔔套裝 Type A 膠囊	wildcard_utf16
+TBL	tbl2.pak	*	Monster Carrot's Set Type B Capsule		怪物胡蘿蔔套裝 Type B 膠囊	wildcard_utf16
+TBL	tbl2.pak	*	Monster Carrot's Set Type C Capsule		怪物胡蘿蔔套裝 Type C 膠囊	wildcard_utf16
+TBL	tbl2.pak	*	Grandpa Gohan's Set Capsule		爺爺悟飯套裝膠囊	wildcard_utf16
+TBL	tbl2.pak	*	Rabbit Corps Set Capsule		兔軍團套裝膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Female Bunny Set Capsule			wildcard_utf16
-TBL	tbl2.pak	*	Mummy Set Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Mummy Set Capsule		木乃伊套裝膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Devil Set Capsule		魔鬼套装胶囊	wildcard_utf16
-TBL	tbl2.pak	*	King Monkey Set 1 Capsule			wildcard_utf16
-TBL	tbl2.pak	*	King Monkey Set 2 Capsule			wildcard_utf16
-TBL	tbl2.pak	*	King Monkey Set 3 Capsule			wildcard_utf16
+TBL	tbl2.pak	*	King Monkey Set 1 Capsule		猴王套裝 1 膠囊	wildcard_utf16
+TBL	tbl2.pak	*	King Monkey Set 2 Capsule		猴王套裝 2 膠囊	wildcard_utf16
+TBL	tbl2.pak	*	King Monkey Set 3 Capsule		猴王套裝 3 膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Dr. Gero's Set Capsule		基罗博士套装胶囊	wildcard_utf16
-TBL	tbl2.pak	*	Great Saiyaman's Set Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Great Saiyaman's Set Capsule		偉大賽亞人套裝膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Jingle Village Winter Type A Set Capsule		铃铛村冬装 A 套装胶囊	wildcard_utf16
 TBL	tbl2.pak	*	Jingle Village Winter Type B Set Capsule		铃铛村冬装 B 套装胶囊	wildcard_utf16
 TBL	tbl2.pak	*	Jingle Village Winter Type C Set Capsule		铃铛村冬装 C 套装胶囊	wildcard_utf16
 TBL	tbl2.pak	*	Christmas Set Capsule			wildcard_utf16
-TBL	tbl2.pak	*	King Yemma Set Capsule			wildcard_utf16
+TBL	tbl2.pak	*	King Yemma Set Capsule		閻王套裝膠囊	wildcard_utf16
 TBL	tbl2.pak	*	EV Strength Potion			wildcard_utf16
 TBL	tbl2.pak	*	EV Stamina Potion			wildcard_utf16
 TBL	tbl2.pak	*	EV Energy Potion		活动气功药水	wildcard_utf16
@@ -15318,10 +15318,10 @@ TBL	tbl2.pak	*	Wagu Coin [20x]		瓦古幣［20×］	wildcard_utf16
 TBL	tbl2.pak	*	Wagu Coin [50x]		瓦古幣［50×］	wildcard_utf16
 TBL	tbl2.pak	*	General EXP Boost [2 Hours] [5x]			wildcard_utf16
 TBL	tbl2.pak	*	Advanced EXP Boost [2 Hours] [5x]			wildcard_utf16
-TBL	tbl2.pak	*	Gold Chest Key [2x]			wildcard_utf16
-TBL	tbl2.pak	*	Gold Chest Key [5x]			wildcard_utf16
-TBL	tbl2.pak	*	Platinium Chest Key [2x]			wildcard_utf16
-TBL	tbl2.pak	*	Platinium Chest Key [5x]			wildcard_utf16
+TBL	tbl2.pak	*	Gold Chest Key [2x]		金箱鑰匙［2×］	wildcard_utf16
+TBL	tbl2.pak	*	Gold Chest Key [5x]		金箱鑰匙［5×］	wildcard_utf16
+TBL	tbl2.pak	*	Platinium Chest Key [2x]		白金箱鑰匙［2×］	wildcard_utf16
+TBL	tbl2.pak	*	Platinium Chest Key [5x]		白金箱鑰匙［5×］	wildcard_utf16
 TBL	tbl2.pak	*	Strength Potion [5x]			wildcard_utf16
 TBL	tbl2.pak	*	Stamina Potion [5x]			wildcard_utf16
 TBL	tbl2.pak	*	Energy Potion [5x]			wildcard_utf16
@@ -15413,7 +15413,7 @@ TBL	tbl2.pak	*	Explorer Set Capsule Type C			wildcard_utf16
 TBL	tbl2.pak	*	Silver Star No.8 Random Capsule		銀星 8 號隨機膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Explorer Hat Capsule			wildcard_utf16
 TBL	tbl2.pak	*	Explorer Clothes Capsule		探險家服裝膠囊	wildcard_utf16
-TBL	tbl2.pak	*	Random Football Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Random Football Capsule		隨機足球膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Overflowing Chest			wildcard_utf16
 TBL	tbl2.pak	*	Doctor's Outfit (White)			wildcard_utf16
 TBL	tbl2.pak	*	Doctor's Outfit (Pink)			wildcard_utf16
@@ -15430,9 +15430,9 @@ TBL	tbl2.pak	*	Nurse Cap (Blue)			wildcard_utf16
 TBL	tbl2.pak	*	Doctor Set Capsule (White)			wildcard_utf16
 TBL	tbl2.pak	*	Doctor Set Capsule (Pink)			wildcard_utf16
 TBL	tbl2.pak	*	Doctor Set Capsule (Blue)			wildcard_utf16
-TBL	tbl2.pak	*	Nurse Set Capsule (White)			wildcard_utf16
-TBL	tbl2.pak	*	Nurse Set Capsule (Pink)			wildcard_utf16
-TBL	tbl2.pak	*	Nurse Set Capsule (Blue)			wildcard_utf16
+TBL	tbl2.pak	*	Nurse Set Capsule (White)		護士套裝膠囊（白）	wildcard_utf16
+TBL	tbl2.pak	*	Nurse Set Capsule (Pink)		護士套裝膠囊（粉）	wildcard_utf16
+TBL	tbl2.pak	*	Nurse Set Capsule (Blue)		護士套裝膠囊（藍）	wildcard_utf16
 TBL	tbl2.pak	*	EV Weapon Upgrade Stone U60		活动武器升级石U60	wildcard_utf16
 TBL	tbl2.pak	*	EV Armor Upgrade Stone U60		活动盔甲升级石U60	wildcard_utf16
 TBL	tbl2.pak	*	EV Advanced Weapon Upgrade Stone U60		活动高级武器升级石U60	wildcard_utf16
@@ -15471,7 +15471,7 @@ TBL	tbl2.pak	*	Flight Skill (Dragon Clan)		飞行技能(那美克龙族)	wildcar
 TBL	tbl2.pak	*	Flight Skill (Mighty Majin)			wildcard_utf16
 TBL	tbl2.pak	*	Flight Skill (Wonder Majin)		飞行技能(意魔人)	wildcard_utf16
 TBL	tbl2.pak	*	LV UP 29!		升级 29！	wildcard_utf16
-TBL	tbl2.pak	*	Grandpa Gohan's Mask Type B			wildcard_utf16
+TBL	tbl2.pak	*	Grandpa Gohan's Mask Type B		爺爺悟飯面具 Type B	wildcard_utf16
 TBL	tbl2.pak	*	Hollow Ichigo Mask			wildcard_utf16
 TBL	tbl2.pak	*	Mr Satan's Hairstyle			wildcard_utf16
 TBL	tbl2.pak	*	Mr Satan's Outfit			wildcard_utf16
@@ -15494,7 +15494,7 @@ TBL	tbl2.pak	*	Popo Set Capsule		波波套装胶囊	wildcard_utf16
 TBL	tbl2.pak	*	Pilaf Set Capsule		皮拉夫套装胶囊	wildcard_utf16
 TBL	tbl2.pak	*	Kid Gohan Set Capsule			wildcard_utf16
 TBL	tbl2.pak	*	Pilot Set Capsule		驾驶员套装胶囊	wildcard_utf16
-TBL	tbl2.pak	*	Police Set Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Police Set Capsule		警察套裝膠囊	wildcard_utf16
 TBL	tbl2.pak	*	White Stone U60		白色石U60	wildcard_utf16
 TBL	tbl2.pak	*	EV Fortune Cookie			wildcard_utf16
 TBL	tbl2.pak	*	CC Battle Dungeon Coupon (10F)		CC 战斗副本券（10 层）	wildcard_utf16
@@ -15529,7 +15529,7 @@ TBL	tbl2.pak	*	Kindergarten Hat			wildcard_utf16
 TBL	tbl2.pak	*	CC School Bag			wildcard_utf16
 TBL	tbl2.pak	*	Son-Goku Motorcycle Outfit		孫悟空摩托車套裝	wildcard_utf16
 TBL	tbl2.pak	*	Son-Goku Motorcycle Cap		孫悟空摩托車帽	wildcard_utf16
-TBL	tbl2.pak	*	Piccolo Red Star Turban			wildcard_utf16
+TBL	tbl2.pak	*	Piccolo Red Star Turban		短笛紅星頭巾	wildcard_utf16
 TBL	tbl2.pak	*	CC Modified Space Suit			wildcard_utf16
 TBL	tbl2.pak	*	CC Modified Space Helmet			wildcard_utf16
 TBL	tbl2.pak	*	Black Dragon Bus		黑龙巴士	wildcard_utf16
@@ -15563,7 +15563,7 @@ TBL	tbl2.pak	*	Panda Captain Helmet			wildcard_utf16
 TBL	tbl2.pak	*	Popo's Outfit A Set Capsule		波波的套装A套装胶囊	wildcard_utf16
 TBL	tbl2.pak	*	Popo's Outfit B Set Capsule		波波的套装B套装胶囊	wildcard_utf16
 TBL	tbl2.pak	*	Popo's Outfit C Set Capsule		波波的套装C套装胶囊	wildcard_utf16
-TBL	tbl2.pak	*	Panda Captain Set Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Panda Captain Set Capsule		熊貓隊長套裝膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Fortune Teller Baba's Hat			wildcard_utf16
 TBL	tbl2.pak	*	Fortune Teller Baba's Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Wolf's Fur Outfit			wildcard_utf16
@@ -15572,9 +15572,9 @@ TBL	tbl2.pak	*	Military Gas Mask			wildcard_utf16
 TBL	tbl2.pak	*	Gothic Style Suit			wildcard_utf16
 TBL	tbl2.pak	*	Prisoner Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Prisoner Cap			wildcard_utf16
-TBL	tbl2.pak	*	Fortune Teller Baba's Set Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Fortune Teller Baba's Set Capsule		占卜婆婆套裝膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Wolf Set Capsules		狼套裝膠囊	wildcard_utf16
-TBL	tbl2.pak	*	Prisoner Set Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Prisoner Set Capsule		囚犯套裝膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Light Pink Sheep Bus			wildcard_utf16
 TBL	tbl2.pak	*	[Modified] Sky Jet-Pack			wildcard_utf16
 TBL	tbl2.pak	*	[Modified] Eagle Jet Helmet		［改造］老鷹噴射頭盔	wildcard_utf16
@@ -15582,7 +15582,7 @@ TBL	tbl2.pak	*	Oolong Uniform			wildcard_utf16
 TBL	tbl2.pak	*	Oolong Hat			wildcard_utf16
 TBL	tbl2.pak	*	Cell Jr Battle Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Cell Jr Battle Helmet			wildcard_utf16
-TBL	tbl2.pak	*	Oolong Set Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Oolong Set Capsule		烏龍套裝膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Contains the Oolong Clothes.			wildcard_utf16
 TBL	tbl2.pak	*	Cell Jr Set Capsule			wildcard_utf16
 TBL	tbl2.pak	*	Contains the Cell Jr Clothes.			wildcard_utf16
@@ -15670,7 +15670,7 @@ TBL	tbl2.pak	*	55Lv Recipe Chest			wildcard_utf16
 TBL	tbl2.pak	*	60Lv Recipe Chest			wildcard_utf16
 TBL	tbl2.pak	*	Yam's Coat			wildcard_utf16
 TBL	tbl2.pak	*	Android 18 Cow-Girl Outfit			wildcard_utf16
-TBL	tbl2.pak	*	Goku City Outfit			wildcard_utf16
+TBL	tbl2.pak	*	Goku City Outfit		悟空城市服裝	wildcard_utf16
 TBL	tbl2.pak	*	Launch's Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Iron Fake Knight			wildcard_utf16
 TBL	tbl2.pak	*	Iron Fake Knight Helm			wildcard_utf16
@@ -15713,11 +15713,11 @@ TBL	tbl2.pak	*	Horse Rider Cap			wildcard_utf16
 TBL	tbl2.pak	*	Saibamen Head			wildcard_utf16
 TBL	tbl2.pak	*	Mushroom Hat		蘑菇帽子	wildcard_utf16
 TBL	tbl2.pak	*	Dinosaur Head		恐龙头	wildcard_utf16
-TBL	tbl2.pak	*	Frieza Head (Mecha)			wildcard_utf16
-TBL	tbl2.pak	*	Imitation of Frieza			wildcard_utf16
-TBL	tbl2.pak	*	Frieza Head (Final Form)			wildcard_utf16
-TBL	tbl2.pak	*	Frieza Head (3rd Form)			wildcard_utf16
-TBL	tbl2.pak	*	Frieza Head (2nd Form)			wildcard_utf16
+TBL	tbl2.pak	*	Frieza Head (Mecha)		弗利薩頭（機械）	wildcard_utf16
+TBL	tbl2.pak	*	Imitation of Frieza		弗利薩仿製品	wildcard_utf16
+TBL	tbl2.pak	*	Frieza Head (Final Form)		弗利薩頭（最終形態）	wildcard_utf16
+TBL	tbl2.pak	*	Frieza Head (3rd Form)		弗利薩頭（第三形態）	wildcard_utf16
+TBL	tbl2.pak	*	Frieza Head (2nd Form)		弗利薩頭（第二形態）	wildcard_utf16
 TBL	tbl2.pak	*	Hypnotic Turban			wildcard_utf16
 TBL	tbl2.pak	*	Turban			wildcard_utf16
 TBL	tbl2.pak	*	Frieza Head (Normal)		弗利萨头(普通)	wildcard_utf16
@@ -15726,7 +15726,7 @@ TBL	tbl2.pak	*	CC Jet Helmet			wildcard_utf16
 TBL	tbl2.pak	*	Master Roshi's Glasses (Original)			wildcard_utf16
 TBL	tbl2.pak	*	Vehicle Fuel (Blue)		载具燃料(蓝色)	wildcard_utf16
 TBL	tbl2.pak	*	Vehicle Fuel (Green)		载具燃料(绿色)	wildcard_utf16
-TBL	tbl2.pak	*	Hockey Mask			wildcard_utf16
+TBL	tbl2.pak	*	Hockey Mask		曲棍球面具	wildcard_utf16
 TBL	tbl2.pak	*	Red Pants Army Dogi		红裤军时装	wildcard_utf16
 TBL	tbl2.pak	*	FN Training Dogi			wildcard_utf16
 TBL	tbl2.pak	*	Krillin Founder Outfit			wildcard_utf16
@@ -15742,11 +15742,11 @@ TBL	tbl2.pak	*	Bartender Outfit			wildcard_utf16
 TBL	tbl2.pak	*	Dragon Slayer Dogi			wildcard_utf16
 TBL	tbl2.pak	*	Horse Rider Outfit			wildcard_utf16
 TBL	tbl2.pak	*	White Christmas Outfit			wildcard_utf16
-TBL	tbl2.pak	*	Frieza Dogi (Mecha)			wildcard_utf16
-TBL	tbl2.pak	*	Imitation of Mecha Frieza			wildcard_utf16
-TBL	tbl2.pak	*	Frieza Dogi (Final Form)			wildcard_utf16
-TBL	tbl2.pak	*	Frieza Dogi (3rd Form)			wildcard_utf16
-TBL	tbl2.pak	*	Frieza Dogi (2nd Form)			wildcard_utf16
+TBL	tbl2.pak	*	Frieza Dogi (Mecha)		弗利薩武道服（機械）	wildcard_utf16
+TBL	tbl2.pak	*	Imitation of Mecha Frieza		機械弗利薩仿製品	wildcard_utf16
+TBL	tbl2.pak	*	Frieza Dogi (Final Form)		弗利薩武道服（最終形態）	wildcard_utf16
+TBL	tbl2.pak	*	Frieza Dogi (3rd Form)		弗利薩武道服（第三形態）	wildcard_utf16
+TBL	tbl2.pak	*	Frieza Dogi (2nd Form)		弗利薩武道服（第二形態）	wildcard_utf16
 TBL	tbl2.pak	*	Frieza Dogi (Normal)		弗利萨时装(普通)	wildcard_utf16
 TBL	tbl2.pak	*	Outfit		套装	wildcard_utf16
 TBL	tbl2.pak	*	Casual Majin Outfit			wildcard_utf16
@@ -15833,7 +15833,7 @@ TBL	tbl2.pak	*	Crane Timber			wildcard_utf16
 TBL	tbl2.pak	*	Black Satin			wildcard_utf16
 TBL	tbl2.pak	*	CC Fiber			wildcard_utf16
 TBL	tbl2.pak	*	Impartial			wildcard_utf16
-TBL	tbl2.pak	*	Namek Cotton			wildcard_utf16
+TBL	tbl2.pak	*	Namek Cotton		那美克棉	wildcard_utf16
 TBL	tbl2.pak	*	Crystal Gem Fiber			wildcard_utf16
 TBL	tbl2.pak	*	Dragonhide			wildcard_utf16
 TBL	tbl2.pak	*	History Shellfish Skin B			wildcard_utf16
@@ -15880,7 +15880,7 @@ TBL	tbl2.pak	*	Ice Years			wildcard_utf16
 TBL	tbl2.pak	*	Meteorite Fragment			wildcard_utf16
 TBL	tbl2.pak	*	Purple Crystal Gem		紫色水晶宝石	wildcard_utf16
 TBL	tbl2.pak	*	Charlie Stone			wildcard_utf16
-TBL	tbl2.pak	*	Giant Stone Body			wildcard_utf16
+TBL	tbl2.pak	*	Giant Stone Body		巨石之軀	wildcard_utf16
 TBL	tbl2.pak	*	Turtle Hermit Tree			wildcard_utf16
 TBL	tbl2.pak	*	Parasitic Plant			wildcard_utf16
 TBL	tbl2.pak	*	Tree Vigor			wildcard_utf16
@@ -16690,7 +16690,7 @@ TBL	tbl2.pak	*	Flexarot (Super Saiyan)		弗莱克萨罗特(超级赛亚人)	wild
 TBL	tbl2.pak	*	Flexarot (Super Saiyan God)		弗莱克萨罗特(超级赛亚人之神)	wildcard_utf16
 TBL	tbl2.pak	*	Flexarot (Super Saiyan God Blue)		弗莱克萨罗特(超级赛亚人之神蓝色)	wildcard_utf16
 TBL	tbl2.pak	*	Mr Popo Pet		波波先生宠物	wildcard_utf16
-TBL	tbl2.pak	*	Kid Gohan LV1			wildcard_utf16
+TBL	tbl2.pak	*	Kid Gohan LV1		小悟飯 LV1	wildcard_utf16
 TBL	tbl2.pak	*	Gohan SS2 LV2		孙悟饭SS2Lv2	wildcard_utf16
 TBL	tbl2.pak	*	Great Saiyaman LV3			wildcard_utf16
 TBL	tbl2.pak	*	Ultimate Gohan LV4		终极孙悟饭Lv4	wildcard_utf16
@@ -16834,16 +16834,16 @@ TBL	tbl2.pak	*	Pandora's Capsule Lv26			wildcard_utf16
 TBL	tbl2.pak	*	Pandora's Capsule Lv27			wildcard_utf16
 TBL	tbl2.pak	*	Pandora's Capsule Lv28			wildcard_utf16
 TBL	tbl2.pak	*	Pandora's Capsule Lv29			wildcard_utf16
-TBL	tbl2.pak	*	Pandora's Capsule Lv30 (CC150 Reward)			wildcard_utf16
+TBL	tbl2.pak	*	Pandora's Capsule Lv30 (CC150 Reward)		潘朵拉膠囊 Lv30（CC150 獎勵）	wildcard_utf16
 TBL	tbl2.pak	*	Special Armor Material Box		特殊盔甲材料盒	wildcard_utf16
 TBL	tbl2.pak	*	Special Weapon Material Box		特殊武器材料盒	wildcard_utf16
 TBL	tbl2.pak	*	Zero Armor Material Box		Zero Armor Material 礼包	wildcard_utf16
 TBL	tbl2.pak	*	Zero Weapon Material Box		Zero Weapon Material 礼包	wildcard_utf16
-TBL	tbl2.pak	*	Pandora's Capsule Lv31 (CC155 Reward)			wildcard_utf16
-TBL	tbl2.pak	*	Pandora's Capsule Lv32 (CC160 Reward)			wildcard_utf16
-TBL	tbl2.pak	*	Pandora's Capsule Lv33 (CC165 Reward)			wildcard_utf16
-TBL	tbl2.pak	*	Pandora's Capsule Lv34 (CC170 Reward)			wildcard_utf16
-TBL	tbl2.pak	*	Pandora's Capsule Lv35 (CC175 Reward)			wildcard_utf16
+TBL	tbl2.pak	*	Pandora's Capsule Lv31 (CC155 Reward)		潘朵拉膠囊 Lv31（CC155 獎勵）	wildcard_utf16
+TBL	tbl2.pak	*	Pandora's Capsule Lv32 (CC160 Reward)		潘朵拉膠囊 Lv32（CC160 獎勵）	wildcard_utf16
+TBL	tbl2.pak	*	Pandora's Capsule Lv33 (CC165 Reward)		潘朵拉膠囊 Lv33（CC165 獎勵）	wildcard_utf16
+TBL	tbl2.pak	*	Pandora's Capsule Lv34 (CC170 Reward)		潘朵拉膠囊 Lv34（CC170 獎勵）	wildcard_utf16
+TBL	tbl2.pak	*	Pandora's Capsule Lv35 (CC175 Reward)		潘朵拉膠囊 Lv35（CC175 獎勵）	wildcard_utf16
 TBL	tbl2.pak	*	Featuring Attack on Titan			wildcard_utf16
 TBL	tbl2.pak	*	Featuring Dandandan			wildcard_utf16
 TBL	tbl2.pak	*	A Very Beatiful Cat Ears			wildcard_utf16
@@ -17602,8 +17602,8 @@ TBL	tbl2.pak	*	Prototype Parts		原型零件	wildcard_utf16
 TBL	tbl2.pak	*	Special Parts for the Saiyan Pod Prototype.			wildcard_utf16
 TBL	tbl2.pak	*	Saiyan Pod Design		賽亞艙設計圖	wildcard_utf16
 TBL	tbl2.pak	*	Saiyan Pod Design.		賽亞艙設計圖。	wildcard_utf16
-TBL	tbl2.pak	*	Prototype Saiyan Pod Design			wildcard_utf16
-TBL	tbl2.pak	*	Prototype Saiyan Pod Design.			wildcard_utf16
+TBL	tbl2.pak	*	Prototype Saiyan Pod Design		原型賽亞艙設計圖	wildcard_utf16
+TBL	tbl2.pak	*	Prototype Saiyan Pod Design.		原型賽亞艙設計圖。	wildcard_utf16
 TBL	tbl2.pak	*	Saiyan Pod Controller Components		賽亞艙控制器組件	wildcard_utf16
 TBL	tbl2.pak	*	Saiyan Pod Part Components		賽亞艙零件組件	wildcard_utf16
 TBL	tbl2.pak	*	Saiyan Pod Engine Components		賽亞艙引擎組件	wildcard_utf16
@@ -17616,7 +17616,7 @@ TBL	tbl2.pak	*	Represents a Dragon Ball Armor		龍珠象徵鎧甲	wildcard_utf16
 TBL	tbl2.pak	*	(Human)Dragon Shen Pants		（人類）神龍下裝	wildcard_utf16
 TBL	tbl2.pak	*	Represents a Dragon Ball Pants		龍珠象徵下裝	wildcard_utf16
 TBL	tbl2.pak	*	(Human)Dragon Shen Boots			wildcard_utf16
-TBL	tbl2.pak	*	Represents a Dragon Ball Boots			wildcard_utf16
+TBL	tbl2.pak	*	Represents a Dragon Ball Boots		龍珠象徵靴子	wildcard_utf16
 TBL	tbl2.pak	*	(Namek)Dragon Shen Armor		（那美克）神龍鎧甲	wildcard_utf16
 TBL	tbl2.pak	*	(Namek)Dragon Shen Pants		（那美克）神龍下裝	wildcard_utf16
 TBL	tbl2.pak	*	(Namek)Dragon Shen Boots			wildcard_utf16
@@ -17646,7 +17646,7 @@ TBL	tbl2.pak	*	Kirito Sword Transmog (Sword)			wildcard_utf16
 TBL	tbl2.pak	*	Giant Folding Fan Transmog (Crane)			wildcard_utf16
 TBL	tbl2.pak	*	Anbu Mask Transmog (Karma)			wildcard_utf16
 TBL	tbl2.pak	*	Blazing Bloodthirsty Axe Transmog (SK)			wildcard_utf16
-TBL	tbl2.pak	*	Rest Scroll Transmog (Dende)			wildcard_utf16
+TBL	tbl2.pak	*	Rest Scroll Transmog (Dende)		休息卷軸幻化（丹德）	wildcard_utf16
 TBL	tbl2.pak	*	Popo Gem Transmog (Poko)		波波宝石幻化(波可)	wildcard_utf16
 TBL	tbl2.pak	*	Ancestral Trumpet Transmog (Ult)			wildcard_utf16
 TBL	tbl2.pak	*	God Claws Transmog (DW)			wildcard_utf16
@@ -17720,7 +17720,7 @@ TBL	tbl2.pak	*	Ultra Lucky Broom			wildcard_utf16
 TBL	tbl2.pak	*	Event Transportation Chest [7 Days]			wildcard_utf16
 TBL	tbl2.pak	*	Event Transportation Chest [15 Days]			wildcard_utf16
 TBL	tbl2.pak	*	First Phase of Reward Capsule			wildcard_utf16
-TBL	tbl2.pak	*	Last Phase of Reward Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Last Phase of Reward Capsule		最後階段獎勵膠囊	wildcard_utf16
 TBL	tbl2.pak	*	[VIP] Martial Art Integrated Package			wildcard_utf16
 TBL	tbl2.pak	*	[VIP] Spiritualist Integrated Package		[VIP] 气功师 Integrated Package	wildcard_utf16
 TBL	tbl2.pak	*	[VIP] Warrior Integrated Package			wildcard_utf16
@@ -17736,41 +17736,41 @@ TBL	tbl2.pak	*	[CBT] Wonder Majin Integrated Package		[CBT] 意魔人 Integrated
 TBL	tbl2.pak	*	Unknown Box		未知盒	wildcard_utf16
 TBL	tbl2.pak	*	Unknown Pocket Coin		未知口袋幣	wildcard_utf16
 TBL	tbl2.pak	*	Return DBO Memorial Box		Return DBO Memorial 礼包	wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv6			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv7			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv8			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv9			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv10			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv11			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv12			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv13			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv14			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv15			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv16			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv17			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv18			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv19			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv20			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv21			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv22			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv23			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv24			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv25			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv26			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv27			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv28			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv29			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv30			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv31			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv32			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv33			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv34			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv35			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv36			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv37			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv38			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv39			wildcard_utf16
-TBL	tbl2.pak	*	New Growth Box Lv40			wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv6		新成長禮包 Lv6	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv7		新成長禮包 Lv7	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv8		新成長禮包 Lv8	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv9		新成長禮包 Lv9	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv10		新成長禮包 Lv10	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv11		新成長禮包 Lv11	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv12		新成長禮包 Lv12	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv13		新成長禮包 Lv13	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv14		新成長禮包 Lv14	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv15		新成長禮包 Lv15	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv16		新成長禮包 Lv16	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv17		新成長禮包 Lv17	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv18		新成長禮包 Lv18	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv19		新成長禮包 Lv19	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv20		新成長禮包 Lv20	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv21		新成長禮包 Lv21	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv22		新成長禮包 Lv22	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv23		新成長禮包 Lv23	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv24		新成長禮包 Lv24	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv25		新成長禮包 Lv25	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv26		新成長禮包 Lv26	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv27		新成長禮包 Lv27	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv28		新成長禮包 Lv28	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv29		新成長禮包 Lv29	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv30		新成長禮包 Lv30	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv31		新成長禮包 Lv31	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv32		新成長禮包 Lv32	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv33		新成長禮包 Lv33	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv34		新成長禮包 Lv34	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv35		新成長禮包 Lv35	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv36		新成長禮包 Lv36	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv37		新成長禮包 Lv37	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv38		新成長禮包 Lv38	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv39		新成長禮包 Lv39	wildcard_utf16
+TBL	tbl2.pak	*	New Growth Box Lv40		新成長禮包 Lv40	wildcard_utf16
 TBL	tbl2.pak	*	EV Transportation Chest [30 Days]			wildcard_utf16
 TBL	tbl2.pak	*	Certified Silver Coin			wildcard_utf16
 TBL	tbl2.pak	*	Dogi Exchange Coupon		时装交换券	wildcard_utf16
@@ -17804,7 +17804,7 @@ TBL	tbl2.pak	*	70 Anniversary Valentine Chocolate			wildcard_utf16
 TBL	tbl2.pak	*	EV Vitality Potion			wildcard_utf16
 TBL	tbl2.pak	*	EV Regeneration Potion			wildcard_utf16
 TBL	tbl2.pak	*	Golden Chest Key		黄金胸甲钥匙	wildcard_utf16
-TBL	tbl2.pak	*	Platinum Chest Key			wildcard_utf16
+TBL	tbl2.pak	*	Platinum Chest Key		白金箱鑰匙	wildcard_utf16
 TBL	tbl2.pak	*	Secret EXP Boost [2 Hours]			wildcard_utf16
 TBL	tbl2.pak	*	EV General EXP Boost [2 Hours]			wildcard_utf16
 TBL	tbl2.pak	*	EV Super Saiyan Potion [Martial Artist]		EV超级赛亚人药水[武道家]	wildcard_utf16
@@ -17946,30 +17946,30 @@ TBL	tbl2.pak	*	Martial Artist Skills Capsule		武道家 Skills Capsule	wildcard_
 TBL	tbl2.pak	*	Spiritualist Skills Capsule		气功师 Skills Capsule	wildcard_utf16
 TBL	tbl2.pak	*	Warrior Skills Capsule		那美克战士技能胶囊	wildcard_utf16
 TBL	tbl2.pak	*	Dragon Clan Skills Capsule		那美克龙族 Skills Capsule	wildcard_utf16
-TBL	tbl2.pak	*	Mighty Majin Skills Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Mighty Majin Skills Capsule		強力魔人技能膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Wonder Majin Skills Capsule		意魔人 Skills Capsule	wildcard_utf16
 TBL	tbl2.pak	*	Contains: CC Life Pill M [10x] and CC Magic Pill M [10x]		内含：CC 生命药丸 M ×10 与 CC 魔力药丸 M ×10	wildcard_utf16
 TBL	tbl2.pak	*	U30 Upgrade Stones Capsule (5 each)		U30 強化石膠囊（各 5）	wildcard_utf16
-TBL	tbl2.pak	*	Flying Squirrel Jet Capsule [30 Days]			wildcard_utf16
+TBL	tbl2.pak	*	Flying Squirrel Jet Capsule [30 Days]		舞空松鼠噴射膠囊［30 天］	wildcard_utf16
 TBL	tbl2.pak	*	Contains: CC Life Pill L [20x] and CC Magic Pill L [20x]		内含：CC 生命药丸 L ×20 与 CC 魔力药丸 L ×20	wildcard_utf16
 TBL	tbl2.pak	*	Flame Rhino Jet Capsule			wildcard_utf16
 TBL	tbl2.pak	*	U30 Upgrade Stones Capsule (x10)		U30 強化石膠囊（×10）	wildcard_utf16
 TBL	tbl2.pak	*	CC Life Pill Capsule (x100)			wildcard_utf16
 TBL	tbl2.pak	*	CC Magic Pill Capsule (x100)			wildcard_utf16
-TBL	tbl2.pak	*	HL Capsule Kit Z20 Pack			wildcard_utf16
-TBL	tbl2.pak	*	HL Capsule Kit Z24 Pack			wildcard_utf16
-TBL	tbl2.pak	*	HL Capsule Kit Z28 Pack			wildcard_utf16
-TBL	tbl2.pak	*	HL Capsule Kit Z32 Pack			wildcard_utf16
-TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 2			wildcard_utf16
-TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 7			wildcard_utf16
-TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 12			wildcard_utf16
-TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 15			wildcard_utf16
-TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 18			wildcard_utf16
-TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 21			wildcard_utf16
-TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 23			wildcard_utf16
-TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 25			wildcard_utf16
-TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 27			wildcard_utf16
-TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 30			wildcard_utf16
+TBL	tbl2.pak	*	HL Capsule Kit Z20 Pack		HL 膠囊套組 Z20 包	wildcard_utf16
+TBL	tbl2.pak	*	HL Capsule Kit Z24 Pack		HL 膠囊套組 Z24 包	wildcard_utf16
+TBL	tbl2.pak	*	HL Capsule Kit Z28 Pack		HL 膠囊套組 Z28 包	wildcard_utf16
+TBL	tbl2.pak	*	HL Capsule Kit Z32 Pack		HL 膠囊套組 Z32 包	wildcard_utf16
+TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 2		惡作劇幽靈禮物箱 LV 2	wildcard_utf16
+TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 7		惡作劇幽靈禮物箱 LV 7	wildcard_utf16
+TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 12		惡作劇幽靈禮物箱 LV 12	wildcard_utf16
+TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 15		惡作劇幽靈禮物箱 LV 15	wildcard_utf16
+TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 18		惡作劇幽靈禮物箱 LV 18	wildcard_utf16
+TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 21		惡作劇幽靈禮物箱 LV 21	wildcard_utf16
+TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 23		惡作劇幽靈禮物箱 LV 23	wildcard_utf16
+TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 25		惡作劇幽靈禮物箱 LV 25	wildcard_utf16
+TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 27		惡作劇幽靈禮物箱 LV 27	wildcard_utf16
+TBL	tbl2.pak	*	Mischievous Ghost Gift Box LV 30		惡作劇幽靈禮物箱 LV 30	wildcard_utf16
 TBL	tbl2.pak	*	Namekian Gift Box Lv2		那美克星人礼物盒Lv2	wildcard_utf16
 TBL	tbl2.pak	*	Namekian Gift Box Lv7		那美克星人礼物盒Lv7	wildcard_utf16
 TBL	tbl2.pak	*	Namekian Gift Box Lv12		那美克星人礼物盒Lv12	wildcard_utf16
@@ -18043,7 +18043,7 @@ TBL	tbl2.pak	*	EV U50 Random Upgrade Stone Capsule			wildcard_utf16
 TBL	tbl2.pak	*	EV U53 Random Upgrade Stone Capsule			wildcard_utf16
 TBL	tbl2.pak	*	EV U55 Random Upgrade Stone Capsule			wildcard_utf16
 TBL	tbl2.pak	*	EV Recovery Potion Random Capsule			wildcard_utf16
-TBL	tbl2.pak	*	Recovery Potion Random Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Recovery Potion Random Capsule		恢復藥水隨機膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Material Reminder Box		Material Reminder 礼包	wildcard_utf16
 TBL	tbl2.pak	*	U50 Advanced Weapon Upgrade Stone Capsule [x30]		U50 高级武器强化石胶囊 ×30	wildcard_utf16
 TBL	tbl2.pak	*	U53 Random Advanced Upgrade Stone Capsule [x30]		U53 随机高级强化石胶囊 ×30	wildcard_utf16
@@ -18129,7 +18129,7 @@ TBL	tbl2.pak	*	Valentine's Chocolate, 70-Year Vintage [5 BOXES]		情人節巧克
 TBL	tbl2.pak	*	EV Dragon Ball Treasure Chest (Random)			wildcard_utf16
 TBL	tbl2.pak	*	Support-Type Pet Spawn Pack			wildcard_utf16
 TBL	tbl2.pak	*	Krillin Costume Capsule		克林服装胶囊	wildcard_utf16
-TBL	tbl2.pak	*	Great Ape Costume Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Great Ape Costume Capsule		大猿造型膠囊	wildcard_utf16
 TBL	tbl2.pak	*	EV Power Potion Treasure Chest		EV力量药水宝箱	wildcard_utf16
 TBL	tbl2.pak	*	EV Legendary Costume Ball Upper-Grade Treasure Chest		活动传说服装球高级-等级宝箱	wildcard_utf16
 TBL	tbl2.pak	*	EV Premium Costume Ball Upper-Grade Treasure Chest		活动高级服装球高级-等级宝箱	wildcard_utf16
@@ -18139,7 +18139,7 @@ TBL	tbl2.pak	*	EV Premium Costume Ball Lower-Grade Treasure Chest		活动高级�
 TBL	tbl2.pak	*	EV Capsule Box Z32 [7 Days] Treasure Chest		活动胶囊礼包 Z32［7 天］宝箱	wildcard_utf16
 TBL	tbl2.pak	*	Sonny Scott (Gold) Compensation Capsule		索尼·斯科特（金）補償膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Sonny Scott (Silver) Compensation Capsule			wildcard_utf16
-TBL	tbl2.pak	*	Reggae Costume Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Reggae Costume Capsule		雷鬼造型膠囊	wildcard_utf16
 TBL	tbl2.pak	*	CM Knight Costume Capsule			wildcard_utf16
 TBL	tbl2.pak	*	WP Random Material Capsule		WP 隨機材料膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Level 30 Recipe Random Box		Level 30 Recipe Random 礼包	wildcard_utf16
@@ -18493,7 +18493,7 @@ TBL	tbl2.pak	*	Kale Hair			wildcard_utf16
 TBL	tbl2.pak	*	SJ Rose Hair		SJ 玫瑰髮型	wildcard_utf16
 TBL	tbl2.pak	*	Baby Goku Space Pod			wildcard_utf16
 TBL	tbl2.pak	*	Beerus Assistant			wildcard_utf16
-TBL	tbl2.pak	*	Giant Dragon Ball Radar			wildcard_utf16
+TBL	tbl2.pak	*	Giant Dragon Ball Radar		巨型龍珠雷達	wildcard_utf16
 TBL	tbl2.pak	*	Future Trunks Hair		未來特南克斯髮型	wildcard_utf16
 TBL	tbl2.pak	*	Dogi Preview		时装预览	wildcard_utf16
 TBL	tbl2.pak	*	Shenron Wings (Grey)		神龍翼（灰）	wildcard_utf16
@@ -18932,7 +18932,7 @@ TBL	tbl2.pak	*	Bardock Pet		巴达克宠物	wildcard_utf16
 TBL	tbl2.pak	*	Bardock Pet (Super Saiyan)		巴达克宠物(超级赛亚人)	wildcard_utf16
 TBL	tbl2.pak	*	Bardock Pet (Super Saiyan 3)		巴达克宠物(超级赛亚人3)	wildcard_utf16
 TBL	tbl2.pak	*	Spinel Dragon Soul		尖晶石龍魂	wildcard_utf16
-TBL	tbl2.pak	*	Ice Turquoise Dragon Soul			wildcard_utf16
+TBL	tbl2.pak	*	Ice Turquoise Dragon Soul		冰綠松石龍魂	wildcard_utf16
 TBL	tbl2.pak	*	Fluorite Dragon Soul			wildcard_utf16
 TBL	tbl2.pak	*	Universal Dragon Soul		宇宙龍魂	wildcard_utf16
 TBL	tbl2.pak	*	Emerald Dragon Soul			wildcard_utf16
@@ -18948,7 +18948,7 @@ TBL	tbl2.pak	*	Human Newbie CC Boots			wildcard_utf16
 TBL	tbl2.pak	*	Legendary Super Saiyan Effect Title		传说超级赛亚人特效称号	wildcard_utf16
 TBL	tbl2.pak	*	Newbie Box		新手礼包	wildcard_utf16
 TBL	tbl2.pak	*	15 Armor Coupon Lv30 [7 Days]		15盔甲券Lv30[7天]	wildcard_utf16
-TBL	tbl2.pak	*	Namek Newbie CC Jacket			wildcard_utf16
+TBL	tbl2.pak	*	Namek Newbie CC Jacket		那美克新手 CC 外套	wildcard_utf16
 TBL	tbl2.pak	*	Namek Newbie CC Pants		那美克新手 CC 下裝	wildcard_utf16
 TBL	tbl2.pak	*	Namek Newbie CC Boots			wildcard_utf16
 TBL	tbl2.pak	*	Majin Newbie CC Jacket			wildcard_utf16
@@ -19460,7 +19460,7 @@ TBL	tbl2.pak	*	Flashing Grasshopper			wildcard_utf16
 TBL	tbl2.pak	*	Lost Grasshopper			wildcard_utf16
 TBL	tbl2.pak	*	Sampling Grasshopper			wildcard_utf16
 TBL	tbl2.pak	*	Stretched Grasshopper			wildcard_utf16
-TBL	tbl2.pak	*	Flying Grasshopper			wildcard_utf16
+TBL	tbl2.pak	*	Flying Grasshopper		舞空蚱蜢	wildcard_utf16
 TBL	tbl2.pak	*	Experimental Masked Man			wildcard_utf16
 TBL	tbl2.pak	*	Metal Grasshopper Snodgred			wildcard_utf16
 TBL	tbl2.pak	*	Giant Bat-Grasshopper			wildcard_utf16
@@ -19641,7 +19641,7 @@ TBL	tbl2.pak	*	Runaway Civil Robot			wildcard_utf16
 TBL	tbl2.pak	*	Mining Robot			wildcard_utf16
 TBL	tbl2.pak	*	Runaway Robot Disintegrator			wildcard_utf16
 TBL	tbl2.pak	*	Old Robot Disintegrator			wildcard_utf16
-TBL	tbl2.pak	*	Old Capsule Excavating Robot			wildcard_utf16
+TBL	tbl2.pak	*	Old Capsule Excavating Robot		舊膠囊挖掘機器人	wildcard_utf16
 TBL	tbl2.pak	*	Waterway Security Guard Robot			wildcard_utf16
 TBL	tbl2.pak	*	Resource Gathering Robot			wildcard_utf16
 TBL	tbl2.pak	*	Battle Robot		战斗机器人	wildcard_utf16
@@ -19689,7 +19689,7 @@ TBL	tbl2.pak	*	Cattle Dragon Frog			wildcard_utf16
 TBL	tbl2.pak	*	Huge Dragon Frog			wildcard_utf16
 TBL	tbl2.pak	*	King Dragon Frog		王龙青蛙	wildcard_utf16
 TBL	tbl2.pak	*	Strange Dragon Frog			wildcard_utf16
-TBL	tbl2.pak	*	Long Tongue Dragon Frog			wildcard_utf16
+TBL	tbl2.pak	*	Long Tongue Dragon Frog		長舌龍蛙	wildcard_utf16
 TBL	tbl2.pak	*	Strong Dragon Frog		强力龙青蛙	wildcard_utf16
 TBL	tbl2.pak	*	Dolphin Frog			wildcard_utf16
 TBL	tbl2.pak	*	RP Special Frog		RP特殊青蛙	wildcard_utf16
@@ -19803,8 +19803,8 @@ TBL	tbl2.pak	*	Prince Cuckoo Chicken			wildcard_utf16
 TBL	tbl2.pak	*	Coke Turkey			wildcard_utf16
 TBL	tbl2.pak	*	Wild Turkey		野火雞	wildcard_utf16
 TBL	tbl2.pak	*	Mr. Chicken			wildcard_utf16
-TBL	tbl2.pak	*	Perry Turkey			wildcard_utf16
-TBL	tbl2.pak	*	Kingbune Turkey			wildcard_utf16
+TBL	tbl2.pak	*	Perry Turkey		佩里火雞	wildcard_utf16
+TBL	tbl2.pak	*	Kingbune Turkey		王骨火雞	wildcard_utf16
 TBL	tbl2.pak	*	Toughbune Turkey		硬骨火雞	wildcard_utf16
 TBL	tbl2.pak	*	Camel Bird			wildcard_utf16
 TBL	tbl2.pak	*	Giant Camel Bird			wildcard_utf16
@@ -20061,14 +20061,14 @@ TBL	tbl2.pak	*	Hard Bebe Devilman			wildcard_utf16
 TBL	tbl2.pak	*	Angel Bebe Devilman			wildcard_utf16
 TBL	tbl2.pak	*	Tamtam Child Dragon		譚譚幼龍	wildcard_utf16
 TBL	tbl2.pak	*	Child Dragon			wildcard_utf16
-TBL	tbl2.pak	*	Poko Child Dragon			wildcard_utf16
+TBL	tbl2.pak	*	Poko Child Dragon		波可幼龍	wildcard_utf16
 TBL	tbl2.pak	*	Ace Child Dragon			wildcard_utf16
 TBL	tbl2.pak	*	Evil Dragon of Trials			wildcard_utf16
-TBL	tbl2.pak	*	Minimum Dragon			wildcard_utf16
+TBL	tbl2.pak	*	Minimum Dragon		迷你之龍	wildcard_utf16
 TBL	tbl2.pak	*	Ancient Drake			wildcard_utf16
 TBL	tbl2.pak	*	Valley Dragon		山谷之龍	wildcard_utf16
 TBL	tbl2.pak	*	Divine Water Guard Dragon			wildcard_utf16
-TBL	tbl2.pak	*	Guardian Dragon Hatchling			wildcard_utf16
+TBL	tbl2.pak	*	Guardian Dragon Hatchling		守護龍幼體	wildcard_utf16
 TBL	tbl2.pak	*	Ancient Child Dragon			wildcard_utf16
 TBL	tbl2.pak	*	J&Divine Water Guard Dragon for Training			wildcard_utf16
 TBL	tbl2.pak	*	Ancient Magic Dragon		古代魔法龙	wildcard_utf16
@@ -20087,7 +20087,7 @@ TBL	tbl2.pak	*	Royal Squirrel			wildcard_utf16
 TBL	tbl2.pak	*	Dera Sasabi			wildcard_utf16
 TBL	tbl2.pak	*	Dark Sasabi			wildcard_utf16
 TBL	tbl2.pak	*	Max Sasabi			wildcard_utf16
-TBL	tbl2.pak	*	Korin's Hallucination			wildcard_utf16
+TBL	tbl2.pak	*	Korin's Hallucination		花梨的幻覺	wildcard_utf16
 TBL	tbl2.pak	*	Fan Saibaman		扇栽培人	wildcard_utf16
 TBL	tbl2.pak	*	Wind Saibaman		风栽培人	wildcard_utf16
 TBL	tbl2.pak	*	Chloroplast Saibaman			wildcard_utf16
@@ -20304,7 +20304,7 @@ TBL	tbl2.pak	*	Shuneshune			wildcard_utf16
 TBL	tbl2.pak	*	Harutz			wildcard_utf16
 TBL	tbl2.pak	*	Harutz Mini			wildcard_utf16
 TBL	tbl2.pak	*	Harutz Minimini			wildcard_utf16
-TBL	tbl2.pak	*	Mai Stone Statue			wildcard_utf16
+TBL	tbl2.pak	*	Mai Stone Statue		舞石像	wildcard_utf16
 TBL	tbl2.pak	*	OK Robot		OK机器人	wildcard_utf16
 TBL	tbl2.pak	*	Nuisance Robot			wildcard_utf16
 TBL	tbl2.pak	*	OK Patrol Robot			wildcard_utf16
@@ -20368,7 +20368,7 @@ TBL	tbl2.pak	*	Confused Guard Robot			wildcard_utf16
 TBL	tbl2.pak	*	Patrol Guard Robot			wildcard_utf16
 TBL	tbl2.pak	*	Broken Shooting Robot			wildcard_utf16
 TBL	tbl2.pak	*	Dirty Smelly Kiri Robot			wildcard_utf16
-TBL	tbl2.pak	*	Monkey Robot			wildcard_utf16
+TBL	tbl2.pak	*	Monkey Robot		猴子機器人	wildcard_utf16
 TBL	tbl2.pak	*	Ghost Robot		幽灵机器人	wildcard_utf16
 TBL	tbl2.pak	*	R-Type Oil Licker Robot			wildcard_utf16
 TBL	tbl2.pak	*	Overseer Robot			wildcard_utf16
@@ -20474,7 +20474,7 @@ TBL	tbl2.pak	*	Rifleman for Experiment			wildcard_utf16
 TBL	tbl2.pak	*	Special Force Wallus			wildcard_utf16
 TBL	tbl2.pak	*	Guriguri First Rifleman			wildcard_utf16
 TBL	tbl2.pak	*	Underground Base Defender			wildcard_utf16
-TBL	tbl2.pak	*	Pilaf Stone Statue			wildcard_utf16
+TBL	tbl2.pak	*	Pilaf Stone Statue		皮拉夫石像	wildcard_utf16
 TBL	tbl2.pak	*	Bear Soldier			wildcard_utf16
 TBL	tbl2.pak	*	Aggravated Bear Soldier			wildcard_utf16
 TBL	tbl2.pak	*	Bear Guerrilla Unit			wildcard_utf16
@@ -20561,7 +20561,7 @@ TBL	tbl2.pak	*	Dispatched Supervising Robot			wildcard_utf16
 TBL	tbl2.pak	*	Broken Remodeled Pilaf Machine			wildcard_utf16
 TBL	tbl2.pak	*	Guardian Pilaf Machine			wildcard_utf16
 TBL	tbl2.pak	*	Traiak			wildcard_utf16
-TBL	tbl2.pak	*	Osoro Flying Dinosaur			wildcard_utf16
+TBL	tbl2.pak	*	Osoro Flying Dinosaur		奧索羅舞空恐龍	wildcard_utf16
 TBL	tbl2.pak	*	Child Saibaman			wildcard_utf16
 TBL	tbl2.pak	*	Ax Child Saibaman			wildcard_utf16
 TBL	tbl2.pak	*	Small Juicy Saibaman			wildcard_utf16
@@ -20605,7 +20605,7 @@ TBL	tbl2.pak	*	Reginean			wildcard_utf16
 TBL	tbl2.pak	*	Special Reginean			wildcard_utf16
 TBL	tbl2.pak	*	Suspicious Alien		可疑异星	wildcard_utf16
 TBL	tbl2.pak	*	Reginean Occupation Force			wildcard_utf16
-TBL	tbl2.pak	*	Frieza's Army Signalman			wildcard_utf16
+TBL	tbl2.pak	*	Frieza's Army Signalman		弗利薩軍通信兵	wildcard_utf16
 TBL	tbl2.pak	*	Reginean Bomber			wildcard_utf16
 TBL	tbl2.pak	*	Field Clinic Guard			wildcard_utf16
 TBL	tbl2.pak	*	Reginean Defense Unit			wildcard_utf16
@@ -20709,7 +20709,7 @@ TBL	tbl2.pak	*	Data Management Soldier		数据管理士兵	wildcard_utf16
 TBL	tbl2.pak	*	Guard Unit Warrior		守卫部队战士	wildcard_utf16
 TBL	tbl2.pak	*	Brainwashed Assassin			wildcard_utf16
 TBL	tbl2.pak	*	Arthritis Fighter			wildcard_utf16
-TBL	tbl2.pak	*	Frieza's Army Secret Police			wildcard_utf16
+TBL	tbl2.pak	*	Frieza's Army Secret Police		弗利薩軍秘密警察	wildcard_utf16
 TBL	tbl2.pak	*	Elite Kettlean			wildcard_utf16
 TBL	tbl2.pak	*	Maintenance-Charging Android			wildcard_utf16
 TBL	tbl2.pak	*	Kettlean Ultrawave Manager			wildcard_utf16
@@ -20827,7 +20827,7 @@ TBL	tbl2.pak	*	Wonder Svaile			wildcard_utf16
 TBL	tbl2.pak	*	Black Svaile			wildcard_utf16
 TBL	tbl2.pak	*	Punch Machine			wildcard_utf16
 TBL	tbl2.pak	*	Blood Machine Bee			wildcard_utf16
-TBL	tbl2.pak	*	Grandpa Gohan			wildcard_utf16
+TBL	tbl2.pak	*	Grandpa Gohan		爺爺悟飯	wildcard_utf16
 TBL	tbl2.pak	*	Martial Artist Examiner		武道家 Examiner	wildcard_utf16
 TBL	tbl2.pak	*	Gesstongue			wildcard_utf16
 TBL	tbl2.pak	*	Dotdarisaurs			wildcard_utf16
@@ -21070,11 +21070,11 @@ TBL	tbl2.pak	*	Big Flower Monkey			wildcard_utf16
 TBL	tbl2.pak	*	War Monkey		戰猴	wildcard_utf16
 TBL	tbl2.pak	*	Bula-Li Black Monkey			wildcard_utf16
 TBL	tbl2.pak	*	Sasi-Li Monkey		薩西利猴	wildcard_utf16
-TBL	tbl2.pak	*	Little Baylor Monkey			wildcard_utf16
+TBL	tbl2.pak	*	Little Baylor Monkey		小貝勒猴	wildcard_utf16
 TBL	tbl2.pak	*	Baylor Monkey			wildcard_utf16
 TBL	tbl2.pak	*	Della Baylor Monkey			wildcard_utf16
 TBL	tbl2.pak	*	Coast Devil			wildcard_utf16
-TBL	tbl2.pak	*	Hungry Monkey			wildcard_utf16
+TBL	tbl2.pak	*	Hungry Monkey		飢餓的猴子	wildcard_utf16
 TBL	tbl2.pak	*	Bula-Li Blue Monkey			wildcard_utf16
 TBL	tbl2.pak	*	Wild Monkey		野猴	wildcard_utf16
 TBL	tbl2.pak	*	Bristol Flower Monkey			wildcard_utf16
@@ -21175,7 +21175,7 @@ TBL	tbl2.pak	*	EP Absorbing Stat			wildcard_utf16
 TBL	tbl2.pak	*	LP Absorbing Stat			wildcard_utf16
 TBL	tbl2.pak	*	Mega Dodon-Ray Stat Mob			wildcard_utf16
 TBL	tbl2.pak	*	Giran Android			wildcard_utf16
-TBL	tbl2.pak	*	Renovated Gigantic Flame Dragon			wildcard_utf16
+TBL	tbl2.pak	*	Renovated Gigantic Flame Dragon		整修巨焰之龍	wildcard_utf16
 TBL	tbl2.pak	*	Super Ackman			wildcard_utf16
 TBL	tbl2.pak	*	Badluck Ackman			wildcard_utf16
 TBL	tbl2.pak	*	Extreme Ackman			wildcard_utf16
@@ -21232,8 +21232,8 @@ TBL	tbl2.pak	*	Transport Manager Long			wildcard_utf16
 TBL	tbl2.pak	*	Boulean Engineer			wildcard_utf16
 TBL	tbl2.pak	*	Shield Namek		盾那美克	wildcard_utf16
 TBL	tbl2.pak	*	Bitt Dragon			wildcard_utf16
-TBL	tbl2.pak	*	Gigantic Flame Dragon			wildcard_utf16
-TBL	tbl2.pak	*	Lord Dragon			wildcard_utf16
+TBL	tbl2.pak	*	Gigantic Flame Dragon		巨焰之龍	wildcard_utf16
+TBL	tbl2.pak	*	Lord Dragon		龍領主	wildcard_utf16
 TBL	tbl2.pak	*	Pink Dragon		粉色龙	wildcard_utf16
 TBL	tbl2.pak	*	Tube Dragon		管狀之龍	wildcard_utf16
 TBL	tbl2.pak	*	Urn of Fate			wildcard_utf16
@@ -21245,7 +21245,7 @@ TBL	tbl2.pak	*	Butt Betugiman			wildcard_utf16
 TBL	tbl2.pak	*	Lightning Bean Saibaman			wildcard_utf16
 TBL	tbl2.pak	*	Spotted Bean Fly Saibaman			wildcard_utf16
 TBL	tbl2.pak	*	Coconut Bean Fly Saibaman			wildcard_utf16
-TBL	tbl2.pak	*	Flying-Fish Bean Saibaman			wildcard_utf16
+TBL	tbl2.pak	*	Flying-Fish Bean Saibaman		飛魚豆菜花人	wildcard_utf16
 TBL	tbl2.pak	*	Fin Boong Boong Saibaman			wildcard_utf16
 TBL	tbl2.pak	*	Buonean Water-Transporter			wildcard_utf16
 TBL	tbl2.pak	*	Hovering Army of Frieza		悬浮的弗利萨军	wildcard_utf16
@@ -21302,11 +21302,11 @@ TBL	tbl2.pak	*	Nidhogg			wildcard_utf16
 TBL	tbl2.pak	*	Pure Majin-X		纯粹魔人-X	wildcard_utf16
 TBL	tbl2.pak	*	Captain Bacterian			wildcard_utf16
 TBL	tbl2.pak	*	Long Caracalla			wildcard_utf16
-TBL	tbl2.pak	*	Proud Dragon			wildcard_utf16
-TBL	tbl2.pak	*	Papa Dragon			wildcard_utf16
+TBL	tbl2.pak	*	Proud Dragon		驕傲之龍	wildcard_utf16
+TBL	tbl2.pak	*	Papa Dragon		爸爸之龍	wildcard_utf16
 TBL	tbl2.pak	*	Attractive Dragon			wildcard_utf16
 TBL	tbl2.pak	*	Chubby Dragon			wildcard_utf16
-TBL	tbl2.pak	*	Lava Dragon			wildcard_utf16
+TBL	tbl2.pak	*	Lava Dragon		熔岩之龍	wildcard_utf16
 TBL	tbl2.pak	*	Catfish Dragon			wildcard_utf16
 TBL	tbl2.pak	*	Black-White Catfish Dragon			wildcard_utf16
 TBL	tbl2.pak	*	Acid Light			wildcard_utf16
@@ -21347,7 +21347,7 @@ TBL	tbl2.pak	*	Angry Lion Jiawu			wildcard_utf16
 TBL	tbl2.pak	*	Angry Beast			wildcard_utf16
 TBL	tbl2.pak	*	Blue Beard Lion			wildcard_utf16
 TBL	tbl2.pak	*	Sharp Beast			wildcard_utf16
-TBL	tbl2.pak	*	Hungry Giran Dragon			wildcard_utf16
+TBL	tbl2.pak	*	Hungry Giran Dragon		飢餓的基然之龍	wildcard_utf16
 TBL	tbl2.pak	*	Poisonous Mushroom Beetle			wildcard_utf16
 TBL	tbl2.pak	*	Frieza Assault Robot		弗利萨突击机器人	wildcard_utf16
 TBL	tbl2.pak	*	Frieza Combat Robot		弗利萨战斗机器人	wildcard_utf16
@@ -21383,7 +21383,7 @@ TBL	tbl2.pak	*	Boxing Ferret			wildcard_utf16
 TBL	tbl2.pak	*	Evil Weasel			wildcard_utf16
 TBL	tbl2.pak	*	Steel Horn Weasel			wildcard_utf16
 TBL	tbl2.pak	*	Long-Iron Horn Weasel			wildcard_utf16
-TBL	tbl2.pak	*	Red Boxing Raccoon			wildcard_utf16
+TBL	tbl2.pak	*	Red Boxing Raccoon		紅拳浣熊	wildcard_utf16
 TBL	tbl2.pak	*	Gunship Pracpelac			wildcard_utf16
 TBL	tbl2.pak	*	Swordsman Stick		剑术家棍	wildcard_utf16
 TBL	tbl2.pak	*	Swordsman Boots			wildcard_utf16
@@ -21404,9 +21404,9 @@ TBL	tbl2.pak	*	Giraffe Devil Pirate			wildcard_utf16
 TBL	tbl2.pak	*	Tattered Giraffe Devil Pirate			wildcard_utf16
 TBL	tbl2.pak	*	Giraffe Official Devil Pirate			wildcard_utf16
 TBL	tbl2.pak	*	Giraffe Chief Devil Pirate			wildcard_utf16
-TBL	tbl2.pak	*	Fury Child Dragon			wildcard_utf16
+TBL	tbl2.pak	*	Fury Child Dragon		憤怒幼龍	wildcard_utf16
 TBL	tbl2.pak	*	Saw-Tooth Child Dragon		鋸齒幼龍	wildcard_utf16
-TBL	tbl2.pak	*	Iron-Horn Child Dragon			wildcard_utf16
+TBL	tbl2.pak	*	Iron-Horn Child Dragon		鐵角幼龍	wildcard_utf16
 TBL	tbl2.pak	*	Dragon Volunteer Service			wildcard_utf16
 TBL	tbl2.pak	*	Wild Keerlanduo			wildcard_utf16
 TBL	tbl2.pak	*	Nightmare Korando			wildcard_utf16
@@ -21445,7 +21445,7 @@ TBL	tbl2.pak	*	Narak Spy Lute			wildcard_utf16
 TBL	tbl2.pak	*	Narak Butcher			wildcard_utf16
 TBL	tbl2.pak	*	Gaizal			wildcard_utf16
 TBL	tbl2.pak	*	Narak Malice Warrior			wildcard_utf16
-TBL	tbl2.pak	*	Narak Assassin Guild			wildcard_utf16
+TBL	tbl2.pak	*	Narak Assassin Guild		納拉克刺客公會	wildcard_utf16
 TBL	tbl2.pak	*	Stealth Evil Warrior			wildcard_utf16
 TBL	tbl2.pak	*	Narak Dark Warrior		那拉克黑暗战士	wildcard_utf16
 TBL	tbl2.pak	*	Narak Defense Assistant			wildcard_utf16
@@ -21627,8 +21627,8 @@ TBL	tbl2.pak	*	Ferocious Sea Crocodile			wildcard_utf16
 TBL	tbl2.pak	*	Aral Crocodile			wildcard_utf16
 TBL	tbl2.pak	*	Purple Sea Crocodile			wildcard_utf16
 TBL	tbl2.pak	*	Old Sea Crocodile			wildcard_utf16
-TBL	tbl2.pak	*	Injured Dragon			wildcard_utf16
-TBL	tbl2.pak	*	Injured Black Dragon			wildcard_utf16
+TBL	tbl2.pak	*	Injured Dragon		受傷的龍	wildcard_utf16
+TBL	tbl2.pak	*	Injured Black Dragon		受傷的黑龍	wildcard_utf16
 TBL	tbl2.pak	*	Mira's Army Treatment Robot		米拉军治疗机器人	wildcard_utf16
 TBL	tbl2.pak	*	Mira's Army Supply Robot		米拉军补给机器人	wildcard_utf16
 TBL	tbl2.pak	*	Snail Shell Horn			wildcard_utf16
@@ -21705,8 +21705,8 @@ TBL	tbl2.pak	*	Newborn Ghost Wolf			wildcard_utf16
 TBL	tbl2.pak	*	Rotting Wolf		腐朽狼	wildcard_utf16
 TBL	tbl2.pak	*	Demon Pirate Wolf		恶魔海盗狼	wildcard_utf16
 TBL	tbl2.pak	*	Shadow Wolf		暗影狼	wildcard_utf16
-TBL	tbl2.pak	*	Papaya Monkey			wildcard_utf16
-TBL	tbl2.pak	*	Mango Monkey			wildcard_utf16
+TBL	tbl2.pak	*	Papaya Monkey		木瓜猴	wildcard_utf16
+TBL	tbl2.pak	*	Mango Monkey		芒果猴	wildcard_utf16
 TBL	tbl2.pak	*	Nightmare General			wildcard_utf16
 TBL	tbl2.pak	*	Great General Lemur			wildcard_utf16
 TBL	tbl2.pak	*	Coconut Monkey			wildcard_utf16
@@ -21806,12 +21806,12 @@ TBL	tbl2.pak	*	Devil General Subordinate			wildcard_utf16
 TBL	tbl2.pak	*	Detheka Mine Contaminated Robot			wildcard_utf16
 TBL	tbl2.pak	*	Rust Ziriziri			wildcard_utf16
 TBL	tbl2.pak	*	Construction Welding Robot			wildcard_utf16
-TBL	tbl2.pak	*	Pre-Summoned Devil Dragon			wildcard_utf16
-TBL	tbl2.pak	*	Just-Summoned Devil Dragon			wildcard_utf16
+TBL	tbl2.pak	*	Pre-Summoned Devil Dragon		預召喚惡魔之龍	wildcard_utf16
+TBL	tbl2.pak	*	Just-Summoned Devil Dragon		剛召喚的惡魔之龍	wildcard_utf16
 TBL	tbl2.pak	*	Bibra's Wind Brother			wildcard_utf16
 TBL	tbl2.pak	*	Mr. Poko		先生. 波可	wildcard_utf16
 TBL	tbl2.pak	*	Ancient Time-Summoned Devil Dragon			wildcard_utf16
-TBL	tbl2.pak	*	Recently-Summoned Devil Dragon			wildcard_utf16
+TBL	tbl2.pak	*	Recently-Summoned Devil Dragon		剛召喚的惡魔之龍	wildcard_utf16
 TBL	tbl2.pak	*	Teremin			wildcard_utf16
 TBL	tbl2.pak	*	Guarding Pilaf Machine			wildcard_utf16
 TBL	tbl2.pak	*	Great Shell People			wildcard_utf16
@@ -21843,7 +21843,7 @@ TBL	tbl2.pak	*	Mira's Training Drill Sergeant			wildcard_utf16
 TBL	tbl2.pak	*	Brainwashed Explosive Bean Saibaman			wildcard_utf16
 TBL	tbl2.pak	*	Time Crystal		时间水晶	wildcard_utf16
 TBL	tbl2.pak	*	Flying Bomb		飞行炸弹	wildcard_utf16
-TBL	tbl2.pak	*	Flying Warhead			wildcard_utf16
+TBL	tbl2.pak	*	Flying Warhead		舞空彈頭	wildcard_utf16
 TBL	tbl2.pak	*	Brainwashed Buonean Cutter			wildcard_utf16
 TBL	tbl2.pak	*	Brainwashed Attack Assistant			wildcard_utf16
 TBL	tbl2.pak	*	Healing Eye		治疗眼	wildcard_utf16
@@ -21911,15 +21911,15 @@ TBL	tbl2.pak	*	Guard Robot Alerty X			wildcard_utf16
 TBL	tbl2.pak	*	Guard Robot Alerty			wildcard_utf16
 TBL	tbl2.pak	*	Guard Robot Alerty S			wildcard_utf16
 TBL	tbl2.pak	*	Frieza's Field Robot		弗利萨的野外机器人	wildcard_utf16
-TBL	tbl2.pak	*	Frieza's Guerrilla Robot			wildcard_utf16
+TBL	tbl2.pak	*	Frieza's Guerrilla Robot		弗利薩游擊機器人	wildcard_utf16
 TBL	tbl2.pak	*	Patrol Robot Securit			wildcard_utf16
 TBL	tbl2.pak	*	Patrol Robot Securit S			wildcard_utf16
 TBL	tbl2.pak	*	Frieza's Intel Supply Soldier		弗利萨情报补给兵	wildcard_utf16
 TBL	tbl2.pak	*	Frieza's Field Batter Signalman		弗利萨野战信号兵	wildcard_utf16
-TBL	tbl2.pak	*	Frieza's Guerrilla Scout			wildcard_utf16
+TBL	tbl2.pak	*	Frieza's Guerrilla Scout		弗利薩游擊偵察兵	wildcard_utf16
 TBL	tbl2.pak	*	Frieza's Intel Battler		弗利萨情报战士	wildcard_utf16
 TBL	tbl2.pak	*	Frieza's Intel Signalman		弗利萨情报信号兵	wildcard_utf16
-TBL	tbl2.pak	*	Frieza's Field Battle Guerrilla			wildcard_utf16
+TBL	tbl2.pak	*	Frieza's Field Battle Guerrilla		弗利薩野戰游擊隊	wildcard_utf16
 TBL	tbl2.pak	*	Frieza's Guerrilla Medic		弗利萨游击医疗兵	wildcard_utf16
 TBL	tbl2.pak	*	Frieza's Intel Patrol		弗利萨情报巡逻兵	wildcard_utf16
 TBL	tbl2.pak	*	Frieza's Guerrilla Battler		弗利萨游击战士	wildcard_utf16
@@ -21976,7 +21976,7 @@ TBL	tbl2.pak	*	Son Gohan		孫悟飯	wildcard_utf16
 TBL	tbl2.pak	*	Hole Lizard			wildcard_utf16
 TBL	tbl2.pak	*	Son of Evil Drum			wildcard_utf16
 TBL	tbl2.pak	*	Son of Evil Tambourine			wildcard_utf16
-TBL	tbl2.pak	*	Piccolo Daimaoh			wildcard_utf16
+TBL	tbl2.pak	*	Piccolo Daimaoh		短笛大魔王	wildcard_utf16
 TBL	tbl2.pak	*	Sword Fish		剑鱼	wildcard_utf16
 TBL	tbl2.pak	*	Indigenous Dog			wildcard_utf16
 TBL	tbl2.pak	*	RR Giraffe			wildcard_utf16
@@ -22040,8 +22040,8 @@ TBL	tbl2.pak	*	Weight Effect 16 (over 150)			wildcard_utf16
 TBL	tbl2.pak	*	Weight Effect 17 (over 150)			wildcard_utf16
 TBL	tbl2.pak	*	Weight Effect 18 (Experience)			wildcard_utf16
 TBL	tbl2.pak	*	UTS Activity Buff			wildcard_utf16
-TBL	tbl2.pak	*	Magical Box's Blessing			wildcard_utf16
-TBL	tbl2.pak	*	Magical Box's Curse			wildcard_utf16
+TBL	tbl2.pak	*	Magical Box's Blessing		魔法箱的祝福	wildcard_utf16
+TBL	tbl2.pak	*	Magical Box's Curse		魔法箱的詛咒	wildcard_utf16
 TBL	tbl2.pak	*	Energy Curse 1LV			wildcard_utf16
 TBL	tbl2.pak	*	Energy Curse 2LV			wildcard_utf16
 TBL	tbl2.pak	*	Energy Curse 3LV			wildcard_utf16
@@ -22087,10 +22087,10 @@ TBL	tbl2.pak	*	Whip Hurricane			wildcard_utf16
 TBL	tbl2.pak	*	Sharp Whip			wildcard_utf16
 TBL	tbl2.pak	*	Ultra-Capacity Energy Bomb			wildcard_utf16
 TBL	tbl2.pak	*	Antenna Light			wildcard_utf16
-TBL	tbl2.pak	*	Flying Smile Kick			wildcard_utf16
+TBL	tbl2.pak	*	Flying Smile Kick		舞空微笑踢	wildcard_utf16
 TBL	tbl2.pak	*	Mono Eye Laser			wildcard_utf16
 TBL	tbl2.pak	*	Rocket Slam			wildcard_utf16
-TBL	tbl2.pak	*	Magical Flying Kick			wildcard_utf16
+TBL	tbl2.pak	*	Magical Flying Kick		魔法舞空踢	wildcard_utf16
 TBL	tbl2.pak	*	Fake Pachosen			wildcard_utf16
 TBL	tbl2.pak	*	Fan Slap			wildcard_utf16
 TBL	tbl2.pak	*	Hedgehog Bomb			wildcard_utf16
@@ -22147,7 +22147,7 @@ TBL	tbl2.pak	*	Absorbing Kiri			wildcard_utf16
 TBL	tbl2.pak	*	Paralysis Ray			wildcard_utf16
 TBL	tbl2.pak	*	Sexy Pose			wildcard_utf16
 TBL	tbl2.pak	*	Emit Magnetic Force			wildcard_utf16
-TBL	tbl2.pak	*	Monkey Tricks			wildcard_utf16
+TBL	tbl2.pak	*	Monkey Tricks		猴子戲法	wildcard_utf16
 TBL	tbl2.pak	*	Explosive Cannon			wildcard_utf16
 TBL	tbl2.pak	*	Explosive Cannon-Vegita			wildcard_utf16
 TBL	tbl2.pak	*	Hammer Assault			wildcard_utf16
@@ -22276,7 +22276,7 @@ TBL	tbl2.pak	*	Iron Headbutt			wildcard_utf16
 TBL	tbl2.pak	*	High Pressure			wildcard_utf16
 TBL	tbl2.pak	*	Earth Separation			wildcard_utf16
 TBL	tbl2.pak	*	Energy Combination Wave			wildcard_utf16
-TBL	tbl2.pak	*	Killer Drunken Skill			wildcard_utf16
+TBL	tbl2.pak	*	Killer Drunken Skill		致命醉拳技能	wildcard_utf16
 TBL	tbl2.pak	*	X-Word Cut			wildcard_utf16
 TBL	tbl2.pak	*	Gastric Spray			wildcard_utf16
 TBL	tbl2.pak	*	Hiccup			wildcard_utf16
@@ -22373,7 +22373,7 @@ TBL	tbl2.pak	*	Special Flash			wildcard_utf16
 TBL	tbl2.pak	*	Anger Roar			wildcard_utf16
 TBL	tbl2.pak	*	Healing Wave		治愈波	wildcard_utf16
 TBL	tbl2.pak	*	Speed Reduce			wildcard_utf16
-TBL	tbl2.pak	*	Flying Kick			wildcard_utf16
+TBL	tbl2.pak	*	Flying Kick		舞空踢	wildcard_utf16
 TBL	tbl2.pak	*	Magic Gun		魔法枪	wildcard_utf16
 TBL	tbl2.pak	*	Shockwave			wildcard_utf16
 TBL	tbl2.pak	*	Explosion Light Gun			wildcard_utf16
@@ -22585,7 +22585,7 @@ TBL	tbl2.pak	*	Bloody Cyclone Attack			wildcard_utf16
 TBL	tbl2.pak	*	Detonation			wildcard_utf16
 TBL	tbl2.pak	*	Acid Venom			wildcard_utf16
 TBL	tbl2.pak	*	Earth Resonance			wildcard_utf16
-TBL	tbl2.pak	*	My Passion			wildcard_utf16
+TBL	tbl2.pak	*	My Passion		我的熱情	wildcard_utf16
 TBL	tbl2.pak	*	Bumper			wildcard_utf16
 TBL	tbl2.pak	*	Rotation Attack			wildcard_utf16
 TBL	tbl2.pak	*	Overheat			wildcard_utf16
@@ -22649,7 +22649,7 @@ TBL	tbl2.pak	*	Hot Earthshaking			wildcard_utf16
 TBL	tbl2.pak	*	Flame Outbreak			wildcard_utf16
 TBL	tbl2.pak	*	Slow Spell			wildcard_utf16
 TBL	tbl2.pak	*	Eat Fart			wildcard_utf16
-TBL	tbl2.pak	*	Monkey Rest			wildcard_utf16
+TBL	tbl2.pak	*	Monkey Rest		猴子休息	wildcard_utf16
 TBL	tbl2.pak	*	Bite of Steel			wildcard_utf16
 TBL	tbl2.pak	*	Waved Wings			wildcard_utf16
 TBL	tbl2.pak	*	Powerful Blow		强力打击	wildcard_utf16
@@ -22733,7 +22733,7 @@ TBL	tbl2.pak	*	Concentration			wildcard_utf16
 TBL	tbl2.pak	*	Ultimate Concentration			wildcard_utf16
 TBL	tbl2.pak	*	Flight		飞行	wildcard_utf16
 TBL	tbl2.pak	*	Super Saiyan		超级赛亚人	wildcard_utf16
-TBL	tbl2.pak	*	Powerfull Super Saiyan			wildcard_utf16
+TBL	tbl2.pak	*	Powerfull Super Saiyan		強力超級賽亞人	wildcard_utf16
 TBL	tbl2.pak	*	Fusion			wildcard_utf16
 TBL	tbl2.pak	*	Wolf Fang Fist EP Consume Reduce			wildcard_utf16
 TBL	tbl2.pak	*	Dash Cooldown Reduce			wildcard_utf16
@@ -22743,7 +22743,7 @@ TBL	tbl2.pak	*	Speed Up Duration Rise			wildcard_utf16
 TBL	tbl2.pak	*	Might Power Increase		大魔人力量增加	wildcard_utf16
 TBL	tbl2.pak	*	Energy Wave Duration Increase			wildcard_utf16
 TBL	tbl2.pak	*	Dragon Power!!		龙之力!!	wildcard_utf16
-TBL	tbl2.pak	*	Monkey Rock Throw			wildcard_utf16
+TBL	tbl2.pak	*	Monkey Rock Throw		猴子投石	wildcard_utf16
 TBL	tbl2.pak	*	Tremor		震地	wildcard_utf16
 TBL	tbl2.pak	*	Oozaru Beam		大猿光束	wildcard_utf16
 TBL	tbl2.pak	*	Oozaru Roar		大猿咆哮	wildcard_utf16
@@ -22938,7 +22938,7 @@ TBL	tbl2.pak	*	Ultimate Draconic Taunt			wildcard_utf16
 TBL	tbl2.pak	*	Draconic Defense			wildcard_utf16
 TBL	tbl2.pak	*	Ultimate Draconic Defense			wildcard_utf16
 TBL	tbl2.pak	*	Great Namek		巨大那美克	wildcard_utf16
-TBL	tbl2.pak	*	Great Namek Duration Rise			wildcard_utf16
+TBL	tbl2.pak	*	Great Namek Duration Rise		巨大那美克持續時間提升	wildcard_utf16
 TBL	tbl2.pak	*	2 Mouth Energy Wave Range Increase			wildcard_utf16
 TBL	tbl2.pak	*	Special Beam Cannon Range Increase			wildcard_utf16
 TBL	tbl2.pak	*	Draconic Protection Power Increase			wildcard_utf16
@@ -23160,8 +23160,8 @@ TBL	tbl2.pak	*	Super Ghost Kamikaze Attack			wildcard_utf16
 TBL	tbl2.pak	*	Ultimate Super Ghost Kamikaze Attack			wildcard_utf16
 TBL	tbl2.pak	*	Unyielding			wildcard_utf16
 TBL	tbl2.pak	*	Ultimate Unyielding			wildcard_utf16
-TBL	tbl2.pak	*	Increased Storm Skill Range			wildcard_utf16
-TBL	tbl2.pak	*	Increased Storm Skill Power			wildcard_utf16
+TBL	tbl2.pak	*	Increased Storm Skill Range		風暴技能範圍提升	wildcard_utf16
+TBL	tbl2.pak	*	Increased Storm Skill Power		風暴技能威力提升	wildcard_utf16
 TBL	tbl2.pak	*	Fighting Mastery			wildcard_utf16
 TBL	tbl2.pak	*	Ultimate Fighting Mastery			wildcard_utf16
 TBL	tbl2.pak	*	Unlimit Trueshot			wildcard_utf16
@@ -23262,7 +23262,7 @@ TBL	tbl2.pak	*	Crane Presentation Mastery			wildcard_utf16
 TBL	tbl2.pak	*	Ultimate Crane Presentation Mastery			wildcard_utf16
 TBL	tbl2.pak	*	Crane Spirit!!		鹤仙流精神!!	wildcard_utf16
 TBL	tbl2.pak	*	Golden Oozaru		黄金巨猿	wildcard_utf16
-TBL	tbl2.pak	*	Orange Muscle Namek			wildcard_utf16
+TBL	tbl2.pak	*	Orange Muscle Namek		橘色肌肉那美克	wildcard_utf16
 TBL	tbl2.pak	*	Giant Kamehameha			wildcard_utf16
 TBL	tbl2.pak	*	Ultimate Giant Kamehameha			wildcard_utf16
 TBL	tbl2.pak	*	Turtle Rod Strike			wildcard_utf16
@@ -23547,7 +23547,7 @@ TBL	tbl2.pak	*	Ultimate Crazy Rush			wildcard_utf16
 TBL	tbl2.pak	*	Ultimate Double Crazy Rush			wildcard_utf16
 TBL	tbl2.pak	*	Donkey Slash			wildcard_utf16
 TBL	tbl2.pak	*	Ultimate Donkey Slash		究極驢斬	wildcard_utf16
-TBL	tbl2.pak	*	Giant Donkey Slash			wildcard_utf16
+TBL	tbl2.pak	*	Giant Donkey Slash		巨驢斬	wildcard_utf16
 TBL	tbl2.pak	*	Ultimate Giant Donkey Slash		究極巨驢斬	wildcard_utf16
 TBL	tbl2.pak	*	Rising Agility			wildcard_utf16
 TBL	tbl2.pak	*	Ultimate Rising Agility			wildcard_utf16
@@ -23705,7 +23705,7 @@ TBL	tbl2.pak	*	Limited to Seal		限定到封印	wildcard_utf16
 TBL	tbl2.pak	*	Event Items		活动物品	wildcard_utf16
 TBL	tbl2.pak	*	Netpy Item			wildcard_utf16
 TBL	tbl2.pak	*	Time Property			wildcard_utf16
-TBL	tbl2.pak	*	Luxury Capsule Item			wildcard_utf16
+TBL	tbl2.pak	*	Luxury Capsule Item		豪華膠囊道具	wildcard_utf16
 TBL	tbl2.pak	*	Stone Heap		石堆	wildcard_utf16
 TBL	tbl2.pak	*	Monster Data Machine			wildcard_utf16
 TBL	tbl2.pak	*	Gerinovitch's Statue			wildcard_utf16
@@ -23718,7 +23718,7 @@ TBL	tbl2.pak	*	Distorted Rock			wildcard_utf16
 TBL	tbl2.pak	*	Broken Billboard			wildcard_utf16
 TBL	tbl2.pak	*	Meteorite Monument			wildcard_utf16
 TBL	tbl2.pak	*	Farm Tool			wildcard_utf16
-TBL	tbl2.pak	*	Historic Pillar			wildcard_utf16
+TBL	tbl2.pak	*	Historic Pillar		歷史之柱	wildcard_utf16
 TBL	tbl2.pak	*	Great Tree			wildcard_utf16
 TBL	tbl2.pak	*	Welded Door			wildcard_utf16
 TBL	tbl2.pak	*	Rusty Gate			wildcard_utf16
@@ -23877,7 +23877,7 @@ TBL	tbl2.pak	*	Huge Fish Fossil		巨大鱼化石	wildcard_utf16
 TBL	tbl2.pak	*	Teleporter			wildcard_utf16
 TBL	tbl2.pak	*	Bomb Box		炸弹盒	wildcard_utf16
 TBL	tbl2.pak	*	Army Supply Box		军补给盒	wildcard_utf16
-TBL	tbl2.pak	*	Frieza's Army Transmitter			wildcard_utf16
+TBL	tbl2.pak	*	Frieza's Army Transmitter		弗利薩軍發報機	wildcard_utf16
 TBL	tbl2.pak	*	Frieza's Army Radar		弗利萨军雷达	wildcard_utf16
 TBL	tbl2.pak	*	Frieza's Army Battle Camp		弗利萨军战斗营地	wildcard_utf16
 TBL	tbl2.pak	*	Frieza's Army Mother Ship		弗利萨军母舰	wildcard_utf16
@@ -23972,7 +23972,7 @@ TBL	tbl2.pak	*	Howling Wand [Turtle Hermit]			wildcard_utf16
 TBL	tbl2.pak	*	Howling Fan [Crane Hermit]			wildcard_utf16
 TBL	tbl2.pak	*	Howling Claws [Dark Warrior]			wildcard_utf16
 TBL	tbl2.pak	*	Howling Axe [Shadow Knight]			wildcard_utf16
-TBL	tbl2.pak	*	Howling Scroll [Dende Priest]			wildcard_utf16
+TBL	tbl2.pak	*	Howling Scroll [Dende Priest]		嚎叫卷軸［丹德祭司］	wildcard_utf16
 TBL	tbl2.pak	*	Howling Crystal [Poko Priest]			wildcard_utf16
 TBL	tbl2.pak	*	Howling Trumpet [Ultimate Majin]			wildcard_utf16
 TBL	tbl2.pak	*	Howling Candy [Grand Chef Majin]			wildcard_utf16
@@ -23999,7 +23999,7 @@ TBL	tbl2.pak	*	Frieza's Army Supply Box B		弗利萨军补给盒B	wildcard_utf16
 TBL	tbl2.pak	*	Frieza's Army Supply Box C		弗利萨军补给盒C	wildcard_utf16
 TBL	tbl2.pak	*	CC Datagram			wildcard_utf16
 TBL	tbl2.pak	*	Parts of Luxurious Robot			wildcard_utf16
-TBL	tbl2.pak	*	Frieza's Army Computer			wildcard_utf16
+TBL	tbl2.pak	*	Frieza's Army Computer		弗利薩軍電腦	wildcard_utf16
 TBL	tbl2.pak	*	Frieza's Army Oil Tank		弗利萨军油箱	wildcard_utf16
 TBL	tbl2.pak	*	FR Data Receiving Antenna			wildcard_utf16
 TBL	tbl2.pak	*	Language Textbook (Basic)			wildcard_utf16
@@ -24013,9 +24013,9 @@ TBL	tbl2.pak	*	Kiri Transporter			wildcard_utf16
 TBL	tbl2.pak	*	Kiri Battery Tank			wildcard_utf16
 TBL	tbl2.pak	*	Prisoner's Beer Bottle			wildcard_utf16
 TBL	tbl2.pak	*	Mira's Army Kiri Mixer			wildcard_utf16
-TBL	tbl2.pak	*	Mira's Army Capsule House Area A			wildcard_utf16
-TBL	tbl2.pak	*	Mira's Army Capsule House Area B			wildcard_utf16
-TBL	tbl2.pak	*	Mira's Army Capsule House Area C			wildcard_utf16
+TBL	tbl2.pak	*	Mira's Army Capsule House Area A		米拉軍膠囊屋 A 區	wildcard_utf16
+TBL	tbl2.pak	*	Mira's Army Capsule House Area B		米拉軍膠囊屋 B 區	wildcard_utf16
+TBL	tbl2.pak	*	Mira's Army Capsule House Area C		米拉軍膠囊屋 C 區	wildcard_utf16
 TBL	tbl2.pak	*	Mira's Army Arms Guard Team			wildcard_utf16
 TBL	tbl2.pak	*	Fear Land Waste Pile			wildcard_utf16
 TBL	tbl2.pak	*	Airfield Crater			wildcard_utf16
@@ -24099,17 +24099,17 @@ TBL	tbl2.pak	*	Devil Dragon's Egg		魔鬼龙的蛋	wildcard_utf16
 TBL	tbl2.pak	*	Experimental Kiri Injector			wildcard_utf16
 TBL	tbl2.pak	*	Tested Material Evacuator			wildcard_utf16
 TBL	tbl2.pak	*	Broken Dragon Clan Staff		Broken 那美克龙族 Staff	wildcard_utf16
-TBL	tbl2.pak	*	Old Heritage of Namek			wildcard_utf16
+TBL	tbl2.pak	*	Old Heritage of Namek		那美克古老遺產	wildcard_utf16
 TBL	tbl2.pak	*	Transplanted Azusa			wildcard_utf16
 TBL	tbl2.pak	*	Dharma's Baggage			wildcard_utf16
 TBL	tbl2.pak	*	M-Collapse Bomb			wildcard_utf16
-TBL	tbl2.pak	*	Guard Stone Base			wildcard_utf16
+TBL	tbl2.pak	*	Guard Stone Base		守護石底座	wildcard_utf16
 TBL	tbl2.pak	*	Buster Cannon Starter			wildcard_utf16
 TBL	tbl2.pak	*	Magma Energy Tank			wildcard_utf16
 TBL	tbl2.pak	*	Buster Cannon's Energy Waste			wildcard_utf16
 TBL	tbl2.pak	*	Buster Cannon Control Panel			wildcard_utf16
 TBL	tbl2.pak	*	Demolished Buster Cannon			wildcard_utf16
-TBL	tbl2.pak	*	Giant Vegetarian Manure			wildcard_utf16
+TBL	tbl2.pak	*	Giant Vegetarian Manure		巨大素食肥料	wildcard_utf16
 TBL	tbl2.pak	*	Young Narak Cotton Tree			wildcard_utf16
 TBL	tbl2.pak	*	Narak Prison Facility			wildcard_utf16
 TBL	tbl2.pak	*	Narak Clothing			wildcard_utf16
@@ -24122,7 +24122,7 @@ TBL	tbl2.pak	*	Prison of Frieza's Army		弗利萨军监狱	wildcard_utf16
 TBL	tbl2.pak	*	Antidote Herb			wildcard_utf16
 TBL	tbl2.pak	*	Collapsed Dinosaur			wildcard_utf16
 TBL	tbl2.pak	*	Captured Namekian			wildcard_utf16
-TBL	tbl2.pak	*	Korin Bellflower			wildcard_utf16
+TBL	tbl2.pak	*	Korin Bellflower		花梨風鈴草	wildcard_utf16
 TBL	tbl2.pak	*	Yellow Korin Flower		黃色花梨花	wildcard_utf16
 TBL	tbl2.pak	*	Tattered Box		Tattered 礼包	wildcard_utf16
 TBL	tbl2.pak	*	Mysterious Spacecraft			wildcard_utf16
@@ -24189,7 +24189,7 @@ TBL	tbl2.pak	*	Waterfall Cave Exit			wildcard_utf16
 TBL	tbl2.pak	*	Closed Mine Exit			wildcard_utf16
 TBL	tbl2.pak	*	Ore Storage Entrance			wildcard_utf16
 TBL	tbl2.pak	*	Dojo Entrance			wildcard_utf16
-TBL	tbl2.pak	*	Korin Tower Exit			wildcard_utf16
+TBL	tbl2.pak	*	Korin Tower Exit		花梨塔出口	wildcard_utf16
 TBL	tbl2.pak	*	Underground Base Exit			wildcard_utf16
 TBL	tbl2.pak	*	Dojo Exit			wildcard_utf16
 TBL	tbl2.pak	*	Memorial Museum Exit			wildcard_utf16
@@ -24282,7 +24282,7 @@ TBL	tbl2.pak	*	Turtle Hermit		龟仙流	wildcard_utf16
 TBL	tbl2.pak	*	Crane Hermit		鹤仙流	wildcard_utf16
 TBL	tbl2.pak	*	Saiyan		赛亚人	wildcard_utf16
 TBL	tbl2.pak	*	Saiyan Blood Society		賽亞血統社團	wildcard_utf16
-TBL	tbl2.pak	*	Korin Tribe			wildcard_utf16
+TBL	tbl2.pak	*	Korin Tribe		花梨族	wildcard_utf16
 TBL	tbl2.pak	*	Capsule Corp		胶囊公司	wildcard_utf16
 TBL	tbl2.pak	*	Yardrat Transportation			wildcard_utf16
 TBL	tbl2.pak	*	Red Ribbon Army		红色缎带军军	wildcard_utf16
@@ -24301,8 +24301,8 @@ TBL	tbl2.pak	*	Beanstalk		豆莖	wildcard_utf16
 TBL	tbl2.pak	*	Azusa Tree			wildcard_utf16
 TBL	tbl2.pak	*	Azusa Spinning			wildcard_utf16
 TBL	tbl2.pak	*	Namekian Character		那美克星人角色	wildcard_utf16
-TBL	tbl2.pak	*	Namek Language			wildcard_utf16
-TBL	tbl2.pak	*	Namek Art			wildcard_utf16
+TBL	tbl2.pak	*	Namek Language		那美克語	wildcard_utf16
+TBL	tbl2.pak	*	Namek Art		那美克藝術	wildcard_utf16
 TBL	tbl2.pak	*	Strongest Namek Warrior		Strongest 那美克战士	wildcard_utf16
 TBL	tbl2.pak	*	Dream of God		神之梦	wildcard_utf16
 TBL	tbl2.pak	*	Porunga		波伦加	wildcard_utf16
@@ -24324,7 +24324,7 @@ TBL	tbl2.pak	*	Luxury Clothing Merchant			wildcard_utf16
 TBL	tbl2.pak	*	Advanced Outfit Merchant		高级套装商人	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Grocer			wildcard_utf16
 TBL	tbl2.pak	*	Advanced Scouter Merchant		高级探测器商人	wildcard_utf16
-TBL	tbl2.pak	*	Grand Skill Master			wildcard_utf16
+TBL	tbl2.pak	*	Grand Skill Master		大技能大師	wildcard_utf16
 TBL	tbl2.pak	*	Mr. Buwoo			wildcard_utf16
 TBL	tbl2.pak	*	West City Guard		西都守卫	wildcard_utf16
 TBL	tbl2.pak	*	Cat Hermit			wildcard_utf16
@@ -24674,7 +24674,7 @@ TBL	tbl2.pak	*	Mushroom Rocks			wildcard_utf16
 TBL	tbl2.pak	*	Yunzabit Land			wildcard_utf16
 TBL	tbl2.pak	*	Big West Sea			wildcard_utf16
 TBL	tbl2.pak	*	Golden River			wildcard_utf16
-TBL	tbl2.pak	*	Namek Plaza			wildcard_utf16
+TBL	tbl2.pak	*	Namek Plaza		那美克廣場	wildcard_utf16
 TBL	tbl2.pak	*	Dragon Cave		龙洞	wildcard_utf16
 TBL	tbl2.pak	*	Takarazuka Volcano		达卡拉部多火山	wildcard_utf16
 TBL	tbl2.pak	*	Giant's Footstep			wildcard_utf16
@@ -24705,7 +24705,7 @@ TBL	tbl2.pak	*	Insect Hunters Camp			wildcard_utf16
 TBL	tbl2.pak	*	Yahoi Outside Area			wildcard_utf16
 TBL	tbl2.pak	*	Cactus Camp			wildcard_utf16
 TBL	tbl2.pak	*	Fran Dog Feeding Field		法朗犬饲育场	wildcard_utf16
-TBL	tbl2.pak	*	Pillar Coast House			wildcard_utf16
+TBL	tbl2.pak	*	Pillar Coast House		柱海岸小屋	wildcard_utf16
 TBL	tbl2.pak	*	Pinon Village			wildcard_utf16
 TBL	tbl2.pak	*	Gas Station			wildcard_utf16
 TBL	tbl2.pak	*	Tongue Town		通通镇	wildcard_utf16
@@ -24735,15 +24735,15 @@ TBL	tbl2.pak	*	Suspicious Obstacles			wildcard_utf16
 TBL	tbl2.pak	*	Mini Dinosaur			wildcard_utf16
 TBL	tbl2.pak	*	Ranger Jail			wildcard_utf16
 TBL	tbl2.pak	*	Red Pants Food Storehouse			wildcard_utf16
-TBL	tbl2.pak	*	Rare Rhenium Stone			wildcard_utf16
+TBL	tbl2.pak	*	Rare Rhenium Stone		稀有錸石	wildcard_utf16
 TBL	tbl2.pak	*	Old Machinery			wildcard_utf16
 TBL	tbl2.pak	*	Cave in Traces			wildcard_utf16
 TBL	tbl2.pak	*	Under The Sea Treasure Box		Under The Sea Treasure 礼包	wildcard_utf16
 TBL	tbl2.pak	*	Blacksmith Toolbox			wildcard_utf16
 TBL	tbl2.pak	*	Papa Wave's Treasure			wildcard_utf16
 TBL	tbl2.pak	*	Frieza's Army UFO Engine		弗利萨军UFO引擎	wildcard_utf16
-TBL	tbl2.pak	*	Frieza's Army Teleporter			wildcard_utf16
-TBL	tbl2.pak	*	Frieza's Army Mothership			wildcard_utf16
+TBL	tbl2.pak	*	Frieza's Army Teleporter		弗利薩軍傳送器	wildcard_utf16
+TBL	tbl2.pak	*	Frieza's Army Mothership		弗利薩軍母艦	wildcard_utf16
 TBL	tbl2.pak	*	Strange Flower Garden			wildcard_utf16
 TBL	tbl2.pak	*	Izumi Garden			wildcard_utf16
 TBL	tbl2.pak	*	Named Item			wildcard_utf16
@@ -24846,13 +24846,13 @@ TBL	tbl2.pak	*	Party Amulet			wildcard_utf16
 TBL	tbl2.pak	*	Guild Emblem		公會徽章	wildcard_utf16
 TBL	tbl2.pak	*	Guild Name		公会名称	wildcard_utf16
 TBL	tbl2.pak	*	Guild Score		公会分数	wildcard_utf16
-TBL	tbl2.pak	*	Guild Leave Button			wildcard_utf16
+TBL	tbl2.pak	*	Guild Leave Button		離開公會按鈕	wildcard_utf16
 TBL	tbl2.pak	*	Guild Points		公会点数	wildcard_utf16
 TBL	tbl2.pak	*	Guild Member Name		公会成员名称	wildcard_utf16
 TBL	tbl2.pak	*	Guild Member Level		公会成员等级	wildcard_utf16
 TBL	tbl2.pak	*	Guild Member Current Location		公会成员当前位置	wildcard_utf16
-TBL	tbl2.pak	*	Guild Notification			wildcard_utf16
-TBL	tbl2.pak	*	Guild Notification Writing Button			wildcard_utf16
+TBL	tbl2.pak	*	Guild Notification		公會公告	wildcard_utf16
+TBL	tbl2.pak	*	Guild Notification Writing Button		公會公告撰寫按鈕	wildcard_utf16
 TBL	tbl2.pak	*	Dialog Box		频道盒	wildcard_utf16
 TBL	tbl2.pak	*	Role Dialog Box		Role Dialog 礼包	wildcard_utf16
 TBL	tbl2.pak	*	PC Dialog Box		PC频道盒	wildcard_utf16
@@ -24872,12 +24872,12 @@ TBL	tbl2.pak	*	Brightness Effect			wildcard_utf16
 TBL	tbl2.pak	*	Main Audio			wildcard_utf16
 TBL	tbl2.pak	*	Background Sound			wildcard_utf16
 TBL	tbl2.pak	*	Sound Effects		效果音量	wildcard_utf16
-TBL	tbl2.pak	*	Operation Keys			wildcard_utf16
+TBL	tbl2.pak	*	Operation Keys		行動鑰匙	wildcard_utf16
 TBL	tbl2.pak	*	Information		資訊	wildcard_utf16
 TBL	tbl2.pak	*	Dojo Symbol			wildcard_utf16
 TBL	tbl2.pak	*	Scouter Display			wildcard_utf16
 TBL	tbl2.pak	*	Friend's Connection		好友的连接	wildcard_utf16
-TBL	tbl2.pak	*	Guild Members Online			wildcard_utf16
+TBL	tbl2.pak	*	Guild Members Online		公會線上成員	wildcard_utf16
 TBL	tbl2.pak	*	Quest Text Effects		任务文字效果	wildcard_utf16
 TBL	tbl2.pak	*	Player Trading			wildcard_utf16
 TBL	tbl2.pak	*	Connection Termination			wildcard_utf16
@@ -24935,8 +24935,8 @@ TBL	tbl2.pak	*	Paella's Memorial		皮拉夫的纪念	wildcard_utf16
 TBL	tbl2.pak	*	Mira's Army		米拉军	wildcard_utf16
 TBL	tbl2.pak	*	Everyday			wildcard_utf16
 TBL	tbl2.pak	*	Day Day			wildcard_utf16
-TBL	tbl2.pak	*	Great Saiyanman			wildcard_utf16
-TBL	tbl2.pak	*	Mixed Capsules			wildcard_utf16
+TBL	tbl2.pak	*	Great Saiyanman		偉大賽亞人	wildcard_utf16
+TBL	tbl2.pak	*	Mixed Capsules		混合膠囊	wildcard_utf16
 TBL	tbl2.pak	*	K Key		K钥匙	wildcard_utf16
 TBL	tbl2.pak	*	Sale Ended			wildcard_utf16
 TBL	tbl2.pak	*	On Sale			wildcard_utf16
@@ -24997,13 +24997,13 @@ TBL	tbl2.pak	*	Guild Energy Attack		公会气功攻击	wildcard_utf16
 TBL	tbl2.pak	*	Guild Physical Defense		公会物理防御	wildcard_utf16
 TBL	tbl2.pak	*	Guild Energy Defense		公会气功防御	wildcard_utf16
 TBL	tbl2.pak	*	Guild Max HP		公会最大HP	wildcard_utf16
-TBL	tbl2.pak	*	Guild Movement Speed			wildcard_utf16
+TBL	tbl2.pak	*	Guild Movement Speed		公會移動速度	wildcard_utf16
 TBL	tbl2.pak	*	Guild Attack Speed		公会攻击速度	wildcard_utf16
-TBL	tbl2.pak	*	Guild Physical Critical Rate			wildcard_utf16
-TBL	tbl2.pak	*	Guild Energy Critical Rate			wildcard_utf16
+TBL	tbl2.pak	*	Guild Physical Critical Rate		公會物理暴擊率	wildcard_utf16
+TBL	tbl2.pak	*	Guild Energy Critical Rate		公會能量暴擊率	wildcard_utf16
 TBL	tbl2.pak	*	Guild Armor Penetration		公會破甲	wildcard_utf16
-TBL	tbl2.pak	*	Guild EXP Bonus			wildcard_utf16
-TBL	tbl2.pak	*	Guild Cooldown Reduction			wildcard_utf16
+TBL	tbl2.pak	*	Guild EXP Bonus		公會經驗加成	wildcard_utf16
+TBL	tbl2.pak	*	Guild Cooldown Reduction		公會冷卻縮減	wildcard_utf16
 TBL	tbl2.pak	*	Reward Account Information A1-4 Description		奖励账号信息A1-4说明	wildcard_utf16
 TBL	tbl2.pak	*	Reward Account Information A1-5 Description		奖励账号信息A1-5说明	wildcard_utf16
 TBL	tbl2.pak	*	Reward Account Information A1-6 Description		奖励账号信息A1-6说明	wildcard_utf16
@@ -25084,7 +25084,7 @@ TBL	tbl2.pak	*	Feel the Focus of Shenron!			wildcard_utf16
 TBL	tbl2.pak	*	Feel the Dexterity of Shenron!			wildcard_utf16
 TBL	tbl2.pak	*	Feel the Soul of Shenron!			wildcard_utf16
 TBL	tbl2.pak	*	Feel the Energy of Shenron!			wildcard_utf16
-TBL	tbl2.pak	*	I'm a Namekian			wildcard_utf16
+TBL	tbl2.pak	*	I'm a Namekian		我是那美克人	wildcard_utf16
 TBL	tbl2.pak	*	Legendary Attack		传说攻击	wildcard_utf16
 TBL	tbl2.pak	*	I'm a Human			wildcard_utf16
 TBL	tbl2.pak	*	I'm a Majin			wildcard_utf16
@@ -25095,7 +25095,7 @@ TBL	tbl2.pak	*	Look for the Turtle9			wildcard_utf16
 TBL	tbl2.pak	*	Battle with Master Roshi?			wildcard_utf16
 TBL	tbl2.pak	*	Time Limitj			wildcard_utf16
 TBL	tbl2.pak	*	Wrapping the Seedlingsr			wildcard_utf16
-TBL	tbl2.pak	*	Loner Goku			wildcard_utf16
+TBL	tbl2.pak	*	Loner Goku		孤獨悟空	wildcard_utf16
 TBL	tbl2.pak	*	Brave Loner Goku			wildcard_utf16
 TBL	tbl2.pak	*	Greedy Bulma			wildcard_utf16
 TBL	tbl2.pak	*	Scared Bulma			wildcard_utf16
@@ -25273,7 +25273,7 @@ TBL	tbl2.pak	*	Wagu Machine			wildcard_utf16
 TBL	tbl2.pak	*	Mascot		吉祥物	wildcard_utf16
 TBL	tbl2.pak	*	Event Machine		活动机器	wildcard_utf16
 TBL	tbl2.pak	*	Silver Coin Ex.		銀幣 Ex.	wildcard_utf16
-TBL	tbl2.pak	*	Gold Coin Ex.			wildcard_utf16
+TBL	tbl2.pak	*	Gold Coin Ex.		金幣 Ex.	wildcard_utf16
 TBL	tbl2.pak	*	Misc / Armor			wildcard_utf16
 TBL	tbl2.pak	*	Weapon / Necklace		武器/项链	wildcard_utf16
 TBL	tbl2.pak	*	U Stone		U石	wildcard_utf16
@@ -25429,7 +25429,7 @@ TBL	tbl2.pak	*	Dende (Earth's Guardian)			wildcard_utf16
 TBL	tbl2.pak	*	Dogi Preview Merchant		时装预览商人	wildcard_utf16
 TBL	tbl2.pak	*	Vampa Entrance Machine			wildcard_utf16
 TBL	tbl2.pak	*	Screaming Dragon		悲鳴之龍	wildcard_utf16
-TBL	tbl2.pak	*	Lost Baby Dragon			wildcard_utf16
+TBL	tbl2.pak	*	Lost Baby Dragon		迷路的幼龍	wildcard_utf16
 TBL	tbl2.pak	*	Garcia			wildcard_utf16
 TBL	tbl2.pak	*	Deserter Pig			wildcard_utf16
 TBL	tbl2.pak	*	Deserter Gad			wildcard_utf16
@@ -25482,7 +25482,7 @@ TBL	tbl2.pak	*	Giran Tribe Bus			wildcard_utf16
 TBL	tbl2.pak	*	Sunfire Springs Bus			wildcard_utf16
 TBL	tbl2.pak	*	Korin Ancient Forest Bus			wildcard_utf16
 TBL	tbl2.pak	*	Forgotten Road Bus			wildcard_utf16
-TBL	tbl2.pak	*	Namek Fountain Bus			wildcard_utf16
+TBL	tbl2.pak	*	Namek Fountain Bus		那美克噴泉巴士	wildcard_utf16
 TBL	tbl2.pak	*	Snail Village Bus			wildcard_utf16
 TBL	tbl2.pak	*	Porunga Rocks Bus			wildcard_utf16
 TBL	tbl2.pak	*	Azusa Watchtower Bus			wildcard_utf16
@@ -25637,7 +25637,7 @@ TBL	tbl2.pak	*	Sand Giran			wildcard_utf16
 TBL	tbl2.pak	*	Woo Giran			wildcard_utf16
 TBL	tbl2.pak	*	Cuckoo Chicken			wildcard_utf16
 TBL	tbl2.pak	*	Original Cuckoo Chicken			wildcard_utf16
-TBL	tbl2.pak	*	Injured Goku			wildcard_utf16
+TBL	tbl2.pak	*	Injured Goku		受傷的悟空	wildcard_utf16
 TBL	tbl2.pak	*	Goku and Raditz		孙悟空和拉蒂兹	wildcard_utf16
 TBL	tbl2.pak	*	Pilaf Machine 1		皮拉夫机器1	wildcard_utf16
 TBL	tbl2.pak	*	Command Robot			wildcard_utf16
@@ -26187,7 +26187,7 @@ TBL	tbl2.pak	*	Aguain			wildcard_utf16
 TBL	tbl2.pak	*	Pharmacist			wildcard_utf16
 TBL	tbl2.pak	*	Beekeeper Jojo			wildcard_utf16
 TBL	tbl2.pak	*	Lu Chi			wildcard_utf16
-TBL	tbl2.pak	*	Namek Cotton Caravan			wildcard_utf16
+TBL	tbl2.pak	*	Namek Cotton Caravan		那美克棉花商隊	wildcard_utf16
 TBL	tbl2.pak	*	Destroyed Namekian Bomb Device			wildcard_utf16
 TBL	tbl2.pak	*	Namekian Artist		那美克星人武道家	wildcard_utf16
 TBL	tbl2.pak	*	Artest			wildcard_utf16
@@ -26202,9 +26202,9 @@ TBL	tbl2.pak	*	Soldier Kim			wildcard_utf16
 TBL	tbl2.pak	*	Infiltrator Koupa			wildcard_utf16
 TBL	tbl2.pak	*	Ambulance Team Baxi			wildcard_utf16
 TBL	tbl2.pak	*	Koulak			wildcard_utf16
-TBL	tbl2.pak	*	Namekian Slave			wildcard_utf16
-TBL	tbl2.pak	*	Namekian Scout			wildcard_utf16
-TBL	tbl2.pak	*	Namekian Fighter Slave			wildcard_utf16
+TBL	tbl2.pak	*	Namekian Slave		那美克奴隸	wildcard_utf16
+TBL	tbl2.pak	*	Namekian Scout		那美克偵察兵	wildcard_utf16
+TBL	tbl2.pak	*	Namekian Fighter Slave		那美克戰士奴隸	wildcard_utf16
 TBL	tbl2.pak	*	Warrior Caleb			wildcard_utf16
 TBL	tbl2.pak	*	Warrior Cary			wildcard_utf16
 TBL	tbl2.pak	*	Warrior Yalin			wildcard_utf16
@@ -26268,10 +26268,10 @@ TBL	tbl2.pak	*	Yikanasi			wildcard_utf16
 TBL	tbl2.pak	*	Hidden Civilian Payi			wildcard_utf16
 TBL	tbl2.pak	*	Villager 8			wildcard_utf16
 TBL	tbl2.pak	*	Sergeant Jimo			wildcard_utf16
-TBL	tbl2.pak	*	Piccolo's Apprentice			wildcard_utf16
+TBL	tbl2.pak	*	Piccolo's Apprentice		短笛的徒弟	wildcard_utf16
 TBL	tbl2.pak	*	Warrior Kaka			wildcard_utf16
 TBL	tbl2.pak	*	Loser Ruja			wildcard_utf16
-TBL	tbl2.pak	*	Piccolo's Disciple			wildcard_utf16
+TBL	tbl2.pak	*	Piccolo's Disciple		短笛的弟子	wildcard_utf16
 TBL	tbl2.pak	*	Villager 9			wildcard_utf16
 TBL	tbl2.pak	*	Citizen 56		市民56	wildcard_utf16
 TBL	tbl2.pak	*	Farmer Tom			wildcard_utf16
@@ -26334,7 +26334,7 @@ TBL	tbl2.pak	*	Dark Namekian Nado			wildcard_utf16
 TBL	tbl2.pak	*	Fallen Dark Namekian			wildcard_utf16
 TBL	tbl2.pak	*	Dark Namekian Jima			wildcard_utf16
 TBL	tbl2.pak	*	Brother Carlos			wildcard_utf16
-TBL	tbl2.pak	*	Namekian Traitor			wildcard_utf16
+TBL	tbl2.pak	*	Namekian Traitor		那美克叛徒	wildcard_utf16
 TBL	tbl2.pak	*	Pakoute			wildcard_utf16
 TBL	tbl2.pak	*	Professor Moran			wildcard_utf16
 TBL	tbl2.pak	*	Ainstein Batchelder			wildcard_utf16
@@ -26423,7 +26423,7 @@ TBL	tbl2.pak	*	Operation Chief Johnny			wildcard_utf16
 TBL	tbl2.pak	*	Paella		皮拉夫	wildcard_utf16
 TBL	tbl2.pak	*	Kuda's Pet			wildcard_utf16
 TBL	tbl2.pak	*	Schuler			wildcard_utf16
-TBL	tbl2.pak	*	Poko Land Dragon			wildcard_utf16
+TBL	tbl2.pak	*	Poko Land Dragon		波可陸之龍	wildcard_utf16
 TBL	tbl2.pak	*	Police Car			wildcard_utf16
 TBL	tbl2.pak	*	Poko Sky Dragon		波可天空龙	wildcard_utf16
 TBL	tbl2.pak	*	Pollan			wildcard_utf16
@@ -26455,7 +26455,7 @@ TBL	tbl2.pak	*	Tourist Bucky			wildcard_utf16
 TBL	tbl2.pak	*	Great Shellman			wildcard_utf16
 TBL	tbl2.pak	*	Dancha			wildcard_utf16
 TBL	tbl2.pak	*	Wet Majin			wildcard_utf16
-TBL	tbl2.pak	*	Picollo, Gohan			wildcard_utf16
+TBL	tbl2.pak	*	Picollo, Gohan		短笛、悟飯	wildcard_utf16
 TBL	tbl2.pak	*	Pilaf Robot-001		皮拉夫机器人-001	wildcard_utf16
 TBL	tbl2.pak	*	Pilaf Robot-002		皮拉夫机器人-002	wildcard_utf16
 TBL	tbl2.pak	*	Pilaf Robot-003		皮拉夫机器人-003	wildcard_utf16
@@ -26770,7 +26770,7 @@ TBL	tbl2.pak	*	Enough Mushrooms!			wildcard_utf16
 TBL	tbl2.pak	*	Pipo! Pipo!			wildcard_utf16
 TBL	tbl2.pak	*	Welcome!			wildcard_utf16
 TBL	tbl2.pak	*	Christmas Shop			wildcard_utf16
-TBL	tbl2.pak	*	Hi! I'm Goku!			wildcard_utf16
+TBL	tbl2.pak	*	Hi! I'm Goku!		嗨！我是悟空！	wildcard_utf16
 TBL	tbl2.pak	*	BID-4 Dungeon Manager		BID-4副本入场管理机	wildcard_utf16
 TBL	tbl2.pak	*	Bardock's Fan		巴达克的粉丝	wildcard_utf16
 TBL	tbl2.pak	*	BID-5 Dungeon Manager		BID-5副本入场管理机	wildcard_utf16
@@ -26816,7 +26816,7 @@ TBL	tbl2.pak	*	Giant Namek		巨大那美克	wildcard_utf16
 TBL	tbl2.pak	*	Mystic Namek			wildcard_utf16
 TBL	tbl2.pak	*	Teleport to the Dojo		传送到道场	wildcard_utf16
 TBL	tbl2.pak	*	Self Revive			wildcard_utf16
-TBL	tbl2.pak	*	Flying Movement.			wildcard_utf16
+TBL	tbl2.pak	*	Flying Movement.		舞空移動。	wildcard_utf16
 TBL	tbl2.pak	*	Flying Dash.		飞行 冲刺.	wildcard_utf16
 TBL	tbl2.pak	*	Flying Acceleration.			wildcard_utf16
 TBL	tbl2.pak	*	Flying Movement. Flying Dash. Flying Acceleration.		舞空移動。舞空衝刺。舞空加速。	wildcard_utf16
@@ -26868,7 +26868,7 @@ TBL	tbl2.pak	*	Decreases Fire defense element by %d%%			wildcard_utf16
 TBL	tbl2.pak	*	Reduces attack and defense elements by %d			wildcard_utf16
 TBL	tbl2.pak	*	Increases VP by %d		VP 提高 %d	wildcard_utf16
 TBL	tbl2.pak	*	Increases Level to %d		增加 等级 到 %d	wildcard_utf16
-TBL	tbl2.pak	*	Grants %d Wagu Coins			wildcard_utf16
+TBL	tbl2.pak	*	Grants %d Wagu Coins		獲得 %d 瓦古幣	wildcard_utf16
 TBL	tbl2.pak	*	Recover %d VP			wildcard_utf16
 TBL	tbl2.pak	*	Recovers All VP			wildcard_utf16
 TBL	tbl2.pak	*	Remote Item Warehouse			wildcard_utf16
@@ -26972,7 +26972,7 @@ TBL	tbl2.pak	*	Dino Research Camp			wildcard_utf16
 TBL	tbl2.pak	*	Ethnic Gateway			wildcard_utf16
 TBL	tbl2.pak	*	Mirage Hill			wildcard_utf16
 TBL	tbl2.pak	*	Glowing Village		卡拉迪部落	wildcard_utf16
-TBL	tbl2.pak	*	Pillar Village			wildcard_utf16
+TBL	tbl2.pak	*	Pillar Village		柱村	wildcard_utf16
 TBL	tbl2.pak	*	Main Gateway			wildcard_utf16
 TBL	tbl2.pak	*	Yahoi Fortress West Entrance			wildcard_utf16
 TBL	tbl2.pak	*	Yahoi Fortress West			wildcard_utf16
@@ -27017,7 +27017,7 @@ TBL	tbl2.pak	*	Water Bridge			wildcard_utf16
 TBL	tbl2.pak	*	Sleepyhead Camp			wildcard_utf16
 TBL	tbl2.pak	*	Splish Splash Sandhill			wildcard_utf16
 TBL	tbl2.pak	*	Rose Camp			wildcard_utf16
-TBL	tbl2.pak	*	Pillar Fishing Village			wildcard_utf16
+TBL	tbl2.pak	*	Pillar Fishing Village		柱漁村	wildcard_utf16
 TBL	tbl2.pak	*	Giran's Tribe Village			wildcard_utf16
 TBL	tbl2.pak	*	Yahoi Gateway			wildcard_utf16
 TBL	tbl2.pak	*	Makada Road			wildcard_utf16
@@ -27136,7 +27136,7 @@ TBL	tbl2.pak	*	Franko's Tomb			wildcard_utf16
 TBL	tbl2.pak	*	Horror Community			wildcard_utf16
 TBL	tbl2.pak	*	Desert  Shrine			wildcard_utf16
 TBL	tbl2.pak	*	Desert Rose Garden			wildcard_utf16
-TBL	tbl2.pak	*	Frieza Residual's Base			wildcard_utf16
+TBL	tbl2.pak	*	Frieza Residual's Base		弗利薩殘黨基地	wildcard_utf16
 TBL	tbl2.pak	*	Magnes Tent			wildcard_utf16
 TBL	tbl2.pak	*	Recycle Plant			wildcard_utf16
 TBL	tbl2.pak	*	Snatch Tower			wildcard_utf16
@@ -27171,7 +27171,7 @@ TBL	tbl2.pak	*	Ancient Korin Forest			wildcard_utf16
 TBL	tbl2.pak	*	Little Mermaid Area			wildcard_utf16
 TBL	tbl2.pak	*	Sira Beach			wildcard_utf16
 TBL	tbl2.pak	*	Little Mermaid		小美人鱼	wildcard_utf16
-TBL	tbl2.pak	*	Korin Holy Land Area			wildcard_utf16
+TBL	tbl2.pak	*	Korin Holy Land Area		花梨聖地區域	wildcard_utf16
 TBL	tbl2.pak	*	Almond Watchtower			wildcard_utf16
 TBL	tbl2.pak	*	Korin Forest Airfield			wildcard_utf16
 TBL	tbl2.pak	*	Red Ribbon HQ Ruin Area			wildcard_utf16
@@ -27243,15 +27243,15 @@ TBL	tbl2.pak	*	Forgotten Ruins			wildcard_utf16
 TBL	tbl2.pak	*	Ancient Forest			wildcard_utf16
 TBL	tbl2.pak	*	Tangulrim Rock			wildcard_utf16
 TBL	tbl2.pak	*	Kobang Ruins			wildcard_utf16
-TBL	tbl2.pak	*	Frieza's Remnants Invasion			wildcard_utf16
-TBL	tbl2.pak	*	Frieza's Pit			wildcard_utf16
+TBL	tbl2.pak	*	Frieza's Remnants Invasion		弗利薩殘黨入侵	wildcard_utf16
+TBL	tbl2.pak	*	Frieza's Pit		弗利薩之坑	wildcard_utf16
 TBL	tbl2.pak	*	Automatic Crusher			wildcard_utf16
 TBL	tbl2.pak	*	Saiyan Tribe HQ		賽亞族總部	wildcard_utf16
-TBL	tbl2.pak	*	Frieza's Remnants HQ			wildcard_utf16
+TBL	tbl2.pak	*	Frieza's Remnants HQ		弗利薩殘黨總部	wildcard_utf16
 TBL	tbl2.pak	*	Condenser			wildcard_utf16
 TBL	tbl2.pak	*	Cultivation Plant			wildcard_utf16
 TBL	tbl2.pak	*	Denver Farm 32			wildcard_utf16
-TBL	tbl2.pak	*	Frieza's Great Statue			wildcard_utf16
+TBL	tbl2.pak	*	Frieza's Great Statue		弗利薩巨像	wildcard_utf16
 TBL	tbl2.pak	*	Grand Nozzle			wildcard_utf16
 TBL	tbl2.pak	*	Assam Village			wildcard_utf16
 TBL	tbl2.pak	*	Papaya Island		番木瓜诸岛	wildcard_utf16
@@ -27284,7 +27284,7 @@ TBL	tbl2.pak	*	Power Factory			wildcard_utf16
 TBL	tbl2.pak	*	Kuroi Montain			wildcard_utf16
 TBL	tbl2.pak	*	33 Villages			wildcard_utf16
 TBL	tbl2.pak	*	Mamma Plain			wildcard_utf16
-TBL	tbl2.pak	*	Piccolo Run			wildcard_utf16
+TBL	tbl2.pak	*	Piccolo Run		短笛奔跑	wildcard_utf16
 TBL	tbl2.pak	*	Tarim Club			wildcard_utf16
 TBL	tbl2.pak	*	Someone's House			wildcard_utf16
 TBL	tbl2.pak	*	Eastland			wildcard_utf16
@@ -27316,7 +27316,7 @@ TBL	tbl2.pak	*	Needle Forest			wildcard_utf16
 TBL	tbl2.pak	*	Kame House			wildcard_utf16
 TBL	tbl2.pak	*	Near Kame House			wildcard_utf16
 TBL	tbl2.pak	*	Pirate Hideout			wildcard_utf16
-TBL	tbl2.pak	*	Goku House			wildcard_utf16
+TBL	tbl2.pak	*	Goku House		悟空的家	wildcard_utf16
 TBL	tbl2.pak	*	Saiyan Pit		賽亞坑	wildcard_utf16
 TBL	tbl2.pak	*	Witch Mountain			wildcard_utf16
 TBL	tbl2.pak	*	Frypan Mountain			wildcard_utf16
@@ -27325,7 +27325,7 @@ TBL	tbl2.pak	*	Red Pants Military Robotics			wildcard_utf16
 TBL	tbl2.pak	*	Oil & Gas Station!			wildcard_utf16
 TBL	tbl2.pak	*	Gas Storage Area			wildcard_utf16
 TBL	tbl2.pak	*	Martial Arts Temple			wildcard_utf16
-TBL	tbl2.pak	*	Namek Castle			wildcard_utf16
+TBL	tbl2.pak	*	Namek Castle		那美克城堡	wildcard_utf16
 TBL	tbl2.pak	*	DEF Test Center			wildcard_utf16
 TBL	tbl2.pak	*	Fear Land		奥所罗岛	wildcard_utf16
 TBL	tbl2.pak	*	Invader Clinic Center			wildcard_utf16
@@ -27345,7 +27345,7 @@ TBL	tbl2.pak	*	Central Guard			wildcard_utf16
 TBL	tbl2.pak	*	CC Battle Dungeon		CC战斗副本	wildcard_utf16
 TBL	tbl2.pak	*	Chocolay Tower Ground			wildcard_utf16
 TBL	tbl2.pak	*	Chocolay Tower Upside			wildcard_utf16
-TBL	tbl2.pak	*	Namek Castle Cave			wildcard_utf16
+TBL	tbl2.pak	*	Namek Castle Cave		那美克城堡洞窟	wildcard_utf16
 TBL	tbl2.pak	*	Freeza Spaceship			wildcard_utf16
 TBL	tbl2.pak	*	Witch Beach			wildcard_utf16
 TBL	tbl2.pak	*	Witch Forest Way			wildcard_utf16
@@ -27381,10 +27381,10 @@ TBL	tbl2.pak	*	Dragon Frog Oil			wildcard_utf16
 TBL	tbl2.pak	*	Cyangugu Cactus			wildcard_utf16
 TBL	tbl2.pak	*	Namek Egg		那美克蛋	wildcard_utf16
 TBL	tbl2.pak	*	Dragon Frog Skin		龙青蛙皮肤	wildcard_utf16
-TBL	tbl2.pak	*	Namek Cotton Seed			wildcard_utf16
+TBL	tbl2.pak	*	Namek Cotton Seed		那美克棉籽	wildcard_utf16
 TBL	tbl2.pak	*	Rock Lizard Teeth			wildcard_utf16
 TBL	tbl2.pak	*	Disgusting Liquid			wildcard_utf16
-TBL	tbl2.pak	*	Moori's Stone			wildcard_utf16
+TBL	tbl2.pak	*	Moori's Stone		莫利之石	wildcard_utf16
 TBL	tbl2.pak	*	Lost Necklace!		失败项链!	wildcard_utf16
 TBL	tbl2.pak	*	Magic Dragon Bones%			wildcard_utf16
 TBL	tbl2.pak	*	Warrior Caleb's Bag-			wildcard_utf16
@@ -27587,7 +27587,7 @@ TBL	tbl2.pak	*	Mushroom Fertilizer			wildcard_utf16
 TBL	tbl2.pak	*	Buena Xu Collection Tool			wildcard_utf16
 TBL	tbl2.pak	*	Old Shoes		老旧鞋子	wildcard_utf16
 TBL	tbl2.pak	*	Bee's Stinger			wildcard_utf16
-TBL	tbl2.pak	*	Purification of the Dragon Crystal Shard			wildcard_utf16
+TBL	tbl2.pak	*	Purification of the Dragon Crystal Shard		淨化龍水晶碎片	wildcard_utf16
 TBL	tbl2.pak	*	Mysterious Flower			wildcard_utf16
 TBL	tbl2.pak	*	Space Machine Parts		空间机器零件	wildcard_utf16
 TBL	tbl2.pak	*	Great Wall Worker Ax			wildcard_utf16
@@ -27609,7 +27609,7 @@ TBL	tbl2.pak	*	Shriveled Tentacle			wildcard_utf16
 TBL	tbl2.pak	*	Little Bugs			wildcard_utf16
 TBL	tbl2.pak	*	Aquatic Disguise			wildcard_utf16
 TBL	tbl2.pak	*	Westland Spy Robot Core			wildcard_utf16
-TBL	tbl2.pak	*	Korin Forest Spy Robot Core			wildcard_utf16
+TBL	tbl2.pak	*	Korin Forest Spy Robot Core		花梨森林間諜機器人核心	wildcard_utf16
 TBL	tbl2.pak	*	Yahoi Fortress Spy Robot Core			wildcard_utf16
 TBL	tbl2.pak	*	Western Yahoi Spy Robot Core			wildcard_utf16
 TBL	tbl2.pak	*	East Yahoi Spy Robot Core			wildcard_utf16
@@ -27671,7 +27671,7 @@ TBL	tbl2.pak	*	Red Underwear		红色内衣	wildcard_utf16
 TBL	tbl2.pak	*	Strange Charm			wildcard_utf16
 TBL	tbl2.pak	*	Scorched Frog Meat			wildcard_utf16
 TBL	tbl2.pak	*	Roasted Frog Meat			wildcard_utf16
-TBL	tbl2.pak	*	Namek Cotton Seedling			wildcard_utf16
+TBL	tbl2.pak	*	Namek Cotton Seedling		那美克棉苗	wildcard_utf16
 TBL	tbl2.pak	*	Moori's Letter			wildcard_utf16
 TBL	tbl2.pak	*	Marked Saibaman Skin			wildcard_utf16
 TBL	tbl2.pak	*	Quicksand Lizard Genetic Sample			wildcard_utf16
@@ -27723,7 +27723,7 @@ TBL	tbl2.pak	*	Pressed Saibaman Body Fluid			wildcard_utf16
 TBL	tbl2.pak	*	King Fan Saibaman Body Fluid			wildcard_utf16
 TBL	tbl2.pak	*	Big Fan Saibaman Body Fluid			wildcard_utf16
 TBL	tbl2.pak	*	Saibaman Fertilizer			wildcard_utf16
-TBL	tbl2.pak	*	Korin Tower Miniature			wildcard_utf16
+TBL	tbl2.pak	*	Korin Tower Miniature		花梨塔模型	wildcard_utf16
 TBL	tbl2.pak	*	Round Sunglasses			wildcard_utf16
 TBL	tbl2.pak	*	Thick-Rim Sunglasses			wildcard_utf16
 TBL	tbl2.pak	*	Sporty Sunglasses			wildcard_utf16
@@ -27746,8 +27746,8 @@ TBL	tbl2.pak	*	Karinga Javelin			wildcard_utf16
 TBL	tbl2.pak	*	Kidnapping Tools			wildcard_utf16
 TBL	tbl2.pak	*	Hunter's Tools			wildcard_utf16
 TBL	tbl2.pak	*	Gila's Letter			wildcard_utf16
-TBL	tbl2.pak	*	Korin Kelp			wildcard_utf16
-TBL	tbl2.pak	*	Korin Seetang			wildcard_utf16
+TBL	tbl2.pak	*	Korin Kelp		花梨昆布	wildcard_utf16
+TBL	tbl2.pak	*	Korin Seetang		花梨海帶	wildcard_utf16
 TBL	tbl2.pak	*	Graveyard Inscriptions			wildcard_utf16
 TBL	tbl2.pak	*	Ancient Remains			wildcard_utf16
 TBL	tbl2.pak	*	Fighting Fish			wildcard_utf16
@@ -27910,7 +27910,7 @@ TBL	tbl2.pak	*	CPU Core		CPU核心	wildcard_utf16
 TBL	tbl2.pak	*	Officer's Badge			wildcard_utf16
 TBL	tbl2.pak	*	Parent's Letter			wildcard_utf16
 TBL	tbl2.pak	*	Solitary Chicken Meat			wildcard_utf16
-TBL	tbl2.pak	*	Kingbune Turkey Meat			wildcard_utf16
+TBL	tbl2.pak	*	Kingbune Turkey Meat		王骨火雞肉	wildcard_utf16
 TBL	tbl2.pak	*	Combat Command			wildcard_utf16
 TBL	tbl2.pak	*	Coffee Beans			wildcard_utf16
 TBL	tbl2.pak	*	Dance Contest Invitation Letter			wildcard_utf16
@@ -27939,13 +27939,13 @@ TBL	tbl2.pak	*	Aircraft Commander Goggles			wildcard_utf16
 TBL	tbl2.pak	*	Crystal Orange			wildcard_utf16
 TBL	tbl2.pak	*	Universal Repair Item			wildcard_utf16
 TBL	tbl2.pak	*	Robot Controller		机器人控制器	wildcard_utf16
-TBL	tbl2.pak	*	Mine Prison Key			wildcard_utf16
+TBL	tbl2.pak	*	Mine Prison Key		礦山監獄鑰匙	wildcard_utf16
 TBL	tbl2.pak	*	Felix's Video Tape			wildcard_utf16
 TBL	tbl2.pak	*	Sweet Bitter Laxative			wildcard_utf16
 TBL	tbl2.pak	*	Fuel Bomb		燃料炸弹	wildcard_utf16
 TBL	tbl2.pak	*	Red Pants Army Key		红裤军钥匙	wildcard_utf16
 TBL	tbl2.pak	*	Wooden Prison Key		木製監獄鑰匙	wildcard_utf16
-TBL	tbl2.pak	*	Iron Prison Key			wildcard_utf16
+TBL	tbl2.pak	*	Iron Prison Key		鐵監獄鑰匙	wildcard_utf16
 TBL	tbl2.pak	*	Measuring Device			wildcard_utf16
 TBL	tbl2.pak	*	Portable Object Transmitter			wildcard_utf16
 TBL	tbl2.pak	*	Strange Dragon Frog Tooth		怪異龍蛙牙	wildcard_utf16
@@ -27962,7 +27962,7 @@ TBL	tbl2.pak	*	Excavators Brush			wildcard_utf16
 TBL	tbl2.pak	*	Stink Bomb			wildcard_utf16
 TBL	tbl2.pak	*	Detonator			wildcard_utf16
 TBL	tbl2.pak	*	Suspect Spacecraft Wreckage			wildcard_utf16
-TBL	tbl2.pak	*	Long Tongue Dragon Frog Meat			wildcard_utf16
+TBL	tbl2.pak	*	Long Tongue Dragon Frog Meat		長舌龍蛙肉	wildcard_utf16
 TBL	tbl2.pak	*	Teleportation Control Device			wildcard_utf16
 TBL	tbl2.pak	*	Disarmed RP Bomb		解除的 RP 炸弹	wildcard_utf16
 TBL	tbl2.pak	*	Wonder Svaile's Fur			wildcard_utf16
@@ -28056,7 +28056,7 @@ TBL	tbl2.pak	*	Huge Child Saibaman Oil			wildcard_utf16
 TBL	tbl2.pak	*	Needle Saibaman Needle		针栽培人针	wildcard_utf16
 TBL	tbl2.pak	*	Leader's Pistol			wildcard_utf16
 TBL	tbl2.pak	*	Brad's Car Keys			wildcard_utf16
-TBL	tbl2.pak	*	Menkey's Map			wildcard_utf16
+TBL	tbl2.pak	*	Menkey's Map		門基的地圖	wildcard_utf16
 TBL	tbl2.pak	*	Mine Waste Timber			wildcard_utf16
 TBL	tbl2.pak	*	Cactus Liquid			wildcard_utf16
 TBL	tbl2.pak	*	Bright Shiny Stone			wildcard_utf16
@@ -28122,12 +28122,12 @@ TBL	tbl2.pak	*	Chemical Waste			wildcard_utf16
 TBL	tbl2.pak	*	Dirty Notepad			wildcard_utf16
 TBL	tbl2.pak	*	Guardian Robot's Gun			wildcard_utf16
 TBL	tbl2.pak	*	Insect Collection Status			wildcard_utf16
-TBL	tbl2.pak	*	Namekian Crystal Samples			wildcard_utf16
+TBL	tbl2.pak	*	Namekian Crystal Samples		那美克水晶樣本	wildcard_utf16
 TBL	tbl2.pak	*	Industrial Explosive			wildcard_utf16
 TBL	tbl2.pak	*	Broken Robot's AI Chip			wildcard_utf16
 TBL	tbl2.pak	*	Guard Robot AI Chip		守卫机器人AI芯片	wildcard_utf16
 TBL	tbl2.pak	*	Standby Robot AI Chip		待命机器人AI芯片	wildcard_utf16
-TBL	tbl2.pak	*	Korin's Veteran Message			wildcard_utf16
+TBL	tbl2.pak	*	Korin's Veteran Message		花梨的老兵留言	wildcard_utf16
 TBL	tbl2.pak	*	Mushroom Plant's Access Card			wildcard_utf16
 TBL	tbl2.pak	*	Gelaide's Letter			wildcard_utf16
 TBL	tbl2.pak	*	Detheka Mine Capsule			wildcard_utf16
@@ -28206,7 +28206,7 @@ TBL	tbl2.pak	*	Sailor's Underwear			wildcard_utf16
 TBL	tbl2.pak	*	Cleaning Cloth			wildcard_utf16
 TBL	tbl2.pak	*	Gray Saibaman Skin			wildcard_utf16
 TBL	tbl2.pak	*	Red Pants Army ID Card			wildcard_utf16
-TBL	tbl2.pak	*	RP Toolbox			wildcard_utf16
+TBL	tbl2.pak	*	RP Toolbox		RP 工具箱	wildcard_utf16
 TBL	tbl2.pak	*	Purungarisaurs Skin			wildcard_utf16
 TBL	tbl2.pak	*	Robot Parts		机器人零件	wildcard_utf16
 TBL	tbl2.pak	*	Robot Fuel		机器人燃料	wildcard_utf16
@@ -28297,14 +28297,14 @@ TBL	tbl2.pak	*	Advanced AI Chip Piece			wildcard_utf16
 TBL	tbl2.pak	*	RP Excavator			wildcard_utf16
 TBL	tbl2.pak	*	Residential Construction Grants			wildcard_utf16
 TBL	tbl2.pak	*	Secret Documents			wildcard_utf16
-TBL	tbl2.pak	*	Proof of Korin			wildcard_utf16
+TBL	tbl2.pak	*	Proof of Korin		花梨之證	wildcard_utf16
 TBL	tbl2.pak	*	Iron Mole Cricket Horn			wildcard_utf16
 TBL	tbl2.pak	*	Demon Essence			wildcard_utf16
 TBL	tbl2.pak	*	River Rock Crystals			wildcard_utf16
 TBL	tbl2.pak	*	Lava Frog Meat			wildcard_utf16
 TBL	tbl2.pak	*	Clean Net-Mask			wildcard_utf16
-TBL	tbl2.pak	*	Reinforcement Request			wildcard_utf16
-TBL	tbl2.pak	*	Kingbune Turkey Feather			wildcard_utf16
+TBL	tbl2.pak	*	Reinforcement Request		強化請求	wildcard_utf16
+TBL	tbl2.pak	*	Kingbune Turkey Feather		王骨火雞羽毛	wildcard_utf16
 TBL	tbl2.pak	*	Burning Agent			wildcard_utf16
 TBL	tbl2.pak	*	Giant Hippo Food			wildcard_utf16
 TBL	tbl2.pak	*	Mad Ox's Wristband			wildcard_utf16
@@ -28459,9 +28459,9 @@ TBL	tbl2.pak	*	Smoked Teriyaki			wildcard_utf16
 TBL	tbl2.pak	*	Honey Pineapple			wildcard_utf16
 TBL	tbl2.pak	*	Warehouse Report			wildcard_utf16
 TBL	tbl2.pak	*	Machine Malfunction Report			wildcard_utf16
-TBL	tbl2.pak	*	Machine Repair Request			wildcard_utf16
+TBL	tbl2.pak	*	Machine Repair Request		機器修理請求	wildcard_utf16
 TBL	tbl2.pak	*	Mobile Unit Mask		移动部队面具	wildcard_utf16
-TBL	tbl2.pak	*	Manager's Compass			wildcard_utf16
+TBL	tbl2.pak	*	Manager's Compass		管理員羅盤	wildcard_utf16
 TBL	tbl2.pak	*	Fire Feather			wildcard_utf16
 TBL	tbl2.pak	*	Harbor Map			wildcard_utf16
 TBL	tbl2.pak	*	Sailing Guide			wildcard_utf16
@@ -28494,7 +28494,7 @@ TBL	tbl2.pak	*	Every Day Mushroom			wildcard_utf16
 TBL	tbl2.pak	*	Environment Research Data			wildcard_utf16
 TBL	tbl2.pak	*	Mowa's Honey Jar			wildcard_utf16
 TBL	tbl2.pak	*	Narak's Survey Book			wildcard_utf16
-TBL	tbl2.pak	*	Kaka's Magic Stone			wildcard_utf16
+TBL	tbl2.pak	*	Kaka's Magic Stone		卡卡的魔法石	wildcard_utf16
 TBL	tbl2.pak	*	Ship's Management Certificate			wildcard_utf16
 TBL	tbl2.pak	*	Bikini Storage Box		Bikini Storage 礼包	wildcard_utf16
 TBL	tbl2.pak	*	Sharp Stone		尖石	wildcard_utf16
@@ -28530,8 +28530,8 @@ TBL	tbl2.pak	*	Grameen Report			wildcard_utf16
 TBL	tbl2.pak	*	Kiri Experiment Device Design			wildcard_utf16
 TBL	tbl2.pak	*	Kiri Experiment Record Book			wildcard_utf16
 TBL	tbl2.pak	*	Citar Wooden Statue			wildcard_utf16
-TBL	tbl2.pak	*	Namek Brand Name			wildcard_utf16
-TBL	tbl2.pak	*	Old Namekian Relics			wildcard_utf16
+TBL	tbl2.pak	*	Namek Brand Name		那美克品牌名	wildcard_utf16
+TBL	tbl2.pak	*	Old Namekian Relics		古老那美克遺跡	wildcard_utf16
 TBL	tbl2.pak	*	Experiment Project Book			wildcard_utf16
 TBL	tbl2.pak	*	Military Command Book			wildcard_utf16
 TBL	tbl2.pak	*	Dragon's Claws		龙的爪	wildcard_utf16
@@ -28565,7 +28565,7 @@ TBL	tbl2.pak	*	AL Display			wildcard_utf16
 TBL	tbl2.pak	*	Signal Search Chip			wildcard_utf16
 TBL	tbl2.pak	*	Cooperation Documents			wildcard_utf16
 TBL	tbl2.pak	*	Ruja's Prison Key		魯賈的監獄鑰匙	wildcard_utf16
-TBL	tbl2.pak	*	Repatriated Convenient Capsule			wildcard_utf16
+TBL	tbl2.pak	*	Repatriated Convenient Capsule		歸還便利膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Franium 7 Fragment			wildcard_utf16
 TBL	tbl2.pak	*	Sealed Black Box		Sealed Black 礼包	wildcard_utf16
 TBL	tbl2.pak	*	Visitor Information			wildcard_utf16
