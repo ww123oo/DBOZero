@@ -1,0 +1,25 @@
+原文	填写中文
+Elemental Attack: %.0f%%	屬性攻擊：%.0f%%
+Elemental Defense: %.0f%%	屬性防禦：%.0f%%
+If it fails, the item element is cleared.	失敗時，道具屬性會被清除。
+VIP members can open Change Element remotely from the status window.	VIP 可從狀態視窗遠端開啟變更屬性。
+Select an element and apply it to gloves or jacket.	選擇屬性並套用到手套或外套。
+Element Change[br]%s -> %s	屬性變更[br]%s -> %s
+Item Element Change (%s > %s)	道具屬性變更（%s > %s）
+Performance Mode: hides effects, other players, pets and mascots to improve FPS.	效能模式：隱藏特效、其他玩家、寵物與吉祥物以提升 FPS。
+Performance Mode OFF - graphics restored.	效能模式關閉－畫面已恢復。
+Auto Collect: picks up nearby items automatically.	自動拾取：自動撿起附近道具。
+For now, you can only have 25 Resets.	目前最多只能有 25 次重置。
+Claimed %d items from this page.	已從此頁領取 %d 個道具。
+There is nothing to claim on this page.	此頁沒有可領取的內容。
+Please wait a moment before claiming another page.	請稍候再領取下一頁。
+Checked in: %u / %u days	已簽到：%u / %u 天
+Season ends in %ud %uh	賽季剩餘 %ud %uh
+No daily sign-in event is running right now.	目前沒有進行中的每日簽到活動。
+Reward claimed. Come back tomorrow!	獎勵已領取。明天再來！
+You already claimed today's reward.	今天的獎勵已領取過。
+You completed this season's calendar.	本季簽到日曆已全部完成。
+Your level is below the event requirement.	等級低於活動需求。
+Free up bag space to receive the reward.	請清出背包空間以領取獎勵。
+The reward could not be claimed.	無法領取獎勵。
+Claim the highlighted day first.	請先領取反白的那一天。
