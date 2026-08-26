@@ -42,3 +42,8 @@ Desktop.ini
 *.bak
 *.orig
 *~
+
+# Local-only (do not push)
+本機與GitHub同步.md
+untranslated_only.tsv
+debug.log
