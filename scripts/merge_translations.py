@@ -17,15 +17,18 @@ merge_files = [
     root / "data" / "ui_batch3_delta.tsv",
     root / "data" / "ui_batch4_delta.tsv",
     root / "data" / "ui_itemascend_delta.tsv",
+    root / "data" / "ui_element_labels_delta.tsv",
     root / "data" / "lang0_s2t_delta.tsv",
     root / "data" / "place_name_fix_delta.tsv",
     root / "data" / "term_advanced_fix_delta.tsv",
     root / "data" / "term_wagu_fix_delta.tsv",
+    root / "data" / "term_armor_fangju_delta.tsv",
+    root / "data" / "term_kaili_fix_delta.tsv",
 ] + [
     root / "data" / name
     for name in [
         "tbl_batch_delta.tsv",
-        *[f"tbl_batch{i}_delta.tsv" for i in range(2, 48)],
+        *[f"tbl_batch{i}_delta.tsv" for i in range(2, 49)],
     ]
 ]
 
@@ -59,6 +62,13 @@ with target.open(encoding="utf-8-sig") as f:
         if en in M:
             if cur != M[en]:
                 r["填写中文"] = M[en]
+                filled += 1
+        # 凱裡/凯里 → 凱里
+        zh = r.get("填写中文") or ""
+        if "凱裡" in zh or "凯里" in zh:
+            nzh = zh.replace("凱裡", "凱里").replace("凯里", "凱里")
+            if nzh != zh:
+                r["填写中文"] = nzh
                 filled += 1
         rows.append(r)
 
