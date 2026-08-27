@@ -7,8 +7,6 @@ import sys
 root = Path(__file__).resolve().parents[1]
 target = root / "data" / "new_translations.tsv"
 
-# "Already 100% success rate." is parsed as placeholder "% s" (from "100% success").
-# Keep "% s" in the fill, but do not show the English word "success".
 FIX_BY_ID = {
     "DST_CHAT_HAVE_NO_USER_TO_REPLY": "無可回覆",
     "DST_PETITION_CATEGORY2_BUG_ETC": "Etc",
@@ -16,7 +14,7 @@ FIX_BY_ID = {
     "DST_SKILL_FILTER_ETC": "Etc",
     "DST_SYSTEMMSG_CASTING_DEFENDER": "%s蓄力%s。",
     "DST_TAB_RAID": "副本",
-    "GAME_ITEM_UPGRADE_CANT_USE_STONE_CORE_WITH_SAFE": "已是100% s。",
+    "GAME_ITEM_UPGRADE_CANT_USE_STONE_CORE_WITH_SAFE": "已是100% 成功。",
 }
 
 FIX_BY_EN = {
@@ -25,7 +23,7 @@ FIX_BY_EN = {
     "Job": "職",
     "Raid": "副本",
     "%s charges %s.": "%s蓄力%s。",
-    "Already 100% success rate.": "已是100% s。",
+    "Already 100% success rate.": "已是100% 成功。",
 }
 
 if not target.exists():
