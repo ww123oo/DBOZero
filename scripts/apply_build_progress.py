@@ -1,167 +1,69 @@
 #!/usr/bin/env python3
-"""Patch build_output.py to show progress during dboc build. Idempotent."""
+"""Patch build_output.py so dboc build shows a terminal progress bar."""
 from pathlib import Path
 import sys
 
 root = Path(__file__).resolve().parents[1]
-path = root / "build_output.py"
-text = path.read_text(encoding="utf-8")
-if "BuildProgress" in text and "tick(" in text:
+target = root / "build_output.py"
+if not target.exists():
+    print("missing", target)
+    sys.exit(1)
+
+t = target.read_text(encoding="utf-8")
+if "_BuildProgress" in t and '_p("pack/lang0.pak")' in t:
     print("already patched")
     sys.exit(0)
 
-imp = "from hanhua_v3.runtime import console_color, install_hanhua, lang0_gbk_patch, tbl_utf16_patch"
-new_imp = imp + "\nfrom hanhua_v3.runtime.build_progress import BuildProgress"
-if imp not in text:
-    print("import line not found", file=sys.stderr)
+if "from pathlib import Path" not in t:
+    print("unexpected build_output.py layout")
     sys.exit(1)
-text = text.replace(imp, new_imp, 1)
 
-old = """    readme_writer: Callable[[Path], None],
-    gui_font: GuiFontPatch | None,
-) -> dict[str, dict[str, int]]:"""
-new = """    readme_writer: Callable[[Path], None],
-    gui_font: GuiFontPatch | None,
-    progress: BuildProgress | None = None,
-) -> dict[str, dict[str, int]]:"""
-if old not in text:
-    print("build_one signature not found", file=sys.stderr)
+if "_BuildProgress" not in t:
+    t = t.replace(
+        "from pathlib import Path\n",
+        "from pathlib import Path\n\n"
+        "try:\n"
+        "    from hanhua_v3.runtime.build_progress import Progress as _BuildProgress\n"
+        "except Exception:  # pragma: no cover\n"
+        "    try:\n"
+        "        from build_progress import Progress as _BuildProgress\n"
+        "    except Exception:\n"
+        "        _BuildProgress = None\n",
+        1,
+    )
+
+old = '''    manifest = load_build_manifest(out_dir)\n    code_sig = build_code_hash()\n    stats: dict[str, dict[str, int]] = {}\n'''
+new = '''    manifest = load_build_manifest(out_dir)\n    code_sig = build_code_hash()\n    stats: dict[str, dict[str, int]] = {}\n    progress = _BuildProgress(9, label=ansi_encoding) if _BuildProgress else None\n\n    def _p(msg: str) -> None:\n        if progress is not None:\n            progress.step(msg)\n        else:\n            print(f"  · {msg}", flush=True)\n'''
+if old not in t:
+    print("anchor1 not found")
     sys.exit(1)
-text = text.replace(old, new, 1)
+t = t.replace(old, new, 1)
 
-old = """    stats: dict[str, dict[str, int]] = {}
+old = '''        stats.update(taiwan_stats)\n\n    lang0_rows = transform_lang0(translations.lang0, text_transform)\n'''
+new = '''        stats.update(taiwan_stats)\n    _p("localize/Taiwan/language")\n\n    lang0_rows = transform_lang0(translations.lang0, text_transform)\n'''
+if old in t:
+    t = t.replace(old, new, 1)
 
-    taiwan_sources = {"""
-new = """    stats: dict[str, dict[str, int]] = {}
+old = '''        builder=build_lang0,\n    )\n\n    tbl_rows = transform_tbl(translations.tbl, text_transform)\n'''
+new = '''        builder=build_lang0,\n    )\n    _p("pack/lang0.pak")\n\n    tbl_rows = transform_tbl(translations.tbl, text_transform)\n'''
+if old in t:
+    t = t.replace(old, new, 1)
 
-    def tick(message: str) -> None:
-        if progress is not None:
-            progress.step(message)
+old = '''                ansi_encoding,\n            ),\n        )\n\n    gui0_stats = {}\n'''
+new = '''                ansi_encoding,\n            ),\n        )\n        _p(f"pack/{file_name}")\n\n    gui0_stats = {}\n'''
+if old in t:
+    t = t.replace(old, new, 1)
 
-    taiwan_sources = {"""
-text = text.replace(old, new, 1)
+old = '''    copy_missing_pack_files(source_dir, pack_dir)\n\n    readme_writer(out_dir)\n    if gui0_stats:\n        stats["pack/gui0.pak"] = gui0_stats\n    write_build_manifest(out_dir, manifest)\n    return stats\n'''
+new = '''    if gui0_stats or source_gui0.is_file():\n        _p("pack/gui0.pak")\n    copy_missing_pack_files(source_dir, pack_dir)\n    _p("copy pack files")\n\n    readme_writer(out_dir)\n    _p("write README")\n    if gui0_stats:\n        stats["pack/gui0.pak"] = gui0_stats\n    write_build_manifest(out_dir, manifest)\n    _p("write manifest")\n    if progress is not None:\n        progress.done("完成")\n    return stats\n'''
+if old in t:
+    t = t.replace(old, new, 1)
 
-pairs = [
-(
-"""    taiwan_stats = maybe_build_target(
-        manifest=manifest,
-        target_id=\"DBOZero/localize/Taiwan/language\",""",
-"""    tick(\"localize/Taiwan/language\")
-    taiwan_stats = maybe_build_target(
-        manifest=manifest,
-        target_id=\"DBOZero/localize/Taiwan/language\",""",
-),
-(
-"""    stats[\"pack/lang0.pak\"] = maybe_build_target(
-        manifest=manifest,
-        target_id=\"DBOZero/pack/lang0.pak\",""",
-"""    tick(\"pack/lang0.pak\")
-    stats[\"pack/lang0.pak\"] = maybe_build_target(
-        manifest=manifest,
-        target_id=\"DBOZero/pack/lang0.pak\",""",
-),
-(
-"""    for file_name in tbl_utf16_patch.TBL_FILES:
-        source_tbl = tbl_utf16_patch.tbl_path(source_dir, file_name)""",
-"""    for file_name in tbl_utf16_patch.TBL_FILES:
-        tick(f\"pack/{file_name}\")
-        source_tbl = tbl_utf16_patch.tbl_path(source_dir, file_name)""",
-),
-(
-"""        gui0_stats = maybe_build_target(
-            manifest=manifest,
-            target_id=\"DBOZero/pack/gui0.pak\",""",
-"""        tick(\"pack/gui0.pak\")
-        gui0_stats = maybe_build_target(
-            manifest=manifest,
-            target_id=\"DBOZero/pack/gui0.pak\",""",
-),
-(
-"""    copy_missing_pack_files(source_dir, pack_dir)
+old = '''    built = run_build_jobs(\n        jobs,\n        source_dir,\n        translations,\n        clean=args.force and not args.no_clean,\n        force=args.force,\n        gui_font=gui_font,\n        parallel=args.variant == "all" and not args.no_parallel,\n    )\n'''
+new = '''    for job in jobs:\n        print(f"=== 開始構建 {job.label} ({job.ansi_encoding}) → {job.out_dir} ===", flush=True)\n    built = run_build_jobs(\n        jobs,\n        source_dir,\n        translations,\n        clean=args.force and not args.no_clean,\n        force=args.force,\n        gui_font=gui_font,\n        parallel=args.variant == "all" and not args.no_parallel,\n    )\n'''
+if old in t:
+    t = t.replace(old, new, 1)
 
-    readme_writer(out_dir)
-    if gui0_stats:
-        stats[\"pack/gui0.pak\"] = gui0_stats
-    write_build_manifest(out_dir, manifest)
-    return stats
-""",
-"""    else:
-        tick(\"pack/gui0.pak (略過)\")
-    tick(\"copy pack files\")
-    copy_missing_pack_files(source_dir, pack_dir)
-
-    tick(\"write README\")
-    readme_writer(out_dir)
-    if gui0_stats:
-        stats[\"pack/gui0.pak\"] = gui0_stats
-    tick(\"write manifest\")
-    write_build_manifest(out_dir, manifest)
-    return stats
-""",
-),
-(
-"""    stats = build_one(
-        source_dir,
-        job.out_dir,
-        translations,
-        clean=clean,
-        force=force,
-        text_transform=text_transform,
-        transform_sig=job.transform_sig,
-        ansi_encoding=job.ansi_encoding,
-        readme_writer=readme_writer,
-        gui_font=gui_font,
-    )
-    return job.label, job.out_dir, job.ansi_encoding, stats
-""",
-"""    progress = BuildProgress(9, label=job.label)
-    print(f\"=== 開始構建 {job.label} ({job.ansi_encoding}) → {job.out_dir} ===\", flush=True)
-    stats = build_one(
-        source_dir,
-        job.out_dir,
-        translations,
-        clean=clean,
-        force=force,
-        text_transform=text_transform,
-        transform_sig=job.transform_sig,
-        ansi_encoding=job.ansi_encoding,
-        readme_writer=readme_writer,
-        gui_font=gui_font,
-        progress=progress,
-    )
-    print(f\"=== 完成 {job.label} ===\", flush=True)
-    return job.label, job.out_dir, job.ansi_encoding, stats
-""",
-),
-(
-"""    require_source_layout(source_dir)
-    translations = load_translation_sets(args.data_dir)
-""",
-"""    require_source_layout(source_dir)
-    print(\"[準備] 載入翻譯表…\", flush=True)
-    translations = load_translation_sets(args.data_dir)
-    print(f\"[準備] 主表 {translations.master_rows} 列，佇列已填 {translations.queue_rows} 列\", flush=True)
-""",
-),
-(
-"""    if not args.no_validate:
-        for label, out_dir, ansi_encoding, _stats in built:
-            validate_basic(source_dir, out_dir, label, ansi_encoding)
-""",
-"""    if not args.no_validate:
-        print(\"[驗證] 檢查輸出檔案…\", flush=True)
-        for i, (label, out_dir, ansi_encoding, _stats) in enumerate(built, 1):
-            print(f\"[驗證] ({i}/{len(built)}) {label}\", flush=True)
-            validate_basic(source_dir, out_dir, label, ansi_encoding)
-""",
-),
-]
-
-for a, b in pairs:
-    if a not in text:
-        print("pattern not found:", repr(a[:60]), file=sys.stderr)
-        sys.exit(1)
-    text = text.replace(a, b, 1)
-
-path.write_text(text, encoding="utf-8")
-print(f"patched {path}")
+compile(t, "build_output.py", "exec")
+target.write_text(t, encoding="utf-8", newline="\n")
+print("OK: patched", target)
