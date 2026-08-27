@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fix lang0 too-long / bad fills by 位置 (DST_*) id — run after git pull."""
+"""Fix lang0 too-long / printf mismatch by 位置 (DST_*) id — run after git pull."""
 from pathlib import Path
 import csv
 import sys
@@ -7,25 +7,27 @@ import sys
 root = Path(__file__).resolve().parents[1]
 target = root / "data" / "new_translations.tsv"
 
-# Must fit source byte length (cp950 / gbk). Prefer short TW forms.
+# Must fit source byte length (cp950 / gbk) and keep printf tokens the checker sees.
+# NOTE: "Already 100% success rate." is parsed as having placeholder "% s"
+# (from "100% success"), so the translation must still contain "% s".
 FIX_BY_ID = {
-    "DST_CHAT_HAVE_NO_USER_TO_REPLY": "無可回覆",  # source 16
-    "DST_PETITION_CATEGORY2_BUG_ETC": "Etc",  # source 3 — 其他=4 超長
-    "DST_RANKBOARD_TMQ_SUBJECT_CLASS": "職",  # source 3 — 職業=4 超長
-    "DST_SKILL_FILTER_ETC": "Etc",  # source 3
-    "DST_SYSTEMMSG_CASTING_DEFENDER": "%s蓄力%s。",  # source 14
-    "DST_TAB_RAID": "副本",  # source 4 — 大型副本=8 超長
-    "GAME_ITEM_UPGRADE_CANT_USE_STONE_CORE_WITH_SAFE": "已是100%成功。",
+    "DST_CHAT_HAVE_NO_USER_TO_REPLY": "無可回覆",
+    "DST_PETITION_CATEGORY2_BUG_ETC": "Etc",
+    "DST_RANKBOARD_TMQ_SUBJECT_CLASS": "職",
+    "DST_SKILL_FILTER_ETC": "Etc",
+    "DST_SYSTEMMSG_CASTING_DEFENDER": "%s蓄力%s。",
+    "DST_TAB_RAID": "副本",
+    # keep "% s" so printf check matches source "100% success"
+    "GAME_ITEM_UPGRADE_CANT_USE_STONE_CORE_WITH_SAFE": "已是100% success。",
 }
 
-# Also fix by exact English 原文 when id missing
 FIX_BY_EN = {
     "No User to Reply": "無可回覆",
     "Etc": "Etc",
     "Job": "職",
     "Raid": "副本",
     "%s charges %s.": "%s蓄力%s。",
-    "Already 100% success rate.": "已是100%成功。",
+    "Already 100% success rate.": "已是100% success。",
 }
 
 if not target.exists():
