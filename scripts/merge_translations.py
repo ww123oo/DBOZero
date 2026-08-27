@@ -23,7 +23,7 @@ merge_files = [
     root / "data" / name
     for name in [
         "tbl_batch_delta.tsv",
-        *[f"tbl_batch{i}_delta.tsv" for i in range(2, 45)],
+        *[f"tbl_batch{i}_delta.tsv" for i in range(2, 46)],
     ]
 ]
 
