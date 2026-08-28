@@ -36,6 +36,7 @@ merge_files = [
     root / "data" / "ui_element_labels_delta.tsv",
     root / "data" / "ui_lang0_labels_delta.tsv",
     root / "data" / "ui_scs_fix_delta.tsv",
+    root / "data" / "term_ascend_jinjie_delta.tsv",
     root / "data" / "lang0_s2t_delta.tsv",
     root / "data" / "place_name_fix_delta.tsv",
     root / "data" / "term_advanced_fix_delta.tsv",
@@ -44,7 +45,7 @@ merge_files = [
     root / "data" / "term_kaili_fix_delta.tsv",
 ] + [
     root / "data" / name
-    for name in ["tbl_batch_delta.tsv", *[f"tbl_batch{i}_delta.tsv" for i in range(2, 62)]]
+    for name in ["tbl_batch_delta.tsv", *[f"tbl_batch{i}_delta.tsv" for i in range(2, 63)]]
 ]
 
 M = {}
@@ -62,7 +63,7 @@ for mp in merge_files:
 if not M or not target.exists():
     print("missing data"); sys.exit(1)
 
-rows, filled, skipped = [], 0, 0
+rows, filled = [], 0
 with target.open(encoding="utf-8-sig") as f:
     reader = csv.DictReader(f, delimiter="\t")
     fields = reader.fieldnames
@@ -70,9 +71,7 @@ with target.open(encoding="utf-8-sig") as f:
         en = (r.get("原文") or "").strip()
         cur = (r.get("填写中文") or "").strip()
         pos = (r.get("位置") or "").strip()
-        if pos in LOCKED_IDS:
-            skipped += 1
-        elif en in M and cur != M[en]:
+        if pos not in LOCKED_IDS and en in M and cur != M[en]:
             r["填写中文"] = M[en]
             filled += 1
         rows.append(r)
@@ -81,5 +80,5 @@ with target.open("w", encoding="utf-8-sig", newline="") as f:
     w = csv.DictWriter(f, fieldnames=fields, delimiter="\t", lineterminator="\n")
     w.writeheader()
     w.writerows(rows)
-print(f"OK: updated {filled}; locked skipped {skipped}")
-print("Then: python scripts/fix_lang0_length_ids.py")
+print(f"OK: updated {filled}")
+print("Then: fix_ascend_to_jinjie.py + fix_lang0_length_ids.py")
