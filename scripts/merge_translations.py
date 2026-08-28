@@ -46,7 +46,7 @@ merge_files = [
     root / "data" / "term_kaili_fix_delta.tsv",
 ] + [
     root / "data" / name
-    for name in ["tbl_batch_delta.tsv", *[f"tbl_batch{i}_delta.tsv" for i in range(2, 64)]]
+    for name in ["tbl_batch_delta.tsv", *[f"tbl_batch{i}_delta.tsv" for i in range(2, 65)]]
 ]
 
 M = {}
@@ -82,3 +82,4 @@ with target.open("w", encoding="utf-8-sig", newline="") as f:
     w.writeheader()
     w.writerows(rows)
 print(f"OK: updated {filled}")
+print("Then: fix_ascend_to_jinjie.py + fix_lang0_length_ids.py")
