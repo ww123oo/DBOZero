@@ -29,6 +29,14 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 from collections import OrderedDict
 from dataclasses import dataclass
 from pathlib import Path
+
+try:
+    from hanhua_v3.runtime.build_progress import Progress as _BuildProgress
+except Exception:  # pragma: no cover
+    try:
+        from build_progress import Progress as _BuildProgress
+    except Exception:
+        _BuildProgress = None
 from typing import Callable
 
 from hanhua_v3.policy import TBL_INTERNAL_TOKEN_DENYLIST, is_tbl_internal_token
@@ -937,6 +945,13 @@ def build_one(
     manifest = load_build_manifest(out_dir)
     code_sig = build_code_hash()
     stats: dict[str, dict[str, int]] = {}
+    progress = _BuildProgress(9, label=ansi_encoding) if _BuildProgress else None
+
+    def _p(msg: str) -> None:
+        if progress is not None:
+            progress.step(msg)
+        else:
+            print(f"  · {msg}", flush=True)
 
     taiwan_sources = {
         name: source_dir / "DBOZero" / "localize" / "Taiwan" / "language" / name
@@ -967,6 +982,7 @@ def build_one(
         stats["localize/Taiwan/language"] = taiwan_stats
     else:
         stats.update(taiwan_stats)
+    _p("localize/Taiwan/language")
 
     lang0_rows = transform_lang0(translations.lang0, text_transform)
     source_lang0 = lang0_gbk_patch.lang0_path(source_dir)
@@ -1001,6 +1017,7 @@ def build_one(
         force=force,
         builder=build_lang0,
     )
+    _p("pack/lang0.pak")
 
     tbl_rows = transform_tbl(translations.tbl, text_transform)
     tbl_groups = group_tbl_translations(tbl_rows)
@@ -1027,6 +1044,7 @@ def build_one(
                 ansi_encoding,
             ),
         )
+        _p(f"pack/{file_name}")
 
     gui0_stats = {}
     source_gui0 = source_dir / "DBOZero" / "pack" / "gui0.pak"
@@ -1047,12 +1065,19 @@ def build_one(
             force=force,
             builder=lambda: write_gui0_pack(source_dir, pack_dir, gui_font),
         )
+    if source_gui0.is_file() or gui0_stats:
+        _p("pack/gui0.pak")
     copy_missing_pack_files(source_dir, pack_dir)
+    _p("copy pack files")
 
     readme_writer(out_dir)
+    _p("write README")
     if gui0_stats:
         stats["pack/gui0.pak"] = gui0_stats
     write_build_manifest(out_dir, manifest)
+    _p("write manifest")
+    if progress is not None:
+        progress.done("完成")
     return stats
 
 
@@ -1118,6 +1143,7 @@ def run_build_variant(
     else:
         raise BuildError(f"Unknown build variant: {job.label}")
 
+    print(f"=== 開始構建 {job.label} ({job.ansi_encoding}) → {job.out_dir}", flush=True)
     stats = build_one(
         source_dir,
         job.out_dir,
@@ -1130,6 +1156,7 @@ def run_build_variant(
         readme_writer=readme_writer,
         gui_font=gui_font,
     )
+    print(f"=== 完成 {job.label} ===", flush=True)
     return job.label, job.out_dir, job.ansi_encoding, stats
 
 
