@@ -18,6 +18,7 @@ merge_files = [
     root / "data" / "ui_batch4_delta.tsv",
     root / "data" / "ui_itemascend_delta.tsv",
     root / "data" / "ui_element_labels_delta.tsv",
+    root / "data" / "ui_lang0_labels_delta.tsv",
     root / "data" / "ui_scs_fix_delta.tsv",
     root / "data" / "lang0_s2t_delta.tsv",
     root / "data" / "place_name_fix_delta.tsv",
@@ -29,7 +30,7 @@ merge_files = [
     root / "data" / name
     for name in [
         "tbl_batch_delta.tsv",
-        *[f"tbl_batch{i}_delta.tsv" for i in range(2, 51)],
+        *[f"tbl_batch{i}_delta.tsv" for i in range(2, 54)],
     ]
 ]
 
@@ -61,7 +62,6 @@ with target.open(encoding="utf-8-sig") as f:
         en = (r.get("原文") or "").strip()
         cur = (r.get("填写中文") or "").strip()
         pos = (r.get("位置") or "").strip()
-        # ID-based overrides for SCS button
         if pos == "DST_SCS_GUI_BUTTON_SEND":
             if cur != "驗證":
                 r["填写中文"] = "驗證"

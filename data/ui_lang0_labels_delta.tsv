@@ -1,0 +1,23 @@
+原文	填写中文
+Armor Element:	防具屬性：
+Weapon Element:	武器屬性：
+Elements:	屬性：
+Elemental Attack: %.0f%%	屬性攻擊：%.0f%%
+Elemental Defense: %.0f%%	屬性防禦：%.0f%%
+If it fails, the item element is cleared.	失敗時，道具屬性會被清除。
+Element Change[br]%s -> %s	屬性變更[br]%s -> %s
+No element changed	屬性未變更
+Item Element Change (%s > %s)	道具屬性變更（%s > %s）
+Element untouched	屬性未變動
+Select an element and apply it to gloves or jacket.	選擇屬性並套用到手套或外套。
+Performance Mode OFF - graphics restored.	效能模式關閉－畫面已恢復。
+Auto Collect: picks up nearby items automatically.	自動拾取：自動撿取附近道具。
+LFG: %s	組隊：%s
+LFP	找隊伍
+Verify	驗證
+Submit Code	驗證
+For now, you can only have 25 Resets.	目前最多只能重置 25 次。
+Battle Info	戰鬥資訊
+Motion posture	舞空姿勢
+Air pose	舞空動作
+You can't fly during a fight.	戰鬥中無法舞空。
