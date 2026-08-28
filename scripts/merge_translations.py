@@ -30,7 +30,7 @@ merge_files = [
     root / "data" / name
     for name in [
         "tbl_batch_delta.tsv",
-        *[f"tbl_batch{i}_delta.tsv" for i in range(2, 54)],
+        *[f"tbl_batch{i}_delta.tsv" for i in range(2, 56)],
     ]
 ]
 
@@ -62,11 +62,7 @@ with target.open(encoding="utf-8-sig") as f:
         en = (r.get("原文") or "").strip()
         cur = (r.get("填写中文") or "").strip()
         pos = (r.get("位置") or "").strip()
-        if pos == "DST_SCS_GUI_BUTTON_SEND":
-            if cur != "驗證":
-                r["填写中文"] = "驗證"
-                filled += 1
-        elif pos == "DST_SCS_BEGIN_BTN":
+        if pos in ("DST_SCS_GUI_BUTTON_SEND", "DST_SCS_BEGIN_BTN"):
             if cur != "驗證":
                 r["填写中文"] = "驗證"
                 filled += 1
