@@ -30,7 +30,7 @@ merge_files = [
     root / "data" / name
     for name in [
         "tbl_batch_delta.tsv",
-        *[f"tbl_batch{i}_delta.tsv" for i in range(2, 57)],
+        *[f"tbl_batch{i}_delta.tsv" for i in range(2, 58)],
     ]
 ]
 
@@ -69,12 +69,6 @@ with target.open(encoding="utf-8-sig") as f:
         elif en in M:
             if cur != M[en]:
                 r["填写中文"] = M[en]
-                filled += 1
-        zh = r.get("填写中文") or ""
-        if "凱裡" in zh or "凯里" in zh:
-            nzh = zh.replace("凱裡", "凱里").replace("凯里", "凱里")
-            if nzh != zh:
-                r["填写中文"] = nzh
                 filled += 1
         rows.append(r)
 
