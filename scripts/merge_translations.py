@@ -37,6 +37,7 @@ merge_files = [
     root / "data" / "ui_lang0_labels_delta.tsv",
     root / "data" / "ui_scs_fix_delta.tsv",
     root / "data" / "ui_transform_end_delta.tsv",
+    root / "data" / "ui_misc_fix_delta.tsv",
     root / "data" / "term_ascend_jinjie_delta.tsv",
     root / "data" / "term_advanced_gaoji_delta.tsv",
     root / "data" / "lang0_s2t_delta.tsv",
@@ -47,7 +48,7 @@ merge_files = [
     root / "data" / "term_kaili_fix_delta.tsv",
 ] + [
     root / "data" / name
-    for name in ["tbl_batch_delta.tsv", *[f"tbl_batch{i}_delta.tsv" for i in range(2, 69)]]
+    for name in ["tbl_batch_delta.tsv", *[f"tbl_batch{i}_delta.tsv" for i in range(2, 70)]]
 ]
 
 M = {}
@@ -83,4 +84,3 @@ with target.open("w", encoding="utf-8-sig", newline="") as f:
     w.writeheader()
     w.writerows(rows)
 print(f"OK: updated {filled}")
-print("Then: fix_advanced_to_gaoji + fix_ascend + fix_lang0_length")
