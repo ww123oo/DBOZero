@@ -36,6 +36,7 @@ merge_files = [
     root / "data" / "ui_element_labels_delta.tsv",
     root / "data" / "ui_lang0_labels_delta.tsv",
     root / "data" / "ui_scs_fix_delta.tsv",
+    root / "data" / "ui_transform_end_delta.tsv",
     root / "data" / "term_ascend_jinjie_delta.tsv",
     root / "data" / "lang0_s2t_delta.tsv",
     root / "data" / "place_name_fix_delta.tsv",
@@ -81,4 +82,3 @@ with target.open("w", encoding="utf-8-sig", newline="") as f:
     w.writeheader()
     w.writerows(rows)
 print(f"OK: updated {filled}")
-print("Then: fix_ascend_to_jinjie.py + fix_lang0_length_ids.py")
