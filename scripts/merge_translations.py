@@ -6,6 +6,34 @@ import sys
 
 root = Path(__file__).resolve().parents[1]
 target = root / "data" / "new_translations.tsv"
+
+# Never overwrite these IDs via 原文 merge (byte-length locked)
+LOCKED_IDS = {
+    "DST_BUDOKAI_INDI_REQ_RECORD_DATA",
+    "DST_OBSERVER_RECORD",
+    "DST_CHAT_HAVE_NO_USER_TO_REPLY",
+    "DST_CHAT_MODE_FIND_PARTY",
+    "DST_CHAT_MODE_FIND_PARTY_EXTEND",
+    "DST_CITYMAP_DEADMINE",
+    "DST_GUILD_PASSIVE_COST",
+    "DST_MOVIE_AGE1000",
+    "DST_NOTIFY_GAIN_EXP_AND_BONUS",
+    "DST_NOTIFY_GAIN_MIX_EXP",
+    "DST_PETITION_CATEGORY2_BUG_ETC",
+    "DST_SKILL_FILTER_ETC",
+    "DST_QUESTREWARD_INFO_REPUTATION",
+    "DST_RANKBATTLE_MEMBER_GIVEUP",
+    "DST_RANKBOARD_TMQ_SUBJECT_CLASS",
+    "DST_SYSTEMMSG_CASTING_DEFENDER",
+    "DST_SYSTEMMSG_SKILL_EP",
+    "DST_SYSTEMMSG_SKILL_LP",
+    "DST_TAB_RAID",
+    "DST_YARDRAT_BTN_CLAIM_WAIT",
+    "GAME_ITEM_UPGRADE_CANT_USE_STONE_CORE_WITH_SAFE",
+    "DST_SCS_GUI_BUTTON_SEND",
+    "DST_SCS_BEGIN_BTN",
+}
+
 merge_files = [
     root / "data" / "translations_to_merge.tsv",
     root / "data" / "ui_equip_delta.tsv",
@@ -30,7 +58,7 @@ merge_files = [
     root / "data" / name
     for name in [
         "tbl_batch_delta.tsv",
-        *[f"tbl_batch{i}_delta.tsv" for i in range(2, 60)],
+        *[f"tbl_batch{i}_delta.tsv" for i in range(2, 61)],
     ]
 ]
 
@@ -55,6 +83,7 @@ if not target.exists():
 
 rows = []
 filled = 0
+skipped_lock = 0
 with target.open(encoding="utf-8-sig") as f:
     reader = csv.DictReader(f, delimiter="\t")
     fields = reader.fieldnames
@@ -62,14 +91,11 @@ with target.open(encoding="utf-8-sig") as f:
         en = (r.get("原文") or "").strip()
         cur = (r.get("填写中文") or "").strip()
         pos = (r.get("位置") or "").strip()
-        if pos in ("DST_SCS_GUI_BUTTON_SEND", "DST_SCS_BEGIN_BTN"):
-            if cur != "驗證":
-                r["填写中文"] = "驗證"
-                filled += 1
-        elif en in M:
-            if cur != M[en]:
-                r["填写中文"] = M[en]
-                filled += 1
+        if pos in LOCKED_IDS:
+            skipped_lock += 1
+        elif en in M and cur != M[en]:
+            r["填写中文"] = M[en]
+            filled += 1
         rows.append(r)
 
 with target.open("w", encoding="utf-8-sig", newline="") as f:
@@ -77,4 +103,5 @@ with target.open("w", encoding="utf-8-sig", newline="") as f:
     w.writeheader()
     w.writerows(rows)
 
-print(f"OK: data/new_translations.tsv updated {filled} from {len(M)} keys")
+print(f"OK: updated {filled}; locked-id rows skipped {skipped_lock}")
+print("NOTE: run scripts/fix_lang0_length_ids.py AFTER merge to re-apply short fills")
