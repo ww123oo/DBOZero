@@ -7,31 +7,19 @@ import sys
 root = Path(__file__).resolve().parents[1]
 target = root / "data" / "new_translations.tsv"
 
-# Never overwrite these IDs via 原文 merge (byte-length locked)
 LOCKED_IDS = {
-    "DST_BUDOKAI_INDI_REQ_RECORD_DATA",
-    "DST_OBSERVER_RECORD",
-    "DST_CHAT_HAVE_NO_USER_TO_REPLY",
-    "DST_CHAT_MODE_FIND_PARTY",
-    "DST_CHAT_MODE_FIND_PARTY_EXTEND",
-    "DST_CITYMAP_DEADMINE",
-    "DST_GUILD_PASSIVE_COST",
-    "DST_MOVIE_AGE1000",
-    "DST_NOTIFY_GAIN_EXP_AND_BONUS",
-    "DST_NOTIFY_GAIN_MIX_EXP",
-    "DST_PETITION_CATEGORY2_BUG_ETC",
-    "DST_SKILL_FILTER_ETC",
-    "DST_QUESTREWARD_INFO_REPUTATION",
-    "DST_RANKBATTLE_MEMBER_GIVEUP",
-    "DST_RANKBOARD_TMQ_SUBJECT_CLASS",
-    "DST_SYSTEMMSG_CASTING_DEFENDER",
-    "DST_SYSTEMMSG_SKILL_EP",
-    "DST_SYSTEMMSG_SKILL_LP",
-    "DST_TAB_RAID",
-    "DST_YARDRAT_BTN_CLAIM_WAIT",
+    "DST_BUDOKAI_INDI_REQ_RECORD_DATA", "DST_OBSERVER_RECORD",
+    "DST_CHAT_HAVE_NO_USER_TO_REPLY", "DST_CHAT_MODE_FIND_PARTY",
+    "DST_CHAT_MODE_FIND_PARTY_EXTEND", "DST_CITYMAP_DEADMINE",
+    "DST_GUILD_PASSIVE_COST", "DST_MOVIE_AGE1000",
+    "DST_NOTIFY_GAIN_EXP_AND_BONUS", "DST_NOTIFY_GAIN_MIX_EXP",
+    "DST_PETITION_CATEGORY2_BUG_ETC", "DST_SKILL_FILTER_ETC",
+    "DST_QUESTREWARD_INFO_REPUTATION", "DST_RANKBATTLE_MEMBER_GIVEUP",
+    "DST_RANKBOARD_TMQ_SUBJECT_CLASS", "DST_SYSTEMMSG_CASTING_DEFENDER",
+    "DST_SYSTEMMSG_SKILL_EP", "DST_SYSTEMMSG_SKILL_LP",
+    "DST_TAB_RAID", "DST_YARDRAT_BTN_CLAIM_WAIT",
     "GAME_ITEM_UPGRADE_CANT_USE_STONE_CORE_WITH_SAFE",
-    "DST_SCS_GUI_BUTTON_SEND",
-    "DST_SCS_BEGIN_BTN",
+    "DST_SCS_GUI_BUTTON_SEND", "DST_SCS_BEGIN_BTN",
 }
 
 merge_files = [
@@ -56,10 +44,7 @@ merge_files = [
     root / "data" / "term_kaili_fix_delta.tsv",
 ] + [
     root / "data" / name
-    for name in [
-        "tbl_batch_delta.tsv",
-        *[f"tbl_batch{i}_delta.tsv" for i in range(2, 61)],
-    ]
+    for name in ["tbl_batch_delta.tsv", *[f"tbl_batch{i}_delta.tsv" for i in range(2, 62)]]
 ]
 
 M = {}
@@ -74,16 +59,10 @@ for mp in merge_files:
                 M[en] = zh
     print(f"loaded {mp.name}: keys {len(M)}")
 
-if not M:
-    print("no merge data")
-    sys.exit(1)
-if not target.exists():
-    print("missing", target)
-    sys.exit(1)
+if not M or not target.exists():
+    print("missing data"); sys.exit(1)
 
-rows = []
-filled = 0
-skipped_lock = 0
+rows, filled, skipped = [], 0, 0
 with target.open(encoding="utf-8-sig") as f:
     reader = csv.DictReader(f, delimiter="\t")
     fields = reader.fieldnames
@@ -92,7 +71,7 @@ with target.open(encoding="utf-8-sig") as f:
         cur = (r.get("填写中文") or "").strip()
         pos = (r.get("位置") or "").strip()
         if pos in LOCKED_IDS:
-            skipped_lock += 1
+            skipped += 1
         elif en in M and cur != M[en]:
             r["填写中文"] = M[en]
             filled += 1
@@ -102,6 +81,5 @@ with target.open("w", encoding="utf-8-sig", newline="") as f:
     w = csv.DictWriter(f, fieldnames=fields, delimiter="\t", lineterminator="\n")
     w.writeheader()
     w.writerows(rows)
-
-print(f"OK: updated {filled}; locked-id rows skipped {skipped_lock}")
-print("NOTE: run scripts/fix_lang0_length_ids.py AFTER merge to re-apply short fills")
+print(f"OK: updated {filled}; locked skipped {skipped}")
+print("Then: python scripts/fix_lang0_length_ids.py")
