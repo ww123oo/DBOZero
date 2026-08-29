@@ -40,6 +40,7 @@ merge_files = [
     root / "data" / "ui_misc_fix_delta.tsv",
     root / "data" / "term_ascend_jinjie_delta.tsv",
     root / "data" / "term_advanced_gaoji_delta.tsv",
+    root / "data" / "tbl0_full_delta.tsv",
     root / "data" / "lang0_s2t_delta.tsv",
     root / "data" / "place_name_fix_delta.tsv",
     root / "data" / "term_advanced_fix_delta.tsv",
