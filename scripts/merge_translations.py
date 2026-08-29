@@ -41,6 +41,7 @@ merge_files = [
     root / "data" / "term_ascend_jinjie_delta.tsv",
     root / "data" / "term_advanced_gaoji_delta.tsv",
     root / "data" / "tbl0_full_delta.tsv",
+    root / "data" / "tbl_length_fix_delta.tsv",
     root / "data" / "lang0_s2t_delta.tsv",
     root / "data" / "place_name_fix_delta.tsv",
     root / "data" / "term_advanced_fix_delta.tsv",
@@ -49,7 +50,7 @@ merge_files = [
     root / "data" / "term_kaili_fix_delta.tsv",
 ] + [
     root / "data" / name
-    for name in ["tbl_batch_delta.tsv", *[f"tbl_batch{i}_delta.tsv" for i in range(2, 90)]]
+    for name in ["tbl_batch_delta.tsv", *[f"tbl_batch{i}_delta.tsv" for i in range(2, 92)]]
 ]
 
 M = {}
