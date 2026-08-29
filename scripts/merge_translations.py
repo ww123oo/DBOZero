@@ -50,7 +50,7 @@ merge_files = [
     root / "data" / "term_armor_fangju_delta.tsv",
 ] + [
     root / "data" / name
-    for name in ["tbl_batch_delta.tsv", *[f"tbl_batch{i}_delta.tsv" for i in range(2, 106)]]
+    for name in ["tbl_batch_delta.tsv", *[f"tbl_batch{i}_delta.tsv" for i in range(2, 107)]]
 ]
 
 M = {}
