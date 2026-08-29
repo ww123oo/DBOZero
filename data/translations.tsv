@@ -257,12 +257,12 @@ lang0	lang0.pak	DST_EQUIP_SLOT_TYPE_DOGI	Dogi	8a3cbc4a85de	时装	accepted	legac
 lang0	lang0.pak	DST_LOBBY_CHARACTER_MAKE	New Character	991697573c36	创建新角色	accepted	legacy/translations/lang0_overrides.tsv	6	
 lang0	lang0.pak	DST_ITEM_GRADE_HERO	Divine	1b8cf090e6ef	神圣	accepted	legacy/translations/lang0_overrides.tsv	7	
 lang0	lang0.pak	DST_ITEMLIST_ITEMNAME	Name: %s	6ac139c4f333	名称: %s	accepted	legacy/translations/lang0_overrides.tsv	8	
-lang0	lang0.pak	DST_STATUS_STAT_CON	CON		耐力	accepted			base_status_attrs_fixed_lang0_short
-lang0	lang0.pak	DST_STATUS_STAT_DEX	DEX		敏捷	accepted			base_status_attrs_fixed_lang0_short
-lang0	lang0.pak	DST_STATUS_STAT_ENG	ENG		幸运	accepted			base_status_attrs_fixed_lang0_short
-lang0	lang0.pak	DST_STATUS_STAT_FOC	FOC		集中	accepted			base_status_attrs_fixed_lang0_short
-lang0	lang0.pak	DST_STATUS_STAT_SOL	SOL		气合	accepted			base_status_attrs_fixed_lang0_short
-lang0	lang0.pak	DST_STATUS_STAT_STR	STR		力量	accepted			base_status_attrs_fixed_lang0_short
+lang0	lang0.pak	DST_STATUS_STAT_CON	CON		体	accepted			base_status_attrs_fixed_lang0_short
+lang0	lang0.pak	DST_STATUS_STAT_DEX	DEX		敏	accepted			base_status_attrs_fixed_lang0_short
+lang0	lang0.pak	DST_STATUS_STAT_ENG	ENG		运	accepted			base_status_attrs_fixed_lang0_short
+lang0	lang0.pak	DST_STATUS_STAT_FOC	FOC		集	accepted			base_status_attrs_fixed_lang0_short
+lang0	lang0.pak	DST_STATUS_STAT_SOL	SOL		气	accepted			base_status_attrs_fixed_lang0_short
+lang0	lang0.pak	DST_STATUS_STAT_STR	STR		力	accepted			base_status_attrs_fixed_lang0_short
 lang0	lang0.pak	DST_STATUS_AP	P.Level		P.Level	accepted			status_panel_full_group_keep_english
 lang0	lang0.pak	DST_STATUS_ATTACK	Attack	1b81f28b5afb	攻击力	accepted	legacy/translations/lang0_overrides.tsv	16	
 lang0	lang0.pak	DST_STATUS_ATTACK_RATE	Hit Rate	27a36c2c2dcf	命中率	accepted	legacy/translations/lang0_overrides.tsv	17	
@@ -857,22 +857,22 @@ lang0	lang0.pak	DST_NAMEK_FIGHTER	Warrior	945eda39d82d	战士	accepted	legacy/tr
 lang0	lang0.pak	DST_NAMEK_MYSTIC	Dragon Clan	90e503aa15f2	那美克龙族	accepted	legacy/translations/lang0_overrides.tsv	621	
 lang0	lang0.pak	DST_SKILL_TAB_ACTION_SKILL	Action Skills	64d7a97e565b	动作技能	accepted	legacy/translations/lang0_overrides.tsv	622	
 lang0	lang0.pak	DST_SKILL_WINDOW_TITLE	Skills	e09212c7d3ea	技能	accepted	legacy/translations/lang0_overrides.tsv	623	
-lang0	lang0.pak	DST_MAILSYSTEM_MAIL_MARKET	World Markets	6c550d27c635	天下第一大市场	accepted	legacy/translations/lang0_overrides.tsv	626	local_data_priority_market
+lang0	lang0.pak	DST_MAILSYSTEM_MAIL_MARKET	World Markets	6c550d27c635	世界市场	accepted	legacy/translations/lang0_overrides.tsv	626	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_ACCESSORY	Accessory	962403f6dae8	装饰品	accepted	legacy/translations/lang0_overrides.tsv	627	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_ACCESSORY1	Accessory 1	7121316fe01e	装饰品1	accepted	legacy/translations/lang0_overrides.tsv	628	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_ACCESSORY2	Accessory 2	0dc8f62e6acc	装饰品2	accepted	legacy/translations/lang0_overrides.tsv	629	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_ACCESSORY3	Accessory 3	24d7a216fe01	装饰品3	accepted	legacy/translations/lang0_overrides.tsv	630	local_data_priority_market
-lang0	lang0.pak	DST_MARKET_ALLCATEGORY	All	6a72085653e4	全部	accepted	legacy/translations/lang0_overrides.tsv	631	local_data_priority_market
+lang0	lang0.pak	DST_MARKET_ALLCATEGORY	All	6a72085653e4	全	accepted	legacy/translations/lang0_overrides.tsv	631	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_ALLCLASS	All Classes	0e75c6a2260c	全部职业	accepted	legacy/translations/lang0_overrides.tsv	632	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_ALLTYPE	All	6a72085653e4	全	accepted	legacy/translations/lang0_overrides.tsv	633	
 lang0	lang0.pak	DST_MARKET_ARMOR	Armor	b1fc5d10fc8c	衣服	accepted	legacy/translations/lang0_overrides.tsv	634	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_BLACK_STONE	Black Stone	683be4a07d7d	漆黑原石	accepted	legacy/translations/lang0_overrides.tsv	635	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_BUY	"[align = ""center""][font size = ""12"" color=""f4d762""]Auction Purchase[/font][br][br][font size = ""10"" color=""269eff""]The following items:[/font][br][br][font size = ""10"" color=""ffffff""]%s[br]Price: %s Zeni[/font][br][br][font size = ""10"" color=""f36a7c""]Purchase this Item?[/font][br]"	94334c49d12e	"[align = ""center""][font size = ""12"" color=""f4d762""]购买确认[/font][br][br][font size = ""10"" color=""269eff""]以下物品:[/font][br][br][font size = ""10"" color=""ffffff""]%s[br]价格: %s 索[/font][br][br][font size = ""10"" color=""f36a7c""]是否购买?[/font][br]"	accepted	legacy/translations/lang0_overrides.tsv	636	
 lang0	lang0.pak	DST_MARKET_BUYITEM_CLICK	Select Items to Buy	448652bdf8e2	选择要买的物品	accepted	legacy/translations/lang0_overrides.tsv	637	
-lang0	lang0.pak	DST_MARKET_BUYTEXT	Buy	7ceca51fcafe	购买	accepted	legacy/translations/lang0_overrides.tsv	638	local_data_priority_market
+lang0	lang0.pak	DST_MARKET_BUYTEXT	Buy	7ceca51fcafe	购	accepted	legacy/translations/lang0_overrides.tsv	638	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_CAPSULE_KIT	Capsule Kit	0369021bbe93	胶囊盒	accepted	legacy/translations/lang0_overrides.tsv	639	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_CHANGETYPE	Switch Between Buying & Selling	54d247a6cc75	可切换购买和贩卖视窗。	accepted	legacy/translations/lang0_overrides.tsv	640	local_data_priority_market
-lang0	lang0.pak	DST_MARKET_CONSOLE_MACHINE	Auction House	4dcdd7d31d86	天下第一大市场	accepted	legacy/translations/lang0_overrides.tsv	641	local_data_priority_market
+lang0	lang0.pak	DST_MARKET_CONSOLE_MACHINE	Auction House	4dcdd7d31d86	拍卖机	accepted	legacy/translations/lang0_overrides.tsv	641	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_DOJO	Dojo	2dd1f883527b	道服	accepted	legacy/translations/lang0_overrides.tsv	642	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_DOWNGRADE_STONE_ARMOR	Armor Downgrade	0ddb9750eff2	服饰降级	accepted	legacy/translations/lang0_overrides.tsv	643	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_DOWNGRADE_STONE_WEAPON	Weapon Downgrade	61ab56f02851	武器降级	accepted	legacy/translations/lang0_overrides.tsv	644	
@@ -882,7 +882,7 @@ lang0	lang0.pak	DST_MARKET_ENDTIME_SECOND	48 hours	b0e30da24243	48小时	accepte
 lang0	lang0.pak	DST_MARKET_ENDTIME_THIRED	72 hours	59cf33080071	72小时	accepted	legacy/translations/lang0_overrides.tsv	648	
 lang0	lang0.pak	DST_MARKET_ETC	Other	6e6a6f2086bb	其他	accepted	legacy/translations/lang0_overrides.tsv	649	
 lang0	lang0.pak	DST_MARKET_EXCELLENTTYPE	Excellent	1aafbf548bd1	特级以上	accepted	legacy/translations/lang0_overrides.tsv	650	local_data_priority_market
-lang0	lang0.pak	DST_MARKET_EXP_BUFF	EXP Buff	695de190d086	经验值Buff	accepted	legacy/translations/lang0_overrides.tsv	651	local_data_priority_market
+lang0	lang0.pak	DST_MARKET_EXP_BUFF	EXP Buff	695de190d086	经验值	accepted	legacy/translations/lang0_overrides.tsv	651	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_FOOD	Food	35b259290ec3	食物	accepted	legacy/translations/lang0_overrides.tsv	652	
 lang0	lang0.pak	DST_MARKET_FORGET_BOOK	Skill Reset Book	30fd8d8ef5c6	忘却之书	accepted	legacy/translations/lang0_overrides.tsv	653	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_FORGET_BOOKPLUS	Skill Reset Book+	d0a71221165b	忘却之书+	accepted	legacy/translations/lang0_overrides.tsv	654	local_data_priority_market
@@ -907,7 +907,7 @@ lang0	lang0.pak	DST_MARKET_MAX_DURITME	Repair First	88d3a527d94f	请先修理	ac
 lang0	lang0.pak	DST_MARKET_MINLEVEL	Min. Level	532e2720aa49	最小等级	accepted	legacy/translations/lang0_overrides.tsv	673	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_NAME	Name	709a23220f2c	姓名	accepted	legacy/translations/lang0_overrides.tsv	674	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_NEW_FOOD	New Food	2fb8b5814622	全新食物	accepted	legacy/translations/lang0_overrides.tsv	675	local_data_priority_market
-lang0	lang0.pak	DST_MARKET_NORMALTYPE	Normal	45e118d0563e	一般服饰	accepted	legacy/translations/lang0_overrides.tsv	676	local_data_priority_market
+lang0	lang0.pak	DST_MARKET_NORMALTYPE	Normal	45e118d0563e	一般	accepted	legacy/translations/lang0_overrides.tsv	676	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_NORMAL_STONE	Normal Stone	7dd248b90544	普通原石	accepted	legacy/translations/lang0_overrides.tsv	677	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_NOT_SERACH	Contains characters that can't be retrieved	1e4822983bcf	关键字中包含了特殊文字无法查询。	accepted	legacy/translations/lang0_overrides.tsv	678	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_PRICE	Price	3e8248e32edf	价格	accepted	legacy/translations/lang0_overrides.tsv	679	
@@ -915,7 +915,7 @@ lang0	lang0.pak	DST_MARKET_PURE_STONE	Pure stone	58a563c913a8	纯原石	accepted
 lang0	lang0.pak	DST_MARKET_RARETYPE	Rare	cce370d2f978	稀有	accepted	legacy/translations/lang0_overrides.tsv	681	
 lang0	lang0.pak	DST_MARKET_RECIPE	Recipe	1dcda804c96d	混合	accepted	legacy/translations/lang0_overrides.tsv	682	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_RECIPE_ITEM	Recipe	1dcda804c96d	食谱	accepted	legacy/translations/lang0_overrides.tsv	683	local_data_priority_market
-lang0	lang0.pak	DST_MARKET_REFRESH	Refresh	56e3badc4e6c	重新整理	accepted	legacy/translations/lang0_overrides.tsv	684	local_data_priority_market
+lang0	lang0.pak	DST_MARKET_REFRESH	Refresh	56e3badc4e6c	刷新	accepted	legacy/translations/lang0_overrides.tsv	684	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_REGISTRATION	Register	d672995a1465	登录	accepted	legacy/translations/lang0_overrides.tsv	685	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_RESORATIVE	Restore	3cbe6d6b9a8d	恢复剂	accepted	legacy/translations/lang0_overrides.tsv	686	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_RESORATIVE_ITEM	Restore	3cbe6d6b9a8d	药水	accepted	legacy/translations/lang0_overrides.tsv	687	local_data_priority_market
@@ -930,7 +930,7 @@ lang0	lang0.pak	DST_MARKET_SELLITEM_CANCEL	Click 'Cancel' to Cancel the Auction	
 lang0	lang0.pak	DST_MARKET_SELLTEXT	Sell	fa3cf2ad51e0	贩卖	accepted	legacy/translations/lang0_overrides.tsv	696	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_SELL_CANCEL	"[align = ""center""][font size = ""12"" color=""f4d762""]Cancel Auction[/font][br][br][font size = ""10"" color=""269eff""]Cancel the following:[/font][br][br][font size = ""10"" color=""ffffff""]%s[br]Sale Price: %s Zeni[/font][br][br][font size = ""10"" color=""f36a7c""]Do you want to Cancel?[/font][br]"	6a7204ff3159	"[align = ""center""][font size = ""12"" color=""f4d762""]取消委托贩卖道具[/font][br][br][font size = ""10"" color=""269font""] 将取消下列登录」[10"" color=""269""] 取消color=""ffffff""]%s[br]卖价 : %sZ[/font][br][br][font size = ""10"" color=""f36a7c""][警告] 您确定要取消吗？"	accepted	legacy/translations/lang0_overrides.tsv	697	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_SELL_ITMEPRICE	Price	3e8248e32edf	价格	accepted	legacy/translations/lang0_overrides.tsv	698	
-lang0	lang0.pak	DST_MARKET_SELL_NOT	Cancel	77dfd2135f4d	贩卖取消	accepted	legacy/translations/lang0_overrides.tsv	699	local_data_priority_market
+lang0	lang0.pak	DST_MARKET_SELL_NOT	Cancel	77dfd2135f4d	取消	accepted	legacy/translations/lang0_overrides.tsv	699	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_SELL_PRICE	Charge	d4e1aee46cda	手续费	accepted	legacy/translations/lang0_overrides.tsv	700	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_SERACH_ITEM	Search	bce06414177f	搜寻	accepted	legacy/translations/lang0_overrides.tsv	701	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_SERACH_REFRESH	Refresh	56e3badc4e6c	刷新	accepted	legacy/translations/lang0_overrides.tsv	702	
@@ -939,7 +939,7 @@ lang0	lang0.pak	DST_MARKET_SUBCATEGORY_INFO	Choose Sub Category	43aa8d15d7d4	选
 lang0	lang0.pak	DST_MARKET_SUBCATEGORY_NOT_SERACH	Select a subcategory	e07d65fa03a8	请选择子分类	accepted	legacy/translations/lang0_overrides.tsv	705	
 lang0	lang0.pak	DST_MARKET_SUBWEAPON	Sub Weapon	ffe8c8e988c7	辅助武器	accepted	legacy/translations/lang0_overrides.tsv	706	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_SUPERIORTYPE	Super	f6889fc97e14	优质	accepted	legacy/translations/lang0_overrides.tsv	707	
-lang0	lang0.pak	DST_MARKET_TITLE	Auction House	4dcdd7d31d86	天下第一大市场	accepted	legacy/translations/lang0_overrides.tsv	708	local_data_priority_market
+lang0	lang0.pak	DST_MARKET_TITLE	Auction House	4dcdd7d31d86	拍卖场	accepted	legacy/translations/lang0_overrides.tsv	708	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_UPGRADE_STONE_ARMOR	Armor Upgrade	a91b2b91f4c6	服饰强化	accepted	legacy/translations/lang0_overrides.tsv	709	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_UPGRADE_STONE_WEAPON	Weapon Upgrade	74ef6c4f013d	武器强化	accepted	legacy/translations/lang0_overrides.tsv	710	local_data_priority_market
 lang0	lang0.pak	DST_MARKET_USELEVLE	Level	7c7f5d049fad	等级	accepted	legacy/translations/lang0_overrides.tsv	711	
@@ -986,7 +986,7 @@ lang0	lang0.pak	DST_MAILSYSTEM_MAIL_EXPIRED_DAY	%u Day	f89abd84b507	%u天	accept
 lang0	lang0.pak	DST_MAILSYSTEM_MAIL_EXPIRED_DAY_LOCK	Lock	891ebccd5baa	锁定	accepted	legacy/translations/lang0_overrides.tsv	756	
 lang0	lang0.pak	DST_MAILSYSTEM_MAIL_EXPIRED_DAY_TITLE	Expiration Date	29a152dbe5f2	到期日	accepted	legacy/translations/lang0_overrides.tsv	757	
 lang0	lang0.pak	DST_MAILSYSTEM_MAIL_FROM	From	3f66052a107e	来自	accepted	legacy/translations/lang0_overrides.tsv	758	
-lang0	lang0.pak	DST_MAILSYSTEM_MAIL_MARKET	World Markets	6c550d27c635	天下第一大市场	accepted	legacy/translations/lang0_overrides.tsv	759	local_data_priority_market
+lang0	lang0.pak	DST_MAILSYSTEM_MAIL_MARKET	World Markets	6c550d27c635	世界市场	accepted	legacy/translations/lang0_overrides.tsv	759	local_data_priority_market
 lang0	lang0.pak	DST_MAILSYSTEM_MAIL_REPLY	Reply	6c2bb735a46a	回复	accepted	legacy/translations/lang0_overrides.tsv	760	
 lang0	lang0.pak	DST_MAILSYSTEM_MAIL_RESET	Reset	44c57abd888a	重置	accepted	legacy/translations/lang0_overrides.tsv	761	
 lang0	lang0.pak	DST_MAILSYSTEM_MAIL_RETURN	Return	24f096b221f9	退回	accepted	legacy/translations/lang0_overrides.tsv	762	
@@ -3080,16 +3080,16 @@ taiwan	local_data.dat	DST_ITEM_ATTR_HONEST	真		冰	accepted			new_element_attrs
 taiwan	local_data.dat	DST_ITEM_ATTR_STRANGE	奇		雷	accepted			new_element_attrs_local_data_mirror
 taiwan	local_data.dat	DST_ITEM_ATTR_WILD	猛		风	accepted			new_element_attrs_local_data_mirror
 taiwan	local_data.dat	DST_STATS_HDR_ATTR	元素		元素	accepted			new_element_attrs_local_data_mirror
-taiwan	local_data.dat	DST_STATS_LBL_HON_OFF	诚攻:		冰攻:	accepted			new_element_attrs_local_data_mirror
-taiwan	local_data.dat	DST_STATS_LBL_HON_DEF	诚防:		冰防:	accepted			new_element_attrs_local_data_mirror
-taiwan	local_data.dat	DST_STATS_LBL_STR_OFF	怪攻:		雷攻:	accepted			new_element_attrs_local_data_mirror
-taiwan	local_data.dat	DST_STATS_LBL_STR_DEF	怪防:		雷防:	accepted			new_element_attrs_local_data_mirror
-taiwan	local_data.dat	DST_STATS_LBL_WLD_OFF	野攻:		风攻:	accepted			new_element_attrs_local_data_mirror
-taiwan	local_data.dat	DST_STATS_LBL_WLD_DEF	野防:		风防:	accepted			new_element_attrs_local_data_mirror
-taiwan	local_data.dat	DST_STATS_LBL_ELG_OFF	雅攻:		水攻:	accepted			new_element_attrs_local_data_mirror
-taiwan	local_data.dat	DST_STATS_LBL_ELG_DEF	雅防:		水防:	accepted			new_element_attrs_local_data_mirror
-taiwan	local_data.dat	DST_STATS_LBL_FNY_OFF	搞攻:		火攻:	accepted			new_element_attrs_local_data_mirror
-taiwan	local_data.dat	DST_STATS_LBL_FNY_DEF	搞防:		火防:	accepted			new_element_attrs_local_data_mirror
+taiwan	local_data.dat	DST_STATS_LBL_HON_OFF	真攻:		冰攻:	accepted			new_element_attrs_local_data_mirror
+taiwan	local_data.dat	DST_STATS_LBL_HON_DEF	真防:		冰防:	accepted			new_element_attrs_local_data_mirror
+taiwan	local_data.dat	DST_STATS_LBL_STR_OFF	奇攻:		雷攻:	accepted			new_element_attrs_local_data_mirror
+taiwan	local_data.dat	DST_STATS_LBL_STR_DEF	奇防:		雷防:	accepted			new_element_attrs_local_data_mirror
+taiwan	local_data.dat	DST_STATS_LBL_WLD_OFF	猛	攻:		风攻:	accepted			new_element_attrs_local_data_mirror
+taiwan	local_data.dat	DST_STATS_LBL_WLD_DEF	猛	防:		风防:	accepted			new_element_attrs_local_data_mirror
+taiwan	local_data.dat	DST_STATS_LBL_ELG_OFF	丽攻:		水攻:	accepted			new_element_attrs_local_data_mirror
+taiwan	local_data.dat	DST_STATS_LBL_ELG_DEF	丽防:		水防:	accepted			new_element_attrs_local_data_mirror
+taiwan	local_data.dat	DST_STATS_LBL_FNY_OFF	乐攻:		火攻:	accepted			new_element_attrs_local_data_mirror
+taiwan	local_data.dat	DST_STATS_LBL_FNY_DEF	乐防:		火防:	accepted			new_element_attrs_local_data_mirror
 taiwan	local_data.dat	DST_TELEPORT_COMMON_CONFIRM_NO_BTN	移動取消	71317c6b7740	取消移动	accepted	git:stash@{1}		recovered_from_git_history
 taiwan	local_data.dat	DST_STATUS_STAT_FOC	專	b98a81588d85	集中	accepted	git:stash@{1}		recovered_from_git_history
 taiwan	local_data.dat	DST_STATUS_TOOLTIP_CON	耐力\n會對LP產生影響。	c19ab68f1178	耐力\n影响生命值。	accepted	git:stash@{1}		recovered_from_git_history

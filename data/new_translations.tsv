@@ -21,8 +21,8 @@ UI	lang0.pak	DST_AGGROPT_PET	Pet's Aggro.	召唤兽的仇恨值。	寵物仇恨�
 UI	lang0.pak	DST_AIRING_POSE	Motion posture	舞空执行动作	舞空姿勢	ok
 UI	lang0.pak	DST_AIR_AP_GUI_COMMENT	AP is consumed only during accelerated flying.\nIt regenerates while you fly slowly or while on ground.		"AP只會在加速舞空時消耗。
 慢速舞空或在地面時會恢復。"	ok
-UI	lang0.pak	DST_AIR_CAN_NOT_FLY	You can't fly right now.	目前无法使用<舞空术>。	目前无法舞空。	ok
-UI	lang0.pak	DST_AIR_CAN_NOT_USE_BATTLE_MODE	You can't fly during a fight.	战斗状态下无法使用。	战斗中无法舞空。	ok
+UI	lang0.pak	DST_AIR_CAN_NOT_FLY	You can't fly right now.	目前无法使用<舞空术>。	目前無法舞空。	ok
+UI	lang0.pak	DST_AIR_CAN_NOT_USE_BATTLE_MODE	You can't fly during a fight.	战斗状态下无法使用。	戰鬥中無法舞空。	ok
 UI	lang0.pak	DST_AIR_EFFECT	Air effect	舞空效果	舞空效果	ok
 UI	lang0.pak	DST_AIR_POSE	Air pose	舞空动作	舞空動作	ok
 UI	lang0.pak	DST_ALRAM_ITEMBOX_USE	"[align = ""center""][font size = ""9"" color=""269eff""]%s[/font][br]Popo's Chest box contains an exp. scroll."		"[align = ""center""][font size = ""9"" color=""269eff""]%s[/font][br]波波寶箱中含有經驗卷軸。"	ok
@@ -220,7 +220,7 @@ UI	lang0.pak	DST_FFA_ARENA_HELP_BODY	"[font color=""FFFFFF""]Free-for-all PvP ar
 UI	lang0.pak	DST_FFA_ARENA_REGISTER_BTN	Register		上架	ok
 UI	lang0.pak	DST_FFA_ARENA_REGISTER_ALREADY	You are already registered for this event.		你已經報名此活動。	ok
 UI	lang0.pak	DST_FFA_ARENA_REGISTER_NOT_ACTIVE	The event is not open.		活動未打開。	ok
-UI	lang0.pak	DST_FFA_ARENA_REGISTER_NOT_READY	The arena is not configured on this server.		此伺服器尚未配置竞技场。	ok
+UI	lang0.pak	DST_FFA_ARENA_REGISTER_NOT_READY	The arena is not configured on this server.		此伺服器尚未配置競技場。	ok
 UI	lang0.pak	DST_FFA_ARENA_REGISTER_FAIL	Registration failed.		報名失敗。	ok
 UI	lang0.pak	DST_FFA_ARENA_RANK_HEADER	Player Kills		玩家擊殺數	ok
 UI	lang0.pak	DST_FFA_ARENA_RANK_EMPTY	No registered players yet.		尚無已報名玩家。	ok
@@ -312,7 +312,7 @@ UI	lang0.pak	DST_CCBD_REWARD_STATE_SELECTING	Choosing...	选择中	選擇中	ok
 UI	lang0.pak	DST_CCBD_REWARD_TITLE	Selection	竞技副本奖励选择	選擇	ok
 UI	lang0.pak	DST_CCBD_REWARD_TITLE_LAST	Reward	竞技副本奖励	獎勵	ok
 UI	lang0.pak	DST_CCBD_STATUS_DISABLE_CHARGE_LPEP	LP/EP recovery disabled	无法自然恢复LP/EP	無法自然恢復LP/EP	ok
-UI	lang0.pak	DST_CCBD_STATUS_DISABLE_GET_EXP	EXP gains disabled	打猎时无法获得经验值	经验取得已禁用	ok
+UI	lang0.pak	DST_CCBD_STATUS_DISABLE_GET_EXP	EXP gains disabled	打猎时无法获得经验值	經驗取得已停用	ok
 UI	lang0.pak	DST_CCBD_STATUS_DISABLE_ITEM	Consumables disabled	无法使用一般道具	無法使用一般道具	ok
 UI	lang0.pak	DST_CCBD_WAIT_AFTER_REWARD	Please Wait.	已完成选择，请稍等一下。	請稍等。	ok
 UI	lang0.pak	DST_CHANGE_ITEMBATTLEATTR_BTN_CANCEL_TOOLTIP	Return to element selection without spending Zeni.		返回到屬性選擇不使用花費索尼。	ok
@@ -532,7 +532,7 @@ UI	lang0.pak	DST_DICE_EXPLAIN2	Click on the Dice	请点选骰子钮。	請點選
 UI	lang0.pak	DST_DICE_RESULT	%s(dice) :%s	'%s' 掷骰子，出现了 %s 。	%s(骰子)：%s	ok
 UI	lang0.pak	DST_DISABLE	Not	不可	不	ok
 UI	lang0.pak	DST_DISASSEMBLE_ALREADY_DISASSEMBLING	Already decomposed	分解中无法进行其他行动。	已經	ok
-UI	lang0.pak	DST_DISASSEMBLE_ALREADY_REGIST_TARGET	Item already Registered	无法登入已分解道具。	无法登入已分解道具。	ok
+UI	lang0.pak	DST_DISASSEMBLE_ALREADY_REGIST_TARGET	Item already Registered	无法登入已分解道具。	無法登入已分解道具。	ok
 UI	lang0.pak	DST_DISASSEMBLE_CAN_NOT_FIND_TARGET	Register to degrade target item	需登入欲分解的道具。	需登入欲分解的道具。	ok
 UI	lang0.pak	DST_DISASSEMBLE_CLOSE	Close	关闭	關閉	ok
 UI	lang0.pak	DST_DISASSEMBLE_GET_MATERIAL	Get Materials	取得材料	取得材料	ok
@@ -754,7 +754,7 @@ UI	lang0.pak	DST_DWC_CARD_TARGET_TOOLTIP	Attack		攻擊	ok
 UI	lang0.pak	DST_DWC_CHOOSE_TITLE	Select Target		選擇目標	ok
 UI	lang0.pak	DST_DWC_CLEAR_CARD_TOOLTIP	Confirm access to the card		確認訪問到卡片	ok
 UI	lang0.pak	DST_DWC_CONDITION	Target Condition		目標條件	ok
-UI	lang0.pak	DST_DWC_CONDITION_RB_STRAIGHTWIN	%d Streak		%d 连胜	ok
+UI	lang0.pak	DST_DWC_CONDITION_RB_STRAIGHTWIN	%d Streak		%d 連勝	ok
 UI	lang0.pak	DST_DWC_CONDITION_STATE	Condition Status		Condition 狀態	ok
 UI	lang0.pak	DST_DWC_ENTER_CONDITION	Entrance Conditions		入口條件	ok
 UI	lang0.pak	DST_DWC_ENTER_CONFIRM	"[align = ""center""]Dragon World Challenge (DWC) Entry[br][br]Remaining # of entries this week: %d[br][br]You can't withdraw.[br]Do you want to enter?[br]"		"[align = ""center""]龍界挑戰（DWC）入場[br][br]本周剩餘入場次數：%d[br][br]進入後無法退出。[br]確定要進入嗎？[br]"	ok
@@ -799,13 +799,13 @@ UI	lang0.pak	DST_DYNAMIC_FIELD_SIDEVIEW_CONTENT_06	Only you can Defeat the Boss.
 UI	lang0.pak	DST_DYNAMIC_FIELD_SIDEVIEW_PERCENTAGE	%s%%		%s%%	ok
 UI	lang0.pak	DST_DYNAMIC_FIELD_SIDEVIEW_TITLE_01	Boss Monster emerges	直到米拉军BOSS怪登场为止	首領怪物出現	ok
 UI	lang0.pak	DST_DYNAMIC_FIELD_SIDEVIEW_TITLE_02	Eliminate BOSS monster	消灭BOSS怪	消滅BOSS怪	ok
-UI	lang0.pak	DST_DYNAMIC_FIELD_SIDEVIEW_TITLE_03	Monster emerges	米拉军袭击怪物登场前	怪物出現	ok
+UI	lang0.pak	DST_DYNAMIC_FIELD_SIDEVIEW_TITLE_03	Monster emerges	米拉军袭击怪物登场前	怪物出现	ok
 UI	lang0.pak	DST_DYNAMIC_FIELD_SIDEVIEW_TITLE_04	Progress	(蘑菇巨石北部/蘑菇巨石南部)	進行中	ok
 UI	lang0.pak	DST_ENABLE	Available		可用	ok
 UI	lang0.pak	DST_ENGINEER	Engineer		工程師	ok
 UI	lang0.pak	DST_ERROR_DUPLICATE_NAME	[%s]Already Exists.		[%s]已經存在。	ok
 UI	lang0.pak	DST_ERROR_NO_USE_BY_PARTY_MEMBER	Party status unavailable.		隊伍狀態。	ok
-UI	lang0.pak	DST_ERROR_RENAME_PENALTY_PERIOD	Penalty: %d remain		懲罰：剩餘 %d	ok
+UI	lang0.pak	DST_ERROR_RENAME_PENALTY_PERIOD	Penalty: %d remain		惩罚：剩余 %d	ok
 UI	lang0.pak	DST_ERROR_WRONG_NAME	[%s]Unavailable.		[%s]不可用.	ok
 UI	lang0.pak	DST_EVENTMACHINE_SIDEICON_TOOLTIP	Event Machine ( Event Coin X %d )		活動機器 ( 活動硬幣X %d )	ok
 UI	lang0.pak	DST_EVENT_ITEM	Event Items	活动道具	活動道具	ok
@@ -862,21 +862,21 @@ UI	lang0.pak	DST_GMT_TITLE_ZENNY	Bonus Zeni	额外获得索尼	索尼加成	ok
 UI	lang0.pak	DST_GMT_ZENNY_FOR_BENEFIT	%u%% Zeni Bonus [%02d:00 - %02d:00]		%u%% 索尼加成 [%02d:00 - %02d:00]	ok
 UI	lang0.pak	DST_GUARD_GAUGE_CANNOT_USE	Guard is in cooldown	冷却时间结束后方可重复使用防卫技能。	防禦正在冷卻	ok
 UI	lang0.pak	DST_GUARD_GAUGE_CAN_USE	Can Use Guard	可以使用防卫技能。	可以使用守衛	ok
-UI	lang0.pak	DST_GUILD_PASSIVE_CHANGE_NFY	%s upgraded a guild passive.		%s 升级了公会被动。	ok
+UI	lang0.pak	DST_GUILD_PASSIVE_CHANGE_NFY	%s upgraded a guild passive.		%s 升級了公會被動。	ok
 UI	lang0.pak	DST_GUILD_PASSIVE_COST	Cost: %u rep + %u zeni		費:%u聲望+%uZ	ok
-UI	lang0.pak	DST_GUILD_PASSIVE_MAX_LEVEL	Max level reached		已达最高等级	ok
-UI	lang0.pak	DST_GUILD_PASSIVE_POINTS	Points: %d / %d  (Available: %d)		点数：%d／%d（可用：%d）	ok
-UI	lang0.pak	DST_GUILD_PASSIVE_REPUTATION	Reputation:		声望：	ok
-UI	lang0.pak	DST_GUILD_PASSIVE_UPGRADE_CONFIRM	"[align = ""center""][font size = ""12"" color=""f4d762""]Upgrade Guild Passive[/font][br][br][font size = ""10"" color=""269eff""]%s[/font][br][br][font size = ""10"" color=""ffffff""]Reputation: %u[br]Zeni: %u[/font][br][br][font size = ""10"" color=""ffffff""]Confirm upgrade?[/font]"		"[align = ""center""][font size = ""12"" color=""f4d762""]升级公会被动[/font][br][br][font size = ""10"" color=""269eff""]%s[/font][br][br][font size = ""10"" color=""ffffff""]声望：%u[br]索尼：%u[/font][br][br][font size = ""10"" color=""ffffff""]确认升级？[/font]"	ok
+UI	lang0.pak	DST_GUILD_PASSIVE_MAX_LEVEL	Max level reached		已達最高等級	ok
+UI	lang0.pak	DST_GUILD_PASSIVE_POINTS	Points: %d / %d  (Available: %d)		點數：%d／%d（可用：%d）	ok
+UI	lang0.pak	DST_GUILD_PASSIVE_REPUTATION	Reputation:		聲望：	ok
+UI	lang0.pak	DST_GUILD_PASSIVE_UPGRADE_CONFIRM	"[align = ""center""][font size = ""12"" color=""f4d762""]Upgrade Guild Passive[/font][br][br][font size = ""10"" color=""269eff""]%s[/font][br][br][font size = ""10"" color=""ffffff""]Reputation: %u[br]Zeni: %u[/font][br][br][font size = ""10"" color=""ffffff""]Confirm upgrade?[/font]"		"[align = ""center""][font size = ""12"" color=""f4d762""]升級公會被動[/font][br][br][font size = ""10"" color=""269eff""]%s[/font][br][br][font size = ""10"" color=""ffffff""]聲望：%u[br]索尼：%u[/font][br][br][font size = ""10"" color=""ffffff""]確認升級？[/font]"	ok
 UI	lang0.pak	DST_GUILD_PASSIVE_RESET_BTN	Reset		重置	ok
-UI	lang0.pak	DST_GUILD_PASSIVE_RESET_CONFIRM	"[align = ""center""][font size = ""12"" color=""f4d762""]Reset Guild Passives[/font][br][br][font size = ""10"" color=""ffffff""]Reputation: %u[br]Zeni: %u[br]Points returned: %d[/font][br][br][font size = ""10"" color=""ff6666""]Spent rep/zeni is NOT refunded.[br]Confirm reset?[/font]"		"[align = ""center""][font size = ""12"" color=""f4d762""]重置公会被动[/font][br][br][font size = ""10"" color=""ffffff""]声望：%u[br]索尼：%u[br]返还点数：%d[/font][br][br][font size = ""10"" color=""ff6666""]已消耗的声望／索尼不予退还。[br]确认重置？[/font]"	ok
-UI	lang0.pak	DST_GUILD_PASSIVE_RESET_COOLDOWN	Reset available in: %s		重置可用时间：%s	ok
-UI	lang0.pak	DST_GUILD_PASSIVE_NOTHING_RESET	No points to reset		没有可重置的点数	ok
-UI	lang0.pak	DST_GUILD_PASSIVE_RESET_DONE	Guild passives reset. %d points returned.		公会被动已重置。返还 %d 点。	ok
+UI	lang0.pak	DST_GUILD_PASSIVE_RESET_CONFIRM	"[align = ""center""][font size = ""12"" color=""f4d762""]Reset Guild Passives[/font][br][br][font size = ""10"" color=""ffffff""]Reputation: %u[br]Zeni: %u[br]Points returned: %d[/font][br][br][font size = ""10"" color=""ff6666""]Spent rep/zeni is NOT refunded.[br]Confirm reset?[/font]"		"[align = ""center""][font size = ""12"" color=""f4d762""]重置公會被動[/font][br][br][font size = ""10"" color=""ffffff""]聲望：%u[br]索尼：%u[br]返還點數：%d[/font][br][br][font size = ""10"" color=""ff6666""]已消耗的聲望／索尼不予退还。[br]確認重置？[/font]"	ok
+UI	lang0.pak	DST_GUILD_PASSIVE_RESET_COOLDOWN	Reset available in: %s		重置可用時間：%s	ok
+UI	lang0.pak	DST_GUILD_PASSIVE_NOTHING_RESET	No points to reset		没有可重置的點數	ok
+UI	lang0.pak	DST_GUILD_PASSIVE_RESET_DONE	Guild passives reset. %d points returned.		公會被動已重置。返還 %d 点。	ok
 UI	lang0.pak	DST_GUN	Gun	枪	槍	ok
 UI	lang0.pak	DST_GUN_MANIA	Gun Maniac		槍械狂熱者	ok
 UI	lang0.pak	DST_HELPWND_GOLIST	Jump To		Jump 到	ok
-UI	lang0.pak	DST_HELPWND_HELPCONTENTS	Contents		目录	ok
+UI	lang0.pak	DST_HELPWND_HELPCONTENTS	Contents		目錄	ok
 UI	lang0.pak	DST_HELPWND_PETITION_TO_GM	GM Help		GM幫助	ok
 UI	lang0.pak	DST_HELPWND_TITLE	Help		幫助	ok
 UI	lang0.pak	DST_HELPWND_TOP_TITLE	Dragon Ball Online Guide		龍珠Online 指南	ok
@@ -953,7 +953,7 @@ UI	lang0.pak	DST_HOIPOIMIX_EMPTY_BY_FILTER	No Recipes found	无此分类的食�
 UI	lang0.pak	DST_HOIPOIMIX_EP_CONTROL_NEED_MORE_EP	Need more EP	EP不足无法提升集中力。	需要更多EP	ok
 UI	lang0.pak	DST_HOIPOIMIX_EP_CONTROL_NOTICE_MSGBOX	"[align = ""center""]HoiPoi Mix Guide[br][br]The concentration control[br]EP is used[br][br]You can't create item when EP is low[br]Please stop, and recover your EP[br][br]If you proceed without EP, chance of success is lower[br][br]Do you want to mix?"		"[align = ""center""]HoiPoi合成指南[br][br]將消耗用於濃度控制的EP。[br][br]EP過低時無法製作道具。[br]請先停止並恢復EP。[br][br]若EP不足仍繼續，成功率會下降。[br][br]確定要合成嗎？"	ok
 UI	lang0.pak	DST_HOIPOIMIX_FARERATE	Mix Machine Setup Fee	搅拌机使用费设定	攪拌機使用費設定	ok
-UI	lang0.pak	DST_HOIPOIMIX_GUIDE_ALREADY_REGIST_THIS_MATERIAL	Item already Registered		无法登入已分解道具。	ok
+UI	lang0.pak	DST_HOIPOIMIX_GUIDE_ALREADY_REGIST_THIS_MATERIAL	Item already Registered		無法登入已分解道具。	ok
 UI	lang0.pak	DST_HOIPOIMIX_GUIDE_CAN_NOT_DEVIDE_MATERIAL	Can't Divide Item		無法分割道具	ok
 UI	lang0.pak	DST_HOIPOIMIX_GUIDE_CAN_NOT_REGIST_MATERIAL_FOR_CREATING	Can't register		無法報名	ok
 UI	lang0.pak	DST_HOIPOIMIX_GUIDE_CAN_NOT_UNREGIST_MATERIAL_FOR_CREATING	Can't unregister		無法	ok
@@ -974,7 +974,7 @@ UI	lang0.pak	DST_HOIPOIMIX_RECIPE_FILTER_SPECIAL	Special	特殊	特殊	ok
 UI	lang0.pak	DST_HOIPOIMIX_RECIPE_FILTER_TOTAL	Total	全部	全部	ok
 UI	lang0.pak	DST_HOIPOIMIX_RECIPE_FILTER_EVENT	Events	活动	活動	ok
 UI	lang0.pak	DST_HOIPOIMIX_RECIPE_TAB	Recipes	食谱	食譜	ok
-UI	lang0.pak	DST_HOIPOIMIX_REGISTER_RECIPE	%s Recorded	%s已登入史考特。	%s 已记录	ok
+UI	lang0.pak	DST_HOIPOIMIX_REGISTER_RECIPE	%s Recorded	%s已登入史考特。	%s 已記錄	ok
 UI	lang0.pak	DST_HOIPOIMIX_REGISTER_SKILL	%s crafting learned.	习得了%s 制造技术。	習得了%s 製造技術。	ok
 UI	lang0.pak	DST_HOIPOIMIX_REQUIRED_LEVEL	Required Lv.%d	制造所需的搅拌等级 : %d	需要 Lv.%d	ok
 UI	lang0.pak	DST_HOIPOIMIX_REQUIRED_ZENNY	Cost: %d	制造费用 : %d	費用：%d	ok
@@ -1083,7 +1083,7 @@ UI	lang0.pak	DST_ITEMUPGRADE_GUARDSTONE_IS_LOW_LEVEL	Whitestone level is too low
 UI	lang0.pak	DST_ITEMUPGRADE_GUARDSTONE_NOT_NEED	Whitestone not needed.	强化等级过低，不需要强化保护石。	Whitestone 不需要。	ok
 UI	lang0.pak	DST_ITEMUPGRADE_INFO	The upgrade can go up to +20. If you use the special stones, they can increase the upgrade by +2 to +3 levels.		升級可以上到 +20. 如果你使用特殊，可以增加升級由 +2 到 +3。	ok
 UI	lang0.pak	DST_ITEMUPGRADE_INFOTITLE	Upgrade		升級	ok
-UI	lang0.pak	DST_ITEMUPGRADE_INFO_CORE_SLOT	HoiPoi prevent destruction		膠囊防爆	ok
+UI	lang0.pak	DST_ITEMUPGRADE_INFO_CORE_SLOT	HoiPoi prevent destruction		胶囊防爆	ok
 UI	lang0.pak	DST_ITEMUPGRADE_INFO_DEFENCE	Defense		防禦	ok
 UI	lang0.pak	DST_ITEMUPGRADE_INFO_HOIPOI_SLOT_ATTR	 mean		平均	ok
 UI	lang0.pak	DST_ITEMUPGRADE_INFO_HOIPOI_SLOT_ATTR_BETTER	 %.0f%% Gain		 %.0f%% 提升	ok
@@ -1318,7 +1318,7 @@ UI	lang0.pak	DST_ITEM_TRANSFORM_POTION_MSG	"[align = ""center""][font size = ""1
 UI	lang0.pak	DST_ITEM_UNIDENTIFIED	Mystery Item	未知道具	未知道具	ok
 UI	lang0.pak	DST_ITEM_USE_ALARM	Please use the Item.	请使用道具.	請使用道具.	ok
 UI	lang0.pak	DST_ITEM_USE_ITEM_LEVEL_TEXT	Lv.%d	使用等级 : %d 等级以上可能	Lv.%d	ok
-UI	lang0.pak	DST_ITEM_USE_ITEM_MIN_MAX_LEVEL_TEXT	Lv.%d - %d		Lv.%d-%d	ok
+UI	lang0.pak	DST_ITEM_USE_ITEM_MIN_MAX_LEVEL_TEXT	Lv.%d - %d		Lv.%d － %d	ok
 UI	lang0.pak	DST_JOB_ALIEN_ENGINEER	Alien Engineer	外星人工程师	外星人工程師	ok
 UI	lang0.pak	DST_JOB_ARMOR_MERCHANT	Armor Merchant	服饰商人	防具商人	ok
 UI	lang0.pak	DST_JOB_BANKER	Banker	亚德拉特传输	倉庫	ok
@@ -1457,9 +1457,9 @@ UI	lang0.pak	DST_LOBBY_UNTIL_DEL_CHAR	Deleted in %d%s		Deleted 在 %d%s	ok
 UI	lang0.pak	DST_LOBBY_WONDER_MAJIN	Fat, happy-looking Majin who[br]resembles Majin Buu's good[br]form. This class utilizes[br]magical combat skills.		Fat, 快樂- 魔人的玩家[br]魔人布歐的好[br]形態。此職業[br]戰鬥技能。	ok
 UI	lang0.pak	DST_LOBBY_YOU_CAN_CHOICE_SERVER	Choose Server		選擇伺服器	ok
 UI	lang0.pak	DST_LOBBY_YOU_MUST_CHOICE_SUPERIOR_POWER	"[align = ""center""]Create Champion[br][br]Choose power of champion.[br][/align]"		"[align = ""center""]創建冠軍[br][br]選擇力量的冠軍。[br][/align]"	ok
-UI	lang0.pak	DST_HUD_REMOTE_SERVICE_COMBAT	Cannot open Mail or Auction House while in combat.		无法在战斗中打开郵件或拍卖行。	ok
+UI	lang0.pak	DST_HUD_REMOTE_SERVICE_COMBAT	Cannot open Mail or Auction House while in combat.		無法在戰鬥中打開郵件或拍賣行。	ok
 UI	lang0.pak	DST_HUD_REMOTE_SERVICE_COOLDOWN	Please wait %u seconds before opening again.		請等待 %u 秒之前再次。	ok
-UI	lang0.pak	DST_HUD_REMOTE_SERVICE_OPEN_NOTICE	Mail and Auction House will close automatically when you enter combat.		进入战斗时，郵件和拍卖行会自动关闭。	ok
+UI	lang0.pak	DST_HUD_REMOTE_SERVICE_OPEN_NOTICE	Mail and Auction House will close automatically when you enter combat.		進入戰鬥时，郵件和拍賣行会自動關閉。	ok
 UI	lang0.pak	DST_HUD_REMOTE_AUCTION_TOOLTIP	Auction House		拍賣行	ok
 UI	lang0.pak	DST_MAIN_CAPSULEKIT_CANT_MOVE	No chance, default capsule kit.	基本胶囊盒无法移动。	基本膠囊盒無法移動。	ok
 UI	lang0.pak	DST_MARKET_SELLTIME_HOUT	%dh		%dh	ok
@@ -1467,7 +1467,7 @@ UI	lang0.pak	DST_MARKET_SELLTIME_MIN	%dm		%dm	ok
 UI	lang0.pak	DST_MASCOT	Pet	宠物	寵	ok
 UI	lang0.pak	DST_MASCOTEX_BAG	Mascot Bag	储存宠物的背包。	吉祥物背包	ok
 UI	lang0.pak	DST_MASCOTEX_FUSIONBUTTON	Fuse	融合	融合	ok
-UI	lang0.pak	DST_MASCOTEX_FUSION_DEFENCEITEM_AGAINE	Item already exists.	已登录于融合进化石。	已登入于融合进化石。	ok
+UI	lang0.pak	DST_MASCOTEX_FUSION_DEFENCEITEM_AGAINE	Item already exists.	已登录于融合进化石。	已登入於融合進化石。	ok
 UI	lang0.pak	DST_MASCOTEX_FUSION_DEFENCEITEM_LEFTCLICK	Right-click to remove.	点击鼠标右键以删除融合进化石。	當前-點擊移除。	ok
 UI	lang0.pak	DST_MASCOTEX_FUSION_DEFENCEITEM_NO	No item available.	此非融合进化石。	此非融合進化石。	ok
 UI	lang0.pak	DST_MASCOTEX_FUSION_EXPLACK	Mascot EXP is too low.	欲融合的宠物经验值不足 / 已满级。	吉祥物EXP是太低。	ok
@@ -1477,7 +1477,7 @@ UI	lang0.pak	DST_MASCOTEX_FUSION_OPEN_AGAINE	Window is already open	融合视窗
 UI	lang0.pak	DST_MASCOTEX_FUSION_OVERGRADE	Pet level already max.	以材料使用的宠物等级更高。	寵物等級已經最大。	ok
 UI	lang0.pak	DST_MASCOTEX_FUSION_SUBMASCOT_DELETED	The sacrificed pet rests in peace	已消耗材料宠物。	已消耗材料寵物。	ok
 UI	lang0.pak	DST_MASCOTEX_FUSION_SUBMASCOT_LEFTCLICK	Right-click to remove the pet	点击鼠标右键以删除宠物。	點擊鼠標右鍵以刪除寵物。	ok
-UI	lang0.pak	DST_MASCOTEX_FUSION_SUBMASCOT_MAINMASCOT	Main Pet already registered.	该宠物已登录为主要使用。	该宠物已登入为主要使用。	ok
+UI	lang0.pak	DST_MASCOTEX_FUSION_SUBMASCOT_MAINMASCOT	Main Pet already registered.	该宠物已登录为主要使用。	該寵物已登入為主要使用。	ok
 UI	lang0.pak	DST_MASCOTEX_FUSION_SUBMASCOT_REGISTER	Include a pet that\nyou want to sacrifice.		放入想要作為材料的寵物。	ok
 UI	lang0.pak	DST_MASCOTEX_FUSION_SUBMASCOT_SUMMONING	Un-summon Pet first	正在召唤欲登录于材料的宠物。	Un-召喚寵物第一	ok
 UI	lang0.pak	DST_MASCOTEX_FUSION_TOOLTIP	Fuse Pets to make a better one		融合寵物，培養更強的寵物	ok
@@ -1575,11 +1575,11 @@ UI	lang0.pak	DST_MINIMAP_UNKNOWN	Unknown	未知的地方	未知	ok
 UI	lang0.pak	DST_MINIMAP_ZOOM_IN	Zoom In	小地图放大	放大	ok
 UI	lang0.pak	DST_MINIMAP_ZOOM_OUT	Zoom Out	小地图缩小	縮小	ok
 UI	lang0.pak	DST_MINIMAP_PERFORMANCE_MODE	Performance Mode: hides effects, other players, pets and mascots for maximum FPS.		效能模式：隱藏特效、其他玩家、寵物與吉祥物以提升 FPS。	untranslated
-UI	lang0.pak	DST_MINIMAP_PERFORMANCE_MODE_ON	Performance Mode ON - effects and other players hidden.		性能模式开——特效与其他玩家已隐藏。	untranslated
+UI	lang0.pak	DST_MINIMAP_PERFORMANCE_MODE_ON	Performance Mode ON - effects and other players hidden.		性能模式開——特效與其他玩家已隱藏。	untranslated
 UI	lang0.pak	DST_MINIMAP_PERFORMANCE_MODE_OFF	Performance Mode OFF - graphics restored.		效能模式關閉－畫面已恢復。	untranslated
 UI	lang0.pak	DST_MINIMAP_AUTOCOLLECT	Auto Collect: picks up nearby items automatically.		自動拾取：自動撿取附近道具。	untranslated
-UI	lang0.pak	DST_MINIMAP_AUTOCOLLECT_ON	Auto Collect ON - items are picked up automatically.		自动拾取开——物品会自动捡起。	untranslated
-UI	lang0.pak	DST_MINIMAP_AUTOCOLLECT_OFF	Auto Collect OFF - items stay on the ground.		自动拾取关——物品留在地面。	untranslated
+UI	lang0.pak	DST_MINIMAP_AUTOCOLLECT_ON	Auto Collect ON - items are picked up automatically.		自動拾取開——物品會自動撿起。	untranslated
+UI	lang0.pak	DST_MINIMAP_AUTOCOLLECT_OFF	Auto Collect OFF - items stay on the ground.		自動拾取關——物品留在地面。	untranslated
 UI	lang0.pak	DST_MOB_GRADE_BOSS	Boss	BOSS级怪物	首領	ok
 UI	lang0.pak	DST_MOB_GRADE_HERO	Hero	HERO级怪物	英雄	ok
 UI	lang0.pak	DST_MOB_GRADE_SUPER	Super	SUPER级怪物	優質	ok
@@ -1639,7 +1639,7 @@ UI	lang0.pak	DST_MULTIDIALOG_GUILDFUNCTION_MAX_MEMBER_90	Max Members (170)	解�
 UI	lang0.pak	DST_MULTIDIALOG_GUILDFUNCTION_MAX_SECOND_MASTER_1	Jr. Masters (1)	任命师范(最大多1人)	副會長（1）	ok
 UI	lang0.pak	DST_MULTIDIALOG_GUILDFUNCTION_MAX_SECOND_MASTER_2	Jr. Masters (2)	任命师范(最大2人)	副會長（2）	ok
 UI	lang0.pak	DST_MULTIDIALOG_GUILDFUNCTION_MAX_SECOND_MASTER_3	Jr. Masters (3)	任命师范(最大3人)	副會長（3）	ok
-UI	lang0.pak	DST_MULTIDIALOG_GUILDFUNCTION_MAX_SECOND_MASTER_4	Jr. Masters (4)	任命师范(最大4人)	副会长（4）	ok
+UI	lang0.pak	DST_MULTIDIALOG_GUILDFUNCTION_MAX_SECOND_MASTER_4	Jr. Masters (4)	任命师范(最大4人)	副會長（4）	ok
 UI	lang0.pak	DST_MULTIDIALOG_GUILDFUNCTION_NOTICE	Notice		公告	ok
 UI	lang0.pak	DST_MULTIDIALOG_GUILDFUNCTION_POST	Guild Mail	流派信件	流派信件	ok
 UI	lang0.pak	DST_MULTIDIALOG_GUILDFUNCTION_SET_EMBLEM	Set Emblem	流派纹章使用	設徽章	ok
@@ -1817,8 +1817,8 @@ UI	lang0.pak	DST_FPS_LIMIT_TITLE	FPS	帧率上限	FPS	ok
 UI	lang0.pak	DST_OPTION_TOOLTIP_PERFORMANCE_MODE	Disables all visual effects for maximum performance (Overrides Player Filter, hides all players, pets and mascots)		Disables 全部效果用於最大 (Overrides 玩家 Filter, 全部玩家，和 )	ok
 UI	lang0.pak	DST_OPTION_PERF_HIDE_MASCOT_TOOLTIP	Hides other players' mascots and pet summons		隱藏其他玩家的吉祥物和寵物召喚物	ok
 UI	lang0.pak	DST_OPTION_PERF_HIDE_PLAYER_EFFECTS_TOOLTIP	Hides all combat effects from other players (skills, attacks, projectiles). Only your own effects will be visible.		Hides 全部戰鬥效果來自其他玩家 (技能，，). 專用你的效果將。	ok
-UI	lang0.pak	DST_OPTION_PERF_HIDE_HIT_TEXTURE	Hide Hit Texture Effects		隐藏受击贴图特效	ok
-UI	lang0.pak	DST_OPTION_PERF_HIDE_HIT_TEXTURE_TOOLTIP	Hides hit visuals on all targets (PC, mob, NPC): impact flash (GME), word text (BASH, etc.) and Miss/Critical/Block popups. Damage numbers and hit sounds remain. Click  to apply.		隐藏所有目标（玩家、怪物、NPC）的受击画面：冲击闪光（GME）、文字（BASH 等）以及未击中／暴击命中／格挡弹出。伤害数字与受击音效保留。点击后套用。	ok
+UI	lang0.pak	DST_OPTION_PERF_HIDE_HIT_TEXTURE	Hide Hit Texture Effects		隱藏受擊贴图特效	ok
+UI	lang0.pak	DST_OPTION_PERF_HIDE_HIT_TEXTURE_TOOLTIP	Hides hit visuals on all targets (PC, mob, NPC): impact flash (GME), word text (BASH, etc.) and Miss/Critical/Block popups. Damage numbers and hit sounds remain. Click  to apply.		隱藏所有目标（玩家、怪物、NPC）的受擊画面：冲击闪光（GME）、文字（BASH 等）以及未击中／暴擊命中／格挡弹出。傷害数字与受擊音效保留。点击后套用。	ok
 UI	lang0.pak	DST_OPTION_INFO_TOOLTIP_COSTUME_RENDER	Possibility to hide/show Costumes		Possibility 到隱藏/顯示 Costumes	ok
 UI	lang0.pak	DST_ITEM_CAN_NOT_MOVE_ERROR_PACKET_SEND	Title Status/Effect has been setted.		稱號狀態/效果已生效。	ok
 UI	lang0.pak	DST_ITEM_CAN_NOT_MOVE_ERROR_PACKET_SEND2	Title Effect has been setted.		稱號效果已生效。	ok
@@ -2100,8 +2100,8 @@ UI	lang0.pak	DST_PRIVATESHOP_ZENNY	Zeni	所持金额	索尼	ok
 UI	lang0.pak	DST_PURE_MARGIN_CAN_NOT_USE_SOCIAL	Can't use while transformed.	真魔人无法使用动作技能	真魔人無法使用動作技能	ok
 UI	lang0.pak	DST_QUESTFLINKFLOWCHART	Quest Link		任務 Link	ok
 UI	lang0.pak	DST_QUESTINDICATOR_ALLEXTEND_OFF	Show all quest information.		顯示全部任務信息。	ok
-UI	lang0.pak	DST_QUESTINDICATOR_ALLEXTEND_ON	Hide all quest information.		隐藏全部任务資訊。	ok
-UI	lang0.pak	DST_QUESTINDICATOR_EXTEND	Hide quest information.		隐藏任务資訊。	ok
+UI	lang0.pak	DST_QUESTINDICATOR_ALLEXTEND_ON	Hide all quest information.		隱藏全部任務資訊。	ok
+UI	lang0.pak	DST_QUESTINDICATOR_EXTEND	Hide quest information.		隱藏任務資訊。	ok
 UI	lang0.pak	DST_QUESTINDICATOR_QUESTLIST_BTN	Turn on OR off the quest list window.		開啟或關閉任務列表窗口。	ok
 UI	lang0.pak	DST_QUESTINDICATOR_QUESTLIST_OPEN	Open Questlist		打開任務列表	ok
 UI	lang0.pak	DST_QUESTINDICATOR_TIP_QUESTTYPE	[%s Quest]		[%s 任務]	ok
@@ -2144,7 +2144,7 @@ UI	lang0.pak	DST_QUEST_CLEAR	Cleared: %s		清除：%s	ok
 UI	lang0.pak	DST_QUEST_CLOSE_BTN	Close		關閉	ok
 UI	lang0.pak	DST_QUEST_COMPLETE	Completed: %s		已完成：%s	ok
 UI	lang0.pak	DST_QUEST_FAILED	Failed: %s		失敗：%s	ok
-UI	lang0.pak	DST_QUEST_GAVEUP_MESSAGE	Abandoned: %s		已放棄：%s	ok
+UI	lang0.pak	DST_QUEST_GAVEUP_MESSAGE	Abandoned: %s		已放弃：%s	ok
 UI	lang0.pak	DST_QUEST_GIVEUP_BTN	Abandon		放棄	ok
 UI	lang0.pak	DST_QUEST_GIVEUP_MESSAGE	"[align = ""center""][font size = ""12"" color=""f4d762""]Abandon the Quest[/font][br][br][font size = ""10"" color=""269eff""]Caution[/font][br][br]You can speak to the NPC to receive the Quest again.[br][br][font size = ""10"" color=""f36a7c""]Quests with Special Conditions may be lost.[/font][br][br][font size = ""10"" color=""ffffff""]Are you sure you want to abandon?[/font]"		"[align = ""center""][font size = ""12"" color=""f4d762""]Abandon 任務[/font][br][br][font size = ""10"" color=""269eff""]Caution[/font][br][br]你可以到NPC到領取任務再次。[br][br][font size = ""10"" color=""f36a7c""]任務使用特殊條件被失敗。[/font][br][br][font size = ""10"" color=""ffffff""]確定是否要？[/font]"	ok
 UI	lang0.pak	DST_QUEST_GUID_TOGGLE_OFF	Quest Guide Off.		任務指南下車。	ok
@@ -2185,7 +2185,7 @@ UI	lang0.pak	DST_QUEST_SUCCESS_COLLECTION	Collection Completed: %s		收集已完
 UI	lang0.pak	DST_QUEST_SUCCESS_CUSTOM	Mission Success: %s		Mission 成功：%s	ok
 UI	lang0.pak	DST_QUEST_SUCCESS_DELIVERY	Delivery Completed: %s		Delivery 已完成：%s	ok
 UI	lang0.pak	DST_QUEST_SUCCESS_MOBHUNT	Mob Hunt Complete: %s		Mob Hunt 完成：%s	ok
-UI	lang0.pak	DST_QUEST_SUCCESS_VISIT	Visited: %s		已拜訪：%s	ok
+UI	lang0.pak	DST_QUEST_SUCCESS_VISIT	Visited: %s		已拜访：%s	ok
 UI	lang0.pak	DST_QUEST_TEXT_AIM	Target		目標	ok
 UI	lang0.pak	DST_QUEST_TEXT_CONVERSATION	Information		資訊	ok
 UI	lang0.pak	DST_QUICKSLOT_IS_LOCK	Bar Locked	快捷列已锁定。	Bar 鎖定	ok
@@ -2283,7 +2283,7 @@ UI	lang0.pak	DST_RB_RESULT_EACH_LEVEL_REWARD	Depends On Level	依等级支付	�
 UI	lang0.pak	DST_RB_RESULT_MESSAGE	"[font size=""14""color=""000000""]The Ranked Battle is over.[br][br]Exiting Soon![/font]"		"[font size=""14""color=""000000""]排位戰是結束。[br][br]Exiting 很快！[/font]"	ok
 UI	lang0.pak	DST_RB_RESULT_POINT_RESULT	Results	结果	結果	ok
 UI	lang0.pak	DST_RB_RESULT_POINT_TEXT	Score	比	比	ok
-UI	lang0.pak	DST_RB_RESULT_RECORD_INFO_1	Total: %u I, %u W, %u L		Total:%uI,%uW,%uL	ok
+UI	lang0.pak	DST_RB_RESULT_RECORD_INFO_1	Total: %u I, %u W, %u L		总计：%u 局，%u 胜，%u 负	ok
 UI	lang0.pak	DST_RB_RESULT_RECORD_INFO_2	%u Win Streak (Victory: %u Times)		%u連勝(勝:%u次)	ok
 UI	lang0.pak	DST_RB_RESULT_WAIT_TEXT	Please Wait	请稍后。	請稍後。	ok
 UI	lang0.pak	DST_RB_RESULT_WAIT_TIME	(Timeout: %dSec)	(限制时间: %d秒)	(限制時間: %d秒)	ok
@@ -2623,7 +2623,7 @@ UI	lang0.pak	DST_SKILL_TOTAL_DAMAGE	Total Dmg: %d	总损伤率: %d	總損傷率:
 UI	lang0.pak	DST_SKILL_TYPE_ACTIVE	Active	发动技术	開啟	ok
 UI	lang0.pak	DST_SKILL_TYPE_HTB	HTB		HTB	ok
 UI	lang0.pak	DST_SKILL_TYPE_PASSIVE	Passive	被动技能	被動	ok
-UI	lang0.pak	DST_SKILL_USERANGE	Range: %dM	使用距离 : %d公尺	範圍：%dM	ok
+UI	lang0.pak	DST_SKILL_USERANGE	Range: %dM	使用距离 : %d公尺	范围：%dM	ok
 UI	lang0.pak	DST_SKILL_USING_TRINER_DIALOG	Can't open Character Skills.	现在无法开启角色技能视窗。	現在無法開啟角色技能視窗。	ok
 UI	lang0.pak	DST_SKY_DUNGEON_ENTER_LIMIT	%d sec left to Enter.	当天可进入SKY副本的次数剩下%d次了.	%d 剩餘進入。	ok
 UI	lang0.pak	DST_SOCIAL_SKILL_BOAST_LIMITED_CONDITION	Skill usage conditions (before transfer):[br]Primary, secondary weapon and Gears[br]upgraded +7 or more, all while wearing.		技能支出條件 (之前轉移):[br]Primary, 武器和 Gears[br]已升級 +7 或更多，全部時。	ok
@@ -2855,7 +2855,7 @@ UI	lang0.pak	DST_SYSTEMMSG_ITME_EP	Item: %s +%d EP.		道具：%s +%d EP.	ok
 UI	lang0.pak	DST_SYSTEMMSG_ITME_LP	Item: %s +%d LP.		道具：%s +%d LP.	ok
 UI	lang0.pak	DST_SYSTEMMSG_KNOCKDOWN_ATTACKER	%s knocked down.		%s 被擊倒了。	ok
 UI	lang0.pak	DST_SYSTEMMSG_KNOCKDOWN_DEFENDER	%s knocked down by %s.		%s 被 %s 擊倒了。	ok
-UI	lang0.pak	DST_SYSTEMMSG_MAIL_BLACKLIST	Can't Mail Blacklisted User.		无法向黑名单使用者寄郵件。	ok
+UI	lang0.pak	DST_SYSTEMMSG_MAIL_BLACKLIST	Can't Mail Blacklisted User.		無法向黑名单使用者寄郵件。	ok
 UI	lang0.pak	DST_SYSTEMMSG_MONSTER_QUEST	%s : %s		%s ：%s	ok
 UI	lang0.pak	DST_SYSTEMMSG_NOATTACKE	%s on %s has no effect.		%s 在 %s 已沒有效果。	ok
 UI	lang0.pak	DST_SYSTEMMSG_NORMAL_ATTACK_ATTACKER	%s took %d damage.		%s受到了%d傷害。	ok
@@ -2892,7 +2892,7 @@ UI	lang0.pak	DST_SYSTEMMSG_STEAL_LP	%s use %s to steal %d LP.		%s 使用 %s 到 
 UI	lang0.pak	DST_SYSTEMMSG_TRADE_BLACKLIST	Can't trade with Blacklisted User.		無法交易使用黑名單用戶。	ok
 UI	lang0.pak	DST_SYSTEMMSG_WHISPER_BLACKLIST	Can't whisper Blacklisted User.		無法密語黑名單用戶。	ok
 UI	lang0.pak	DST_SYS_EFFECT_CONFIRM_USE_BOOSTER_MSG	"[align = ""center""][font size = ""12"" color=""f4d762""]Consume[/font][br][br][font size = ""10"" color=""269eff""]Use %s?[/font][br][br][font size = ""10"" color=""f4d762""]Can't be undone.[/font]"		"[align = ""center""][font size = ""12"" color=""f4d762""]消耗[/font][br][br][font size = ""10"" color=""269eff""]使用 %s([/font][br][br][font size = ""10"" color=""f4d762""]無法。[/font]"	ok
-UI	lang0.pak	DST_TAB_PASSIVE	Passives		被动	ok
+UI	lang0.pak	DST_TAB_PASSIVE	Passives		被動	ok
 UI	lang0.pak	DST_TAB_PARTY	Party	队伍	隊伍	ok
 UI	lang0.pak	DST_TAB_RAID	Raid	大型副本	副本	ok
 UI	lang0.pak	DST_TARGET_CANNOT_TARGETING_FOR_SCOUTER	Power Level Unknown	无法测量自己的战斗力。	力量等級未知	ok
@@ -3059,7 +3059,7 @@ UI	lang0.pak	DST_WAGUWAGU_INFOMATION	Info		資訊	ok
 UI	lang0.pak	DST_WAGUWAGU_INFOTRY	%d try to win		%d次嘗試	ok
 UI	lang0.pak	DST_WAGUWAGU_INIT_GOODS	item configuring	商品上架中	商品上架中	ok
 UI	lang0.pak	DST_WAGUWAGU_ITEMRANK	Rank %d: %s	%d奖: %s	%d獎: %s	ok
-UI	lang0.pak	DST_WAGUWAGU_MACHINE	Wagu Machine	现金扭蛋机	瓦古機器	ok
+UI	lang0.pak	DST_WAGUWAGU_MACHINE	Wagu Machine	现金扭蛋机	Wagu 扭蛋機	ok
 UI	lang0.pak	DST_WAGUWAGU_NUMBER	%d No.	%d号	%d號	ok
 UI	lang0.pak	DST_WAGUWAGU_TITLEMACHINE	Machine	机器	機器	ok
 UI	lang0.pak	DST_WAGUWAGU_TITLENAME	Wagu	现金	現金	ok
@@ -3122,7 +3122,7 @@ UI	lang0.pak	DST_NAMEK_SIGN	Revealer	那美坎印记	揭示者	ok
 UI	lang0.pak	DST_WORLDMAP_PORTAL_NOT_REG	This Portal isn't registered.	无法登入的地点.	無法登錄的地點.	ok
 UI	lang0.pak	DST_WORLDMAP_PORUNGAROCKS	Porunga Rocks	波路亚巨石北部	波倫加 Rocks	ok
 UI	lang0.pak	DST_WORLDMAP_QUEST_SEARCH_TOOLTIP	Turn ON/OFF for Quest search		開啟/關閉任務搜索	ok
-UI	lang0.pak	DST_WORLDMAP_RECOMMENDED_LEVEL	Lv. %d ~ %d		Lv. %d~%d	ok
+UI	lang0.pak	DST_WORLDMAP_RECOMMENDED_LEVEL	Lv. %d ~ %d		Lv. %d ～ %d	ok
 UI	lang0.pak	DST_WORLDMAP_SEARCH_NOT_QUEST	No NPC with Quest found.		無NPC使用任務找到。	ok
 UI	lang0.pak	DST_WORLDMAP_SEARCH_NPC_DOJO	Dojo	流派/道场	道場	ok
 UI	lang0.pak	DST_WORLDMAP_SEARCH_NPC_ITEMBIND	Vending Machine	道具封印贩卖机	販賣機	ok
@@ -3225,7 +3225,7 @@ UI	lang0.pak	DST_BUDOKAI_NOTICE_TEAM_WINNER	Team Winner		團隊獲勝者	ok
 UI	lang0.pak	DST_BUDOKAI_NOTICE_WAIT_GUIDE	Please Wait		請等待	ok
 UI	lang0.pak	DST_CHANGESEX_MSG	Are you sure you want to change gender?		確定是否要更改性別？	ok
 UI	lang0.pak	DST_EXP_LOCK	Lock EXP	经验锁：当前已开启	鎖定EXP	ok
-UI	lang0.pak	DST_EXP_UNLOCK	Unlock EXP	经验锁：当前已关闭	解锁经验	ok
+UI	lang0.pak	DST_EXP_UNLOCK	Unlock EXP	经验锁：当前已关闭	解鎖經驗	ok
 UI	lang0.pak	DST_GAME_MASTER	Game Master	游戏管理员	遊戲管理員	ok
 UI	lang0.pak	DST_GAME_MASTER_TBLIDX	GM Table Index		GM 表格 Index	ok
 UI	lang0.pak	DST_HOIPOIMIX_RECIPE_FILTER_EVENT	Event	活动	活動	ok
@@ -3235,7 +3235,7 @@ UI	lang0.pak	DST_ITEMUPGRADE_RESTLT_HEIGHT	Height	请放置未强化的道具	�
 UI	lang0.pak	DST_LOBBY_SERVER_INDEX	Server %d		伺服器 %d	ok
 UI	lang0.pak	DST_OBSERVER_DBOTABLETOOLS	DBO Table Tools	table工具	table工具	ok
 UI	lang0.pak	DST_PAY_REGISTER	Register Payment		報名 Payment	ok
-UI	lang0.pak	DST_PAY_WEB	Web Payment		网页支付	ok
+UI	lang0.pak	DST_PAY_WEB	Web Payment		網頁支付	ok
 UI	lang0.pak	DST_RECIPE_INVALID	Invalid Recipe		配方無效。	ok
 UI	lang0.pak	DST_RECIPE_LOGIN	Recipe Login	请登录配方	請登錄配方	ok
 UI	lang0.pak	DST_REMOVE_ALL_PART	Remove All Parts	卸载晶片	卸載晶片	ok
@@ -3254,14 +3254,14 @@ UI	lang0.pak	DST_WORLD_CONCEPT_WAIT_TRADE	Please wait, trade in progress	等待�
 UI	lang0.pak	DST_ITEM_GRADE_ANGEL	Angel		天使	ok
 UI	lang0.pak	DST_ITEM_GRADE_PRIEST	Grand Priest		大神官	ok
 UI	lang0.pak	DST_ITEM_GRADE_ZENOH	Zen'oh		全王	ok
-UI	lang0.pak	DST_ITEMASCEND_TITLE	Ascend System		裝備進階	ok
-UI	lang0.pak	DST_ITEMASCEND_INFO	Place an equipment piece here to ascend it to the next rarity tier.		將一件裝備放在這裡，使其進階至下一稀有度。	ok
+UI	lang0.pak	DST_ITEMASCEND_TITLE	Ascend System		裝備升階	ok
+UI	lang0.pak	DST_ITEMASCEND_INFO	Place an equipment piece here to ascend it to the next rarity tier.		將一件裝備放在這裡，使其升階至下一稀有度。	ok
 UI	lang0.pak	DST_ITEMASCEND_MATERIAL	Required Materials		所需材料	ok
 UI	lang0.pak	DST_ITEMASCEND_ZENNY	Zeni		索尼	ok
 UI	lang0.pak	DST_ITEMASCEND_SUCCESSRATE	Success Rate		成功率	ok
-UI	lang0.pak	DST_ITEMASCEND_BTN_ASCEND	ASCEND		進階	ok
-UI	lang0.pak	DST_ITEMASCEND_SUCCESS	Ascension succeeded!		進階成功！	ok
-UI	lang0.pak	DST_ITEMASCEND_FAIL	Ascension failed. Success rate increased.		進階失敗，成功率已提升。	ok
+UI	lang0.pak	DST_ITEMASCEND_BTN_ASCEND	ASCEND		升階	ok
+UI	lang0.pak	DST_ITEMASCEND_SUCCESS	Ascension succeeded!		升階成功！	ok
+UI	lang0.pak	DST_ITEMASCEND_FAIL	Ascension failed. Success rate increased.		升階失敗，成功率已提升。	ok
 UI	lang0.pak	DST_ITEMASCEND_MAXRANK	This item is already at the maximum rarity.		該裝備已達最高稀有度。	ok
 UI	lang0.pak	DST_ITEMASCEND_CONFIRM	"[align = ""center""][font size = ""12"" color=""f4d762""]Confirm Ascension[/font][br][br][font size = ""10"" color=""ffffff""]Attempt to ascend this item now?[/font][br][br][font size = ""10"" color=""f36a7c""]On failure, only the materials and zenny[br]will be lost - the item itself is kept[br]and your next success rate will increase.[/font][br][br][font size = ""10"" color=""269eff""]Current success rate: %s%%[/font]"		"[align = ""center""][font size = ""12"" color=""f4d762""]確認進階[/font][br][br][font size = ""10"" color=""ffffff""]現在嘗試進階該裝備嗎？[/font][br][br][font size = ""10"" color=""f36a7c""]失敗時只會消耗材料和索尼，[br]裝備本身會保留，[br]下次進階成功率也會提高。[/font][br][br][font size = ""10"" color=""269eff""]當前成功率：%s%%[/font]"	ok
 UI	lang0.pak	DST_SIGNIN_TITLE	Daily Sign-In		每日簽到	untranslated
@@ -3495,7 +3495,7 @@ UI	lang0.pak	GAME_COMMON_ALREADY_REGISTERED	Already Registered.		已報名。	ok
 UI	lang0.pak	GAME_COMMON_CANT_DO_THAT_FOR_SOME_REASON	You can't do that at the moment.		現在無法執行。	ok
 UI	lang0.pak	GAME_COMMON_CANT_DO_THAT_IN_AFFECTING_STATE	Can't do that while cast.		無法執行該時施放。	ok
 UI	lang0.pak	GAME_COMMON_CANT_DO_THAT_IN_AFTEREFFECT_CONDITION	Can't do that right now.		現在無法執行。	ok
-UI	lang0.pak	GAME_COMMON_CANT_DO_THAT_IN_AIR_MODE_STATE	Can't do that while flying.		无法在舞空时执行。	ok
+UI	lang0.pak	GAME_COMMON_CANT_DO_THAT_IN_AIR_MODE_STATE	Can't do that while flying.		無法在舞空時執行。	ok
 UI	lang0.pak	GAME_COMMON_CANT_DO_THAT_IN_BATTLE_STATE	Can't to that while battle.		無法該時戰鬥。	ok
 UI	lang0.pak	GAME_COMMON_CANT_DO_THAT_IN_BLOCKING_STATE	Can't do that while blocking.		無法執行該時。	ok
 UI	lang0.pak	GAME_COMMON_CANT_DO_THAT_IN_CAMPING_STATE	Can't do that while champing.		無法執行該時。	ok
@@ -3738,7 +3738,7 @@ UI	lang0.pak	GAME_ITEM_DURATIONTIME_ZERO	Item duration time is 0		道具持續�
 UI	lang0.pak	GAME_ITEM_DUR_ZERO	Item durability is zero.		道具耐久度是。	ok
 UI	lang0.pak	GAME_ITEM_EXCHANGE_FAIL	Failed to exchange items		交換道具失敗	ok
 UI	lang0.pak	GAME_ITEM_EXCHANGE_NOT_STACKED	Item not stackable,\nplease continue.		道具不，\n請繼續。	ok
-UI	lang0.pak	GAME_ITEM_EXCHANGE_SUCCESS	Successfully exchanged.		兌換成功。	ok
+UI	lang0.pak	GAME_ITEM_EXCHANGE_SUCCESS	Successfully exchanged.		兑换成功。	ok
 UI	lang0.pak	GAME_ITEM_GENDER_DOESNT_MATCH	Gender doesn't match.		性別不匹配。	ok
 UI	lang0.pak	GAME_ITEM_HOIPOIMIX_FARE_CAN_NOT_SET	Fee set not available.		無法設置費用。	ok
 UI	lang0.pak	GAME_ITEM_HOIPOIMIX_FARE_NOT_SET	Fee isn't set.		費用未套裝。	ok
@@ -3757,16 +3757,16 @@ UI	lang0.pak	GAME_ITEM_MAX_WATT_OVER	Scouter is overloaded.		探測器是。	ok
 UI	lang0.pak	GAME_ITEM_NEED_LESS_LEVEL	Need less level		需要低於等級	ok
 UI	lang0.pak	GAME_ITEM_NEED_MORE_LEVEL	Need more level		需要更多等級	ok
 UI	lang0.pak	GAME_ITEM_NEED_LESS_RESETS	Need less Resets		需要低於重置	ok
-UI	lang0.pak	GAME_GUILD_PASSIVE_INVALID	Invalid guild passive.		无效的公会被动。	ok
-UI	lang0.pak	GAME_GUILD_PASSIVE_MAX_LEVEL	This guild passive is already at max level.		此公会被动已达最高等级。	ok
-UI	lang0.pak	GAME_GUILD_PASSIVE_NEED_MORE_GUILD_POINT	Not enough guild reputation.		公会声望不足。	ok
+UI	lang0.pak	GAME_GUILD_PASSIVE_INVALID	Invalid guild passive.		無效的公會被動。	ok
+UI	lang0.pak	GAME_GUILD_PASSIVE_MAX_LEVEL	This guild passive is already at max level.		此公會被動已達最高等級。	ok
+UI	lang0.pak	GAME_GUILD_PASSIVE_NEED_MORE_GUILD_POINT	Not enough guild reputation.		公會聲望不足。	ok
 UI	lang0.pak	GAME_GUILD_PASSIVE_NEED_MORE_ZENNY	Not enough Zeni.		索尼不足.	ok
-UI	lang0.pak	GAME_GUILD_PASSIVE_NOTHING_TO_RESET	No guild passive points to reset.		没有可重置的公会被动点数。	ok
-UI	lang0.pak	GAME_GUILD_PASSIVE_POINT_LIMIT	Not enough guild passive points available.		公会被动点数不足。	ok
-UI	lang0.pak	GAME_GUILD_PASSIVE_PREREQUISITE	Upgrade the required guild passive first.		请先升级所需的公会被动。	ok
-UI	lang0.pak	GAME_GUILD_PASSIVE_RESET_COOLDOWN	Guild passive reset is on cooldown.		公会被动重置冷却中。	ok
-UI	lang0.pak	GAME_GUILD_PASSIVE_RESET_IN_PROGRESS	Guild passive reset already in progress.		公会被动重置进行中。	ok
-UI	lang0.pak	GAME_GUILD_PASSIVE_UPGRADE_IN_PROGRESS	Guild passive upgrade already in progress.		公会被动升级进行中。	ok
+UI	lang0.pak	GAME_GUILD_PASSIVE_NOTHING_TO_RESET	No guild passive points to reset.		没有可重置的公會被動點數。	ok
+UI	lang0.pak	GAME_GUILD_PASSIVE_POINT_LIMIT	Not enough guild passive points available.		公會被動點數不足。	ok
+UI	lang0.pak	GAME_GUILD_PASSIVE_PREREQUISITE	Upgrade the required guild passive first.		请先升級所需的公會被動。	ok
+UI	lang0.pak	GAME_GUILD_PASSIVE_RESET_COOLDOWN	Guild passive reset is on cooldown.		公會被動重置冷卻中。	ok
+UI	lang0.pak	GAME_GUILD_PASSIVE_RESET_IN_PROGRESS	Guild passive reset already in progress.		公會被動重置進行中。	ok
+UI	lang0.pak	GAME_GUILD_PASSIVE_UPGRADE_IN_PROGRESS	Guild passive upgrade already in progress.		公會被動升級進行中。	ok
 UI	lang0.pak	GAME_ITEM_NEED_MORE_PARAMETER	Need more parameter		需要更多	ok
 UI	lang0.pak	GAME_ITEM_NOT_BATTLE_AVAILABLE_LOCATION	Can't use it in this battle area.		無法使用它在此戰鬥區域。	ok
 UI	lang0.pak	GAME_ITEM_NOT_BEAD	It isn't a bead item.		它未道具。	ok
@@ -4470,7 +4470,7 @@ UI	lang0.pak	GAME_CANNOT_TOGGLE_AURA_WITH_KAIOKEN	Cannot toggle aura while Kaiok
 UI	lang0.pak	GAME_ULTRA_SAIYAN_NOT_IN_SSJ	Ultra Saiyan Boost requires Super Saiyan 1 transformation.		極限賽亞人強化需要先變身為超級賽亞人1。	ok
 UI	lang0.pak	GAME_COMMON_CASHITEM_REFRESH_COOLDOWN	You must wait 1 minute to refresh or relog for instant reload.		必須等待1分鐘後刷新，或重新登錄以立即重新加載。	ok
 UI	lang0.pak	MASCOT_FAIL_GUARD_ITEM_USE_FAIL	Failed to use guard item on mascot.		吉祥物使用守護道具失敗。	ok
-UI	lang0.pak	AIR_FAIL	Air mode failed.		舞空模式失败	ok
+UI	lang0.pak	AIR_FAIL	Air mode failed.		舞空模式失敗	ok
 UI	lang0.pak	DWC_FAIL	Dragon World Championship failed.		龍界冠軍賽失敗。	ok
 UI	lang0.pak	GAME_COMMON_TEMPORARY_	Temporary error.		臨時錯誤。	ok
 UI	lang0.pak	GAME_ITEM_DICE_FAIL_INVALID_DICE	Invalid dice roll.		骰子點數無效。	ok
@@ -4486,11 +4486,11 @@ UI	lang0.pak	GAME_PARTYMATCHING_ROLEPLAY_INVALD	Invalid roleplay.		角色選擇�
 UI	lang0.pak	GAME_RESKILL_TIME_NON	Skill reset time not available.		技能重置時間不可用。	ok
 UI	lang0.pak	GAME_SHOP_NOT_FOUND	Shop not found.		未找到商店。	ok
 UI	lang0.pak	GAME_VEHICLE_WILL_GET_OFF_SOON	You will get off the vehicle soon.		即將從載具上下來。	ok
-UI	lang0.pak	GAME_ITEM_ASCEND_NO_CONFIG	This item cannot be ascended (no recipe found).		該裝備無法進階（未找到配方）。	ok
+UI	lang0.pak	GAME_ITEM_ASCEND_NO_CONFIG	This item cannot be ascended (no recipe found).		該裝備無法升階（未找到配方）。	ok
 UI	lang0.pak	GAME_ITEM_ASCEND_NOT_ENOUGH_MATERIAL	You do not have the required materials.		所需材料不足。	ok
 UI	lang0.pak	GAME_ITEM_ASCEND_NOT_ENOUGH_ZENNY	You do not have enough zeni.		索尼不足。	ok
 UI	lang0.pak	GAME_ITEM_ASCEND_MAX_RANK	This item is already at the maximum rarity.		該裝備已達最高稀有度。	ok
-UI	lang0.pak	GAME_ITEM_ASCEND_INVALID_ITEM	This item cannot be ascended right now.		該裝備目前無法進階。	ok
+UI	lang0.pak	GAME_ITEM_ASCEND_INVALID_ITEM	This item cannot be ascended right now.		該裝備目前無法升階。	ok
 TBL	tbl0.pak	*	Caliban El Fantasma Blanco		卡利班・白色幽靈	wildcard_utf16
 TBL	tbl0.pak	*	Caliban El Fantasma Azul		卡利班・藍色幽靈	wildcard_utf16
 TBL	tbl0.pak	*	Caliban El Fantasma Rojo		卡利班・紅色幽靈	wildcard_utf16
@@ -4608,7 +4608,7 @@ TBL	tbl0.pak	*	Trunks Tank Top Outfit		特兰克斯背心服装	wildcard_utf16
 TBL	tbl0.pak	*	Future Gohan Gi		未來悟飯武道服	wildcard_utf16
 TBL	tbl0.pak	*	Saiyan Female Armor		賽亞人女性護甲	wildcard_utf16
 TBL	tbl0.pak	*	Multiverse Bardock Armor		多元宇宙巴達克護甲	wildcard_utf16
-TBL	tbl0.pak	*	Time Patrol Trunks Outfit		时间巡逻队特兰克斯服装	wildcard_utf16
+TBL	tbl0.pak	*	Time Patrol Trunks Outfit		時間巡逻队特兰克斯服装	wildcard_utf16
 TBL	tbl0.pak	*	CC Soldier Uniform		CC 士兵制服	wildcard_utf16
 TBL	tbl0.pak	*	Swordmaster Outfit		劍術大師服裝	wildcard_utf16
 TBL	tbl0.pak	*	Budo Champion Dogi B		武道冠軍道服 B	wildcard_utf16
@@ -5110,7 +5110,7 @@ TBL	tbl0.pak	*	SSStaff-Hakai90		SS 杖 破壞90	wildcard_utf16
 TBL	tbl0.pak	*	FANSS HAKAI90		SS 扇 破壞90	wildcard_utf16
 TBL	tbl0.pak	*	ANSS Angel		天使 SS	wildcard_utf16
 TBL	tbl0.pak	*	ANSS Priest		祭司 SS	wildcard_utf16
-TBL	tbl0.pak	*	ANSS Zenoo		Zenoo SS	wildcard_utf16
+TBL	tbl0.pak	*	ANSS Zenoo		ANSS Zenoo	wildcard_utf16
 TBL	tbl0.pak	*	StickSS HAKAI90		SS 棍 破壞90	wildcard_utf16
 TBL	tbl0.pak	*	WandSS Hakai90		SS 魔杖 破壞90	wildcard_utf16
 TBL	tbl0.pak	*	TrumpetSS Hakai90		SS 小號 破壞90	wildcard_utf16
@@ -5282,7 +5282,7 @@ TBL	tbl1.pak	*	NEW Turn		新回合	wildcard_utf16
 TBL	tbl1.pak	*	Come Back To DBO		重返 DBO	wildcard_utf16
 TBL	tbl1.pak	*	LV UP 30!		升級 30！	wildcard_utf16
 TBL	tbl1.pak	*	Boost Event Box		加成活動禮包	wildcard_utf16
-TBL	tbl1.pak	*	Newbie Box		新手礼包	wildcard_utf16
+TBL	tbl1.pak	*	Newbie Box		新手禮包	wildcard_utf16
 TBL	tbl1.pak	*	Aniversary Box		Aniversary 禮包	wildcard_utf16
 TBL	tbl1.pak	*	Founder Zero V2		創始人 Zero V2	wildcard_utf16
 TBL	tbl1.pak	*	WC Daima Capsule		WC大魔膠囊	wildcard_utf16
@@ -5710,7 +5710,7 @@ TBL	tbl2.pak	*	Cell-X Remastered Earrings (B)!		賽爾 X 重製版耳環 (B)！	
 TBL	tbl2.pak	*	Tobi Mask		帶土面具	wildcard_utf16
 TBL	tbl2.pak	*	Featuring Naruto.		收录《火影忍者》。	wildcard_utf16
 TBL	tbl2.pak	*	Saiyan Armor Female		賽亞人防具女性	wildcard_utf16
-TBL	tbl2.pak	*	Kairi Clothes		凱莉服裝	wildcard_utf16
+TBL	tbl2.pak	*	Kairi Clothes		凱里服装	wildcard_utf16
 TBL	tbl2.pak	*	Super Brolly Movie Outfit		超级布罗利电影服装	wildcard_utf16
 TBL	tbl2.pak	*	Super Movie Brolly Clothes..		劇場版布羅利服裝	wildcard_utf16
 TBL	tbl2.pak	*	Mirai Gohan Outfit		未來悟飯服裝	wildcard_utf16
@@ -6826,7 +6826,7 @@ TBL	tbl2.pak	*	Vine Tentacles		藤觸手	wildcard_utf16
 TBL	tbl2.pak	*	Crac Fodder		克拉克飼料	wildcard_utf16
 TBL	tbl2.pak	*	Pamphlet		宣傳冊	wildcard_utf16
 TBL	tbl2.pak	*	Harvest Team Book		收穫隊手冊	wildcard_utf16
-TBL	tbl2.pak	*	Odd Box		奇怪的礼包	wildcard_utf16
+TBL	tbl2.pak	*	Odd Box		奇怪的禮包	wildcard_utf16
 TBL	tbl2.pak	*	Giant Order		巨人命令	wildcard_utf16
 TBL	tbl2.pak	*	Sticky Clay		黏土	wildcard_utf16
 TBL	tbl2.pak	*	Witch Spell		女巫咒語	wildcard_utf16
@@ -7279,10 +7279,10 @@ TBL	tbl2.pak	*	Skill Reset Book [Vol 5]		技能重置書［第 5 卷］	wildcard
 TBL	tbl2.pak	*	Skill Reset Book [Vol 10]		技能重置書［第 10 卷］	wildcard_utf16
 TBL	tbl2.pak	*	General EXP Scroll [1 Day]		一般經驗卷軸［1 天］	wildcard_utf16
 TBL	tbl2.pak	*	General EXP Scroll [7 Days]		一般經驗卷軸［7 天］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced EXP Scroll [1 Day]		進階經驗卷軸［1 天］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced EXP Scroll [7 Days]		進階經驗卷軸［7 天］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced EXP Scroll [15 Days]		進階經驗卷軸［15 天］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced EXP Scroll [30 Days]		進階經驗卷軸［30 天］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced EXP Scroll [1 Day]		高級經驗卷軸［1 天］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced EXP Scroll [7 Days]		高級經驗卷軸［7 天］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced EXP Scroll [15 Days]		高級經驗卷軸［15 天］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced EXP Scroll [30 Days]		高級經驗卷軸［30 天］	wildcard_utf16
 TBL	tbl2.pak	*	HL Life Pill X [x20]		HL 生命藥丸 X［×20］	wildcard_utf16
 TBL	tbl2.pak	*	HL Life Pill Y [x20]		HL 生命藥丸 Y［×20］	wildcard_utf16
 TBL	tbl2.pak	*	HL Life Pill X-S [x30]		HL 生命藥丸 X-S［×30］	wildcard_utf16
@@ -7352,7 +7352,7 @@ TBL	tbl2.pak	*	LRAllows the user to become synchronized with\none of Buddhism's 
 佛教五種神力之一同步。"	wildcard_utf16
 TBL	tbl2.pak	*	P Jet Turbine Gloves		P 噴射渦輪手套	wildcard_utf16
 TBL	tbl2.pak	*	P Turbo Gloves Z		P 渦輪手套 Z	wildcard_utf16
-TBL	tbl2.pak	*	LGPrinted z representing the strongest Warrior, performance is very good.		印有代表最强战士的 Z，性能优秀。	wildcard_utf16
+TBL	tbl2.pak	*	LGPrinted z representing the strongest Warrior, performance is very good.		印有代表最强戰士的 Z，性能优秀。	wildcard_utf16
 TBL	tbl2.pak	*	P Smash Gloves Z		P 粉碎手套 Z	wildcard_utf16
 TBL	tbl2.pak	*	LOPrinted Z representing the strongest Warrior,\nto enhance the improved version.		"LO印有象徵最強戰士的 Z 字樣，
 為強化改良版。"	wildcard_utf16
@@ -7375,7 +7375,7 @@ TBL	tbl2.pak	*	Lotus Dragon Gloves		蓮花龍手套	wildcard_utf16
 TBL	tbl2.pak	*	Jet Turbine Gloves		噴射渦輪手套	wildcard_utf16
 TBL	tbl2.pak	*	Z Turbo Gloves		Z 渦輪手套	wildcard_utf16
 TBL	tbl2.pak	*	Z Smash Gloves		Z 猛擊手套	wildcard_utf16
-TBL	tbl2.pak	*	LHThis enhanced custom version was represented by the strongest Z-Warrior.		此强化定制版以最强 Z 战士为代表。	wildcard_utf16
+TBL	tbl2.pak	*	LHThis enhanced custom version was represented by the strongest Z-Warrior.		此強化定制版以最强 Z 戰士为代表。	wildcard_utf16
 TBL	tbl2.pak	*	Wind Breaking Gloves		破風手套	wildcard_utf16
 TBL	tbl2.pak	*	CC Mach Punch Gloves		CC 音速拳套	wildcard_utf16
 TBL	tbl2.pak	*	E Mining Gloves		E 採礦手套	wildcard_utf16
@@ -7468,7 +7468,7 @@ TBL	tbl2.pak	*	Galaxia Staff		銀河杖	wildcard_utf16
 TBL	tbl2.pak	*	Gamma Limited Staff		Gamma 限定杖	wildcard_utf16
 TBL	tbl2.pak	*	Limited ETA Staff		限定 ETA 杖	wildcard_utf16
 TBL	tbl2.pak	*	E Z Turbo Staff		E Z 渦輪杖	wildcard_utf16
-TBL	tbl2.pak	*	MGPrinted z representing the strongest Warrior, performance is very good.		印有代表最强战士的 Z，性能优秀。	wildcard_utf16
+TBL	tbl2.pak	*	MGPrinted z representing the strongest Warrior, performance is very good.		印有代表最强戰士的 Z，性能优秀。	wildcard_utf16
 TBL	tbl2.pak	*	E Z Smash Staff		E Z 粉碎杖	wildcard_utf16
 TBL	tbl2.pak	*	MZPrinted z representing the strongest Warrior, performance is very good.\nAdvanced Version.		"MZ印有象徵最強戰士的 z 字樣，效能極佳。
 進階版。"	wildcard_utf16
@@ -12749,7 +12749,7 @@ TBL	tbl2.pak	*	Jotaro Outfit		承太郎服裝	wildcard_utf16
 TBL	tbl2.pak	*	Naruto Outfit		鳴人服裝	wildcard_utf16
 TBL	tbl2.pak	*	Goku Drip		悟空潮服	wildcard_utf16
 TBL	tbl2.pak	*	Rimuru Tempest Outfit		利姆路·坦佩斯特服裝	wildcard_utf16
-TBL	tbl2.pak	*	Vip Box		VIP 礼包	wildcard_utf16
+TBL	tbl2.pak	*	Vip Box		VIP 禮包	wildcard_utf16
 TBL	tbl2.pak	*	Raphtalia Outfit		拉芙塔莉雅服裝	wildcard_utf16
 TBL	tbl2.pak	*	Raphtalia Hair		拉芙塔莉雅髮型	wildcard_utf16
 TBL	tbl2.pak	*	Harley Quinzel Outfit		哈莉·奎茵服裝	wildcard_utf16
@@ -15086,7 +15086,7 @@ TBL	tbl2.pak	*	Powerful Combination Package B		強力組合禮包 B	wildcard_utf
 TBL	tbl2.pak	*	Gorgeous Combination Package A		華麗組合禮包 A	wildcard_utf16
 TBL	tbl2.pak	*	Gorgeous Combination Package B		華麗組合禮包 B	wildcard_utf16
 TBL	tbl2.pak	*	General Practice Capsule		一般練習膠囊	wildcard_utf16
-TBL	tbl2.pak	*	Advance Practice Capsule		進階練習膠囊	wildcard_utf16
+TBL	tbl2.pak	*	Advance Practice Capsule		高級練習膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Novice Support Package [1] (LV1-30)		新手支援禮包［1］（LV1-30）	wildcard_utf16
 TBL	tbl2.pak	*	Novice Support Package [2] (LV1-30)		新手支援禮包［2］（LV1-30）	wildcard_utf16
 TBL	tbl2.pak	*	Novice Support Package [3] (LV1-30)		新手支援禮包［3］（LV1-30）	wildcard_utf16
@@ -15131,8 +15131,8 @@ TBL	tbl2.pak	*	VP Recovery Box [1x]		VP 恢復禮包［1×］	wildcard_utf16
 TBL	tbl2.pak	*	VP Recovery Box [5x]		VP 恢復禮包［5×］	wildcard_utf16
 TBL	tbl2.pak	*	Medium VP Recovery Box [1x]		中級 VP 恢復禮包［1×］	wildcard_utf16
 TBL	tbl2.pak	*	Medium VP Recovery Box [5x]		中級 VP 恢復禮包［5×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced VP Recovery Box [1x]		進階 VP 恢復禮包［1×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced VP Recovery Box [5x]		進階 VP 恢復禮包［5×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced VP Recovery Box [1x]		高級 VP 恢復禮包［1×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced VP Recovery Box [5x]		高級 VP 恢復禮包［5×］	wildcard_utf16
 TBL	tbl2.pak	*	High VP Recovery Box [1x]		高級 VP 恢復禮包［1×］	wildcard_utf16
 TBL	tbl2.pak	*	High VP Recovery Box [5x]		高級 VP 恢復禮包［5×］	wildcard_utf16
 TBL	tbl2.pak	*	Pet Fusion Item		寵物融合道具	wildcard_utf16
@@ -15227,7 +15227,7 @@ TBL	tbl2.pak	*	Popo Stone Capsule		波波石膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Self Revive Popo [10x] + Resurrection Popo (10x)		自我復活波波 ×10 ＋ 復活波波 ×10	wildcard_utf16
 TBL	tbl2.pak	*	Upgrade Capsule U30		升級膠囊U30	wildcard_utf16
 TBL	tbl2.pak	*	Weapon Upgrade Stone U30 + Armor Upgrade Stone U30		武器強化石 U30 ＋ 防具強化石 U30	wildcard_utf16
-TBL	tbl2.pak	*	Advance Upgrade Capsule U30		進階強化膠囊 U30	wildcard_utf16
+TBL	tbl2.pak	*	Advance Upgrade Capsule U30		高級強化膠囊 U30	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U30 + Advanced Armor Upgrade Stone U30		高級武器強化石 U30 ＋ 高級防具強化石 U30	wildcard_utf16
 TBL	tbl2.pak	*	HL Pill Capsule		HL藥丸膠囊	wildcard_utf16
 TBL	tbl2.pak	*	HL Life Pill X-S + HL Magic Pill X-S		HL 生命藥丸 X-S ＋ HL 魔力藥丸 X-S	wildcard_utf16
@@ -15385,33 +15385,33 @@ TBL	tbl2.pak	*	Speed Potion [10x]		速度藥水［10 倍］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U42 [3x]		進階防具強化石 U42［3×］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U42 [5x]		進階防具強化石 U42［5×］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U42 [10x]		進階防具強化石 U42［10×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U42 [3x]		進階武器強化石 U42［3×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U42 [5x]		進階武器強化石 U42［5×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U42 [10x]		進階武器強化石 U42［10×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U42 [3x]		高級武器強化石 U42［3×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U42 [5x]		高級武器強化石 U42［5×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U42 [10x]		高級武器強化石 U42［10×］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U46 [3x]		進階防具強化石 U46［3×］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U46 [5x]		進階防具強化石 U46［5×］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U46 [10x]		進階防具強化石 U46［10×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U46 [3x]		進階武器強化石 U46［3×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U46 [5x]		進階武器強化石 U46［5×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U46 [10x]		進階武器強化石 U46［10×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U46 [3x]		高級武器強化石 U46［3×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U46 [5x]		高級武器強化石 U46［5×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U46 [10x]		高級武器強化石 U46［10×］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U50 [3x]		進階防具強化石 U50［3×］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U50 [5x]		進階防具強化石 U50［5×］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U50 [10x]		進階防具強化石 U50［10×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U50 [3x]		進階武器強化石 U50［3×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U50 [5x]		進階武器強化石 U50［5×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U50 [10x]		進階武器強化石 U50［10×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U50 [3x]		高級武器強化石 U50［3×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U50 [5x]		高級武器強化石 U50［5×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U50 [10x]		高級武器強化石 U50［10×］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U53 [3x]		進階防具強化石 U53［3×］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U53 [5x]		進階防具強化石 U53［5×］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U53 [10x]		進階防具強化石 U53［10×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U53 [3x]		進階武器強化石 U53［3×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U53 [5x]		進階武器強化石 U53［5×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U53 [10x]		進階武器強化石 U53［10×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U53 [3x]		高級武器強化石 U53［3×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U53 [5x]		高級武器強化石 U53［5×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U53 [10x]		高級武器強化石 U53［10×］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U55 [3x]		進階防具強化石 U55［3×］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U55 [5x]		進階防具強化石 U55［5×］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U55 [10x]		進階防具強化石 U55［10×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U55 [3x]		進階武器強化石 U55［3×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U55 [5x]		進階武器強化石 U55［5×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U55 [10x]		進階武器強化石 U55［10×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U55 [3x]		高級武器強化石 U55［3×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U55 [5x]		高級武器強化石 U55［5×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U55 [10x]		高級武器強化石 U55［10×］	wildcard_utf16
 TBL	tbl2.pak	*	Transformation Potions Capsule		變身藥水膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Transformation Random Capsule		變身隨機膠囊	wildcard_utf16
 TBL	tbl2.pak	*	EV Transformation Random Capsule		EV 變身隨機膠囊	wildcard_utf16
@@ -15433,23 +15433,23 @@ TBL	tbl2.pak	*	EV White Stone U55		活動白色石U55	wildcard_utf16
 TBL	tbl2.pak	*	Event Wagu Coin		活動瓦古幣	wildcard_utf16
 TBL	tbl2.pak	*	Korin Guardian Outfit		花梨守護者服裝	wildcard_utf16
 TBL	tbl2.pak	*	Special Equipment Box		Special Equipment 禮包	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U50 Capsule [30x]		進階武器強化石 U50 膠囊［30×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U53 Capsule [30x]		進階武器強化石 U53 膠囊［30×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U55 Capsule [30x]		進階武器強化石 U55 膠囊［30×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U50 Capsule [30x]		進階防具強化石 U50 膠囊［30×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U53 Capsule [30x]		進階防具強化石 U53 膠囊［30×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U55 Capsule [30x]		進階防具強化石 U55 膠囊［30×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U50 Capsule [50x]		進階武器強化石 U50 膠囊［50×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U50 Capsule [30x]		高級武器強化石 U50 膠囊［30×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U53 Capsule [30x]		高級武器強化石 U53 膠囊［30×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U55 Capsule [30x]		高級武器強化石 U55 膠囊［30×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U50 Capsule [30x]		高級防具強化石 U50 膠囊［30×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U53 Capsule [30x]		高級防具強化石 U53 膠囊［30×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U55 Capsule [30x]		高級防具強化石 U55 膠囊［30×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U50 Capsule [50x]		高級武器強化石 U50 膠囊［50×］	wildcard_utf16
 TBL	tbl2.pak	*	You can get Advanced Weapon Upgrade Stone U50 50x.\nPlease confirm free space before use!!		可獲得高級武器強化石 U50 ×50。\n使用前請確認背包空間！	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U53 Capsule [50x]		進階武器強化石 U53 膠囊［50×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U53 Capsule [50x]		高級武器強化石 U53 膠囊［50×］	wildcard_utf16
 TBL	tbl2.pak	*	You can get Advanced Weapon Upgrade Stone U53 50x.\nPlease confirm free space before use!!		可獲得高級武器強化石 U53 ×50。\n使用前請確認背包空間！	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U55 Capsule [50x]		進階武器強化石 U55 膠囊［50×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U55 Capsule [50x]		高級武器強化石 U55 膠囊［50×］	wildcard_utf16
 TBL	tbl2.pak	*	You can get Advanced Weapon Upgrade Stone U55 50x.\nPlease confirm free space before use!!		可獲得高級武器強化石 U55 ×50。\n使用前請確認背包空間！	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U50 Capsule [50x]		進階防具強化石 U50 膠囊［50×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U50 Capsule [50x]		高級防具強化石 U50 膠囊［50×］	wildcard_utf16
 TBL	tbl2.pak	*	You can get Advanced Armor Upgrade Stone U50 50x.\nPlease confirm free space before use!!		可獲得高級防具強化石 U50 ×50。\n使用前請確認背包空間！	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U53 Capsule [50x]		進階防具強化石 U53 膠囊［50×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U53 Capsule [50x]		高級防具強化石 U53 膠囊［50×］	wildcard_utf16
 TBL	tbl2.pak	*	You can get Advanced Armor Upgrade Stone U53 50x.\nPlease confirm free space before use!!		可獲得高級防具強化石 U53 ×50。\n使用前請確認背包空間！	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U55 Capsule [50x]		進階防具強化石 U55 膠囊［50×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U55 Capsule [50x]		高級防具強化石 U55 膠囊［50×］	wildcard_utf16
 TBL	tbl2.pak	*	You can get Advanced Armor Upgrade Stone U55 50x.\nPlease confirm free space before use!!		可獲得高級防具強化石 U55 ×50。\n使用前請確認背包空間！	wildcard_utf16
 TBL	tbl2.pak	*	Equipment Box [1x]		裝備禮包［1×］	wildcard_utf16
 TBL	tbl2.pak	*	Explorer Outfit Type A		探險家服裝 Type A	wildcard_utf16
@@ -15489,17 +15489,17 @@ TBL	tbl2.pak	*	EV Weapon Upgrade Stone U60		活動武器升級石U60	wildcard_ut
 TBL	tbl2.pak	*	EV Armor Upgrade Stone U60		活動防具強化石U60	wildcard_utf16
 TBL	tbl2.pak	*	EV Advanced Weapon Upgrade Stone U60		活動高級武器升級石U60	wildcard_utf16
 TBL	tbl2.pak	*	EV Advanced Armor Upgrade Stone U60		活動高級防具強化石U60	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U60 Capsule [3x]		進階武器強化石 U60 膠囊［3×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U60 Capsule [3x]		高級武器強化石 U60 膠囊［3×］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U60 Capsule [5x]		高級武器強化石 U60 膠囊［5×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U60 Capsule [10x]		進階武器強化石 U60 膠囊［10×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U60 Capsule [30x]		進階武器強化石 U60 膠囊［30×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U60 Capsule [50x]		進階武器強化石 U60 膠囊［50×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U60 Capsule [10x]		高級武器強化石 U60 膠囊［10×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U60 Capsule [30x]		高級武器強化石 U60 膠囊［30×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U60 Capsule [50x]		高級武器強化石 U60 膠囊［50×］	wildcard_utf16
 TBL	tbl2.pak	*	You can get Advanced Weapon Upgrade Stone U60 50x.\nPlease confirm free space before use!		可獲得高級武器強化石 U60 ×50。\n使用前請確認背包空間！	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U60 Capsule [3x]		進階防具強化石 U60 膠囊［3×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U60 Capsule [5x]		進階防具強化石 U60 膠囊［5×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U60 Capsule [10x]		進階防具強化石 U60 膠囊［10×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U60 Capsule [30x]		進階防具強化石 U60 膠囊［30×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U60 Capsule [50x]		進階防具強化石 U60 膠囊［50×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U60 Capsule [3x]		高級防具強化石 U60 膠囊［3×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U60 Capsule [5x]		高級防具強化石 U60 膠囊［5×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U60 Capsule [10x]		高級防具強化石 U60 膠囊［10×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U60 Capsule [30x]		高級防具強化石 U60 膠囊［30×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U60 Capsule [50x]		高級防具強化石 U60 膠囊［50×］	wildcard_utf16
 TBL	tbl2.pak	*	You can get Advanced Armor Upgrade Stone U60 50x.\nPlease confirm free space before use!		可獲得高級防具強化石 U60 ×50。\n使用前請確認背包空間！	wildcard_utf16
 TBL	tbl2.pak	*	[Marterial Art] LV UP 30! Cookie		［武道］升級 30！餅乾	wildcard_utf16
 TBL	tbl2.pak	*	[Spiritualist] LV UP 30! Cookie		[氣功師] LV UP 30! Cookie	wildcard_utf16
@@ -15585,17 +15585,17 @@ TBL	tbl2.pak	*	Piccolo Red Star Turban		短笛紅星頭巾	wildcard_utf16
 TBL	tbl2.pak	*	CC Modified Space Suit		CC 改裝太空套裝	wildcard_utf16
 TBL	tbl2.pak	*	CC Modified Space Helmet		CC 改裝太空頭盔	wildcard_utf16
 TBL	tbl2.pak	*	Black Dragon Bus		黑龍巴士	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U70 Capsule [3x]		進階武器強化石 U70 膠囊［3×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U70 Capsule [3x]		高級武器強化石 U70 膠囊［3×］	wildcard_utf16
 TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U70 Capsule [5x]		高級武器強化石 U70 膠囊［5×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U70 Capsule [10x]		進階武器強化石 U70 膠囊［10×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U70 Capsule [30x]		進階武器強化石 U70 膠囊［30×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U70 Capsule [50x]		進階武器強化石 U70 膠囊［50×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U70 Capsule [10x]		高級武器強化石 U70 膠囊［10×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U70 Capsule [30x]		高級武器強化石 U70 膠囊［30×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Weapon Upgrade Stone U70 Capsule [50x]		高級武器強化石 U70 膠囊［50×］	wildcard_utf16
 TBL	tbl2.pak	*	You can get Advanced Weapon Upgrade Stone U70 50x.\nPlease confirm free space before use!		可獲得高級武器強化石 U70 ×50。\n使用前請確認背包空間！	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U70 Capsule [3x]		進階防具強化石 U70 膠囊［3×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U70 Capsule [5x]		進階防具強化石 U70 膠囊［5×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U70 Capsule [10x]		進階防具強化石 U70 膠囊［10×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U70 Capsule [30x]		進階防具強化石 U70 膠囊［30×］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U70 Capsule [50x]		進階防具強化石 U70 膠囊［50×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U70 Capsule [3x]		高級防具強化石 U70 膠囊［3×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U70 Capsule [5x]		高級防具強化石 U70 膠囊［5×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U70 Capsule [10x]		高級防具強化石 U70 膠囊［10×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U70 Capsule [30x]		高級防具強化石 U70 膠囊［30×］	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Armor Upgrade Stone U70 Capsule [50x]		高級防具強化石 U70 膠囊［50×］	wildcard_utf16
 TBL	tbl2.pak	*	You can get Advanced Armor Upgrade Stone U70 50x.\nPlease confirm free space before use!		可獲得高級防具強化石 U70 ×50。\n使用前請確認背包空間！	wildcard_utf16
 TBL	tbl2.pak	*	LV70 Treasure Chest		LV70寶箱	wildcard_utf16
 TBL	tbl2.pak	*	White Stone U70		白色石U70	wildcard_utf16
@@ -17918,7 +17918,7 @@ TBL	tbl2.pak	*	12 Weapon Coupon Lv29 [2 Days]		12武器券Lv29[2天]	wildcard_ut
 TBL	tbl2.pak	*	12 Armor Coupon Lv29 [2 Days]		12防具券Lv29[2天]	wildcard_utf16
 TBL	tbl2.pak	*	12 Weapon Coupon Lv37 [2 Days]		12武器券Lv37[2天]	wildcard_utf16
 TBL	tbl2.pak	*	12 Armor Coupon Lv37 [2 Days]		12防具券Lv37[2天]	wildcard_utf16
-TBL	tbl2.pak	*	EV Advanced Fly Scroll [3 Min]		EV 進階舞空卷軸［3 分］	wildcard_utf16
+TBL	tbl2.pak	*	EV Advanced Fly Scroll [3 Min]		EV 高級舞空卷軸［3 分］	wildcard_utf16
 TBL	tbl2.pak	*	EV Secret Fly Scroll		活動秘密舞空卷軸	wildcard_utf16
 TBL	tbl2.pak	*	12 Weapon Coupon Lv44 [2 Days]		12武器券Lv44[2天]	wildcard_utf16
 TBL	tbl2.pak	*	12 Armor Coupon Lv44 [2 Days]		12防具券Lv44[2天]	wildcard_utf16
@@ -17971,7 +17971,7 @@ TBL	tbl2.pak	*	EV Protective Net Lv4		活動防護網 Lv4	wildcard_utf16
 TBL	tbl2.pak	*	EV White Stone U70		EV白色石U70	wildcard_utf16
 TBL	tbl2.pak	*	EV +10 Weapon Coupon Lv70 [3 Days]		EV +10 武器優惠券 Lv70［3 天］	wildcard_utf16
 TBL	tbl2.pak	*	EV +8 Armor Coupon Lv70 [3 Days]		EV +8 防具優惠券 Lv70［3 天］	wildcard_utf16
-TBL	tbl2.pak	*	EV Advanced Fly Scroll [1 Day]		EV 進階舞空卷軸［1 天］	wildcard_utf16
+TBL	tbl2.pak	*	EV Advanced Fly Scroll [1 Day]		EV 高級舞空卷軸［1 天］	wildcard_utf16
 TBL	tbl2.pak	*	EX Low Ultimate EXP Boost [1 Hour]		EX 低級究極經驗加成［1 小時］	wildcard_utf16
 TBL	tbl2.pak	*	EX Medium Ultimate EXP Boost [1 Hour]		EX 中級究極經驗加成［1 小時］	wildcard_utf16
 TBL	tbl2.pak	*	EX High Ultimate EXP Boost [1 Hour]		EX 高級究極經驗加成［1 小時］	wildcard_utf16
@@ -18050,7 +18050,7 @@ TBL	tbl2.pak	*	Armor Chest (Namekian) [Lv30-35]		防具箱（那美克）［Lv30
 TBL	tbl2.pak	*	Armor Chest (Majin) [Lv21-26]		防具箱（魔人）［Lv21-26］	wildcard_utf16
 TBL	tbl2.pak	*	Armor Chest (Majin) [Lv30-35]		防具箱（魔人）［Lv30-35］	wildcard_utf16
 TBL	tbl2.pak	*	Jewelry Chest [Lv21-35]		飾品箱［Lv21-35］	wildcard_utf16
-TBL	tbl2.pak	*	Advance Potion Capsule		進階藥水膠囊	wildcard_utf16
+TBL	tbl2.pak	*	Advance Potion Capsule		高級藥水膠囊	wildcard_utf16
 TBL	tbl2.pak	*	Jewelry Recipe Chest		飾品配方箱	wildcard_utf16
 TBL	tbl2.pak	*	Armor Recipe Chest (General) [Lv21-29]		防具配方箱（一般）［Lv21-29］	wildcard_utf16
 TBL	tbl2.pak	*	Armor Recipe Chest (Probability) [Lv21-29]		防具配方箱（機率）［Lv21-29］	wildcard_utf16
@@ -18072,7 +18072,7 @@ TBL	tbl2.pak	*	Armor Chest (Human) [Lv50]		防具箱（人類）［Lv50］	wildc
 TBL	tbl2.pak	*	Armor Chest (Namekian) [Lv50]		防具箱（那美克）［Lv50］	wildcard_utf16
 TBL	tbl2.pak	*	Armor Chest (Majin) [Lv50]		防具箱（魔人）［Lv50］	wildcard_utf16
 TBL	tbl2.pak	*	Jewelry Chest [Lv38-50]		飾品箱［Lv38-50］	wildcard_utf16
-TBL	tbl2.pak	*	Advanced Jewelry Recipe Chest		進階飾品配方箱	wildcard_utf16
+TBL	tbl2.pak	*	Advanced Jewelry Recipe Chest		高級飾品配方箱	wildcard_utf16
 TBL	tbl2.pak	*	Weapon Recipe Chest [Lv38]		武器配方箱［Lv38］	wildcard_utf16
 TBL	tbl2.pak	*	Weapon Recipe Chest [Lv42]		武器配方箱［Lv42］	wildcard_utf16
 TBL	tbl2.pak	*	Weapon Recipe Chest [Lv46]		武器配方箱［Lv46］	wildcard_utf16
@@ -19010,7 +19010,7 @@ TBL	tbl2.pak	*	Human Newbie CC Jacket		人類新手 CC 夾克	wildcard_utf16
 TBL	tbl2.pak	*	Human Newbie CC Pants		人類新手 CC 褲	wildcard_utf16
 TBL	tbl2.pak	*	Human Newbie CC Boots		人類新手 CC 靴	wildcard_utf16
 TBL	tbl2.pak	*	Legendary Super Saiyan Effect Title		傳說超級賽亞人特效稱號	wildcard_utf16
-TBL	tbl2.pak	*	Newbie Box		新手礼包	wildcard_utf16
+TBL	tbl2.pak	*	Newbie Box		新手禮包	wildcard_utf16
 TBL	tbl2.pak	*	15 Armor Coupon Lv30 [7 Days]		15防具券Lv30[7天]	wildcard_utf16
 TBL	tbl2.pak	*	Namek Newbie CC Jacket		那美克新手 CC 外套	wildcard_utf16
 TBL	tbl2.pak	*	Namek Newbie CC Pants		那美克新手 CC 下裝	wildcard_utf16
@@ -19048,15 +19048,15 @@ TBL	tbl2.pak	*	Tatsumaki Clothes		龍捲服裝	wildcard_utf16
 TBL	tbl2.pak	*	Featuring One Punch Man		取材自一拳超人	wildcard_utf16
 TBL	tbl2.pak	*	Neliel Hair		涅莉艾爾髮型	wildcard_utf16
 TBL	tbl2.pak	*	Ruby Ki Soul		紅寶石氣魂	wildcard_utf16
-TBL	tbl2.pak	*	An evolution of the Third Spinel Dragon Soul. It shines like a Warrior Soul.		尖晶石龙魂第三阶段的进化。如战士之魂般闪耀。	wildcard_utf16
+TBL	tbl2.pak	*	An evolution of the Third Spinel Dragon Soul. It shines like a Warrior Soul.		尖晶石龙魂第三阶段的进化。如戰士之魂般闪耀。	wildcard_utf16
 TBL	tbl2.pak	*	Quartz Ki Soul		石英氣魂	wildcard_utf16
-TBL	tbl2.pak	*	An evolution of the Third Turquoise Dragon Soul. It shines like a Warrior Soul.		绿松石龙魂第三阶段的进化。如战士之魂般闪耀。	wildcard_utf16
+TBL	tbl2.pak	*	An evolution of the Third Turquoise Dragon Soul. It shines like a Warrior Soul.		绿松石龙魂第三阶段的进化。如戰士之魂般闪耀。	wildcard_utf16
 TBL	tbl2.pak	*	Amethyst Ki Soul		紫水晶氣魂	wildcard_utf16
-TBL	tbl2.pak	*	An evolution of the Third Fluorite Dragon Soul. It shines like a Warrior Soul.		萤石龙魂第三阶段的进化。如战士之魂般闪耀。	wildcard_utf16
+TBL	tbl2.pak	*	An evolution of the Third Fluorite Dragon Soul. It shines like a Warrior Soul.		萤石龙魂第三阶段的进化。如戰士之魂般闪耀。	wildcard_utf16
 TBL	tbl2.pak	*	Sun Ki Soul		太陽氣魂	wildcard_utf16
-TBL	tbl2.pak	*	An evolution of the Third Universal Dragon Soul. It shines like a Warrior Soul.		宇宙龙魂第三阶段的进化。如战士之魂般闪耀。	wildcard_utf16
+TBL	tbl2.pak	*	An evolution of the Third Universal Dragon Soul. It shines like a Warrior Soul.		宇宙龙魂第三阶段的进化。如戰士之魂般闪耀。	wildcard_utf16
 TBL	tbl2.pak	*	Nature Ki Soul		自然氣魂	wildcard_utf16
-TBL	tbl2.pak	*	An evolution of the Third Emerald Dragon Soul. It shines like a Warrior Soul.		翡翠龙魂第三阶段的进化。如战士之魂般闪耀。	wildcard_utf16
+TBL	tbl2.pak	*	An evolution of the Third Emerald Dragon Soul. It shines like a Warrior Soul.		翡翠龙魂第三阶段的进化。如戰士之魂般闪耀。	wildcard_utf16
 TBL	tbl2.pak	*	Ruby Ki Soul Recipe		Ruby Ki Soul配方	wildcard_utf16
 TBL	tbl2.pak	*	Quartz Ki Soul Recipe		Quartz Ki Soul配方	wildcard_utf16
 TBL	tbl2.pak	*	Amethyst Ki Soul Recipe		Amethyst Ki Soul配方	wildcard_utf16
@@ -22327,7 +22327,7 @@ TBL	tbl2.pak	*	Dirty Wave		骯髒波	wildcard_utf16
 TBL	tbl2.pak	*	Moment of Dread		恐懼時刻	wildcard_utf16
 TBL	tbl2.pak	*	Super Indigestion		超消化不良	wildcard_utf16
 TBL	tbl2.pak	*	Kiri Kiri Kiri		基里基里基里	wildcard_utf16
-TBL	tbl2.pak	*	Critical Hit		暴击命中	wildcard_utf16
+TBL	tbl2.pak	*	Critical Hit		暴擊命中	wildcard_utf16
 TBL	tbl2.pak	*	Energy Ball		氣功球	wildcard_utf16
 TBL	tbl2.pak	*	Tornado Shot		龍捲風射擊	wildcard_utf16
 TBL	tbl2.pak	*	Ultrasonic Movement		超音波移動	wildcard_utf16
@@ -24310,7 +24310,7 @@ TBL	tbl2.pak	*	Abnormal Status Resistance		異常狀態抗性	wildcard_utf16
 TBL	tbl2.pak	*	Abdominal Pain		腹痛	wildcard_utf16
 TBL	tbl2.pak	*	Fainting		昏迷	wildcard_utf16
 TBL	tbl2.pak	*	Barrier		屏障	wildcard_utf16
-TBL	tbl2.pak	*	Critical		暴击	wildcard_utf16
+TBL	tbl2.pak	*	Critical		暴擊	wildcard_utf16
 TBL	tbl2.pak	*	Physical Critical Hit Rate		物理暴擊命中率	wildcard_utf16
 TBL	tbl2.pak	*	Spiritual Critical Hit Rate		精神暴擊率	wildcard_utf16
 TBL	tbl2.pak	*	Revive		復活	wildcard_utf16
@@ -24525,10 +24525,10 @@ TBL	tbl2.pak	*	Bus Routes		巴士路線	wildcard_utf16
 TBL	tbl2.pak	*	Detection Range		偵測範圍	wildcard_utf16
 TBL	tbl2.pak	*	Vision Distance		視野距離	wildcard_utf16
 TBL	tbl2.pak	*	Budokai Lottery		武道會抽獎	wildcard_utf16
-TBL	tbl2.pak	*	Wagu Machine No. 1		瓦古機器 1 號	wildcard_utf16
-TBL	tbl2.pak	*	Wagu Machine No. 2		瓦古機器 2 號	wildcard_utf16
-TBL	tbl2.pak	*	Wagu Machine No. 3		瓦古機器 3 號	wildcard_utf16
-TBL	tbl2.pak	*	Wagu Machine No. 4		瓦古機器 4 號	wildcard_utf16
+TBL	tbl2.pak	*	Wagu Machine No. 1		Wagu 扭蛋機 1 號	wildcard_utf16
+TBL	tbl2.pak	*	Wagu Machine No. 2		Wagu 扭蛋機 2 號	wildcard_utf16
+TBL	tbl2.pak	*	Wagu Machine No. 3		Wagu 扭蛋機 3 號	wildcard_utf16
+TBL	tbl2.pak	*	Wagu Machine No. 4		Wagu 扭蛋機 4 號	wildcard_utf16
 TBL	tbl2.pak	*	Events Machine		活動機台	wildcard_utf16
 TBL	tbl2.pak	*	Normal Class		普通職業	wildcard_utf16
 TBL	tbl2.pak	*	Warrior		戰士	wildcard_utf16
@@ -25196,7 +25196,7 @@ TBL	tbl2.pak	*	BID4 Evil Bardock		BID4邪惡巴達克	wildcard_utf16
 TBL	tbl2.pak	*	BID5 Freeza Invasion		BID5 弗利薩入侵	wildcard_utf16
 TBL	tbl2.pak	*	BID6 Makai Realm		BID6魔界領域	wildcard_utf16
 TBL	tbl2.pak	*	MQ 1-1 A Tense Smile On The Farm		MQ 1-1 农场上的紧张微笑	wildcard_utf16
-TBL	tbl2.pak	*	MQ 1-2 The Journey Begins		MQ 1-2 旅途开始	wildcard_utf16
+TBL	tbl2.pak	*	MQ 1-2 The Journey Begins		MQ 1-2 旅途開始	wildcard_utf16
 TBL	tbl2.pak	*	MQ 1-3 The Nightmare		MQ 1-3 噩梦	wildcard_utf16
 TBL	tbl2.pak	*	MQ 1-4 Saiyan Invasion		MQ 1-4 赛亚人入侵	wildcard_utf16
 TBL	tbl2.pak	*	MQ 2-2 Namek's Fate		MQ 2-2 那美克的命運	wildcard_utf16
@@ -25333,7 +25333,7 @@ TBL	tbl2.pak	*	Hot Item		火辣道具	wildcard_utf16
 TBL	tbl2.pak	*	Limited		限定	wildcard_utf16
 TBL	tbl2.pak	*	Transforms		變身	wildcard_utf16
 TBL	tbl2.pak	*	Support Item		支援道具	wildcard_utf16
-TBL	tbl2.pak	*	Wagu Machine		瓦古機器	wildcard_utf16
+TBL	tbl2.pak	*	Wagu Machine		Wagu 扭蛋機	wildcard_utf16
 TBL	tbl2.pak	*	Mascot		吉祥物	wildcard_utf16
 TBL	tbl2.pak	*	Event Machine		活動機器	wildcard_utf16
 TBL	tbl2.pak	*	Silver Coin Ex.		銀幣 Ex.	wildcard_utf16
@@ -25635,11 +25635,11 @@ TBL	tbl2.pak	*	Aerobic Man		有氧男子	wildcard_utf16
 TBL	tbl2.pak	*	Dr. Iguana Jones		鬣蜥瓊斯博士	wildcard_utf16
 TBL	tbl2.pak	*	Hero Woolahan		英雄烏拉漢	wildcard_utf16
 TBL	tbl2.pak	*	King Gotz		戈茨王	wildcard_utf16
-TBL	tbl2.pak	*	DEF-Hope 761		DEF-Hope 761	wildcard_utf16
-TBL	tbl2.pak	*	DEF-Hope 761B		DEF-Hope 761B	wildcard_utf16
-TBL	tbl2.pak	*	DEF-Hope 761A		DEF-Hope 761A	wildcard_utf16
-TBL	tbl2.pak	*	DEF-Hope 762A		DEF-Hope 762A	wildcard_utf16
-TBL	tbl2.pak	*	DEF-Hope 762B		DEF-Hope 762B	wildcard_utf16
+TBL	tbl2.pak	*	DEF-Hope 761		DEF-希望 761	wildcard_utf16
+TBL	tbl2.pak	*	DEF-Hope 761B		DEF-希望 761B	wildcard_utf16
+TBL	tbl2.pak	*	DEF-Hope 761A		DEF-希望 761A	wildcard_utf16
+TBL	tbl2.pak	*	DEF-Hope 762A		DEF-希望 762A	wildcard_utf16
+TBL	tbl2.pak	*	DEF-Hope 762B		DEF-希望 762B	wildcard_utf16
 TBL	tbl2.pak	*	Fran Dog (Adult)		法蘭狗（成犬）	wildcard_utf16
 TBL	tbl2.pak	*	Fran Dog (Puppy)		法蘭狗（幼犬）	wildcard_utf16
 TBL	tbl2.pak	*	Lost Fran Dog		迷途的法蘭狗	wildcard_utf16
@@ -26859,8 +26859,8 @@ TBL	tbl2.pak	*	Increases Dodge Rate by %d (Passive)		閃避率提升 %d（被動
 TBL	tbl2.pak	*	Increases Defense Rate by %d (Passive)		防禦率提升 %d（被動）	wildcard_utf16
 TBL	tbl2.pak	*	Increases Success Rate by %d (Passive)		成功率提升 %d（被動）	wildcard_utf16
 TBL	tbl2.pak	*	Increases Resistance Rate by %d (Passive)		抵抗率提升 %d（被動）	wildcard_utf16
-TBL	tbl2.pak	*	Increases Physical Critical Hit Rate by %d (Passive)		物理暴击命中率提高 %d（被动）	wildcard_utf16
-TBL	tbl2.pak	*	Increases Energy Critical Hit Rate by %d (Passive)		能量暴击命中率提高 %d（被动）	wildcard_utf16
+TBL	tbl2.pak	*	Increases Physical Critical Hit Rate by %d (Passive)		物理暴擊命中率提高 %d（被動）	wildcard_utf16
+TBL	tbl2.pak	*	Increases Energy Critical Hit Rate by %d (Passive)		能量暴擊命中率提高 %d（被動）	wildcard_utf16
 TBL	tbl2.pak	*	Increases RP Charge Rate by %d (Passive)		RP 充能速率提高 %d（被動）	wildcard_utf16
 TBL	tbl2.pak	*	Increases Movement Speed by %d (Passive)		移動速度提升 %d（被動）	wildcard_utf16
 TBL	tbl2.pak	*	Increases Attack Speed by %d (Passive)		攻擊速度提升 %d（被動）	wildcard_utf16
@@ -28811,7 +28811,7 @@ TBL	tbl2.pak	*	Flying Fast		舞空术快速	wildcard_utf16
 TBL	tbl2.pak	*	Flight Accelerating		舞空术加速	wildcard_utf16
 TBL	tbl2.pak	*	Flight Training		舞空术训练	wildcard_utf16
 TBL	tbl2.pak	*	Flight Tutorial Quest		舞空教程任務	wildcard_utf16
-TBL	tbl2.pak	*	Learning Flight Quest		学习舞空术任务	wildcard_utf16
+TBL	tbl2.pak	*	Learning Flight Quest		学习舞空术任務	wildcard_utf16
 TBL	tbl2.pak	*	How To Use Scouter		如何使用偵測器	wildcard_utf16
 TBL	tbl2.pak	*	Minimap Display		小地圖顯示	wildcard_utf16
 TBL	tbl2.pak	*	Positioning		定位	wildcard_utf16
@@ -28942,7 +28942,7 @@ TBL	tbl2.pak	*	Hope Warrior2		希望戰士2	wildcard_utf16
 TBL	tbl2.pak	*	Developer3		開發者3	wildcard_utf16
 TBL	tbl2.pak	*	Legendary Super Saiyan4		傳說 超級 賽亞人4	wildcard_utf16
 TBL	tbl2.pak	*	Pure Evil5		純粹 邪惡5	wildcard_utf16
-TBL	tbl2.pak	*	Beater6		Beater6	wildcard_utf16
+TBL	tbl2.pak	*	Beater6		打擊者 6	wildcard_utf16
 TBL	tbl2.pak	*	King of Money7		金錢之王7	wildcard_utf16
 TBL	tbl2.pak	*	God Instint8		神之本能8	wildcard_utf16
 TBL	tbl2.pak	*	Green Instint9		綠色本能9	wildcard_utf16

@@ -14,6 +14,7 @@
 # Local AI / agent tooling
 /.codex/
 /.agents/
+/.workbuddy/
 /tmp/
 
 # Generated discovery / backups
