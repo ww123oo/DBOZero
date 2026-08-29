@@ -1,0 +1,38 @@
+原文	填写中文
+You can't fly during a fight.	戰鬥中無法舞空。
+The arena is not configured on this server.	此伺服器尚未配置競技場。
+EXP gains disabled	經驗取得已停用
+%d Streak	%d 連勝
+%s upgraded a guild passive.	%s 升級了公會被動。
+Max level reached	已達最高等級
+Points: %d / %d  (Available: %d)	點數：%d／%d（可用：%d）
+Reset available in: %s	重置可用時間：%s
+No points to reset	沒有可重置的點數
+Guild passives reset. %d points returned.	公會被動已重置。返還 %d 點。
+Contents	目錄
+%s Recorded	%s 已記錄
+Cannot open Mail or Auction House while in combat.	無法在戰鬥中打開郵件或拍賣行。
+Mail and Auction House will close automatically when entering combat.	進入戰鬥時，郵件和拍賣行會自動關閉。
+Item already exists.	已登入於融合進化石。
+Main Pet already registered.	該寵物已登入為主要使用。
+Performance Mode ON - effects and other players hidden.	性能模式開——特效與其他玩家已隱藏。
+Auto Collect ON - items are picked up automatically.	自動拾取開——物品會自動撿起。
+Auto Collect OFF - items stay on the ground.	自動拾取關——物品留在地面。
+Jr. Masters (4)	副會長（4）
+Hide Hit Texture Effects	隱藏受擊貼圖特效
+Hide all quest information.	隱藏全部任務資訊。
+Hide quest information.	隱藏任務資訊。
+Passives	被動
+Unlock EXP	解鎖經驗
+Web Payment	網頁支付
+Can't do that while flying.	無法在舞空時執行。
+Invalid guild passive.	無效的公會被動。
+This guild passive is already at max level.	此公會被動已達最高等級。
+Not enough guild reputation.	公會聲望不足。
+No guild passive points to reset.	沒有可重置的公會被動點數。
+Not enough guild passive points available.	公會被動點數不足。
+Upgrade the required guild passive first.	請先升級所需的公會被動。
+Guild passive reset is on cooldown.	公會被動重置冷卻中。
+Guild passive reset already in progress.	公會被動重置進行中。
+Guild passive upgrade already in progress.	公會被動升級進行中。
+Air mode failed.	舞空模式失敗
