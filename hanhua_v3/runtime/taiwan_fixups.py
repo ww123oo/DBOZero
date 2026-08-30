@@ -7,6 +7,10 @@ __all__ = ["TAIWAN_SIMPLIFY_FIXUPS"]
 # Do not add 刷新↔重新整理: short UI would become 8 bytes and fail lang0 fixed length.
 # Same traditional may map from multiple simplified forms (e.g. 帳號←账号/帐号); intentional.
 TAIWAN_SIMPLIFY_FIXUPS = (
+    ("氣合藥水", "气力药水"),
+    ("氣合藥水", "气功药水"),
+    ("氣合藥水", "能量药水"),
+    ("氣合", "气力"),
     ("帳號", "账号"),
     ("帳戶", "账户"),
     ("帳號", "帐号"),
