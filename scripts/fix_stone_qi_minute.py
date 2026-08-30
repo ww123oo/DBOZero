@@ -10,7 +10,7 @@ root = Path(__file__).resolve().parents[1]
 target = root / "data" / "new_translations.tsv"
 
 BY_ID = {
-    "DST_TIME_MINUTE": " 分鐘",
+    "DST_TIME_MINUTE": "分鐘",
     "DST_TABITEMUPGRADENORMALSTONE_ERR": "請放入普通強化石。",
     "DST_TABITEMUPGRADEUPPERSTONE_ERR": "請放入高級強化石。",
 }
