@@ -51,7 +51,6 @@ def bytelen(s: str, enc: str) -> int:
 
 
 def fits_tbl(en: str, zh: str) -> bool:
-    """True if zh fits in a field no larger than source text (approx)."""
     if not zh or not en:
         return False
     limit = max(bytelen(en, "cp950"), len(en.encode("ascii", "replace")))
@@ -65,6 +64,7 @@ def collect_delta_files() -> list[Path]:
         "tbl0_full_delta.tsv",
         "tbl_length_fix_delta.tsv",
         "tbl_batch_delta.tsv",
+        "ui_lang0_empty_fill_delta.tsv",
     ):
         p = data / name
         if p.exists():
@@ -72,7 +72,6 @@ def collect_delta_files() -> list[Path]:
     for p in sorted(data.glob("*_delta.tsv")):
         if p not in files:
             files.append(p)
-    # numbered batches in numeric order after non-batch deltas
     batches = sorted(
         data.glob("tbl_batch*_delta.tsv"),
         key=lambda p: int(re.search(r"(\d+)", p.stem).group(1))
@@ -85,8 +84,6 @@ def collect_delta_files() -> list[Path]:
     arch = data / "archive"
     if arch.is_dir():
         for p in sorted(arch.rglob("*_delta.tsv")):
-            files.append(p)
-        for p in sorted(arch.rglob("translations_to_merge.tsv")):
             files.append(p)
     return files
 
