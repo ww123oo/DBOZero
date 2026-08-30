@@ -9,7 +9,7 @@ target = root / "data" / "new_translations.tsv"
 
 # ID -> exact 填写中文 (must fit source field bytes)
 LOCKED = {
-    "DST_SKILL_FILTER_ETC": "Etc",  # source Etc = 3 bytes; never "Etc ok" / 其他
+    "DST_SKILL_FILTER_ETC": "Etc",
     "DST_PETITION_CATEGORY2_BUG_ETC": "Etc",
     "DST_RANKBOARD_TMQ_SUBJECT_CLASS": "Cls",
     "DST_CHAT_MODE_FIND_PARTY": "LFP",
@@ -29,7 +29,13 @@ LOCKED = {
     "DST_SYSTEMMSG_CASTING_DEFENDER": "%s cast",
     "DST_GUILD_PASSIVE_COST": "Cost %u",
     "DST_CHAT_HAVE_NO_USER_TO_REPLY": "No reply",
+    # fullwidth dash/tilde exceed source by 1 byte — keep ASCII
+    "DST_ITEM_USE_ITEM_MIN_MAX_LEVEL_TEXT": "Lv.%d - %d",  # source=10
+    "DST_WORLDMAP_RECOMMENDED_LEVEL": "Lv. %d ~ %d",  # source=11, ASCII ~
+    # short rank battle record (source=23)
+    "DST_RB_RESULT_RECORD_INFO_1": "總%u 勝%u 負%u",
 }
+
 
 def main() -> int:
     if not target.exists():
@@ -45,11 +51,9 @@ def main() -> int:
             if pos in LOCKED:
                 want = LOCKED[pos]
                 cur = (r.get("填写中文") or "").strip()
-                # fix "Etc ok" / space-glued 长度状态
                 if cur != want:
                     r["填写中文"] = want
                     changed += 1
-                # if 长度状态 empty and was eaten into 填写中文, set ok
                 if fields and "长度状态" in fields:
                     st = (r.get("长度状态") or "").strip()
                     if not st:
@@ -61,6 +65,7 @@ def main() -> int:
         w.writerows(rows)
     print(f"OK: locked {changed} lang0 length IDs")
     return 0
+
 
 if __name__ == "__main__":
     raise SystemExit(main())
