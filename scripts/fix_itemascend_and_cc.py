@@ -173,15 +173,9 @@ TEXT_REPL = [
     ("麻痹", "麻痺"),
     ("恐懼", "恐怖"),
     ("胃部", "腹痛"),
-] + [
-    ("诚攻", "真攻"), ("诚防", "真防"),
-    ("怪攻", "奇攻"), ("怪防", "奇防"),
-    ("野攻", "猛攻"), ("野防", "猛防"),
-    ("雅攻", "麗攻"), ("雅防", "麗防"),
-    ("搞攻", "樂攻"), ("搞防", "樂防"),
-    ("丽攻", "麗攻"), ("丽防", "麗防"),
-    ("乐攻", "樂攻"), ("乐防", "樂防"),
 ]
+
+BY_ID = BY_ID  # noqa - defined below for clarity
 
 BY_ID = {
     "DST_ITEMASCEND_TITLE": "裝備進階",
@@ -248,6 +242,7 @@ TEXT_REPL = [
     ("胃部", "腹痛"),
 ] + REPL
 
+# fix main to use BY_ID BY_EN TEXT_REPL properly
 
 def main() -> int:
     if not target.exists():
