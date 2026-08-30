@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
-"""Merge all data/*_delta.tsv (and a few known files) into data/new_translations.tsv."""
+"""Merge data/*_delta.tsv into data/new_translations.tsv.
+
+Order: later files overwrite same 原文. For tbl0/1/2 rows, skip 填写中文
+that are longer (GBK/CP950 bytes) than 原文 — avoids fixed-field crash.
+"""
 from __future__ import annotations
 
 from pathlib import Path
 import csv
+import re
 import sys
 
 root = Path(__file__).resolve().parents[1]
@@ -37,10 +42,24 @@ LOCKED_IDS = {
 }
 
 
+def has_cjk(s: str) -> bool:
+    return bool(re.search(r"[\u4e00-\u9fff]", s or ""))
+
+
+def bytelen(s: str, enc: str) -> int:
+    return len(s.encode(enc, "replace"))
+
+
+def fits_tbl(en: str, zh: str) -> bool:
+    """True if zh fits in a field no larger than source text (approx)."""
+    if not zh or not en:
+        return False
+    limit = max(bytelen(en, "cp950"), len(en.encode("ascii", "replace")))
+    return max(bytelen(zh, "cp950"), bytelen(zh, "gbk")) <= limit
+
+
 def collect_delta_files() -> list[Path]:
-    """Prefer flat data/*.tsv deltas; also archive subfolders if still present."""
     files: list[Path] = []
-    # explicit small helpers first (order: later wins on same EN key)
     for name in (
         "translations_to_merge.tsv",
         "tbl0_full_delta.tsv",
@@ -50,11 +69,19 @@ def collect_delta_files() -> list[Path]:
         p = data / name
         if p.exists():
             files.append(p)
-    # all *_delta.tsv under data/ (not recursive into archive by default)
     for p in sorted(data.glob("*_delta.tsv")):
         if p not in files:
             files.append(p)
-    # optional: still load archive if user has not deleted it yet
+    # numbered batches in numeric order after non-batch deltas
+    batches = sorted(
+        data.glob("tbl_batch*_delta.tsv"),
+        key=lambda p: int(re.search(r"(\d+)", p.stem).group(1))
+        if re.search(r"(\d+)", p.stem)
+        else 0,
+    )
+    for p in batches:
+        if p not in files:
+            files.append(p)
     arch = data / "archive"
     if arch.is_dir():
         for p in sorted(arch.rglob("*_delta.tsv")):
@@ -86,14 +113,14 @@ def main() -> int:
         return 1
     paths = collect_delta_files()
     if not paths:
-        print("no delta files found under data/")
+        print("no delta files under data/")
         return 1
     M = load_map(paths)
     if not M:
-        print("empty merge map")
+        print("empty map")
         return 1
 
-    rows, filled = [], 0
+    rows, filled, skipped = [], 0, 0
     with target.open(encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f, delimiter="\t")
         fields = reader.fieldnames
@@ -101,8 +128,18 @@ def main() -> int:
             en = (r.get("原文") or "").strip()
             cur = (r.get("填写中文") or "").strip()
             pos = (r.get("位置") or "").strip()
-            if pos not in LOCKED_IDS and en in M and cur != M[en]:
-                r["填写中文"] = M[en]
+            file_ = (r.get("文件") or "").lower()
+            if pos in LOCKED_IDS or en not in M:
+                rows.append(r)
+                continue
+            zh = M[en]
+            is_tbl = any(x in file_ for x in ("tbl0", "tbl1", "tbl2"))
+            if is_tbl and has_cjk(zh) and not fits_tbl(en, zh):
+                skipped += 1
+                rows.append(r)
+                continue
+            if cur != zh:
+                r["填写中文"] = zh
                 filled += 1
             rows.append(r)
 
@@ -110,7 +147,7 @@ def main() -> int:
         w = csv.DictWriter(f, fieldnames=fields, delimiter="\t", lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
-    print(f"OK: updated {filled} rows from {len(paths)} files / {len(M)} keys")
+    print(f"OK: updated {filled}, skipped overlong tbl {skipped}, keys {len(M)}, files {len(paths)}")
     return 0
 
 

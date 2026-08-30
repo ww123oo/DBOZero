@@ -1,36 +1,42 @@
 # data/ — 翻譯資料
 
-## ★ 主表（務必保留）
+## 主表（必保留）
 
 | 檔案 | 用途 |
 |------|------|
-| **`new_translations.tsv`** | 新詞主表（欄位：来源／文件／位置／原文／参考译文／填写中文／长度状态） |
-| **`translations.tsv`** | 舊譯主表 |
+| **`new_translations.tsv`** | 主表（填 `填写中文`） |
+| **`translations.tsv`** | 舊譯 |
 
-**不要手動刪改欄位名。** 整理 `archive/` 時只動 `*_delta.tsv`，**不要動**這兩張主表。
+穩定可玩基準：**merge 前** `ee96361` 的主表。  
+`fa7d471` 整批 merge 曾導致 tbl2 超長閃退。
 
-若懷疑主表壞掉，可從歷史還原（列數應約 **28935**）：
+## delta 要不要寫進主表？
+
+**要，但不要一次無檢查硬併。**
+
+所有 `tbl_batch*_delta.tsv` **翻譯內容可留著**，它們是增量稿：
 
 ```text
-merge 前（tbl2 中文較少、較不易閃退）:
-  https://raw.githubusercontent.com/ww123oo/DBOZero/ee96361013ba07d19751754fba4c9b1fafea6a2b/data/new_translations.tsv
-
-merge 後（tbl2 幾乎全中，需跑 fix_tbl2_overlong）:
-  https://raw.githubusercontent.com/ww123oo/DBOZero/fa7d4711c7bc83bb38843358a457cebe77ad76c1/data/new_translations.tsv
+tbl_batch_delta.tsv
+tbl_batch2_delta.tsv … tbl_batch106_delta.tsv
 ```
 
-### tbl2 閃退時
+### 合併順序（腳本已處理）
+
+1. 一般 `*_delta.tsv`（term／ui／place…）
+2. `tbl_batch_delta.tsv`
+3. `tbl_batch2` → `tbl_batch106`（**數字由小到大**；同英文後面覆蓋前面）
+4. 若有 `data/archive/**` 也會讀
+
+### 安全合併（推薦）
+
+主表先用能玩的 `ee96361`，再：
 
 ```powershell
-python scripts\fix_tbl2_overlong.py
+python scripts\merge_translations.py
+# 只寫入「中文字節 ≤ 英文原文」的 tbl 譯文；超長自動跳過
+python scripts\fix_tbl_overlong.py   # 雙保險
 dboc build --variant taiwan
 ```
 
-會清空「中文字節數 > 英文原文」的 tbl2 譯文（約數百條），其餘保留。
-
----
-
-## 其他
-
-- `*_delta.tsv` / `archive/`：歷史增量，可歸檔
-- `gui_font.ini`：字型設定
+這樣 **delta 不用刪**，能進主表的會進去，超長的留在 delta 裡以後再縮短。
