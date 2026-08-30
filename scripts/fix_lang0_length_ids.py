@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Force locked short lang0 translations by 位置 ID.
+"""Force locked short lang0 translations by position ID.
 
-Must: (1) fit source field byte length  (2) keep same printf placeholders.
+Must fit original field length AND keep placeholders (%s/%d/%u).
 """
 from pathlib import Path
 import csv
@@ -10,36 +10,33 @@ import sys
 root = Path(__file__).resolve().parents[1]
 target = root / "data" / "new_translations.tsv"
 
-# ID -> 填写中文 (byte-safe + placeholders match 原文)
+# ID -> exact translation (Traditional where needed; placeholders required)
 LOCKED = {
-    # no placeholders
     "DST_SKILL_FILTER_ETC": "Etc",
     "DST_PETITION_CATEGORY2_BUG_ETC": "Etc",
     "DST_RANKBOARD_TMQ_SUBJECT_CLASS": "Cls",
     "DST_CHAT_MODE_FIND_PARTY": "LFP",
-    "DST_TAB_RAID": "副本",
+    "DST_TAB_RAID": "Raid",
     "DST_MOVIE_AGE1000": "Age1000",
     "DST_CITYMAP_DEADMINE": "DeadMine",
-    "DST_SCS_GUI_BUTTON_SEND": "驗證",
-    "DST_SCS_BEGIN_BTN": "驗證",
-    # keep %d/%u/%s
-    "DST_BUDOKAI_INDI_REQ_RECORD_DATA": "%dW %dL %dD",  # source %dW %dL %dD
+    "DST_SCS_GUI_BUTTON_SEND": "\u9a57\u8b49",
+    "DST_SCS_BEGIN_BTN": "\u9a57\u8b49",
+    "DST_BUDOKAI_INDI_REQ_RECORD_DATA": "%dW %dL %dD",
     "DST_OBSERVER_RECORD": "%dW %dL %dD",
     "DST_CHAT_MODE_FIND_PARTY_EXTEND": "LFG: %s",
-    "DST_GUILD_PASSIVE_COST": "費:%u聲望+%uZ",  # was Cost: %u rep + %u zeni
+    "DST_GUILD_PASSIVE_COST": "Cost: %u rep + %uZ",
     "DST_NOTIFY_GAIN_EXP_AND_BONUS": "+%u(+%u)EXP",
     "DST_NOTIFY_GAIN_MIX_EXP": "+%u EXP",
-    "DST_QUESTREWARD_INFO_REPUTATION": "%d聲望",
-    "DST_RANKBATTLE_MEMBER_GIVEUP": "%s逃走",
-    "DST_SYSTEMMSG_CASTING_DEFENDER": "%s蓄力%s。",
-    "DST_SYSTEMMSG_SKILL_EP": "%s: %s +%d EP.",
-    "DST_SYSTEMMSG_SKILL_LP": "%s: %s +%d LP.",
-    "DST_YARDRAT_BTN_CLAIM_WAIT": "等%d秒",
+    "DST_QUESTREWARD_INFO_REPUTATION": "%d Rep",
+    "DST_RANKBATTLE_MEMBER_GIVEUP": "%s Fled",
+    "DST_SYSTEMMSG_CASTING_DEFENDER": "%s charges %s!",
+    "DST_SYSTEMMSG_SKILL_EP": "%s: %s +%d EP",
+    "DST_SYSTEMMSG_SKILL_LP": "%s: %s +%d LP",
+    "DST_YARDRAT_BTN_CLAIM_WAIT": "WAIT %ds",
     "DST_CHAT_HAVE_NO_USER_TO_REPLY": "No reply",
-    # ASCII only (fullwidth dash/tilde overflow)
     "DST_ITEM_USE_ITEM_MIN_MAX_LEVEL_TEXT": "Lv.%d - %d",
     "DST_WORLDMAP_RECOMMENDED_LEVEL": "Lv. %d ~ %d",
-    "DST_RB_RESULT_RECORD_INFO_1": "總%u 勝%u 負%u",
+    "DST_RB_RESULT_RECORD_INFO_1": "Total: %u I, %u W, %u L",
 }
 
 
@@ -61,7 +58,8 @@ def main() -> int:
                     r["填写中文"] = want
                     changed += 1
                 if fields and "长度状态" in fields:
-                    if not (r.get("长度状态") or "").strip():
+                    st = (r.get("长度状态") or "").strip()
+                    if not st:
                         r["长度状态"] = "ok"
             rows.append(r)
     with target.open("w", encoding="utf-8-sig", newline="") as f:
