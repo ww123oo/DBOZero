@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fix: 升級石→強化石, Energy/氣力/氣功藥水→氣合藥水, DST_TIME_MINUTE 最小→分鐘."""
+"""Fix: 升級石→強化石, Energy/氣力/氣功/能量藥水→氣合藥水, DST_TIME_MINUTE→分鐘 (4-byte)."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -15,7 +15,6 @@ BY_ID = {
     "DST_TABITEMUPGRADEUPPERSTONE_ERR": "請放入高級強化石。",
 }
 
-# English original → preferred Chinese (Energy Potion family)
 BY_EN = {
     "Energy Potion": "氣合藥水",
     "Energy Potion (Small)": "氣合藥水（小）",
@@ -28,10 +27,13 @@ BY_EN = {
     "EV Energy Potion": "活動氣合藥水",
 }
 
-# Order: longer first
 TEXT_REPL = [
     ("氣力藥水", "氣合藥水"),
+    ("气力药水", "氣合藥水"),
     ("氣功藥水", "氣合藥水"),
+    ("气功药水", "氣合藥水"),
+    ("能量藥水", "氣合藥水"),
+    ("升级石", "強化石"),
     ("升級石", "強化石"),
 ]
 
