@@ -1,0 +1,8 @@
+After git pull, run:
+
+  python scripts/assemble_build_output.py
+
+This replaces build_output.py with the real work-unit progress bar version
+(lang0/tbl row counts, not fixed 9 fake steps).
+
+hanhua_v3/runtime/build_progress.py is already updated on main.
