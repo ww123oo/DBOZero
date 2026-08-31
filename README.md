@@ -6,7 +6,7 @@
 > **免責聲明**：非官方玩家自製工具，與遊戲開發商／營運商無關。  
 > 倉庫**不含**任何遊戲資源；補丁由你在本機生成。使用前請先備份遊戲目錄。
 
-本倉庫由 [kalworth/DBOZero](https://github.com/kalworth/DBOZero) fork，並加強**台灣繁中用字**（例如「登錄」「帳號」）。
+本倉庫由 [kalworth/DBOZero](https://github.com/kalworth/DBOZero) fork，並加強**台灣繁中用字**（例如「登錄」「帳號」「強化石」「氣合藥水」）。
 
 **相關文件：** [常見問題 FAQ](docs/faq.md) · [貢獻說明](CONTRIBUTING.md) · [翻譯規則](docs/translation-rules.md)
 
@@ -61,21 +61,31 @@ cd DBOZero
 pip install -e .
 
 # 3) 告訴工具遊戲在哪（只需做一次，會寫入本機 dboc.toml）
-dboc config --game-dir "E:\DBO Zero 2.0"
+dboc config --game-dir "E:\\DBO Zero 2.0"
 
 # 4) 一鍵：同步源檔 → 掃描 → 填可自動翻譯的詞 → 產出兩套補丁
 dboc update
 
 # 5) 確認有產出
-dir output\DBOZero
-dir output_taiwan\DBOZero
+dir output\\DBOZero
+dir output_taiwan\\DBOZero
 ```
+
+### 只構建台灣繁中
+
+改完翻譯表後，建議：
+
+```powershell
+dboc build --variant taiwan
+```
+
+進度條會依實際工作量分段顯示（目前階段 + 底部總進度），不是固定假的 9 步。
 
 ### 把補丁套進遊戲
 
 ```text
-繁中：把  output_taiwan\DBOZero\*  覆蓋到  遊戲目錄\DBOZero\
-簡中：把  output\DBOZero\*          覆蓋到  遊戲目錄\DBOZero\
+繁中：把  output_taiwan\\DBOZero\\*  覆蓋到  遊戲目錄\\DBOZero\\
+簡中：把  output\\DBOZero\\*          覆蓋到  遊戲目錄\\DBOZero\\
 ```
 
 覆蓋前請先備份。工具**只讀**遊戲目錄，不會自動寫入遊戲。
@@ -84,7 +94,7 @@ dir output_taiwan\DBOZero
 
 | 現象 | 怎麼辦 |
 |------|--------|
-| `找不到遊戲目錄` / `缺少必要源檔案` | 路徑要指到含 `DBOZero` 的遊戲根目錄，或直接指到 `...\DBOZero`；路徑有空格請加引號 |
+| `找不到遊戲目錄` / `缺少必要源檔案` | 路徑要指到含 `DBOZero` 的遊戲根目錄，或直接指到 `...\\DBOZero`；路徑有空格請加引號 |
 | `疑似已打補丁` / 拒絕同步 | 遊戲已被漢化過。用啟動器**修復原版**後再 `dboc update` |
 | `pip` / `dboc` 不是內部或外部命令 | 重裝 Python 並勾選 PATH，或改用 `python -m pip install -e .`、`python -m hanhua_v3` |
 | 必須用可編輯安裝 | 請用 `pip install -e .`（有 `-e`），不要只 `pip install .` |
@@ -106,6 +116,8 @@ dir output_taiwan\DBOZero
 改完後：
 
 ```powershell
+dboc build --variant taiwan
+# 或兩套都構建：
 dboc build
 ```
 
@@ -137,14 +149,15 @@ dboc update
 ## 常用命令一覽
 
 ```text
-dboc update      # 遊戲更新後一鍵重做（建議）
-dboc status      # 看源快照與本機遊戲是否一致
-dboc refresh     # 只同步必要源檔（會先建恢復點）
-dboc scan        # 只掃描並刷新翻譯佇列
-dboc translate   # 批量填可確定的佇列譯文
-dboc build       # 只構建補丁（改完 TSV 後用這個）
-dboc config      # 查看／寫入遊戲目錄
-dboc --help      # 全部說明
+dboc update                 # 遊戲更新後一鍵重做（建議）
+dboc status                 # 看源快照與本機遊戲是否一致
+dboc refresh                # 只同步必要源檔（會先建恢復點）
+dboc scan                   # 只掃描並刷新翻譯佇列
+dboc translate              # 批量填可確定的佇列譯文
+dboc build                  # 構建兩套補丁
+dboc build --variant taiwan # 只構建台灣繁中（推薦日常使用）
+dboc config                 # 查看／寫入遊戲目錄
+dboc --help                 # 全部說明
 ```
 
 ---
@@ -153,17 +166,22 @@ dboc --help      # 全部說明
 
 構建繁中時會先轉繁體，再套用 `TAIWAN_SIMPLIFY_FIXUPS`（**唯一來源**：`hanhua_v3/runtime/taiwan_fixups.py`）。
 
-| 簡中 | 本倉庫繁中 |
-|------|------------|
-| 登录 | **登錄** |
+| 簡中／舊譯 | 本倉庫繁中 |
+|------------|------------|
+| 登录 | **登錄**（帳號登入語境） |
 | 账号／账户 | **帳號／帳戶** |
 | 服务器 | **伺服器** |
 | 信息 | **訊息** |
 | 窗口 | **視窗** |
 | 默认 | **預設** |
 | 设置 | **設定** |
+| 升级石 | **強化石**（勿用升級石） |
+| 气力／气功／能量药水 | **氣合藥水** |
+| 升阶（裝備） | **進階** |
+| 稀有度 | **稀少度** |
+| 高级（道具品質） | **高級**（勿與「進階」混淆） |
 
-若遊戲裡仍看到不順的用字，在修正表追加 `("正確台灣用字", "簡體")`，長詞放前面，再 `dboc build`。
+若遊戲裡仍看到不順的用字，在修正表追加，長詞放前面，再 `dboc build --variant taiwan`。
 
 ---
 
@@ -174,9 +192,13 @@ DBOZero/
 ├── README.md              ← 你正在看的說明
 ├── CONTRIBUTING.md        ← 如何貢獻翻譯／程式
 ├── data/                  ← ★ 翻譯表（日常改這裡）
+│   ├── new_translations.tsv
+│   ├── translations.tsv
+│   └── archive/           ← 歷史 delta／備份（勿當日常來源）
 ├── hanhua_v3/             ← 工具本體（一般不用改）
 │   └── runtime/taiwan_fixups.py  ← 繁中用字修正表（唯一來源）
 ├── docs/                  ← FAQ、規則、開發說明
+├── scripts/               ← 開發用腳本（新手可忽略）
 ├── src_file/              ← 從遊戲同步來的源（不進 Git）
 ├── output/                ← 簡中補丁產出（不進 Git）
 ├── output_taiwan/         ← 繁中補丁產出（不進 Git）
@@ -184,7 +206,7 @@ DBOZero/
 └── legacy/                ← 舊版歸檔（僅參考；可能不完整／有錯字）
 ```
 
-**新手請忽略：** `legacy/`、`scripts/`、`reports/internal/`。  
+**新手請忽略：** `legacy/`、`scripts/`、`data/archive/`、`reports/internal/`。  
 `legacy/` 說明見 [legacy/README.md](legacy/README.md)。
 
 ---
@@ -196,7 +218,7 @@ pip install -e .[dev]
 python -m compileall -q build_output.py hanhua_v3
 pytest
 dboc status
-dboc build
+dboc build --variant taiwan
 ```
 
 模組說明見 [docs/development.md](docs/development.md)。
