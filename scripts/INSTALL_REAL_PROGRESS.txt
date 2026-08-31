@@ -1,8 +1,15 @@
-After git pull, run:
+After git pull, run ONE of:
+
+  python scripts/install_real_progress.py
+
+or (if chunks are present):
 
   python scripts/assemble_build_output.py
 
-This replaces build_output.py with the real work-unit progress bar version
+This installs build_output.py with the real work-unit progress bar
 (lang0/tbl row counts, not fixed 9 fake steps).
 
 hanhua_v3/runtime/build_progress.py is already updated on main.
+
+Then:
+  dboc build --variant taiwan
