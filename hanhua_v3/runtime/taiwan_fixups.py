@@ -6,6 +6,10 @@ __all__ = ["TAIWAN_SIMPLIFY_FIXUPS"]
 # Longer phrases first. apply_traditional_fixups maps simplified -> traditional.
 # Do not add 刷新↔重新整理: short UI would become 8 bytes and fail lang0 fixed length.
 # Same traditional may map from multiple simplified forms (e.g. 帳號←账号/帐号); intentional.
+#
+# 制 / 製: NEVER map single-char 制→製.
+#   製 only for make/manufacture: 製作、製造、製品、特製…
+#   制 stays for system/control: 制度、控制、限制、強制、機制…
 TAIWAN_SIMPLIFY_FIXUPS = (
     ("氣合藥水", "气力药水"),
     ("氣合藥水", "气功药水"),
@@ -19,7 +23,13 @@ TAIWAN_SIMPLIFY_FIXUPS = (
     ("帳戶", "賬戶"),
     ("帳", "賬"),
     ("登錄", "登录"),
+    # 製 compounds only (no single-char 制→製)
     ("製作", "制作"),
+    ("製造", "制造"),
+    ("製品", "制品"),
+    ("特製", "特制"),
+    ("精製", "精制"),
+    ("訂製", "订制"),
     ("格鬥家", "格斗家"),
     ("格鬥", "格斗"),
     ("戰鬥", "战斗"),
@@ -181,5 +191,5 @@ TAIWAN_SIMPLIFY_FIXUPS = (
     ("畫", "画"),
     ("藥", "药"),
     ("聖", "圣"),
-    ("製", "制"),
+    # NOTE: no ("製", "制") — would break 制度/控制/限制/強制/機制
 )
