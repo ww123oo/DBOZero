@@ -189,15 +189,21 @@ def inside_length_prefixed_field(
     return False
 
 
-def find_all(data: bytes, needle: bytes) -> list[int]:
+def find_all(data: bytes | bytearray | memoryview, needle: bytes) -> list[int]:
+    """Find all occurrences without copying the haystack (critical for large tbl*.pak)."""
+    if isinstance(data, memoryview):
+        data = data.obj if isinstance(data.obj, (bytes, bytearray)) else bytes(data)
     offsets: list[int] = []
     start = 0
+    nlen = len(needle)
+    if nlen == 0:
+        return offsets
     while True:
         idx = data.find(needle, start)
         if idx < 0:
             return offsets
         offsets.append(idx)
-        start = idx + len(needle)
+        start = idx + nlen
 
 
 def length_prefixed_offsets(
@@ -209,7 +215,7 @@ def length_prefixed_offsets(
     source_units = len(source) // 2
     return [
         offset
-        for offset in find_all(bytes(data), source)
+        for offset in find_all(data, source)
         if has_length_prefix(data, file_name, offset, source_units)
     ]
 
@@ -283,7 +289,7 @@ def patch_tbl_bytes(
         source_units = len(source) // 2
         if row.offset is not None:
             offset = row.offset
-            if 0 <= offset and offset + len(source) <= len(patched) and bytes(patched[offset : offset + len(source)]) == source:
+            if 0 <= offset and offset + len(source) <= len(patched) and patched[offset : offset + len(source)] == source:
                 replacement = fixed_replacement(row.source_text, row.translation)
                 patched[offset : offset + len(source)] = replacement
                 changed += 1
@@ -296,7 +302,7 @@ def patch_tbl_bytes(
                 if (
                     0 <= offset
                     and offset + len(single_source) <= len(patched)
-                    and bytes(patched[offset : offset + len(single_source)]) == single_source
+                    and patched[offset : offset + len(single_source)] == single_source
                 ):
                     patched[offset : offset + len(single_source)] = fixed_single_byte_replacement(
                         single_source, row.source_text, row.translation, single_byte_encoding
@@ -307,7 +313,7 @@ def patch_tbl_bytes(
             # Game updates often shift fixed TBL fields. If the old exact
             # offset no longer matches, relocate only when the current source
             # text is unique in the active source pack.
-            offsets = find_all(bytes(patched), source)
+            offsets = find_all(patched, source)
             if len(offsets) == 1:
                 new_offset = offsets[0]
                 if not inside_length_prefixed_field(patched, row.file_name, new_offset, source_units):
@@ -342,7 +348,7 @@ def patch_tbl_bytes(
 
             continue
 
-        offsets = find_all(bytes(patched), source)
+        offsets = find_all(patched, source)
         if not offsets:
             # If the exact source existed before this batch but is gone now, a
             # higher-priority duplicate row already consumed it. Do not fall
@@ -357,7 +363,7 @@ def patch_tbl_bytes(
                 if replacement is None:
                     continue
                 for offset in normalized_offsets:
-                    if bytes(patched[offset : offset + len(normalized_source)]) != normalized_source:
+                    if patched[offset : offset + len(normalized_source)] != normalized_source:
                         continue
                     patched[offset : offset + len(normalized_source)] = replacement
                     changed += 1
@@ -378,7 +384,7 @@ def patch_tbl_bytes(
                 continue
             if inside_length_prefixed_field(patched, row.file_name, offset, source_units):
                 continue
-            if bytes(patched[offset : offset + len(source)]) != source:
+            if patched[offset : offset + len(source)] != source:
                 missing += 1
                 if missing_rows is not None:
                     missing_rows.append((row, "wildcard_source_changed_during_batch"))
@@ -394,7 +400,7 @@ def patch_tbl_bytes(
                 if replacement is None:
                     continue
                 for offset in normalized_offsets:
-                    if bytes(patched[offset : offset + len(normalized_source)]) != normalized_source:
+                    if patched[offset : offset + len(normalized_source)] != normalized_source:
                         continue
                     patched[offset : offset + len(normalized_source)] = replacement
                     changed += 1
