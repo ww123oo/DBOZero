@@ -1,4 +1,4 @@
-原文	填写中文
-Submit Code	驗證
-Verify	驗證
-Click to verify your code	點擊驗證代碼
+位置	原文	填写中文
+DST_SCS_GUI_BUTTON_SEND	Submit Code	驗證
+DST_SCS_GUI_BUTTON_SEND_TOOLTIP	Click to verify your code	點擊驗證代碼
+DST_SCS_GUI_BUTTON_RESEND	Re-enter	重新輸入
