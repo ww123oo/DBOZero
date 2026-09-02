@@ -1,0 +1,13 @@
+解壓方式（在 data/舊譯表/deltas_merged/ 目錄）：
+
+  python -c "import base64,gzip; from pathlib import Path
+for n in ['term','ui']:
+  p=Path(n+'.tsv.gz.b64')
+  if p.exists():
+    Path(n+'.tsv').write_bytes(gzip.decompress(base64.b64decode(p.read_text().strip())))
+    print('wrote', n+'.tsv')"
+
+tbl / all_deltas 較大，分片在 tbl_p*.b64 / all_p*.b64，合併後同樣解壓。
+
+欄位：原文\t填写中文
+用途：歷史增量合併去重，需要時再併入 data/new_translations.tsv。
