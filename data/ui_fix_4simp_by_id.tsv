@@ -1,5 +1,0 @@
-位置	原文	填写中文	长度状态
-DST_MINIMAP_PERFORMANCE_MODE_ON	Performance Mode ON - effects and other players hidden.	效能模式開——特效與其他玩家已隱藏。	ok
-DST_OPTION_PERF_HIDE_HIT_TEXTURE_TOOLTIP	Hides hit visuals on all targets (PC, mob, NPC): impact flash (GME), word text (BASH, etc.) and Miss/Critical/Block popups. Damage numbers and hit sounds remain. Click  to apply.	隱藏所有目標（玩家、怪物、NPC）的受擊畫面：衝擊閃光（GME）、文字（BASH 等）以及未擊中／暴擊命中／格擋彈出。傷害數字與受擊音效保留。點擊後套用。	ok
-DST_YARDRAT_BULK_MOVE_PARTIAL	Claimed %d items. %d stayed in storage: not enough inventory space.	已領取 %d 件。另有 %d 件因背包空間不足留在倉庫。	ok
-DST_SIGNIN_MSG_IN_PROGRESS	Please wait, the previous claim is still processing.	請稍候，上一筆領取仍在處理中。	ok
