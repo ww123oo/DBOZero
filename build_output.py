@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Expands full build_output.py from scripts/build_output.py.gz.b64 then re-runs."""
+"""Expands full build_output.py from scripts/build_output_p1.b64 + p2.b64 then re-runs."""
 from __future__ import annotations
 import base64
 import gzip
@@ -9,19 +9,20 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-GZ = HERE / "scripts" / "build_output.py.gz.b64"
+P1 = HERE / "scripts" / "build_output_p1.b64"
+P2 = HERE / "scripts" / "build_output_p2.b64"
 SELF = Path(__file__).resolve()
 
 def expand() -> bytes:
-    if not GZ.is_file():
+    if not P1.is_file() or not P2.is_file():
         raise SystemExit(
-            "Missing scripts/build_output.py.gz.b64\n"
+            "Missing scripts/build_output_p1.b64 or p2.b64\n"
             "git pull, then retry."
         )
-    raw = GZ.read_text(encoding="ascii").strip()
+    raw = P1.read_text(encoding="ascii").strip() + P2.read_text(encoding="ascii").strip()
     data = gzip.decompress(base64.b64decode(raw))
     if b"set_total" not in data or b"begin_stage" not in data:
-        raise SystemExit("invalid build_output.py.gz.b64 payload")
+        raise SystemExit("invalid build_output p1/p2 payload")
     return data
 
 def main() -> None:
