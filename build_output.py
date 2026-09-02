@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Expands full build_output.py from scripts/build_output.py.gz.b64 then re-runs."""
+"""Expands full build_output.py from scripts/build_output*.b64 then re-runs."""
 from __future__ import annotations
 import base64
 import gzip
@@ -9,18 +9,25 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 GZ = HERE / "scripts" / "build_output.py.gz.b64"
+P1 = HERE / "scripts" / "build_output_p1.b64"
+P2 = HERE / "scripts" / "build_output_p2.b64"
 SELF = Path(__file__).resolve()
 
+def _load_gz_text() -> str:
+    if GZ.is_file():
+        return GZ.read_text(encoding="ascii").strip()
+    if P1.is_file() and P2.is_file():
+        return (P1.read_text(encoding="ascii").strip() + P2.read_text(encoding="ascii").strip())
+    raise SystemExit(
+        "build_output.py not installed yet.\n"
+        "Missing scripts/build_output.py.gz.b64 (or p1+p2).\n"
+        "git pull, then: python scripts/install_real_progress.py"
+    )
+
 def expand() -> bytes:
-    if not GZ.is_file():
-        raise SystemExit(
-            "build_output.py not installed yet.\n"
-            "Missing: scripts/build_output.py.gz.b64\n"
-            "Pull latest, or run: python scripts/install_real_progress.py"
-        )
-    data = gzip.decompress(base64.b64decode(GZ.read_text(encoding="ascii").strip()))
+    data = gzip.decompress(base64.b64decode(_load_gz_text()))
     if b"set_total" not in data or b"begin_stage" not in data:
-        raise SystemExit("invalid scripts/build_output.py.gz.b64")
+        raise SystemExit("invalid build_output b64 payload")
     return data
 
 def main() -> None:
