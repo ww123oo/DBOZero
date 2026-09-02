@@ -13,11 +13,22 @@ P1 = HERE / "scripts" / "build_output_p1.b64"
 P2 = HERE / "scripts" / "build_output_p2.b64"
 SELF = Path(__file__).resolve()
 
+# Known transcription errors in the published p2 half (3 chars); fix on load.
+_P2_FIXES = (
+    ("f977579v43", "f977179v43"),
+    ("uXqiHcfk65", "uXqiHffk65"),
+    ("jNFm29U5du", "jNFm39U5du"),
+)
+
 def _load_gz_text() -> str:
     if GZ.is_file():
         return GZ.read_text(encoding="ascii").strip()
     if P1.is_file() and P2.is_file():
-        return (P1.read_text(encoding="ascii").strip() + P2.read_text(encoding="ascii").strip())
+        p1 = P1.read_text(encoding="ascii").strip()
+        p2 = P2.read_text(encoding="ascii").strip()
+        for bad, good in _P2_FIXES:
+            p2 = p2.replace(bad, good, 1)
+        return p1 + p2
     raise SystemExit(
         "build_output.py not installed yet.\n"
         "Missing scripts/build_output.py.gz.b64 (or p1+p2).\n"
