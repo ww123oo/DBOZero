@@ -1,15 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""安裝真實進度條。
-
-完整自包含安裝器因檔案過大，請改用：
-
-  python scripts/assemble_build_output.py
-
-或從 artifacts 複製 install_real_progress.py 後執行。
-
-hanhua_v3/runtime/build_progress.py 已在 main 上。
-"""
+"""安裝真實進度條 build_output.py（從 scripts/build_output.py.gz.b64 展開）。"""
 from __future__ import annotations
 import subprocess
 import sys
@@ -21,7 +12,7 @@ def main() -> int:
     if not assemble.is_file():
         print("ERROR: missing scripts/assemble_build_output.py", file=sys.stderr)
         return 1
-    print("Delegating to assemble_build_output.py ...")
+    print("Assembling full build_output.py ...")
     rc = subprocess.call([sys.executable, str(assemble)], cwd=str(root))
     if rc == 0:
         print()
