@@ -1,28 +1,22 @@
 # -*- coding: utf-8 -*-
-"""Expands full build_output.py from scripts/build_output_p1.b64 + p2.b64 then re-runs."""
+"""Expand full build_output from scripts/build_output_p0..p8.b64"""
 from __future__ import annotations
-import base64
-import gzip
-import importlib.util
-import runpy
-import sys
+import base64, gzip, importlib.util, runpy, sys
 from pathlib import Path
-
 HERE = Path(__file__).resolve().parent
-P1 = HERE / "scripts" / "build_output_p1.b64"
-P2 = HERE / "scripts" / "build_output_p2.b64"
 SELF = Path(__file__).resolve()
+N = 9
 
 def expand() -> bytes:
-    if not P1.is_file() or not P2.is_file():
-        raise SystemExit(
-            "Missing scripts/build_output_p1.b64 or p2.b64\n"
-            "git pull, then retry."
-        )
-    raw = P1.read_text(encoding="ascii").strip() + P2.read_text(encoding="ascii").strip()
-    data = gzip.decompress(base64.b64decode(raw))
+    parts = []
+    for i in range(N):
+        p = HERE / "scripts" / f"build_output_p{i}.b64"
+        if not p.is_file():
+            raise SystemExit(f"Missing {p}\ngit pull, then retry.")
+        parts.append(p.read_text(encoding="ascii").strip())
+    data = gzip.decompress(base64.b64decode("".join(parts)))
     if b"set_total" not in data or b"begin_stage" not in data:
-        raise SystemExit("invalid build_output p1/p2 payload")
+        raise SystemExit("invalid payload")
     return data
 
 def main() -> None:
