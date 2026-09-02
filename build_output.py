@@ -18,7 +18,8 @@ def expand() -> bytes:
             "Missing scripts/build_output.py.gz.b64\n"
             "git pull, then retry."
         )
-    data = gzip.decompress(base64.b64decode(GZ.read_text(encoding="ascii").strip()))
+    raw = GZ.read_text(encoding="ascii").strip()
+    data = gzip.decompress(base64.b64decode(raw))
     if b"set_total" not in data or b"begin_stage" not in data:
         raise SystemExit("invalid build_output.py.gz.b64 payload")
     return data
