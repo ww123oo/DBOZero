@@ -1,35 +1,25 @@
 # data/
 
-## 乾淨結構（整理後）
+日常翻譯**只改**這兩個檔：
 
-```text
-data/
-├── new_translations.tsv   ★ 主表
-├── translations.tsv       ★ 舊譯
-├── gui_font.ini
-├── README.md
-├── deltas/                ★ 增量（只有下面 3 個）
-│   ├── term.tsv
-│   ├── ui.tsv
-│   └── tbl.tsv
-└── archive/
-    └── legacy_deltas/     舊的上百個 tbl_batch*_delta.tsv（可查、可刪）
-```
+| 檔案 | 用途 |
+|------|------|
+| `new_translations.tsv` | 主表：填 `填写中文` |
+| `translations.tsv` | 舊譯：改 `zh_cn` |
 
-## 一鍵整理（把散落的 delta 合成 3 個檔）
+其他：
 
-```powershell
-python scripts\consolidate_deltas.py
-git add -A data scripts
-git commit -m "chore: consolidate deltas into data/deltas/"
-git push
-```
+| 路徑 | 說明 |
+|------|------|
+| `gui_font.ini` | GUI 字型設定 |
+| `deltas/` | 少量現行增量（可選） |
+| `舊譯表/` | 歷史合併 delta、台服原版對照（**不參與 build**） |
+| `archive/` | 已歸檔的舊 `*_delta.tsv`（勿當日常來源） |
+| `client_local/` | client 本機相關說明／佔位 |
 
-## 合併進主表
+**根目錄不要再堆 `tbl_batch*_delta.tsv` / `ui_*_delta.tsv`。**  
+歷史內容已合併到 `舊譯表/deltas_merged/`，需要時再採用。
 
 ```powershell
-python scripts\merge_translations.py
-python scripts\fix_tbl_overlong.py
-python scripts\fix_lang0_length_ids.py
 dboc build --variant taiwan
 ```
