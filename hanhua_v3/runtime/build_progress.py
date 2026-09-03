@@ -8,7 +8,7 @@ Desired look:
     [████████████████████████████] 100% (3240/3240) pack/lang0.pak
     [████████░░░░░░░░░░░░░░░░░░░░]  30% (230/769) pack/tbl0.pak   ← live \\r
     …
-    總進度 [████████████████████████████] 100% (53773/53773) 完成
+    [████████████████████████████] 100% 總進度 (53773/53773) 完成
 """
 
 from __future__ import annotations
@@ -109,7 +109,7 @@ class Progress:
         bar, pct = self._bar(self.overall_current, self.overall_total)
         ot = max(self.overall_total, 1)
         oc = min(self.overall_current, ot)
-        line = f"總進度 [{bar}] {pct:3d}% ({oc}/{ot}) {message}"
+        line = f"[{bar}] {pct:3d}% 總進度 ({oc}/{ot}) {message}"
         print(line, flush=True)
         self._finished = True
 
