@@ -4,7 +4,7 @@
 Supported discovery targets:
   lang0.pak, tbl0.pak, tbl1.pak, tbl2.pak, *.rdf, *.xml, *.dat
 
-*.bin is intentionally excluded.  This module only discovers candidates; it
+*.bin is intentionally excluded. This module only discovers candidates; it
 never modifies game resources.
 """
 from __future__ import annotations
@@ -19,6 +19,7 @@ CJK_RE = re.compile(r"[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uac00-\ud7af]")
 DAT_ENTRY_RE = re.compile(
     r"(?m)^\s*([A-Za-z_][A-Za-z0-9_.-]*)\s*=\s*(\"(?:\\.|[^\"])*\"|'(?:\\.|[^'])*'|[^\r\n]+)\s*$"
 )
+LANG0_ENTRY_RE = re.compile(rb"(?m)^([A-Za-z_][A-Za-z0-9_.-]*)[ \t]*=[ \t]*\"")
 RESOURCE_EXTENSIONS = {".pak", ".rdf", ".xml", ".dat"}
 WANTED_PACKS = {"lang0.pak", "tbl0.pak", "tbl1.pak", "tbl2.pak"}
 
@@ -65,11 +66,53 @@ def scan_single_byte(data: bytes, minimum: int = 4):
         i = max(i + 1, start + 1)
 
 
+def _decode_lang0(raw: bytes) -> str:
+    for enc in ("utf-8", "gbk"):
+        try:
+            return raw.decode(enc)
+        except UnicodeDecodeError:
+            pass
+    return raw.decode("gbk", errors="replace")
+
+
+def _lang0_end(data: bytes, start: int) -> int:
+    pos = start
+    while True:
+        end = data.find(b'"', pos)
+        if end < 0:
+            return -1
+        if end + 1 < len(data) and data[end + 1] == ord('"'):
+            pos = end + 2
+            continue
+        return end
+
+
+def scan_lang0_entries(path: Path) -> list[tuple[int, str, str, int]]:
+    """Return (value_offset, key, value, byte_length) for lang0 key/value rows."""
+    raw = path.read_bytes()
+    hits: list[tuple[int, str, str, int]] = []
+    for match in LANG0_ENTRY_RE.finditer(raw):
+        key = match.group(1).decode("ascii")
+        start = match.end()
+        end = _lang0_end(raw, start)
+        if end < 0:
+            continue
+        value_raw = raw[start:end].replace(b'""', b'"')
+        value = _decode_lang0(value_raw)
+        if not value or value.isdigit():
+            continue
+        hits.append((start, key, value, end - start))
+    return hits
+
+
 def unquote_dat(value: str) -> str:
     value = value.strip()
     if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
         body = value[1:-1]
-        return bytes(body, "utf-8").decode("unicode_escape")
+        # Preserve non-ASCII characters; only interpret simple escaped syntax.
+        body = body.replace("\\\\", "\\").replace("\\\"", "\"").replace("\\'", "'")
+        body = body.replace("\\n", "\n").replace("\\r", "\r").replace("\\t", "\t")
+        return body
     return value
 
 
@@ -92,7 +135,6 @@ def scan_dat_entries(path: Path) -> list[tuple[int, str, str, int]]:
         value = unquote_dat(match.group(2))
         if not value or value.isdigit():
             continue
-        # Character offset is converted to a byte offset in the source file.
         byte_offset = len(text[:match.start(2)].encode(encoding))
         byte_length = len(match.group(2).encode(encoding))
         hits.append((byte_offset, value, encoding, byte_length))
@@ -127,6 +169,7 @@ class Hit:
     confidence: str
     byte_length: int
     kind: str = "raw"
+    id: str = ""
 
 
 def files_to_scan(root: Path):
@@ -141,18 +184,19 @@ def files_to_scan(root: Path):
 def scan_file(path: Path) -> list[Hit]:
     data = path.read_bytes()
     hits: list[Hit] = []
+    if path.name.lower() == "lang0.pak":
+        for off, key, text, size in scan_lang0_entries(path):
+            hits.append(Hit(path.name, off, "gbk", text, confidence(path.name, off, text, "gbk"), size, "lang0_entry", key))
     if path.suffix.lower() == ".dat":
         for off, text, enc, size in scan_dat_entries(path):
-            hits.append(Hit(path.name, off, enc, text, confidence(path.name, off, text, enc), size, "dat_entry"))
+            hits.append(Hit(path.name, off, enc, text, confidence(path.name, off, text, enc), size, "dat_entry", ""))
     for off, text, chars in scan_utf16(data):
-        hits.append(Hit(path.name, off, "utf-16le", text, confidence(path.name, off, text, "utf-16le"), chars * 2, "utf16"))
+        hits.append(Hit(path.name, off, "utf-16le", text, confidence(path.name, off, text, "utf-16le"), chars * 2, "utf16", ""))
     for off, text, size in scan_single_byte(data):
-        hits.append(Hit(path.name, off, "gbk/ascii", text, confidence(path.name, off, text, "gbk/ascii"), size, "single_byte"))
-    # DAT entries are authoritative structured hits; remove exact duplicates
-    # produced by the generic scanners.
-    unique: dict[tuple[int, str, str], Hit] = {}
+        hits.append(Hit(path.name, off, "gbk/ascii", text, confidence(path.name, off, text, "gbk/ascii"), size, "single_byte", ""))
+    unique: dict[tuple[int, str, str, str], Hit] = {}
     for hit in hits:
-        unique[(hit.offset, hit.text, hit.kind if hit.kind == "dat_entry" else "raw")] = hit
+        unique[(hit.offset, hit.text, hit.kind, hit.id)] = hit
     return sorted(unique.values(), key=lambda h: (h.offset, -h.byte_length, h.kind))
 
 
@@ -169,11 +213,11 @@ def main(argv: list[str] | None = None) -> int:
         all_hits.extend(scan_file(path))
     with args.output.open("w", encoding="utf-8-sig", newline="") as handle:
         writer = csv.writer(handle, delimiter="\t", lineterminator="\n")
-        writer.writerow(["file", "offset", "encoding", "byte_length", "confidence", "kind", "source_text", "translation"])
+        writer.writerow(["file", "offset", "encoding", "byte_length", "confidence", "kind", "id", "source_text", "translation"])
         for hit in all_hits:
             if levels[hit.confidence] < levels[args.min_confidence]:
                 continue
-            writer.writerow([hit.file_name, f"0x{hit.offset:X}", hit.encoding, hit.byte_length, hit.confidence, hit.kind, hit.text, ""])
+            writer.writerow([hit.file_name, f"0x{hit.offset:X}", hit.encoding, hit.byte_length, hit.confidence, hit.kind, hit.id, hit.text, ""])
     print(f"Scanned files: {len(files)}")
     print(f"Text candidates: {len(all_hits)}")
     print(f"Output: {args.output.resolve()}")
