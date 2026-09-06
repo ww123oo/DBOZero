@@ -1,39 +1,51 @@
 # -*- coding: utf-8 -*-
-"""Expand full build_output from scripts/build_output_p0..p2.b64"""
+"""Stable launcher for the bundled DBOZero build implementation.
+
+The bundled builder is stored in scripts/build_output_p*.b64. This launcher
+executes it without overwriting build_output.py itself.
+"""
 from __future__ import annotations
-import base64, gzip, importlib.util, runpy, sys
+
+import base64
+import gzip
+import sys
+import types
 from pathlib import Path
+
 HERE = Path(__file__).resolve().parent
-SELF = Path(__file__).resolve()
-N = 3
+PAYLOAD_PARTS = 3
+
 
 def expand() -> bytes:
-    parts = []
-    for i in range(N):
-        p = HERE / "scripts" / f"build_output_p{i}.b64"
-        if not p.is_file():
-            raise SystemExit(f"Missing {p}\ngit pull, then retry. Or: python scripts/install_build_output_parts.py")
-        parts.append(p.read_text(encoding="ascii").strip())
-    data = gzip.decompress(base64.b64decode("".join(parts)))
+    parts: list[str] = []
+    for i in range(PAYLOAD_PARTS):
+        path = HERE / "scripts" / f"build_output_p{i}.b64"
+        if not path.is_file():
+            raise SystemExit(f"Missing {path}\ngit pull, then retry.")
+        parts.append(path.read_text(encoding="ascii").strip())
+    try:
+        data = gzip.decompress(base64.b64decode("".join(parts), validate=True))
+    except Exception as exc:
+        raise SystemExit(f"invalid build_output payload: {exc}") from exc
     if b"set_total" not in data or b"begin_stage" not in data:
-        raise SystemExit("invalid payload")
+        raise SystemExit("invalid build_output payload")
     return data
 
+
+def execute(data: bytes) -> None:
+    module = types.ModuleType("__main__")
+    module.__file__ = str(HERE / "build_output.py")
+    module.__package__ = ""
+    module.__cached__ = None
+    module.__dict__["__name__"] = "__main__"
+    sys.modules["__main__"] = module
+    code = compile(data, str(HERE / "build_output.py"), "exec")
+    exec(code, module.__dict__)
+
+
 def main() -> None:
-    data = expand()
-    bak = SELF.with_suffix(".py.bak_stub")
-    if not bak.exists():
-        bak.write_bytes(SELF.read_bytes())
-    SELF.write_bytes(data)
-    sys.argv[0] = str(SELF)
-    runpy.run_path(str(SELF), run_name="__main__")
+    execute(expand())
+
 
 if __name__ == "__main__":
     main()
-else:
-    data = expand()
-    SELF.write_bytes(data)
-    spec = importlib.util.spec_from_file_location("build_output", SELF)
-    mod = importlib.util.module_from_spec(spec)
-    sys.modules["build_output"] = mod
-    spec.loader.exec_module(mod)
