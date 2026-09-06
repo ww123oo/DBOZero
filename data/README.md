@@ -59,14 +59,22 @@ tbl2.pak
 
 **不掃描 `.bin`。**
 
-掃描後可以使用：
+掃描後建議使用：
 
 ```powershell
 python scan_all_text.py "src_file\DBOZero" -o translation_scan.tsv
-python -m hanhua_v3.runtime.translation_inventory translation_scan.tsv
+python -m hanhua_v3.runtime.translation_queue translation_scan.tsv
 ```
 
-第二個命令會把掃描結果與舊 `translations.tsv`、目前 `new_translations.tsv` 比對，產生：
+如果確認要把新發現直接加入日常工作表：
+
+```powershell
+python -m hanhua_v3.runtime.translation_queue translation_scan.tsv --sync-daily
+```
+
+這個同步只會新增目前不存在的候選，不會用掃描結果覆蓋已經有中文翻譯或已確認狀態的人工資料。
+
+掃描候選報告預設產生：
 
 ```text
 reports/internal/untranslated_candidates.tsv
