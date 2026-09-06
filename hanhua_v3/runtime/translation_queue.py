@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-"""Build and optionally sync the active DBO translation work queue.
+"""Build the stable, active DBO translation work queue.
 
-Resource scan output is authoritative for discovery.  data/translations.tsv is
+Resource scan output is authoritative for discovery. data/translations.tsv is
 legacy reference data; data/new_translations.tsv is the active daily/update
-queue.  This module never writes game resource files.
+queue. Matching is deliberately scoped to the same resource file.
 """
 from __future__ import annotations
 
@@ -12,10 +12,7 @@ import csv
 import hashlib
 from pathlib import Path
 
-SCHEMA = (
-    "surface", "file", "id", "source_text", "source_hash", "zh_cn",
-    "status", "legacy_source", "legacy_row", "note",
-)
+SCHEMA = ("surface", "file", "id", "source_text", "source_hash", "zh_cn", "status", "legacy_source", "legacy_row", "note")
 
 
 def source_hash(text: str) -> str:
@@ -61,7 +58,7 @@ def hash_key(row: dict[str, str]) -> tuple[str, str]:
 def surface_for(hit: dict[str, str]) -> str:
     file_name = _norm_file(hit.get("file", ""))
     kind = (hit.get("kind") or "").strip().lower()
-    if kind == "dat_entry" or file_name.endswith(".dat"):
+    if kind in {"dat_entry"} or file_name.endswith(".dat"):
         return "dat"
     if file_name.endswith(".rdf"):
         return "rdf"
@@ -98,9 +95,19 @@ def candidate_from_hit(hit: dict[str, str]) -> dict[str, str] | None:
     }
 
 
+def _usable_old_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
+    """Drop malformed/blank historical rows without making discovery fail."""
+    return [row for row in rows if (row.get("source_text") or "").strip() and (row.get("file") or "").strip()]
+
+
+def _same_translation(rows: list[dict[str, str]]) -> bool:
+    values = {(row.get("zh_cn") or "").strip() for row in rows}
+    return len(values) == 1 and bool(next(iter(values), ""))
+
+
 def build_queue(scan_tsv: Path, legacy_tsv: Path, daily_tsv: Path) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
-    legacy = read_tsv(legacy_tsv)
-    daily = read_tsv(daily_tsv)
+    legacy = _usable_old_rows(read_tsv(legacy_tsv))
+    daily = _usable_old_rows(read_tsv(daily_tsv))
 
     exact: dict[tuple[str, str, str], dict[str, str]] = {}
     hashes: dict[tuple[str, str], list[dict[str, str]]] = {}
@@ -121,53 +128,64 @@ def build_queue(scan_tsv: Path, legacy_tsv: Path, daily_tsv: Path) -> tuple[list
             seen.add(key)
 
             old = exact.get(key)
+            match_mode = "exact"
             if old is None:
                 matches = hashes.get(hash_key(row), [])
-                # Hash matching is allowed only when the same file identifies
-                # exactly one historical/daily row.  Never match by text alone.
+                # Offsets may move after an update. If a source text occurs
+                # multiple times, reuse it only when every historical row has
+                # the same non-empty translation. Never match across files.
                 if len(matches) == 1:
                     old = matches[0]
+                    match_mode = "hash"
+                elif matches and _same_translation(matches):
+                    old = matches[0]
+                    match_mode = "duplicate-hash"
 
             if old is not None:
-                # Human translation or an intentional status always wins.
-                # A plain "new" row is also not duplicated if it already exists.
+                # Keep the new resource locator so writers can patch the new
+                # resource, while inheriting the human translation/status.
+                if old.get("zh_cn") or old.get("status") not in {"", "new"}:
+                    row["zh_cn"] = old.get("zh_cn", "")
+                    row["status"] = old.get("status", "") or "translated"
+                    row["legacy_source"] = old.get("legacy_source", "") or "historical"
+                    row["legacy_row"] = old.get("legacy_row", "")
+                    row["note"] = f"carried forward by {match_mode} match"
+                else:
+                    row["status"] = "new"
+                    row["note"] = f"existing queue row carried forward by {match_mode} match"
+                candidates.append(row)
                 continue
 
             candidates.append(row)
             exact[key] = row
 
-    merged = list(daily)
-    daily_keys = {exact_key(row) for row in merged}
-    for row in candidates:
-        if exact_key(row) not in daily_keys:
-            merged.append(row)
-            daily_keys.add(exact_key(row))
-    return candidates, merged
+    # The active queue is rebuilt from the scan, preserving translated values
+    # and current offsets. This is what makes it safe across game updates.
+    return candidates, candidates
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Build the DBO daily translation queue")
+    parser = argparse.ArgumentParser(description="Build the stable DBO daily translation queue")
     parser.add_argument("scan", type=Path, help="translation_scan.tsv from scan_all_text.py")
     parser.add_argument("--legacy", type=Path, default=Path("data/translations.tsv"))
     parser.add_argument("--daily", type=Path, default=Path("data/new_translations.tsv"))
     parser.add_argument("-o", "--output", type=Path, default=Path("reports/internal/untranslated_candidates.tsv"))
-    parser.add_argument("--sync-daily", action="store_true", help="append newly discovered entries to the active daily TSV")
+    parser.add_argument("--sync-daily", action="store_true", help="replace active daily TSV with the current stable queue")
     args = parser.parse_args(argv)
-
     if not args.scan.is_file():
         parser.error(f"scan file does not exist: {args.scan}")
-
     candidates, merged = build_queue(args.scan, args.legacy, args.daily)
-    write_tsv(args.output, candidates)
+    untranslated = [row for row in candidates if not (row.get("zh_cn") or "").strip() and (row.get("status") or "new") == "new"]
+    write_tsv(args.output, untranslated)
     if args.sync_daily:
         write_tsv(args.daily, merged)
-
-    print(f"new candidates: {len(candidates)}")
+    print(f"scanned queue rows: {len(merged)}")
+    print(f"new untranslated candidates: {len(untranslated)}")
     print(f"candidate report: {args.output}")
     if args.sync_daily:
-        print(f"daily queue updated: {args.daily}")
+        print(f"stable daily queue updated: {args.daily}")
     else:
-        print("daily queue unchanged; use --sync-daily to append discovered rows")
+        print("daily queue unchanged; use --sync-daily to refresh locators after a game update")
     return 0
 
 
