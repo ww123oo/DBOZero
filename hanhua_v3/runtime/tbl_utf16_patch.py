@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Safe fixed-field patcher for DBO tbl0/tbl1/tbl2.
-
-The patcher never inserts/deletes bytes.  It only replaces a UTF-16LE/GBK
-string in an existing field and pads the remaining field with NUL bytes.
-For tbl2 we additionally validate its observed record layout before writing.
-"""
+"""Safe fixed-field patcher for DBO tbl0/tbl1/tbl2."""
 from __future__ import annotations
 
 import argparse
@@ -25,6 +20,7 @@ class TblOverride:
     offset: int | None
     source_text: str
     translation: str
+    item_id: int | None = None
 
 def tool_dir() -> Path:
     if getattr(sys, "frozen", False):
@@ -66,7 +62,17 @@ def read_overrides(path: Path | None = None) -> list[TblOverride]:
             if file_name not in TBL_FILES:
                 raise PatchError(f"Unsupported tbl file at row {row_no}: {file_name}")
             if row[2] and row[3]:
-                rows.append(TblOverride(file_name, parse_offset(row[1], row_no), row[2], row[3]))
+                locator = row[1].strip()
+                item_id = None
+                if locator.lower().startswith("id:"):
+                    try:
+                        item_id = int(locator.split(":", 1)[1], 0)
+                    except ValueError as exc:
+                        raise PatchError(f"Invalid stable ID at row {row_no}: {locator}") from exc
+                    offset = None
+                else:
+                    offset = parse_offset(locator, row_no)
+                rows.append(TblOverride(file_name, offset, row[2], row[3], item_id))
     return rows
 
 def utf16le(text: str, label: str = "Text") -> bytes:
@@ -82,15 +88,6 @@ def fixed_replacement(source_text: str, translation: str) -> bytes:
         raise PatchError(f"Translation is too long: {source_text!r} -> {translation!r}")
     return replacement + b"\x00" * (len(source) - len(replacement))
 
-def fixed_single_byte_replacement(source: bytes, translation: str, encoding: str = "gbk") -> bytes:
-    try:
-        replacement = translation.encode(encoding)
-    except UnicodeEncodeError as exc:
-        raise PatchError(f"Translation cannot be encoded as {encoding}: {translation!r}") from exc
-    if len(replacement) > len(source):
-        raise PatchError(f"Translation is too long for single-byte field: {translation!r}")
-    return replacement + b"\x00" * (len(source) - len(replacement))
-
 def find_all(data: bytes, needle: bytes) -> list[int]:
     result: list[int] = []
     start = 0
@@ -102,13 +99,6 @@ def find_all(data: bytes, needle: bytes) -> list[int]:
         start = pos + max(1, len(needle))
 
 def tbl2_record_at(data: bytes, text_offset: int, source_text: str) -> bool:
-    """Validate the tbl2 record layout observed in the supplied client.
-
-    Layout: uint32 id, uint8 type, uint16 little-endian UTF-16 code-unit
-    length, followed immediately by UTF-16LE text.  The first record follows
-    the same layout.  We deliberately reject an offset that is not a record
-    field instead of guessing.
-    """
     raw = utf16le(source_text)
     if text_offset < 7 or text_offset + len(raw) > len(data):
         return False
@@ -122,11 +112,30 @@ def tbl2_record_at(data: bytes, text_offset: int, source_text: str) -> bool:
         return False
     return bytes(data[text_offset:text_offset + len(raw)]) == raw
 
+def find_tbl2_id_text(data: bytes, item_id: int, source_text: str) -> list[int]:
+    """Find text offsets for a stable tbl2 ID in the observed record form."""
+    raw = utf16le(source_text)
+    hits: list[int] = []
+    start = 0
+    id_bytes = item_id.to_bytes(4, "little", signed=False)
+    while True:
+        record_pos = data.find(id_bytes, start)
+        if record_pos < 0:
+            break
+        text_offset = record_pos + 7
+        if tbl2_record_at(data, text_offset, source_text):
+            hits.append(text_offset)
+        start = record_pos + 1
+    return hits
+
 def patch_one(data: bytes, row: TblOverride, file_name: str) -> tuple[bytes, bool, str]:
     patched = bytearray(data)
     source = utf16le(row.source_text)
-    candidates: list[int]
-    if row.offset is not None:
+    if file_name == "tbl2.pak" and row.item_id is not None:
+        candidates = find_tbl2_id_text(data, row.item_id, row.source_text)
+        if len(candidates) != 1:
+            return data, False, "stable_id_missing_or_ambiguous"
+    elif row.offset is not None:
         candidates = [row.offset]
     else:
         candidates = find_all(data, source)
@@ -155,7 +164,7 @@ def patch_tbl_bytes(data: bytes, rows: list[TblOverride], single_byte_encoding: 
             stats["changed"] += 1
         else:
             stats["missing"] += 1
-            if reason == "ambiguous_or_missing":
+            if reason in {"ambiguous_or_missing", "stable_id_missing_or_ambiguous"}:
                 stats["ambiguous"] += 1
             if missing_rows is not None:
                 missing_rows.append((row, reason))
