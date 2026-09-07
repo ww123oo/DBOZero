@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import shutil
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -27,7 +28,8 @@ class QueueRow:
     kind: str
 
 def read_queue(path: Path) -> list[QueueRow]:
-    if not path.is_file(): raise WriteError(f"Missing translation queue: {path}")
+    if not path.is_file():
+        raise WriteError(f"Missing translation queue: {path}")
     rows=[]
     with path.open("r",encoding="utf-8-sig",newline="") as handle:
         for row in csv.DictReader(handle,delimiter="\t"):
@@ -96,7 +98,7 @@ def _tbl_override(row: QueueRow,name: str)->tbl.TblOverride:
     except ValueError as exc: raise WriteError(f"Invalid tbl locator: {row.locator!r}") from exc
     return tbl.TblOverride(name,off,row.source,row.translation)
 
-def _write_one(path: Path,rows: list[QueueRow],output_root: Path)->tuple[Path,int]:
+def _write_one(path: Path,rows: list[QueueRow],output_root: Path,source_root: Path)->tuple[Path,int]:
     name=path.name.lower(); original=path.read_bytes()
     if name=="lang0.pak":
         keyed=[]
@@ -109,19 +111,44 @@ def _write_one(path: Path,rows: list[QueueRow],output_root: Path)->tuple[Path,in
         if stats["missing"]: raise WriteError(f"{name}: {stats['missing']} translation rows did not match the original resource")
     elif path.suffix.lower() in RESOURCE_EXTENSIONS:
         patched,changed=_patch_text_rows(original,rows,name)
-    else: raise WriteError(f"Unsupported resource type: {path}")
+    else:
+        raise WriteError(f"Unsupported resource type: {path}")
     if len(patched)!=len(original) and name in PAK_FILES: raise WriteError(f"Fixed-size resource changed size: {name}")
-    output_root.mkdir(parents=True,exist_ok=True); output=output_root/path.name; output.write_bytes(patched)
+    relative=path.relative_to(source_root)
+    output=output_root/relative
+    output.parent.mkdir(parents=True,exist_ok=True)
+    output.write_bytes(patched)
     return output,changed
+
+def _mirror_source_tree(source_root: Path,output_root: Path)->int:
+    """Create the Taiwan build tree from the untouched source.
+
+    All files are copied unchanged first, including .bin. The translation
+    writer only replaces supported text resources afterwards; .bin is never
+    scanned or modified by this module.
+    """
+    source_root=source_root.resolve(); output_root=output_root.resolve()
+    if not source_root.is_dir(): raise WriteError(f"Source root not found: {source_root}")
+    output_root.mkdir(parents=True,exist_ok=True)
+    copied=0
+    for source in source_root.rglob("*"):
+        if not source.is_file(): continue
+        relative=source.relative_to(source_root)
+        target=output_root/relative
+        target.parent.mkdir(parents=True,exist_ok=True)
+        shutil.copy2(source,target)
+        copied+=1
+    return copied
 
 def write_queue(queue: Path,source_root: Path,output_root: Path)->dict[str,int]:
     rows=read_queue(queue)
     if any(r.file.lower().endswith(".bin") for r in rows): raise WriteError(".bin is not a supported translation target and will never be written")
+    _mirror_source_tree(source_root,output_root)
     grouped={}
     for row in rows: grouped.setdefault(row.file.replace("\\","/").lower(),[]).append(row)
     result={}
     for key,file_rows in sorted(grouped.items()):
-        path=_find_resource(source_root,key); output,changed=_write_one(path,file_rows,output_root); result[output.name]=changed
+        path=_find_resource(source_root,key); output,changed=_write_one(path,file_rows,output_root,source_root); result[output.relative_to(output_root).as_posix()]=changed
     return result
 
 def main(argv: list[str]|None=None)->int:
