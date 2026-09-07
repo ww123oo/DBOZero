@@ -12,7 +12,7 @@ import csv
 import hashlib
 from pathlib import Path
 
-SCHEMA = ("surface", "file", "id", "source_text", "source_hash", "zh_cn", "status", "legacy_source", "legacy_row", "note")
+SCHEMA = ("surface", "file", "id", "source_hash", "source_text", "zh_cn", "status", "kind", "encoding", "legacy_source", "legacy_row", "note")
 
 
 def source_hash(text: str) -> str:
@@ -58,7 +58,7 @@ def hash_key(row: dict[str, str]) -> tuple[str, str]:
 def surface_for(hit: dict[str, str]) -> str:
     file_name = _norm_file(hit.get("file", ""))
     kind = (hit.get("kind") or "").strip().lower()
-    if kind in {"dat_entry"} or file_name.endswith(".dat"):
+    if kind == "dat_entry" or file_name.endswith(".dat"):
         return "dat"
     if file_name.endswith(".rdf"):
         return "rdf"
@@ -72,7 +72,7 @@ def surface_for(hit: dict[str, str]) -> str:
 def locator_for(hit: dict[str, str]) -> str:
     value = _norm_id(hit.get("id", ""))
     if value:
-        return value
+        return f"id:{value}" if (hit.get("kind") or "").strip().lower() == "tbl2_record" else value
     offset = _norm_id(hit.get("offset", ""))
     return f"offset:{offset}" if offset else ""
 
@@ -85,10 +85,12 @@ def candidate_from_hit(hit: dict[str, str]) -> dict[str, str] | None:
         "surface": surface_for(hit),
         "file": hit.get("file", ""),
         "id": locator_for(hit),
-        "source_text": source,
         "source_hash": source_hash(source),
+        "source_text": source,
         "zh_cn": "",
         "status": "new",
+        "kind": (hit.get("kind") or "").strip(),
+        "encoding": (hit.get("encoding") or "").strip(),
         "legacy_source": "",
         "legacy_row": "",
         "note": "discovered by full_text_scanner",
@@ -96,7 +98,6 @@ def candidate_from_hit(hit: dict[str, str]) -> dict[str, str] | None:
 
 
 def _usable_old_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
-    """Drop malformed/blank historical rows without making discovery fail."""
     return [row for row in rows if (row.get("source_text") or "").strip() and (row.get("file") or "").strip()]
 
 
@@ -108,7 +109,6 @@ def _same_translation(rows: list[dict[str, str]]) -> bool:
 def build_queue(scan_tsv: Path, legacy_tsv: Path, daily_tsv: Path) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
     legacy = _usable_old_rows(read_tsv(legacy_tsv))
     daily = _usable_old_rows(read_tsv(daily_tsv))
-
     exact: dict[tuple[str, str, str], dict[str, str]] = {}
     hashes: dict[tuple[str, str], list[dict[str, str]]] = {}
     for row in legacy + daily:
@@ -126,24 +126,17 @@ def build_queue(scan_tsv: Path, legacy_tsv: Path, daily_tsv: Path) -> tuple[list
             if key in seen:
                 continue
             seen.add(key)
-
             old = exact.get(key)
             match_mode = "exact"
             if old is None:
                 matches = hashes.get(hash_key(row), [])
-                # Offsets may move after an update. If a source text occurs
-                # multiple times, reuse it only when every historical row has
-                # the same non-empty translation. Never match across files.
                 if len(matches) == 1:
                     old = matches[0]
                     match_mode = "hash"
                 elif matches and _same_translation(matches):
                     old = matches[0]
                     match_mode = "duplicate-hash"
-
             if old is not None:
-                # Keep the new resource locator so writers can patch the new
-                # resource, while inheriting the human translation/status.
                 if old.get("zh_cn") or old.get("status") not in {"", "new"}:
                     row["zh_cn"] = old.get("zh_cn", "")
                     row["status"] = old.get("status", "") or "translated"
@@ -155,22 +148,18 @@ def build_queue(scan_tsv: Path, legacy_tsv: Path, daily_tsv: Path) -> tuple[list
                     row["note"] = f"existing queue row carried forward by {match_mode} match"
                 candidates.append(row)
                 continue
-
             candidates.append(row)
             exact[key] = row
-
-    # The active queue is rebuilt from the scan, preserving translated values
-    # and current offsets. This is what makes it safe across game updates.
     return candidates, candidates
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Build the stable DBO daily translation queue")
-    parser.add_argument("scan", type=Path, help="translation_scan.tsv from scan_all_text.py")
+    parser.add_argument("scan", type=Path)
     parser.add_argument("--legacy", type=Path, default=Path("data/translations.tsv"))
     parser.add_argument("--daily", type=Path, default=Path("data/new_translations.tsv"))
     parser.add_argument("-o", "--output", type=Path, default=Path("reports/internal/untranslated_candidates.tsv"))
-    parser.add_argument("--sync-daily", action="store_true", help="replace active daily TSV with the current stable queue")
+    parser.add_argument("--sync-daily", action="store_true")
     args = parser.parse_args(argv)
     if not args.scan.is_file():
         parser.error(f"scan file does not exist: {args.scan}")
