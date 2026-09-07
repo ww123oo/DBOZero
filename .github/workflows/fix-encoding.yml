@@ -1,60 +1,57 @@
-<<<<<<< HEAD
-name: Fix Taiwan encoding
+name: Validate Taiwan encoding
 
-=======
-name: Apply taiwan fixups
->>>>>>> 05445851771ab9bfdeb7dc77ae81f0897c247807
 on:
   push:
     paths:
+      - "hanhua_v3/runtime/**"
+      - "data/**"
+      - "build_output.py"
       - ".github/workflows/fix-encoding.yml"
   workflow_dispatch:
-<<<<<<< HEAD
 
 permissions:
-  contents: write
+  contents: read
 
-=======
-permissions:
-  contents: write
->>>>>>> 05445851771ab9bfdeb7dc77ae81f0897c247807
 jobs:
-  apply:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-<<<<<<< HEAD
-      - name: Download and install fixed install_hanhua.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate UTF-8 Python sources
         run: |
-          curl -fsSL -o hanhua_v3/runtime/install_hanhua.py "https://litter.catbox.moe/9o26f0.py"
-          python3 -c "import ast; t=open('hanhua_v3/runtime/install_hanhua.py',encoding='utf-8').read(); ast.parse(t); assert 'cp950' in t; print('ok', len(t))"
-          # ensure tbl2
-          python3 -c "from pathlib import Path
-p=Path('hanhua_v3/runtime/tbl_utf16_patch.py'); t=p.read_text(encoding='utf-8')
-if '\"tbl2.pak\"' not in t:
- t=t.replace('TBL_FILES = (\"tbl0.pak\", \"tbl1.pak\")','TBL_FILES = (\"tbl0.pak\", \"tbl1.pak\", \"tbl2.pak\")'); p.write_text(t, encoding='utf-8')
-b=Path('build_output.py'); bt=b.read_text(encoding='utf-8')
-if 'tbl2.pak' not in bt.split('CORE_PACK_FILES')[1][:120]:
- bt=bt.replace('CORE_PACK_FILES = (\"lang0.pak\", \"tbl0.pak\", \"tbl1.pak\")','CORE_PACK_FILES = (\"lang0.pak\", \"tbl0.pak\", \"tbl1.pak\", \"tbl2.pak\")'); b.write_text(bt, encoding='utf-8')
-print('tbl2 ok')"
-      - name: Commit
+          python - <<'PY'
+          from pathlib import Path
+          import ast
+          roots = [Path("hanhua_v3"), Path("build_output.py")]
+          files = []
+          for root in roots:
+              if root.is_file():
+                  files.append(root)
+              elif root.exists():
+                  files.extend(root.rglob("*.py"))
+          for path in files:
+              text = path.read_text(encoding="utf-8")
+              ast.parse(text, filename=str(path))
+          print(f"validated {len(files)} Python files")
+          PY
+      - name: Validate translation tables
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add hanhua_v3/runtime/install_hanhua.py hanhua_v3/runtime/tbl_utf16_patch.py build_output.py
-          git commit -m "fix: auto-detect CP950/Big5 for Taiwan local_data" || exit 0
-=======
-      - run: |
-          curl -fsSL -o hanhua_v3/runtime/taiwan_fixups.py https://litter.catbox.moe/d30b75.py
-          python3 -c "import ast; t=open('hanhua_v3/runtime/taiwan_fixups.py',encoding='utf-8').read(); ast.parse(t); assert '服務器' in t and '伺服器' in t; print('ok')"
-      - run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add hanhua_v3/runtime/taiwan_fixups.py
-<<<<<<< HEAD
-          git commit -m "fix(taiwan): 賬→帳, 格斗→格鬥, 战斗→戰鬥" || exit 0
->>>>>>> 05445851771ab9bfdeb7dc77ae81f0897c247807
-=======
-          git commit -m "fix(taiwan): map 服務器→伺服器 after LCMap" || exit 0
->>>>>>> f6f61bd55c0467a11d91f785354829d07378542c
-          git push
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+          for name in ("data/translations.tsv", "data/new_translations.tsv"):
+              path = Path(name)
+              if not path.exists():
+                  continue
+              with path.open("r", encoding="utf-8-sig", newline="") as f:
+                  rows = list(csv.reader(f, delimiter="\t"))
+              if rows:
+                  width = len(rows[0])
+                  bad = [i + 1 for i, row in enumerate(rows[1:], 2) if len(row) != width]
+                  if bad:
+                      raise SystemExit(f"{name}: inconsistent TSV columns at lines {bad[:10]}")
+              print(f"validated {name}")
+          PY
