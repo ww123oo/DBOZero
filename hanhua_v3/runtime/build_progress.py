@@ -40,9 +40,19 @@ class Progress:
 
     @staticmethod
     def _fmt_sec(seconds: float) -> str:
+        """Human time: <10s one decimal; <60s seconds; else 分/秒 (and 時 if needed)."""
+        if seconds < 0:
+            seconds = 0.0
         if seconds < 10:
             return f"{seconds:.1f}s"
-        return f"{int(round(seconds))}s"
+        if seconds < 60:
+            return f"{int(round(seconds))}s"
+        total = int(round(seconds))
+        hours, rem = divmod(total, 3600)
+        minutes, secs = divmod(rem, 60)
+        if hours > 0:
+            return f"{hours}時{minutes}分{secs:02d}秒"
+        return f"{minutes}分{secs:02d}秒"
 
     def begin_stage(self, name: str, total: int = 1) -> None:
         if self._stage_open:
@@ -54,13 +64,14 @@ class Progress:
         self._stage_t0 = time.monotonic()
         self._render_live(force=True)
 
-    def end_stage(self, message: str = "") -> None:
+    def end_stage(self, message: str = "", *, elapsed: float | None = None) -> None:
         if not self._stage_open:
             return
         self.stage_current = self.stage_total
         label = message or self.stage_name
-        elapsed = time.monotonic() - self._stage_t0 if self._stage_t0 else 0.0
-        self._finish_line(label, elapsed)
+        if elapsed is None:
+            elapsed = time.monotonic() - self._stage_t0 if self._stage_t0 else 0.0
+        self._finish_line(label, float(elapsed))
         self._stage_open = False
 
     def step(self, message: str = "", n: int = 1) -> None:
@@ -97,9 +108,36 @@ class Progress:
             self._live = False
         print(f"  · {message}", flush=True)
 
-    def wait_futures(self, futs_map, label: str = "平行構建中") -> list:
+    def busy_line(self, message: str) -> None:
+        """Single \\r status line (cleared by clear_busy or next permanent line)."""
+        line = message.ljust(100)
+        sys.stdout.write("\\r" + line)
+        sys.stdout.flush()
+        self._live = True
+
+    def clear_busy(self) -> None:
+        if self._live:
+            sys.stdout.write("\\r" + " " * 100 + "\\r")
+            sys.stdout.flush()
+            self._live = False
+
+    def wait_futures(self, futs_map, label: str = "構建 tbl") -> list:
         from concurrent.futures import as_completed
         return [(fut, futs_map[fut]) for fut in as_completed(futs_map)]
+
+    def finish_stage_timed(self, name: str, total: int, elapsed: float) -> None:
+        """Print a completed stage line using a pre-measured elapsed time (e.g. parallel tbl)."""
+        if self._stage_open:
+            self.end_stage()
+        self.stage_name = name
+        self.stage_total = max(int(total), 1)
+        self.stage_current = self.stage_total
+        self.overall_current = min(self.overall_current + self.stage_total, max(self.overall_total, 1))
+        self.current = self.overall_current
+        self._stage_open = True
+        self._live = False
+        self._finish_line(name, float(elapsed))
+        self._stage_open = False
 
     def done(self, message: str = "完成") -> None:
         if self._stage_open:
@@ -140,7 +178,7 @@ class Progress:
         sc = min(self.stage_current, st)
         bar, pct = self._bar(sc, st)
         name = label or self.stage_name or ""
-        sys.stdout.write("\r" + f"[{bar}] {pct:3d}% ({sc}/{st}) {name}".ljust(96))
+        sys.stdout.write("\\r" + f"[{bar}] {pct:3d}% ({sc}/{st}) {name}".ljust(96))
         sys.stdout.flush()
         self._live = True
 
@@ -152,7 +190,7 @@ class Progress:
             text = f"{text} 完成".strip()
         line = f"[{bar}] {pct:3d}% ({st}/{st}) {text} ({self._fmt_sec(elapsed)})"
         if self._live:
-            sys.stdout.write("\r" + line + "\n")
+            sys.stdout.write("\\r" + line + "\n")
         else:
             sys.stdout.write(line + "\n")
         sys.stdout.flush()
