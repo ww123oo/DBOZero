@@ -24,4 +24,4 @@ def test_tbl2_can_patch_by_stable_id_without_using_offset():
     assert stats["missing"] == 0
     assert len(patched) == len(data)
     assert patched[8:12] == (1001).to_bytes(4, "little")
-    assert patched[15:29] == "否定".encode("utf-16le") + b"\x00" * 10
+    assert patched[15:31] == "否定".encode("utf-16le") + b"\x00" * 12
