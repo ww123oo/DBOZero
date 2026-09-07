@@ -8,7 +8,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-from . import __version__, batch_translate_queue, config, scan
+from . import __version__, batch_translate_queue_v2 as batch_translate_queue, config, scan
 from .config import ConfigError
 from .recover import RecoveryError, recover_from_git
 from .resource_writer import WriteError, write_queue
