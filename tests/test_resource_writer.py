@@ -49,6 +49,27 @@ def test_dat_writer_preserves_quotes(tmp_path: Path) -> None:
     assert (out / "local.dat").read_text(encoding="utf-8") == 'GREETING = "你好"\n'
 
 
+def test_output_mirrors_untouched_files_and_never_patches_bin(tmp_path: Path) -> None:
+    source = tmp_path / "resources"
+    out = tmp_path / "out"
+    source.mkdir()
+    (source / "keep.bin").write_bytes(b"DO NOT TOUCH")
+    (source / "nested").mkdir()
+    (source / "nested" / "readme.txt").write_text("original", encoding="utf-8")
+    resource = source / "table.xml"
+    resource.write_text("<root>Negative</root>", encoding="utf-8")
+    offset = resource.read_bytes().find(b"Negative")
+    queue = tmp_path / "queue.tsv"
+    write_tsv(queue, [{"file": "table.xml", "id": f"offset:{offset}", "source_text": "Negative", "zh_cn": "負面"}])
+
+    write_queue(queue, source, out)
+
+    assert (out / "keep.bin").read_bytes() == b"DO NOT TOUCH"
+    assert (out / "nested" / "readme.txt").read_text(encoding="utf-8") == "original"
+    assert (out / "table.xml").read_text(encoding="utf-8") == "<root>負面</root>"
+    assert (source / "keep.bin").read_bytes() == b"DO NOT TOUCH"
+
+
 def test_tbl2_writer_rejects_invalid_offset(tmp_path: Path) -> None:
     source = tmp_path / "resources"
     out = tmp_path / "out"
