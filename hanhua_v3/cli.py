@@ -159,6 +159,13 @@ def run_recover(args: argparse.Namespace) -> int:
 
 
 def run_build(args: argparse.Namespace) -> int:
+    """Build products from the canonical source tree.
+
+    The bundled builder owns the two product directories: `output/` for the
+    Simplified Chinese build and `output_taiwan/` for the Taiwan Traditional
+    Chinese build. `--variant` selects which product(s) the builder emits;
+    the source tree is never replaced by either output directory.
+    """
     import build_output
     build_args = ["--source-dir", str(args.source_dir), "--variant", args.variant]
     if args.force:
@@ -225,20 +232,26 @@ def run_config(args: argparse.Namespace) -> int:
         config.save_game_dir(game_root)
         print(f"已儲存遊戲目錄：{game_root}")
         return 0
-    print(config.load())
-    return 0
+    if args.show:
+        print(config.load())
+        return 0
+    raise CliError("請指定 --game-dir 或使用 --show 查看設定")
 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="dboc")
+    parser.add_argument("--version", action="version", version=f"dboc {__version__}")
     sub = parser.add_subparsers(dest="command", required=True)
     for command, func in (("refresh", run_refresh), ("scan", run_scan), ("translate", run_translate), ("write", run_write), ("build", run_build), ("update", run_update), ("recover", run_recover), ("status", run_status), ("config", run_config)):
         p = sub.add_parser(command)
         p.set_defaults(func=func)
-        add_source_args(p)
+        if command == "build":
+            p.add_argument("--source-dir", type=Path, default=ROOT / "src_file" / "DBOZero")
+        else:
+            add_source_args(p)
         if command in {"scan", "translate", "write", "build", "update", "recover", "status"}:
             add_queue_args(p)
-        if command in {"write", "build", "update"}:
+        if command in {"write", "update"}:
             p.add_argument("--output-dir", type=Path, default=ROOT / "output_taiwan")
         if command in {"build", "update"}:
             add_build_args(p)
@@ -254,6 +267,7 @@ def build_parser() -> argparse.ArgumentParser:
             p.add_argument("refs", nargs="+", help="Git refs to recover from")
             p.add_argument("--dry-run", action="store_true")
         if command == "config":
+            p.add_argument("--show", action="store_true")
             p.add_argument("--game-dir", type=Path)
     return parser
 
@@ -275,7 +289,7 @@ def add_translate_args(parser: argparse.ArgumentParser) -> None:
 
 
 def add_build_args(parser: argparse.ArgumentParser) -> None:
-    parser.add_argument("--variant", default="taiwan")
+    parser.add_argument("--variant", choices=("all", "simplified", "taiwan"), default="all")
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--no-parallel", action="store_true")
 
