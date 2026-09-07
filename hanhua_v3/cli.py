@@ -8,20 +8,18 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-from . import __version__, batch_translate_queue_v2 as batch_translate_queue, config, scan
+from . import __version__, batch_translate_queue_v2 as batch_translate_queue, config
 from .config import ConfigError
 from .recover import RecoveryError, recover_from_git
-from .resource_writer import WriteError, write_queue
+from .runtime import full_text_scanner, translation_queue
+from .runtime.resource_writer import WriteError, write_queue
 from .source import (
-    DEFAULT_SOURCE_DIR,
     SourceRefreshError,
     compare_source,
     detect_patched_source,
     refresh_source,
     resolve_game_dir,
-    resolve_source_dir,
 )
-
 
 __all__ = [
     "CliError", "DEFAULT_QUEUE", "ROOT", "add_build_args", "add_source_args", "add_translate_args",
@@ -32,6 +30,8 @@ __all__ = [
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_QUEUE = ROOT / "data" / "new_translations.tsv"
+DEFAULT_SCAN = ROOT / "reports" / "internal" / "translation_scan.tsv"
+DEFAULT_CANDIDATES = ROOT / "reports" / "internal" / "untranslated_candidates.tsv"
 
 
 class CliError(RuntimeError):
@@ -60,8 +60,15 @@ def create_checkpoint() -> str:
         raise CliError("無法建立刷新前 Git 恢復點，未讀取實際遊戲目錄") from exc
 
 
-def queue_keys_from_rows(rows: list[dict[str, str]]) -> set[tuple[str, str]]:
-    return {((row.get("文件") or row.get("file") or "").strip(), (row.get("原文") or row.get("source_text") or "").strip()) for row in rows if (row.get("文件") or row.get("file") or "").strip() and (row.get("原文") or row.get("source_text") or "").strip()}
+def _row_key(row: dict[str, str]) -> tuple[str, str, str]:
+    file_name = (row.get("file") or row.get("文件") or "").replace("\\", "/").strip().lower()
+    item_id = (row.get("id") or row.get("ID") or row.get("位置") or "").strip()
+    source = (row.get("source_text") or row.get("原文") or "").strip()
+    return file_name, item_id, source
+
+
+def queue_keys_from_rows(rows: list[dict[str, str]]) -> set[tuple[str, str, str]]:
+    return {_row_key(row) for row in rows if _row_key(row) != ("", "", "")}
 
 
 def read_queue_rows(path: Path = DEFAULT_QUEUE) -> list[dict[str, str]]:
@@ -94,14 +101,33 @@ def run_refresh(args: argparse.Namespace, *, checkpoint: bool = True) -> int:
 
 
 def run_scan(args: argparse.Namespace) -> int:
-    return scan.main(["--source-dir", str(args.source_dir), "--data-dir", str(ROOT / "data"), "--report-dir", str(ROOT / "reports")])
+    args.source_dir = Path(args.source_dir).resolve()
+    DEFAULT_SCAN.parent.mkdir(parents=True, exist_ok=True)
+    scanner_args = [str(args.source_dir), "--output", str(DEFAULT_SCAN), "--min-confidence", getattr(args, "min_confidence", "medium")]
+    full_text_scanner.main(scanner_args)
+    translation_queue.main([
+        str(DEFAULT_SCAN),
+        "--legacy", str(ROOT / "data" / "translations.tsv"),
+        "--daily", str(args.queue),
+        "--output", str(DEFAULT_CANDIDATES),
+        "--sync-daily",
+    ])
+    return 0
 
 
-def run_translate(args: argparse.Namespace, only_keys: set[tuple[str, str]] | None = None) -> int:
+def run_translate(args: argparse.Namespace, only_keys: set[tuple[str, str, str]] | None = None) -> int:
     if args.new_since:
         only_keys = queue_keys_from_rows(read_queue_rows(args.queue)) - queue_keys_from_rows(read_git_queue_rows(args.new_since))
         print(f"相對 {args.new_since} 的新增原文：{len(only_keys)}")
-    stats = batch_translate_queue.translate_queue(queue_path=args.queue, out_path=args.queue, translations_path=ROOT / "data" / "translations.tsv", fill_all=args.fill_all, replace_existing=args.replace_existing, ignore_existing_map=args.ignore_existing_map, only_keys=only_keys)
+    stats = batch_translate_queue.translate_queue(
+        queue_path=args.queue,
+        out_path=args.queue,
+        translations_path=ROOT / "data" / "translations.tsv",
+        fill_all=args.fill_all,
+        replace_existing=args.replace_existing,
+        ignore_existing_map=args.ignore_existing_map,
+        only_keys=only_keys,
+    )
     print(f"翻譯完成：selected={stats.selected}, filled={stats.filled}, empty_after={stats.empty_after}")
     print(f"複用現有譯文：{stats.reused_existing}")
     print(f"翻譯佇列：{args.queue}")
@@ -147,17 +173,23 @@ def run_update(args: argparse.Namespace) -> int:
     print(f"刷新前 Git 恢復點：{create_checkpoint()}")
     print("\n[1/5] 同步實際遊戲源檔案")
     print_refresh_results(refresh_source(args.game_dir, args.source_dir))
-    print("\n[2/5] 掃描新版詞條")
+    print("\n[2/5] 完整掃描 + 更新穩定翻譯佇列")
     run_scan(args)
     current_keys = queue_keys_from_rows(read_queue_rows(args.queue))
     new_keys = current_keys - previous_keys
-    print(f"本次新增原文：{len(new_keys)}")
+    print(f"本次新增/變更詞條：{len(new_keys)}")
     if args.recover_refs:
         print("\n[歷史恢復] 回填 Git 中仍匹配當前源的譯文")
         recovery = recover_from_git(args.recover_refs)
         print(f"恢復佇列譯文：{recovery.queue_filled}，恢復主表譯文：{recovery.master_added}")
     print("\n[3/5] 翻譯新增詞條")
-    translate_args = argparse.Namespace(queue=args.queue, fill_all=args.fill_all, replace_existing=False, ignore_existing_map=False, new_since=None)
+    translate_args = argparse.Namespace(
+        queue=args.queue,
+        fill_all=args.fill_all,
+        replace_existing=False,
+        ignore_existing_map=False,
+        new_since=None,
+    )
     run_translate(translate_args, only_keys=None if args.translate_all else new_keys)
     print("\n[4/5] 寫入翻譯資源")
     run_write(args)
@@ -167,7 +199,7 @@ def run_update(args: argparse.Namespace) -> int:
 
 def run_status(args: argparse.Namespace) -> int:
     rows = read_queue_rows(args.queue)
-    filled = sum(bool((row.get("填写中文") or row.get("zh_cn") or "").strip()) for row in rows)
+    filled = sum(bool((row.get("zh_cn") or row.get("填写中文") or "").strip()) for row in rows)
     print(f"翻譯佇列：total={len(rows)}, filled={filled}, empty={len(rows) - filled}")
     try:
         comparison = compare_source(args.game_dir, args.source_dir)
@@ -210,6 +242,8 @@ def build_parser() -> argparse.ArgumentParser:
             p.add_argument("--output-dir", type=Path, default=ROOT / "output_taiwan")
         if command in {"build", "update"}:
             add_build_args(p)
+        if command == "scan":
+            p.add_argument("--min-confidence", choices=("low", "medium", "high"), default="medium")
         if command == "translate":
             add_translate_args(p)
         if command == "update":
