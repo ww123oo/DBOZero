@@ -88,7 +88,6 @@ def _lang0_end(data: bytes, start: int) -> int:
 
 
 def scan_lang0_entries(path: Path) -> list[tuple[int, str, str, int]]:
-    """Return (value_offset, key, value, byte_length) for lang0 key/value rows."""
     raw = path.read_bytes()
     hits: list[tuple[int, str, str, int]] = []
     for match in LANG0_ENTRY_RE.finditer(raw):
@@ -109,15 +108,14 @@ def unquote_dat(value: str) -> str:
     value = value.strip()
     if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
         body = value[1:-1]
-        # Preserve non-ASCII characters; only interpret simple escaped syntax.
         body = body.replace("\\\\", "\\").replace("\\\"", "\"").replace("\\'", "'")
         body = body.replace("\\n", "\n").replace("\\r", "\r").replace("\\t", "\t")
         return body
     return value
 
 
-def scan_dat_entries(path: Path) -> list[tuple[int, str, str, int]]:
-    """Scan DBO DAT key=value resources without changing their syntax."""
+def scan_dat_entries(path: Path) -> list[tuple[int, str, str, int, str]]:
+    """Return byte offset, key, value, encoded length and source encoding."""
     raw = path.read_bytes()
     text = None
     encoding = "utf-8"
@@ -130,14 +128,15 @@ def scan_dat_entries(path: Path) -> list[tuple[int, str, str, int]]:
             continue
     if text is None:
         return []
-    hits: list[tuple[int, str, str, int]] = []
+    hits: list[tuple[int, str, str, int, str]] = []
     for match in DAT_ENTRY_RE.finditer(text):
         value = unquote_dat(match.group(2))
         if not value or value.isdigit():
             continue
         byte_offset = len(text[:match.start(2)].encode(encoding))
         byte_length = len(match.group(2).encode(encoding))
-        hits.append((byte_offset, value, encoding, byte_length))
+        key = match.group(1)
+        hits.append((byte_offset, key, value, byte_length, encoding))
     return hits
 
 
@@ -181,6 +180,39 @@ def files_to_scan(root: Path):
             yield p
 
 
+def scan_tbl2_structured(path: Path) -> list[Hit]:
+    """Discover the observed tbl2 record form and retain its stable numeric ID.
+
+    Observed records use uint32 id, uint8 type, uint16 UTF-16 code-unit length,
+    then UTF-16LE text. We only accept records whose length and text boundaries
+    validate exactly; other tbl2 sections continue through the generic scanner.
+    """
+    data = path.read_bytes()
+    hits: list[Hit] = []
+    for record_pos in range(0, len(data) - 7):
+        item_id = int.from_bytes(data[record_pos:record_pos + 4], "little")
+        if item_id == 0:
+            continue
+        if data[record_pos + 4] != 0:
+            continue
+        units = int.from_bytes(data[record_pos + 5:record_pos + 7], "little")
+        if units < 1 or units > 512:
+            continue
+        text_start = record_pos + 7
+        text_end = text_start + units * 2
+        if text_end > len(data):
+            continue
+        raw = data[text_start:text_end]
+        try:
+            text = raw.decode("utf-16le")
+        except UnicodeDecodeError:
+            continue
+        if not text or not any(ch.isalpha() for ch in text) or not all(printable(ch) for ch in text):
+            continue
+        hits.append(Hit(path.name, text_start, "utf-16le", text, confidence(path.name, text_start, text, "utf-16le"), len(raw), "tbl2_record", str(item_id)))
+    return hits
+
+
 def scan_file(path: Path) -> list[Hit]:
     data = path.read_bytes()
     hits: list[Hit] = []
@@ -188,8 +220,10 @@ def scan_file(path: Path) -> list[Hit]:
         for off, key, text, size in scan_lang0_entries(path):
             hits.append(Hit(path.name, off, "gbk", text, confidence(path.name, off, text, "gbk"), size, "lang0_entry", key))
     if path.suffix.lower() == ".dat":
-        for off, text, enc, size in scan_dat_entries(path):
-            hits.append(Hit(path.name, off, enc, text, confidence(path.name, off, text, enc), size, "dat_entry", ""))
+        for off, key, text, enc_size, enc in scan_dat_entries(path):
+            hits.append(Hit(path.name, off, enc, text, confidence(path.name, off, text, enc), enc_size, "dat_entry", key))
+    if path.name.lower() == "tbl2.pak":
+        hits.extend(scan_tbl2_structured(path))
     for off, text, chars in scan_utf16(data):
         hits.append(Hit(path.name, off, "utf-16le", text, confidence(path.name, off, text, "utf-16le"), chars * 2, "utf16", ""))
     for off, text, size in scan_single_byte(data):
