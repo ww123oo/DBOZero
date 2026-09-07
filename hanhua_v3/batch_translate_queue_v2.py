@@ -36,8 +36,11 @@ def _load_existing(path: Path) -> dict[str, str]:
     return result
 
 
-def _key(row: dict[str, str]) -> tuple[str, str]:
-    return ((row.get("文件") or row.get("file") or "").strip(), (row.get("原文") or row.get("source_text") or "").strip())
+def _key(row: dict[str, str]) -> tuple[str, str, str]:
+    file_name = (row.get("文件") or row.get("file") or "").replace("\\", "/").strip().lower()
+    item_id = (row.get("ID") or row.get("id") or row.get("位置") or "").strip()
+    source = (row.get("原文") or row.get("source_text") or "").strip()
+    return file_name, item_id, source
 
 
 def translate_queue(
@@ -48,7 +51,7 @@ def translate_queue(
     fill_all: bool = False,
     replace_existing: bool = False,
     ignore_existing_map: bool = False,
-    only_keys: set[tuple[str, str]] | None = None,
+    only_keys: set[tuple[str, str, str]] | None = None,
 ) -> TranslationStats:
     queue_path = queue_path.resolve()
     out_path = (out_path or queue_path).resolve()
@@ -85,8 +88,6 @@ def translate_queue(
             continue
 
         result = translate(stripped)
-        # v2 intentionally refuses to invent translations for unknown text.
-        # --fill-all means "use composed deterministic rules", not hallucinate.
         if result.changed and (fill_all or result.confidence >= 0.70):
             row[target_col] = result.translation
             filled += 1
