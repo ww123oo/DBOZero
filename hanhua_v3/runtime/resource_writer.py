@@ -45,16 +45,7 @@ def read_queue(path: Path) -> list[QueueRow]:
             file_name = (row.get("file") or row.get("文件") or "").strip()
             if not file_name:
                 continue
-            rows.append(
-                QueueRow(
-                    file=file_name,
-                    locator=(row.get("id") or row.get("ID") or "").strip(),
-                    source=source,
-                    translation=translation,
-                    encoding=(row.get("encoding") or "").strip().lower(),
-                    kind=(row.get("kind") or "").strip().lower(),
-                )
-            )
+            rows.append(QueueRow(file_name, (row.get("id") or row.get("ID") or "").strip(), source, translation, (row.get("encoding") or "").strip().lower(), (row.get("kind") or "").strip().lower()))
     return rows
 
 
@@ -104,10 +95,8 @@ def _patch_text_rows(data: bytes, rows: list[QueueRow]) -> tuple[bytes, int]:
         if row.kind == "dat_entry":
             enc = "gb18030" if row.encoding == "gb18030" else "utf-8"
             candidates = (
-                (("\"" + row.source.replace("\"", "\\\"") + "\"").encode(enc),
-                 ("\"" + row.translation.replace("\"", "\\\"") + "\"").encode(enc)),
-                (("'" + row.source.replace("'", "\\'") + "'").encode(enc),
-                 ("'" + row.translation.replace("'", "\\'") + "'").encode(enc)),
+                (("\"" + row.source.replace("\"", "\\\"") + "\"").encode(enc), ("\"" + row.translation.replace("\"", "\\\"") + "\"").encode(enc)),
+                (("'" + row.source.replace("'", "\\'") + "'").encode(enc), ("'" + row.translation.replace("'", "\\'") + "'").encode(enc)),
             )
             old, new = next(((old, new) for old, new in candidates if data[offset:offset + len(old)] == old), (b"", b""))
             if not old:
@@ -128,6 +117,20 @@ def _patch_text_rows(data: bytes, rows: list[QueueRow]) -> tuple[bytes, int]:
     return bytes(patched), changed
 
 
+def _tbl_override(row: QueueRow, name: str) -> tbl.TblOverride:
+    if name == "tbl2.pak" and row.kind == "tbl2_record":
+        try:
+            item_id = int(row.locator, 0)
+        except ValueError as exc:
+            raise WriteError(f"Invalid tbl2 stable ID: {row.locator!r}") from exc
+        return tbl.TblOverride(name, None, row.source, row.translation, item_id)
+    try:
+        off = _offset(row.locator) if row.locator else None
+    except ValueError as exc:
+        raise WriteError(f"Invalid tbl locator: {row.locator!r}") from exc
+    return tbl.TblOverride(name, off, row.source, row.translation)
+
+
 def _write_one(path: Path, rows: list[QueueRow], output_root: Path) -> tuple[Path, int]:
     name = path.name.lower()
     original = path.read_bytes()
@@ -141,13 +144,7 @@ def _write_one(path: Path, rows: list[QueueRow], output_root: Path) -> tuple[Pat
         patched, stats = lang0.patch_lang0_bytes(original, keyed)
         changed = stats["changed"]
     elif name in TBL_FILES:
-        overrides: list[tbl.TblOverride] = []
-        for row in rows:
-            try:
-                off = _offset(row.locator) if row.locator else None
-            except ValueError as exc:
-                raise WriteError(f"Invalid tbl locator: {row.locator!r}") from exc
-            overrides.append(tbl.TblOverride(name, off, row.source, row.translation))
+        overrides = [_tbl_override(row, name) for row in rows]
         patched, stats = tbl.patch_tbl_bytes(original, overrides)
         changed = stats["changed"]
         if stats["missing"]:
