@@ -247,6 +247,9 @@ def build_parser() -> argparse.ArgumentParser:
         p.set_defaults(func=func)
         if command == "build":
             p.add_argument("--source-dir", type=Path, default=ROOT / "src_file" / "DBOZero")
+        elif command == "config":
+            p.add_argument("--game-dir", type=Path)
+            p.add_argument("--show", action="store_true")
         else:
             add_source_args(p)
         if command in {"scan", "translate", "write", "build", "update", "recover", "status"}:
@@ -266,9 +269,6 @@ def build_parser() -> argparse.ArgumentParser:
         if command == "recover":
             p.add_argument("refs", nargs="+", help="Git refs to recover from")
             p.add_argument("--dry-run", action="store_true")
-        if command == "config":
-            p.add_argument("--show", action="store_true")
-            p.add_argument("--game-dir", type=Path)
     return parser
 
 
