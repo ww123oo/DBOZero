@@ -167,7 +167,10 @@ def run_build(args: argparse.Namespace) -> int:
     the source tree is never replaced by either output directory.
     """
     import build_output
-    build_args = ["--source-dir", str(args.source_dir), "--variant", args.variant]
+    # The CLI exposes the user-facing name `simplified`, while the bundled
+    # builder historically calls the same product `mainland`.
+    builder_variant = "mainland" if args.variant == "simplified" else args.variant
+    build_args = ["--source-dir", str(args.source_dir), "--variant", builder_variant]
     if args.force:
         build_args.append("--force")
     if args.no_parallel:
