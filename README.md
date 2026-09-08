@@ -1,98 +1,126 @@
 # DBOZero — Dragon Ball Online 繁體中文漢化工具鏈
 
-> **目前專案定位：** 以實際遊戲資源為準，建立可持續更新的 DBO Zero 繁中漢化工具鏈。
+> **目前版本定位：** `v0.1.0` Release Candidate／首個公開工具鏈版本。
+>
+> 以實際 DBO Zero 遊戲資源為 source of truth，建立可持續更新、可驗證、可回溯的繁體中文漢化工具鏈。
 
-本專案是玩家自製的 Dragon Ball Online（DBO Zero）繁體中文翻譯工具，不修改遊戲程式、不寫入系統登錄檔。
+![CI](https://github.com/ww123oo/DBOZero/actions/workflows/ci.yml/badge.svg)
+
+本專案是玩家自製的 Dragon Ball Online（DBO Zero）繁體中文翻譯工具鏈，不修改遊戲程式、不寫入系統登錄檔。
 
 > **重要：** 本倉庫不提供遊戲本體或可直接散布的遊戲資源。請只使用你自己取得、並有權使用的 DBO Zero 資源進行掃描與建置。
 
----
+## 專案狀態
+
+| 項目 | 狀態 |
+|---|---|
+| 完整文字掃描框架 | ✅ |
+| `lang0.pak` / `tbl0.pak` / `tbl1.pak` 掃描 | ✅ |
+| `tbl2.pak` 掃描與結構化定位 | ✅ |
+| `*.rdf` / `*.xml` / `*.dat` 掃描 | ✅ |
+| 舊翻譯繼承與新翻譯佇列 | ✅ |
+| 簡中獨立建置 | ✅ |
+| 台灣繁中獨立建置 | ✅ |
+| 雙語 Release Gate | ✅ |
+| CI：Windows/Linux × Python 3.9/3.12 | ✅ 4/4 PASS |
+| 最新遊戲資源完整實機測試 | ⏳ |
+
+**CI 全綠代表程式碼、單元測試與 CLI smoke test 通過；不代表 GitHub CI 已經持有你的完整 DBO 遊戲資源。** 正式交付前仍須在有實際遊戲資源的環境執行雙語 Release Gate 並進行遊戲內測試。
 
 ## 目錄
 
-- [專案現在在做什麼](#專案現在在做什麼)
+- [專案狀態](#專案狀態)
+- [Release](#release)
+- [核心設計](#核心設計)
 - [翻譯資料的正確觀念](#翻譯資料的正確觀念)
 - [目前掃描範圍](#目前掃描範圍)
 - [資源檔案與 Git 分支規則](#資源檔案與-git-分支規則)
 - [第一次使用](#第一次使用)
+- [完整掃描](#完整掃描)
 - [遊戲更新後](#遊戲更新後)
 - [日常翻譯流程](#日常翻譯流程)
-- [翻譯與建置資料夾](#翻譯與建置資料夾)
+- [雙語建置與發布](#雙語建置與發布)
 - [台灣繁中用字](#台灣繁中用字)
 - [開發與測試](#開發與測試)
 - [專案結構](#專案結構)
 - [注意事項](#注意事項)
 
----
+## Release
 
-## 專案現在在做什麼
+目前 Release 系列以 **`v0.1.x`** 為第一階段公開版本。
 
-DBOZero 早期的翻譯資料主要沿用原作者整理的 `translations.tsv`，當時的資源版本較舊，因此主要處理到 `lang0.pak`、`tbl0.pak`、`tbl1.pak`。
+`v0.1.0` 的目標不是宣稱「所有遊戲文字都已完成翻譯」，而是建立第一個可持續更新的工具鏈基準：
 
-後來遊戲經過大型更新，出現新的資源與新的文字資料，例如 `tbl2.pak`。因此現在不能再把舊的 `translations.tsv` 視為「完整遊戲翻譯表」。
+- 完整掃描遊戲實際存在的文字資源
+- 使用舊翻譯作為歷史資產，而不是掃描範圍限制
+- 將新文字導入 `data/new_translations.tsv`
+- 對 `tbl2.pak` 使用結構化、穩定 ID 的安全寫入策略
+- 簡中與台灣繁中分開建置、分開驗證
+- 兩個產品都 PASS 後才允許通過 Release Gate
 
-目前專案的方向已改成：
+GitHub Releases 頁面：
+
+https://github.com/ww123oo/DBOZero/releases
+
+## 核心設計
+
+整體流程：
 
 ```text
-實際遊戲資源
-    ↓
+官方原版遊戲資源
+        ↓
 完整掃描
-    ↓
+        ↓
 建立最新文字索引
-    ↓
-與舊翻譯資料比對
-    ↓
-找出已翻譯 / 未翻譯 / 新增 / 衝突
-    ↓
-依資源格式使用專用安全寫入器
-    ↓
-產生漢化結果
+        ↓
+舊翻譯繼承 + 新文字進入佇列
+        ↓
+翻譯
+        ↓
+依資源格式安全寫入
+        ↓
+簡中 build + validation
+        ↓
+台灣繁中 build + validation
+        ↓
+RELEASE GATE PASS
+        ↓
+才可交付
 ```
 
 **遊戲目前實際存在的文字，才是完整度的依據。**
-
-`data/translations.tsv`、`data/new_translations.tsv` 以及歷史翻譯資料，都是翻譯資產與參考資料，不是遊戲資源的完整清單。
-
----
 
 ## 翻譯資料的正確觀念
 
 ### `translations.tsv` 不是最新完整表
 
-原作者停止維護後，遊戲又有新的更新，所以其中沒有 `tbl2.pak` 並不代表 `tbl2.pak` 不需要翻譯。
+原作者停止維護後，遊戲仍可能更新並出現新的文字與資源，例如 `tbl2.pak`。因此不能把舊的 `translations.tsv` 當成完整遊戲文字清單。
 
-例如掃描器發現：
+舊翻譯主要用來：
 
-```text
-source: tbl2.pak
-text:   Consent
-
-source: tbl2.pak
-text:   Negative
-
-source: tbl2.pak
-text:   Greetings
-```
-
-即使舊的 `translations.tsv` 沒有這些資料，也應該進入新的翻譯索引。
-
-### 舊翻譯的用途
-
-舊表仍然非常重要，主要用來：
-
-- 繼承已經確認的翻譯
+- 繼承已確認翻譯
 - 查找歷史譯名
 - 避免重複翻譯
-- 比對不同版本的遊戲資源
-- 作為新的翻譯詞彙參考
+- 比對不同版本資源
+- 作為新翻譯的詞彙參考
 
-但**不能用來限制掃描範圍**。
+### `new_translations.tsv` 是日常新翻譯佇列
 
----
+新的遊戲文字經完整掃描後，應進入：
+
+```text
+data/new_translations.tsv
+```
+
+完成確認的歷史／既有翻譯則保留於：
+
+```text
+data/translations.tsv
+```
+
+兩者都不是遊戲資源本身的完整清單。
 
 ## 目前掃描範圍
-
-完整文字掃描器目前以以下資源為目標：
 
 ### PAK
 
@@ -111,71 +139,56 @@ tbl2.pak
 *.dat
 ```
 
-### 明確不掃描
+專案不把其他非翻譯資源自動加入掃描範圍。
 
-```text
-*.bin
-```
+### `tbl2.pak` 為什麼要特別處理？
 
-目前專案的掃描器**不把 `.bin` 當成翻譯資源**。
+`tbl2.pak` 包含結構化記錄，例如 ID、旗標、長度與 UTF-16LE 文字。不能用全檔盲目字串取代。
 
-### 為什麼 `tbl2.pak` 要特別處理？
+寫入時應：
 
-`tbl2.pak` 不是單純把所有 UTF-16 字串直接替換即可。它包含結構化資料，例如 ID、旗標、長度與 UTF-16LE 文字等欄位。
-
-因此 `tbl2.pak` 必須使用能理解其記錄邊界與長度欄位的方式處理，不能做全檔盲目字串替換。
-
----
+1. 優先使用穩定 ID 定位。
+2. 驗證記錄邊界與原始文字。
+3. 驗證固定長度與 UTF-16LE 資料。
+4. 定位失敗時 fail-closed，不猜 offset。
+5. 寫入後再做格式驗證。
 
 ## 資源檔案與 Git 分支規則
 
-### `main` 的原則
+### `main`
 
-`main` 是**程式碼、翻譯資料與文件的主要分支**。
+`main` 是程式碼、翻譯資料、測試與文件的主要分支。
 
-大型遊戲原始資源、台服原版參考檔以及容易造成 Git repository 膨脹的資源，不放進 `main`。
+大型遊戲原始資源、台服原版參考檔與研究用資源不應放進 `main`。
 
-目前以下大型參考檔已移到專用分支：
+### `reference-resources`
+
+大型參考資料放在：
 
 ```text
 reference-resources
 ```
 
-該分支用來保存開發、比對、研究時需要的參考資源。
-
-### 目前列入資源分支的檔案
+目前規劃的參考檔包括：
 
 ```text
 table_quest_text_data.xml
 table_quest_text_data(台服原版).xml
 table_text_all_data.xml
 table_text_all_data(台服原版).xml
-```
-
-另外，下列資源若需要進行版本比對，也應放在 `reference-resources`，**不要加入 `main`**：
-
-```text
 table_quest_text_data.rdf
 table_text_all_data.rdf
 local_data.dat
 local_sync_data.dat
 ```
 
-如果日後還有其他大型遊戲資源，也採用同一原則：
+本機遊戲來源快照：
 
 ```text
-main
-└── 程式碼 / 翻譯表 / 測試 / 文件
-
-reference-resources
-└── 大型原始資源 / 台服原版 / 比對用資料
+src_file/DBOZero/
 ```
 
-這樣每次修改程式或翻譯表時，Git repository 不會被大量遊戲資源拖慢，也能避免把不必要的遊戲資源一起送進日常 AI 檢查流程。
-
-> **注意：** `src_file/DBOZero/` 本身仍然是本機遊戲來源快照，不應直接提交到 `main`。
-
----
+不應直接提交到 `main`。
 
 ## 第一次使用
 
@@ -184,7 +197,7 @@ reference-resources
 - Windows
 - Python 3.9+
 - Git
-- 一份你自己取得的 DBO Zero 官方原版遊戲資源
+- 一份你自己取得並有權使用的 DBO Zero 原版遊戲資源
 
 安裝：
 
@@ -198,41 +211,27 @@ pip install -e .
 dboc config --game-dir "E:\DBO Zero 2.0"
 ```
 
-確認設定：
+確認：
 
 ```powershell
 dboc config --show
 ```
 
----
+## 完整掃描
 
-## 掃描遊戲資源
-
-目前可以直接使用完整文字掃描器：
+新版完整掃描入口：
 
 ```powershell
 python scan_all_text.py "src_file\DBOZero" -o translation_scan.tsv
 ```
 
-不指定參數時：
-
-```powershell
-python scan_all_text.py
-```
-
-預設會掃描：
+不指定參數時預設掃描：
 
 ```text
 src_file/DBOZero
 ```
 
-並產生：
-
-```text
-translation_scan.tsv
-```
-
-掃描結果主要包含：
+主要輸出欄位：
 
 ```text
 file
@@ -241,32 +240,30 @@ encoding
 byte_length
 confidence
 kind
+id
 source_text
 translation
 ```
 
-其中 `translation` 初始可以保持空白，再與現有翻譯資料合併。
-
----
+`kind` 會保留資源格式資訊，供後續翻譯佇列與寫入器使用。
 
 ## 遊戲更新後
 
-推薦流程：
+每次遊戲更新都建議重新掃描，而不是只依賴舊翻譯表：
 
-```powershell
-1. 將遊戲更新／修復成官方原版
+```text
+1. 更新／修復成官方原版
 2. 更新本機 src_file/DBOZero
 3. 執行完整掃描
-4. 比對舊翻譯資料
-5. 翻譯新增文字
-6. 執行格式驗證
-7. 建置漢化補丁
-8. 實際進遊戲測試
+4. 與舊翻譯資料比對
+5. 新文字進入 new_translations.tsv
+6. 翻譯與術語確認
+7. 格式驗證
+8. 雙語建置
+9. 實際進遊戲測試
 ```
 
-不要因為舊的 `translations.tsv` 沒有某個新檔案，就直接判定該檔案不需要翻譯。
-
-尤其是大型更新後，要特別檢查：
+特別確認：
 
 ```text
 lang0.pak
@@ -278,50 +275,72 @@ tbl2.pak
 *.dat
 ```
 
----
-
 ## 日常翻譯流程
 
-### 翻譯主表
-
-主要翻譯資料位於：
+主要翻譯資料：
 
 ```text
 data/new_translations.tsv
 data/translations.tsv
+data/舊譯表/
 ```
 
-其中：
+推薦順序：
 
-- `new_translations.tsv`：新的翻譯佇列／新增翻譯
-- `translations.tsv`：舊譯與已確認翻譯資料
-- `data/舊譯表/`：歷史翻譯與參考資料
+```text
+掃描 → 建立 inventory → 繼承舊譯 → 新增翻譯 → 寫入 → 驗證
+```
 
-### 建置繁中
+未知文字不要為了填滿表格而猜測翻譯；應保留待人工確認。
+
+## 雙語建置與發布
+
+### 單獨建置台灣繁中
 
 ```powershell
 dboc build --variant taiwan
 ```
 
-### 建置兩套
-
-```powershell
-dboc build
-```
-
-輸出位置：
+輸出：
 
 ```text
-output/DBOZero
-    → 簡中版本
-
-output_taiwan/DBOZero
-    → 台灣繁中版本
+output_taiwan/
 ```
 
-覆蓋遊戲前請先備份。
+### 單獨建置簡中
 
----
+```powershell
+dboc build --variant simplified
+```
+
+輸出：
+
+```text
+output/
+```
+
+### 正式 Release Gate
+
+```powershell
+dboc release
+```
+
+Release Gate 會依序：
+
+1. 建置簡體中文。
+2. 驗證簡體中文。
+3. PASS 後才建置台灣繁體中文。
+4. 驗證台灣繁體中文。
+5. 兩者都 PASS 才回報 `RELEASE GATE PASS`。
+
+任何一個版本失敗都停止，不會因另一個版本成功而宣稱 Release 完成。
+
+詳細規則：
+
+```text
+docs/BUILD_PIPELINE.md
+docs/REALTIME_UPDATE_FLOW.md
+```
 
 ## 命令快速對照
 
@@ -330,20 +349,18 @@ output_taiwan/DBOZero
 | `dboc config` | 設定遊戲目錄 |
 | `dboc config --show` | 查看遊戲目錄設定 |
 | `dboc status` | 檢查來源狀態 |
-| `dboc scan` | 使用既有 DBOZero 掃描流程 |
+| `dboc scan` | 舊流程掃描入口 |
 | `dboc translate` | 處理可自動確定的翻譯 |
-| `dboc build --variant taiwan` | 建置台灣繁中 |
-| `dboc build` | 建置簡中 + 繁中 |
-| `dboc update` | 更新來源、掃描、翻譯與建置的整體流程 |
-| `python scan_all_text.py` | 新版完整文字掃描器 |
-
-> `dboc scan` 與新的 `scan_all_text.py` 是不同層級的工具。新的完整掃描器是為了補足舊流程對新資源與 `tbl2.pak` 的覆蓋不足。
-
----
+| `dboc build --variant simplified` | 單獨建置簡中 |
+| `dboc build --variant taiwan` | 單獨建置台灣繁中 |
+| `dboc build` | 建置兩個語言產品 |
+| `dboc release` | 雙語獨立建置 + Release Gate |
+| `dboc update` | 更新來源、掃描、翻譯與建置流程 |
+| `python scan_all_text.py` | 完整文字掃描 |
 
 ## 台灣繁中用字
 
-本專案以台灣玩家習慣與台灣官方遊戲用語為優先。
+本專案以台灣玩家習慣與台灣遊戲用語為優先。
 
 | 原文／簡中 | 台灣繁中 |
 |---|---|
@@ -357,178 +374,106 @@ output_taiwan/DBOZero
 | 稀有度 | **稀少度** |
 | 连接（伺服器） | **連線** |
 
-固定譯名與詳細規則請參考：
+固定譯名與詳細規則：
 
 ```text
 docs/translation-rules.md
 ```
 
----
-
-## 專案結構
-
-```text
-DBOZero/
-│
-├── README.md                    ← 專案總說明
-├── AGENTS.md                    ← AI / 維護工作規則
-├── CONTRIBUTING.md              ← 貢獻規則
-├── LICENSE
-├── pyproject.toml
-├── build_output.py              ← 建置入口
-├── scan_all_text.py             ← 完整文字掃描入口
-│
-├── data/
-│   ├── new_translations.tsv     ← 新翻譯資料
-│   ├── translations.tsv         ← 舊譯／已確認翻譯
-│   ├── gui_font.ini
-│   ├── deltas/
-│   ├── 舊譯表/
-│   └── archive/
-│
-├── hanhua_v3/                   ← 主要工具程式
-│   └── runtime/
-│       ├── full_text_scanner.py
-│       ├── tbl_utf16_patch.py
-│       ├── lang0_gbk_patch.py
-│       ├── taiwan_fixups.py
-│       └── build_progress.py
-│
-├── scripts/                     ← 維護與一次性腳本
-├── tests/                       ← 自動化測試
-├── docs/                        ← 詳細文件
-├── legacy/                      ← 歷史程式與資料
-├── reports/                     ← 掃描／對帳報告
-│
-└── src_file/DBOZero/            ← 本機遊戲來源，不提交 Git
-```
-
-### 大型參考資源
-
-位於：
-
-```text
-reference-resources
-```
-
-而不是 `main`。
-
----
-
 ## 開發與測試
 
-修改程式後至少執行：
+本地至少執行：
 
 ```powershell
 python -m compileall -q build_output.py hanhua_v3
 pytest
 ```
 
-如果修改的是翻譯或資源處理流程，另外執行：
+CLI smoke test：
 
 ```powershell
-dboc status
-dboc build --variant taiwan
+dboc --help
+dboc build --help
+dboc release --help
 ```
 
-### 特別注意
+CI 目前驗證：
 
-涉及 PAK、DAT、RDF、XML 等資源格式時，不要只確認「程式沒有報錯」。
+- Windows / Python 3.9
+- Windows / Python 3.12
+- Ubuntu / Python 3.9
+- Ubuntu / Python 3.12
+- compile check
+- unit tests
+- CLI smoke test
 
-應該同時確認：
+目前最新一輪 CI：**4/4 PASS**。
 
-- 原始檔案沒有被破壞
-- 記錄數量沒有異常改變
-- 長度欄位正確
-- 編碼正確
-- 輸出檔案可以被遊戲讀取
-- 遊戲啟動與進入相關介面正常
+## 專案結構
 
-尤其是 `tbl2.pak`，必須進行結構與長度驗證後才能正式寫入。
-
----
+```text
+DBOZero/
+├── README.md
+├── AGENTS.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── pyproject.toml
+├── build_output.py
+├── scan_all_text.py
+│
+├── data/
+│   ├── new_translations.tsv
+│   ├── translations.tsv
+│   ├── gui_font.ini
+│   ├── deltas/
+│   ├── 舊譯表/
+│   └── archive/
+│
+├── hanhua_v3/
+│   └── runtime/
+│       ├── full_text_scanner.py
+│       ├── translation_inventory.py
+│       ├── translation_queue.py
+│       ├── auto_translate_v2.py
+│       ├── tbl_utf16_patch.py
+│       ├── lang0_gbk_patch.py
+│       ├── resource_writer.py
+│       └── build_progress.py
+│
+├── docs/
+│   ├── BUILD_PIPELINE.md
+│   ├── REALTIME_UPDATE_FLOW.md
+│   ├── FULL_TEXT_SCAN.md
+│   └── translation-rules.md
+│
+├── tests/
+└── reference-resources/        ← 獨立 Git 分支，不放 main
+```
 
 ## 注意事項
 
-### 1. 不要直接修改遊戲目錄
+### 不要直接修改遊戲目錄
 
-工具應該在工作區產生輸出：
+工具應在工作區產生：
 
 ```text
 output/
 output_taiwan/
 ```
 
-測試完成後，再由使用者自行備份並覆蓋到遊戲目錄。
+測試完成後再由使用者自行備份並覆蓋到遊戲目錄。
 
-### 2. 不要把遊戲原始資源提交到 main
+### 不要提交大型遊戲原始資源
 
-包括大型 XML、RDF、DAT、PAK 等參考檔。
+大型 PAK、XML、RDF、DAT 等參考檔請放在 `reference-resources`，不要塞進 `main`。
 
-請使用：
+### 不要猜測未知翻譯
 
-```text
-reference-resources
-```
+無法可靠判斷的文字應保留待確認，而不是為了提高完成率亂填。
 
-作為開發與版本比對用途。
+### `tbl2.pak` 必須 fail-closed
 
-### 3. 不要把 `.bin` 加回掃描器
-
-目前完整掃描範圍是：
-
-```text
-lang0.pak
-tbl0.pak
-tbl1.pak
-tbl2.pak
-*.rdf
-*.xml
-*.dat
-```
-
-`.bin` 不在範圍內。
-
-### 4. 每次遊戲更新都重新掃描
-
-不要只依賴舊翻譯表。
-
-新版本可能新增：
-
-```text
-新的文字
-新的 ID
-新的 tbl 資料
-新的 XML / RDF / DAT
-```
-
-掃描器應該以遊戲實際檔案為準，舊翻譯只負責提供翻譯與歷史參考。
-
----
-
-## 專案狀態
-
-目前重點工作：
-
-- [x] 建立完整文字掃描器
-- [x] 掃描 `lang0.pak`
-- [x] 掃描 `tbl0.pak`
-- [x] 掃描 `tbl1.pak`
-- [x] 納入 `tbl2.pak`
-- [x] 掃描 `*.rdf`
-- [x] 掃描 `*.xml`
-- [x] 掃描 `*.dat`
-- [x] 明確排除 `.bin`
-- [x] 建立 DAT 結構化文字掃描
-- [ ] 完整翻譯索引與舊表合併
-- [ ] `tbl2.pak` 完整格式驗證與安全寫入
-- [ ] RDF / XML / DAT 格式專用安全寫入
-- [ ] lang0.pak 完整版本驗證
-- [ ] 全流程遊戲實機測試
-
-專案會以「**先掃描、再比對、再翻譯、最後安全寫入**」為原則逐步完成。
-
----
+定位、來源文字、長度或結構驗證任何一項失敗，都應停止寫入，不猜 offset、不做全檔替換。
 
 ## License
 
