@@ -1,4 +1,4 @@
-"""Parser-level tests for the dboc CLI."""
+"""Parser and release-gate tests for the dboc CLI."""
 
 from __future__ import annotations
 
@@ -27,6 +27,45 @@ def test_build_variant_and_flags() -> None:
     assert args.variant == "taiwan"
     assert args.force is True
     assert args.no_parallel is True
+
+
+def test_release_defaults() -> None:
+    args = cli.build_parser().parse_args(["release"])
+    assert args.command == "release"
+    assert args.force is False
+    assert args.no_parallel is False
+    assert not hasattr(args, "variant")
+    assert args.source_dir == cli.ROOT / "src_file" / "DBOZero"
+
+
+def test_run_release_builds_both_separately(monkeypatch: pytest.MonkeyPatch) -> None:
+    calls: list[tuple[str, Path, bool, bool]] = []
+
+    def fake_run_build(args: object) -> int:
+        calls.append((args.variant, args.source_dir, args.force, args.no_parallel))
+        return 0
+
+    monkeypatch.setattr(cli, "run_build", fake_run_build)
+    args = cli.build_parser().parse_args(["release", "--force", "--no-parallel"])
+    assert cli.run_release(args) == 0
+    assert calls == [
+        ("simplified", cli.ROOT / "src_file" / "DBOZero", True, True),
+        ("taiwan", cli.ROOT / "src_file" / "DBOZero", True, True),
+    ]
+
+
+def test_run_release_stops_after_first_failure(monkeypatch: pytest.MonkeyPatch) -> None:
+    calls: list[str] = []
+
+    def fake_run_build(args: object) -> int:
+        calls.append(args.variant)
+        return 1
+
+    monkeypatch.setattr(cli, "run_build", fake_run_build)
+    args = cli.build_parser().parse_args(["release"])
+    with pytest.raises(cli.CliError, match="簡體中文.*停止發布閘門"):
+        cli.run_release(args)
+    assert calls == ["simplified"]
 
 
 def test_game_dir_optional_on_refresh() -> None:
