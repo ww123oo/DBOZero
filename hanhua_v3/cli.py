@@ -78,7 +78,7 @@ def run_build(args):
     return build_output.main(build_args)
 
 def run_release(args):
-    """Build and validate Simplified and Taiwan products independently; release only if both pass."""
+    """Build and validate both products independently; release only after both pass."""
     for variant, label in (("simplified", "簡體中文"), ("taiwan", "台灣繁體中文")):
         print(f"\n[Release Gate] 開始獨立構建：{label} ({variant})")
         build_args = argparse.Namespace(source_dir=Path(args.source_dir), variant=variant, force=args.force, no_parallel=args.no_parallel)
@@ -113,7 +113,10 @@ def build_parser():
         else: add_source_args(p)
         if command in {"scan","translate","write","build","update","recover","status"}: add_queue_args(p)
         if command in {"write","update"}: p.add_argument("--output-dir",type=Path,default=ROOT/"output_taiwan")
-        if command in {"build","release","update"}: add_build_args(p)
+        if command in {"build","update"}: add_build_args(p)
+        if command=="release":
+            p.add_argument("--force",action="store_true")
+            p.add_argument("--no-parallel",action="store_true")
         if command=="scan": p.add_argument("--min-confidence",choices=("low","medium","high"),default="medium")
         if command=="translate": add_translate_args(p)
         if command=="update": add_translate_args(p); p.add_argument("--translate-all",action="store_true"); p.add_argument("--recover-refs",nargs="*",default=[])
