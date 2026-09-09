@@ -10,8 +10,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCE_DIR = ROOT / "src_file" / "DBOZero"
 
-# Only copy original assets consumed by scan.py and build_output.py. Runtime
-# logs, account data, executables, caches, and updater files never belong here.
 SOURCE_FILES = (
     Path("localize/Taiwan/language/local_data.dat"),
     Path("localize/Taiwan/language/local_sync_data.dat"),
@@ -37,7 +35,17 @@ class SourceFileResult:
     sha256: str
 
 
-def resolve_game_dir(path: Path) -> Path:
+def resolve_game_dir(path: Path | None) -> Path:
+    """Resolve game root; if path is None, use dboc config / env / autodetect."""
+    if path is None:
+        try:
+            from . import config as _cfg
+
+            path = _cfg.resolve_game_dir(None)
+        except Exception as exc:
+            raise SourceRefreshError(
+                '未設定遊戲目錄。請先執行： dboc config --game-dir "<遊戲目錄>"'
+            ) from exc
     path = path.expanduser().resolve()
     if (path / "pack" / "lang0.pak").is_file():
         return path
@@ -73,14 +81,8 @@ OUTPUT_VARIANT_DIRS = (
     ROOT / "output_taiwan" / "DBOZero",
 )
 
-# gui0.pak is copied verbatim into outputs when no font alias changes, so an
-# original gui0 always matches the build output and must be excluded from
-# patched-content detection.
 PASSTHROUGH_FILES = frozenset({Path("pack/gui0.pak")})
 
-# Originals of these files are always valid UTF-8 (English/UTF-8 text), while
-# the built patch rewrites them as GBK/CP950. A decode failure flags a patched
-# file even when no build outputs are available to compare against.
 UTF8_ORIGINAL_FILES = frozenset(
     {
         Path("pack/lang0.pak"),
@@ -92,13 +94,6 @@ UTF8_ORIGINAL_FILES = frozenset(
 def detect_patched_source(
     game_root: Path, *, variant_dirs: tuple[Path, ...] = OUTPUT_VARIANT_DIRS
 ) -> list[str]:
-    """Return warning lines for live files that look like built patch output.
-
-    The snapshot must always hold original game files. Pulling an already
-    patched file would overwrite the clean snapshot and corrupt every
-    downstream scan/translation, so refresh refuses to proceed when any file
-    is byte-identical to a build output or fails the UTF-8 originality check.
-    """
     warnings: list[str] = []
     for relative in SOURCE_FILES:
         live_file = game_root / relative
@@ -135,7 +130,7 @@ def assert_source_not_patched(game_root: Path, *, variant_dirs: tuple[Path, ...]
 
 
 def refresh_source(
-    game_dir: Path,
+    game_dir: Path | None,
     source_dir: Path = DEFAULT_SOURCE_DIR,
     *,
     variant_dirs: tuple[Path, ...] = OUTPUT_VARIANT_DIRS,
@@ -167,7 +162,7 @@ def refresh_source(
     return results
 
 
-def compare_source(game_dir: Path, source_dir: Path = DEFAULT_SOURCE_DIR) -> list[SourceFileResult]:
+def compare_source(game_dir: Path | None, source_dir: Path = DEFAULT_SOURCE_DIR) -> list[SourceFileResult]:
     game_root = resolve_game_dir(game_dir)
     source_root = resolve_source_dir(source_dir)
     validate_layout(game_root)
