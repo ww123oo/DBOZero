@@ -26,6 +26,7 @@ __all__ = [
     "ENV_GAME_DIR",
     "ROOT",
     "autodetect_game_dir",
+    "load",
     "load_config",
     "resolve_game_dir",
     "save_game_dir",
@@ -37,9 +38,6 @@ ENV_GAME_DIR = "DBOC_GAME_DIR"
 
 _KEY_VALUE_RE = re.compile(r'^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=\s*("(?:[^"\\]|\\.)*")\s*(?:#.*)?$')
 
-# Common install locations probed in order. The check is existence of
-# pack/lang0.pak, so entries may point either at the game root or at the
-# inner DBOZero directory.
 _AUTODETECT_ROOTS = (
     "DBO Zero 2.0",
     "Games/DBO Zero 2.0",
@@ -50,6 +48,11 @@ _AUTODETECT_ROOTS = (
 
 class ConfigError(RuntimeError):
     pass
+
+
+def load(path: Path = CONFIG_PATH) -> dict[str, str]:
+    """Alias for load_config (CLI compatibility)."""
+    return load_config(path)
 
 
 def load_config(path: Path = CONFIG_PATH) -> dict[str, str]:
