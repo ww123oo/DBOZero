@@ -40,7 +40,6 @@ class Progress:
 
     @staticmethod
     def _fmt_sec(seconds: float) -> str:
-        """Human time: <10s one decimal; <60s seconds; else 分/秒 (and 時 if needed)."""
         if seconds < 0:
             seconds = 0.0
         if seconds < 10:
@@ -109,15 +108,15 @@ class Progress:
         print(f"  · {message}", flush=True)
 
     def busy_line(self, message: str) -> None:
-        """Single \\r status line (cleared by clear_busy or next permanent line)."""
+        """Single CR status line (cleared by clear_busy or next permanent line)."""
         line = message.ljust(100)
-        sys.stdout.write("\\r" + line)
+        sys.stdout.write("\r" + line)
         sys.stdout.flush()
         self._live = True
 
     def clear_busy(self) -> None:
         if self._live:
-            sys.stdout.write("\\r" + " " * 100 + "\\r")
+            sys.stdout.write("\r" + " " * 100 + "\r")
             sys.stdout.flush()
             self._live = False
 
@@ -126,7 +125,6 @@ class Progress:
         return [(fut, futs_map[fut]) for fut in as_completed(futs_map)]
 
     def finish_stage_timed(self, name: str, total: int, elapsed: float) -> None:
-        """Print a completed stage line using a pre-measured elapsed time (e.g. parallel tbl)."""
         if self._stage_open:
             self.end_stage()
         self.stage_name = name
@@ -178,7 +176,7 @@ class Progress:
         sc = min(self.stage_current, st)
         bar, pct = self._bar(sc, st)
         name = label or self.stage_name or ""
-        sys.stdout.write("\\r" + f"[{bar}] {pct:3d}% ({sc}/{st}) {name}".ljust(96))
+        sys.stdout.write("\r" + f"[{bar}] {pct:3d}% ({sc}/{st}) {name}".ljust(96))
         sys.stdout.flush()
         self._live = True
 
@@ -190,7 +188,7 @@ class Progress:
             text = f"{text} 完成".strip()
         line = f"[{bar}] {pct:3d}% ({st}/{st}) {text} ({self._fmt_sec(elapsed)})"
         if self._live:
-            sys.stdout.write("\\r" + line + "\n")
+            sys.stdout.write("\r" + line + "\n")
         else:
             sys.stdout.write(line + "\n")
         sys.stdout.flush()
