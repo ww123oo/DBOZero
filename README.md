@@ -23,9 +23,8 @@
 | 台灣繁中獨立建置 | ✅ |
 | 雙語 Release Gate | ✅ |
 | CI：Windows/Linux × Python 3.9/3.12 | ✅ 4/4 PASS |
-| 最新遊戲資源完整實機測試 | ⏳ |
 
-**CI 全綠代表程式碼、單元測試與 CLI smoke test 通過；不代表 GitHub CI 已經持有你的完整 DBO 遊戲資源。** 正式交付前仍須在有實際遊戲資源的環境執行雙語 Release Gate 並進行遊戲內測試。
+**CI 全綠代表程式碼、單元測試與 CLI smoke test 通過；不代表 GitHub CI 已經持有你的完整 DBO 遊戲資源。** 正式交付前應在有實際遊戲資源的環境執行雙語 Release Gate，確認兩個語言產品的 build 與格式驗證都通過。
 
 ## 目錄
 
@@ -260,7 +259,6 @@ translation
 6. 翻譯與術語確認
 7. 格式驗證
 8. 雙語建置
-9. 實際進遊戲測試
 ```
 
 特別確認：
@@ -466,17 +464,3 @@ output_taiwan/
 ### 不要提交大型遊戲原始資源
 
 大型 PAK、XML、RDF、DAT 等參考檔請放在 `reference-resources`，不要塞進 `main`。
-
-### 不要猜測未知翻譯
-
-無法可靠判斷的文字應保留待確認，而不是為了提高完成率亂填。
-
-### `tbl2.pak` 必須 fail-closed
-
-定位、來源文字、長度或結構驗證任何一項失敗，都應停止寫入，不猜 offset、不做全檔替換。
-
-## License
-
-程式碼採用 [MIT License](LICENSE)。
-
-遊戲本體、遊戲資源、圖片、文字、商標與其他相關內容，其權利歸原權利人所有。
