@@ -124,7 +124,6 @@ def tbl2_record_at(data: bytes, text_offset: int, source_text: str) -> bool:
 
 def find_tbl2_id_text(data: bytes, item_id: int, source_text: str) -> list[int]:
     """Find text offsets for a stable tbl2 ID in the observed record form."""
-    raw = utf16le(source_text)
     hits: list[int] = []
     start = 0
     id_bytes = item_id.to_bytes(4, "little", signed=False)
@@ -171,8 +170,7 @@ def patch_tbl_bytes(
     single_byte_encoding: str = "gbk",
     missing_rows: list[tuple[TblOverride, str]] | None = None,
 ) -> tuple[bytes, dict[str, int]]:
-    original = bytes(data)
-    patched = original
+    patched = bytes(data)
     stats = {
         "rows": len(rows),
         "changed": 0,
@@ -183,7 +181,6 @@ def patch_tbl_bytes(
         "space_padded": 0,
     }
     for row in rows:
-        before = patched
         patched, ok, reason = patch_one(patched, row, row.file_name)
         if ok:
             stats["changed"] += 1
@@ -197,7 +194,17 @@ def patch_tbl_bytes(
 
 
 def tbl_path(source_dir: Path, file_name: str) -> Path:
-    return source_dir / "pack" / file_name
+    """Resolve tbl under src_file/DBOZero/pack or a bare DBOZero/pack."""
+    candidates = [
+        source_dir / "pack" / file_name,
+        source_dir / "DBOZero" / "pack" / file_name,
+    ]
+    if source_dir.name.lower() != "dbozero":
+        candidates.append(source_dir / "DBOZero" / "pack" / file_name)
+    for path in candidates:
+        if path.is_file():
+            return path
+    return candidates[1] if (source_dir / "DBOZero").is_dir() else candidates[0]
 
 
 def patch_tbl_file(
