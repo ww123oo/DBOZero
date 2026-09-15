@@ -4,12 +4,16 @@
     [████████████████████████████] 100% (1/1) 讀取翻譯表 完成 (0.1s)
     [████████████████████████████] 100% (5368/5368) pack/lang0.pak 完成 (2.3s)
     [████████████████████████████] 100% 總進度 (53773/53773) 完成 (45.2s)
+
+Uses chr(13) for carriage return so source cannot be double-escaped.
 """
 
 from __future__ import annotations
 
 import sys
 import time
+
+_CR = chr(13)
 
 
 class Progress:
@@ -108,15 +112,14 @@ class Progress:
         print(f"  · {message}", flush=True)
 
     def busy_line(self, message: str) -> None:
-        """Single CR status line (cleared by clear_busy or next permanent line)."""
         line = message.ljust(100)
-        sys.stdout.write("\r" + line)
+        sys.stdout.write(_CR + line)
         sys.stdout.flush()
         self._live = True
 
     def clear_busy(self) -> None:
         if self._live:
-            sys.stdout.write("\r" + " " * 100 + "\r")
+            sys.stdout.write(_CR + " " * 100 + _CR)
             sys.stdout.flush()
             self._live = False
 
@@ -176,7 +179,7 @@ class Progress:
         sc = min(self.stage_current, st)
         bar, pct = self._bar(sc, st)
         name = label or self.stage_name or ""
-        sys.stdout.write("\r" + f"[{bar}] {pct:3d}% ({sc}/{st}) {name}".ljust(96))
+        sys.stdout.write(_CR + f"[{bar}] {pct:3d}% ({sc}/{st}) {name}".ljust(96))
         sys.stdout.flush()
         self._live = True
 
@@ -188,7 +191,7 @@ class Progress:
             text = f"{text} 完成".strip()
         line = f"[{bar}] {pct:3d}% ({st}/{st}) {text} ({self._fmt_sec(elapsed)})"
         if self._live:
-            sys.stdout.write("\r" + line + "\n")
+            sys.stdout.write(_CR + line + "\n")
         else:
             sys.stdout.write(line + "\n")
         sys.stdout.flush()
