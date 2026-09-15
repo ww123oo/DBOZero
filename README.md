@@ -25,17 +25,13 @@ pip install -e .
 dboc config --game-dir "G:\DBO Zero 2.0\DBOZero"
 dboc config --show
 
-# 同步原版資源到本機快照（勿提交 src_file）
 dboc refresh
-
-# 強制建置台灣繁中
 dboc build --variant taiwan --force
 ```
 
 產物目錄：`output_taiwan/DBOZero/`。覆蓋遊戲前請自行備份原版 `pack` 與 `localize/Taiwan`。
 
 ```powershell
-# 可選：雙語發布閘門（兩者皆 PASS 才算通過）
 dboc release --force
 ```
 
@@ -58,7 +54,7 @@ dboc release --force
 | `src_file/DBOZero/` | 本機遊戲快照（`.gitignore`，勿進 main） |
 | `output*` / `release/` | 建置產物（勿提交） |
 
-詳見 [data/README.md](data/README.md)。
+詳見 [data/README.md](data/README.md) 與 [docs/PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md)。
 
 ---
 
@@ -81,13 +77,11 @@ dboc release --force
 |------|------|
 | `dboc config --game-dir …` | 儲存遊戲目錄（寫入本機 `dboc.toml`） |
 | `dboc refresh` | 從遊戲同步原版資源到 `src_file` |
-| `dboc scan` | 掃描並更新翻譯佇列（可能改動 TSV，請先備份） |
+| `dboc scan` | 掃描並更新翻譯佇列 |
 | `dboc build --variant taiwan --force` | 強制建置繁中 |
 | `dboc build --variant simplified --force` | 強制建置簡中 |
-| `dboc release --force` | 雙語閘門 |
+| `dboc release --force` | 雙語建置與格式驗證閘門 |
 | `dboc status` | 佇列與源檔差異概況 |
-
-**建議：** 主表穩定前避免頻繁 `dboc update`／`scan`（會改 `new_translations.tsv`）。日常以備份主表 + `build --force` 為主。
 
 ---
 
@@ -95,16 +89,24 @@ dboc release --force
 
 ```text
 DBOZero/
-├── hanhua_v3/          # CLI、掃描、寫入、執行期
-├── data/               # 翻譯表與設定（見 data/README.md）
-├── docs/               # 設計與流程文件
-├── scripts/            # 維護腳本（見 scripts/README.md）
-├── tests/              # 單元測試
-├── build_output.py     # 建置入口（亦可 dboc build）
-├── scan_all_text.py    # 完整文字掃描入口
-├── src_file/           # 本機資源快照（不提交）
-└── output*/            # 建置輸出（不提交）
+├── .github/          # GitHub Actions / CI
+├── data/              # 翻譯資料、delta 與歷史參考
+├── docs/              # 設計、流程、格式與專案結構文件
+├── hanhua_v3/         # 核心 Python 套件與 runtime
+├── legacy/            # 舊版實作與相容資料
+├── reports/           # 掃描、翻譯與格式驗證報告
+├── scripts/           # 維護、合併與一次性工具
+├── tests/             # 自動化測試與測試資料
+├── build_output.py    # 建置入口／相容入口
+├── scan_all_text.py   # 完整文字掃描入口
+├── pyproject.toml     # Python 專案與 CLI 設定
+├── README.md          # 專案首頁
+├── CONTRIBUTING.md    # 貢獻指南
+├── CHANGELOG.md       # 變更紀錄
+└── LICENSE            # 授權
 ```
+
+完整結構與資料流請見 [docs/PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md)。
 
 分支：
 
@@ -139,6 +141,7 @@ pytest -q
 - 貢獻：[CONTRIBUTING.md](CONTRIBUTING.md)
 - 變更紀錄：[CHANGELOG.md](CHANGELOG.md)
 - 代理／維護備註：[AGENTS.md](AGENTS.md)
+- 專案結構：[docs/PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md)
 
 CI：Windows / Linux × Python 3.9 / 3.12。全綠表示程式與 smoke test 通過，**不代表** CI 持有完整遊戲資源。
 
