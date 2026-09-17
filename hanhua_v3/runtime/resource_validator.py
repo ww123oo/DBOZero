@@ -11,7 +11,7 @@ from pathlib import Path
 
 from . import lang0_gbk_patch as lang0
 from . import tbl_utf16_patch as tbl
-from .resource_writer import QueueRow
+from .resource_writer import QueueRow, _fixed_generic_pak_replacement
 
 PAK_FILES = {"lang0.pak", "tbl0.pak", "tbl1.pak", "tbl2.pak"}
 
@@ -33,6 +33,14 @@ def _resolve_resource(root: Path, name: str) -> Path:
     direct = root / normalized
     if direct.is_file():
         return direct
+    wanted_parts = Path(normalized).parts
+    casefold_matches = [
+        p
+        for p in root.rglob("*")
+        if p.is_file() and p.relative_to(root).as_posix().casefold() == "/".join(wanted_parts).casefold()
+    ]
+    if len(casefold_matches) == 1:
+        return casefold_matches[0]
     matches = [p for p in root.rglob(Path(normalized).name) if p.is_file()]
     if len(matches) == 1:
         return matches[0]
@@ -152,6 +160,26 @@ def _validate_tbl_fixed_field(data: bytes, row: QueueRow, file_name: str) -> Non
         )
 
 
+def _validate_generic_pak(data: bytes, row: QueueRow, file_name: str) -> None:
+    locator = (row.locator or "").strip()
+    if not locator or locator.lower().startswith("id:"):
+        raise ValidationError(f"{file_name} row requires an offset locator")
+    try:
+        offset = tbl.parse_offset(
+            locator[7:] if locator.lower().startswith("offset:") else locator,
+            0,
+        )
+        if offset is None:
+            raise ValidationError(f"{file_name} does not permit wildcard locators")
+        old, expected = _fixed_generic_pak_replacement(row.source, row.translation, row.encoding)
+    except (tbl.PatchError, UnicodeEncodeError, LookupError, ValueError) as exc:
+        raise ValidationError(f"Invalid {file_name} translation row at {locator!r}") from exc
+    if data[offset : offset + len(old)] != expected:
+        raise ValidationError(
+            f"{file_name} output field mismatch at 0x{offset:X}: {row.translation!r}"
+        )
+
+
 def _escaped_dat_candidates(source: str, translation: str, encoding: str) -> list[tuple[bytes, bytes]]:
     enc = "gb18030" if encoding == "gb18030" else "utf-8"
     source_escaped = source.replace("\\", "\\\\").replace('"', '\\"')
@@ -212,7 +240,7 @@ def validate_build(source_root: Path, output_root: Path, rows: list[QueueRow]) -
 
     for relative, source in source_files.items():
         output = output_files[relative]
-        if Path(relative).name.lower() in PAK_FILES and source.stat().st_size != output.stat().st_size:
+        if Path(relative).name.lower().endswith(".pak") and source.stat().st_size != output.stat().st_size:
             raise ValidationError(
                 f"Fixed-size PAK changed size: {relative} "
                 f"({source.stat().st_size} -> {output.stat().st_size})"
@@ -237,6 +265,8 @@ def validate_build(source_root: Path, output_root: Path, rows: list[QueueRow]) -
                 _validate_tbl2(output_data, row)
             elif name in {"tbl0.pak", "tbl1.pak"}:
                 _validate_tbl_fixed_field(output_data, row, name)
+            elif name.endswith(".pak"):
+                _validate_generic_pak(output_data, row, name)
             else:
                 _validate_text_resource(output_data, row)
             validated += 1
