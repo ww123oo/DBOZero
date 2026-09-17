@@ -151,12 +151,13 @@ def scan_dat_entries(path: Path) -> list[tuple[int, str, str, int, str]]:
     return hits
 
 
-def _xml_candidates(path: Path) -> list["Hit"]:
+def _xml_candidates(path: Path, display_name: str | None = None) -> list["Hit"]:
     """Discover human-readable XML/RDF attribute and element values."""
     raw = path.read_bytes()
     text, encoding = _decode_text_resource(raw)
     if text is None:
         return []
+    shown = display_name or path.name
 
     def byte_offset(char_index: int) -> int:
         return len(text[:char_index].encode(encoding)) + (
@@ -174,7 +175,7 @@ def _xml_candidates(path: Path) -> list["Hit"]:
         if key in seen:
             continue
         seen.add(key)
-        hits.append(Hit(path.name, start, encoding, value, confidence(path.name, start, value, encoding), len(value.encode(encoding)), "xml_attribute", match.group("name")))
+        hits.append(Hit(shown, start, encoding, value, confidence(shown, start, value, encoding), len(value.encode(encoding)), "xml_attribute", match.group("name")))
     for match in XML_TEXT_RE.finditer(text):
         value = match.group("value").strip()
         if not value or value.isdigit() or not any(ch.isalpha() for ch in value):
@@ -185,7 +186,7 @@ def _xml_candidates(path: Path) -> list["Hit"]:
         if key in seen:
             continue
         seen.add(key)
-        hits.append(Hit(path.name, start, encoding, value, confidence(path.name, start, value, encoding), len(value.encode(encoding)), "xml_text", ""))
+        hits.append(Hit(shown, start, encoding, value, confidence(shown, start, value, encoding), len(value.encode(encoding)), "xml_text", ""))
     return hits
 
 
@@ -275,7 +276,7 @@ def scan_file(path: Path, display_name: str | None = None) -> list[Hit]:
         for off, key, text, enc_size, enc in scan_dat_entries(path):
             hits.append(Hit(shown, off, enc, text, confidence(shown, off, text, enc), enc_size, "dat_entry", key))
     if path.suffix.lower() in {".rdf", ".xml"}:
-        hits.extend(_xml_candidates(path))
+        hits.extend(_xml_candidates(path, shown))
     if path.name.lower() == "tbl2.pak":
         hits.extend(scan_tbl2_structured(path, shown))
 
