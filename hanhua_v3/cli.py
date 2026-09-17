@@ -65,7 +65,7 @@ def git_command(*args: str, capture: bool = False) -> subprocess.CompletedProces
         "-c",
         f"safe.directory={ROOT.as_posix()}",
         "-c",
-        "user.name=dboc",
+        "user.name=dboc-local",
         "-c",
         "user.email=dboc-local@localhost",
         *args,
@@ -222,16 +222,31 @@ def run_recover(args: argparse.Namespace) -> int:
 
 
 def run_build(args: argparse.Namespace) -> int:
-    """Build one or both language products from the canonical source tree."""
+    """Build selected language products from the canonical source tree."""
     import build_output
 
-    builder_variant = "mainland" if args.variant == "simplified" else args.variant
-    build_args = ["--source-dir", str(args.source_dir), "--variant", builder_variant]
-    if args.force:
-        build_args.append("--force")
-    if args.no_parallel:
-        build_args.append("--no-parallel")
-    return build_output.main(build_args)
+    requested = getattr(args, "variant", "taiwan")
+    variants = ("simplified", "taiwan") if requested == "all" else (requested,)
+    queue = Path(getattr(args, "queue", DEFAULT_QUEUE))
+
+    for variant in variants:
+        builder_variant = "mainland" if variant == "simplified" else variant
+        build_args = [
+            "--source-dir",
+            str(args.source_dir),
+            "--variant",
+            builder_variant,
+            "--queue",
+            str(queue),
+        ]
+        if args.force:
+            build_args.append("--force")
+        if args.no_parallel:
+            build_args.append("--no-parallel")
+        result = build_output.main(build_args)
+        if result != 0:
+            return result
+    return 0
 
 
 def run_release(args: argparse.Namespace) -> int:
@@ -241,6 +256,7 @@ def run_release(args: argparse.Namespace) -> int:
         build_args = argparse.Namespace(
             source_dir=Path(args.source_dir),
             variant=variant,
+            queue=Path(args.queue),
             force=args.force,
             no_parallel=args.no_parallel,
         )
@@ -285,8 +301,8 @@ def run_update(args: argparse.Namespace) -> int:
     )
     run_translate(translate_args, only_keys=None if args.translate_all else new_keys)
 
-    print("\n[4/5] 寫入翻譯資源")
-    run_write(args)
+    print("\n[4/5] 構建所需的翻譯資源")
+    print("  寫入與格式驗證由 build pipeline 統一執行，避免重複產生未驗證輸出。")
 
     print("\n[5/5] 構建並驗證補丁")
     return run_build(args)
