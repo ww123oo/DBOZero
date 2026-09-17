@@ -58,11 +58,11 @@ def scan_single_byte(data: bytes, minimum: int = 4):
         if i - start >= minimum:
             raw = data[start:i]
             try:
-                text = raw.decode("gbk")
+                text = raw.decode("ascii")
             except UnicodeDecodeError:
                 text = raw.decode("ascii", "ignore")
             if text and not text.isdigit():
-                yield start, text, len(raw)
+                yield start, text, len(raw), "ascii"
         i = max(i + 1, start + 1)
 
 
@@ -73,6 +73,16 @@ def _decode_lang0(raw: bytes) -> str:
         except UnicodeDecodeError:
             pass
     return raw.decode("gbk", errors="replace")
+
+
+def _detect_lang0_value_encoding(raw: bytes) -> str:
+    for enc in ("utf-8", "gbk"):
+        try:
+            raw.decode(enc)
+            return enc
+        except UnicodeDecodeError:
+            continue
+    return "gbk"
 
 
 def _lang0_end(data: bytes, start: int) -> int:
@@ -114,18 +124,19 @@ def unquote_dat(value: str) -> str:
     return value
 
 
+def _decode_text_resource(raw: bytes) -> tuple[str | None, str]:
+    for enc in ("utf-8-sig", "utf-8", "gb18030"):
+        try:
+            return raw.decode(enc), enc
+        except UnicodeDecodeError:
+            continue
+    return None, ""
+
+
 def scan_dat_entries(path: Path) -> list[tuple[int, str, str, int, str]]:
     """Return byte offset, key, value, encoded length and source encoding."""
     raw = path.read_bytes()
-    text = None
-    encoding = "utf-8"
-    for enc in ("utf-8-sig", "utf-8", "gb18030"):
-        try:
-            text = raw.decode(enc)
-            encoding = enc
-            break
-        except UnicodeDecodeError:
-            continue
+    text, encoding = _decode_text_resource(raw)
     if text is None:
         return []
     hits: list[tuple[int, str, str, int, str]] = []
@@ -134,6 +145,8 @@ def scan_dat_entries(path: Path) -> list[tuple[int, str, str, int, str]]:
         if not value or value.isdigit():
             continue
         byte_offset = len(text[:match.start(2)].encode(encoding))
+        if encoding == "utf-8-sig" and raw.startswith(b"\xef\xbb\xbf"):
+            byte_offset += 3
         byte_length = len(match.group(2).encode(encoding))
         key = match.group(1)
         hits.append((byte_offset, key, value, byte_length, encoding))
@@ -180,7 +193,7 @@ def files_to_scan(root: Path):
             yield p
 
 
-def scan_tbl2_structured(path: Path) -> list[Hit]:
+def scan_tbl2_structured(path: Path, display_name: str | None = None) -> list[Hit]:
     """Discover the observed tbl2 record form and retain its stable numeric ID.
 
     Observed records use uint32 id, uint8 type, uint16 UTF-16 code-unit length,
@@ -188,6 +201,7 @@ def scan_tbl2_structured(path: Path) -> list[Hit]:
     validate exactly; other tbl2 sections continue through the generic scanner.
     """
     data = path.read_bytes()
+    shown = display_name or path.name
     hits: list[Hit] = []
     for record_pos in range(0, len(data) - 7):
         item_id = int.from_bytes(data[record_pos:record_pos + 4], "little")
@@ -209,25 +223,43 @@ def scan_tbl2_structured(path: Path) -> list[Hit]:
             continue
         if not text or not any(ch.isalpha() for ch in text) or not all(printable(ch) for ch in text):
             continue
-        hits.append(Hit(path.name, text_start, "utf-16le", text, confidence(path.name, text_start, text, "utf-16le"), len(raw), "tbl2_record", str(item_id)))
+        hits.append(
+            Hit(
+                shown,
+                text_start,
+                "utf-16le",
+                text,
+                confidence(shown, text_start, text, "utf-16le"),
+                len(raw),
+                "tbl2_record",
+                str(item_id),
+            )
+        )
     return hits
 
 
-def scan_file(path: Path) -> list[Hit]:
+def scan_file(path: Path, display_name: str | None = None) -> list[Hit]:
     data = path.read_bytes()
+    shown = display_name or path.name
     hits: list[Hit] = []
     if path.name.lower() == "lang0.pak":
         for off, key, text, size in scan_lang0_entries(path):
-            hits.append(Hit(path.name, off, "gbk", text, confidence(path.name, off, text, "gbk"), size, "lang0_entry", key))
+            enc = _detect_lang0_value_encoding(text.encode("utf-8")) if CJK_RE.search(text) else "ascii"
+            # For ASCII values both encodings decode identically; use UTF-8 as
+            # the neutral metadata value for source resources.
+            enc = "utf-8" if enc == "ascii" else enc
+            hits.append(
+                Hit(shown, off, enc, text, confidence(shown, off, text, enc), size, "lang0_entry", key)
+            )
     if path.suffix.lower() == ".dat":
         for off, key, text, enc_size, enc in scan_dat_entries(path):
-            hits.append(Hit(path.name, off, enc, text, confidence(path.name, off, text, enc), enc_size, "dat_entry", key))
+            hits.append(Hit(shown, off, enc, text, confidence(shown, off, text, enc), enc_size, "dat_entry", key))
     if path.name.lower() == "tbl2.pak":
-        hits.extend(scan_tbl2_structured(path))
-    for off, text, chars in scan_utf16(data):
-        hits.append(Hit(path.name, off, "utf-16le", text, confidence(path.name, off, text, "utf-16le"), chars * 2, "utf16", ""))
-    for off, text, size in scan_single_byte(data):
-        hits.append(Hit(path.name, off, "gbk/ascii", text, confidence(path.name, off, text, "gbk/ascii"), size, "single_byte", ""))
+        hits.extend(scan_tbl2_structured(path, shown))
+    for off, text, _chars in scan_utf16(data):
+        hits.append(Hit(shown, off, "utf-16le", text, confidence(shown, off, text, "utf-16le"), len(text) * 2, "utf16", ""))
+    for off, text, size, enc in scan_single_byte(data):
+        hits.append(Hit(shown, off, enc, text, confidence(shown, off, text, enc), size, "single_byte", ""))
     unique: dict[tuple[int, str, str, str], Hit] = {}
     for hit in hits:
         unique[(hit.offset, hit.text, hit.kind, hit.id)] = hit
@@ -244,7 +276,8 @@ def main(argv: list[str] | None = None) -> int:
     all_hits: list[Hit] = []
     files = list(files_to_scan(args.root))
     for path in files:
-        all_hits.extend(scan_file(path))
+        relative = path.relative_to(args.root).as_posix()
+        all_hits.extend(scan_file(path, relative))
     with args.output.open("w", encoding="utf-8-sig", newline="") as handle:
         writer = csv.writer(handle, delimiter="\t", lineterminator="\n")
         writer.writerow(["file", "offset", "encoding", "byte_length", "confidence", "kind", "id", "source_text", "translation"])
