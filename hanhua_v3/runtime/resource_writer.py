@@ -91,6 +91,48 @@ def _offset(locator: str) -> int:
     return int(value)
 
 
+def _fixed_generic_pak_replacement(source: str, translation: str, encoding: str) -> tuple[bytes, bytes]:
+    old = _encode(source, encoding)
+    new = _encode(translation, encoding)
+    if encoding in {"utf-16le", "utf16", "utf-16"}:
+        if len(new) > len(old):
+            raise WriteError(
+                f"UTF-16 fixed field is too small: {source!r} -> {translation!r}"
+            )
+        new = new + b"\x00" * (len(old) - len(new))
+    elif len(new) != len(old):
+        raise WriteError(
+            "Generic PAK text replacement must preserve byte width unless "
+            f"UTF-16 padding is available: {source!r} -> {translation!r}"
+        )
+    return old, new
+
+
+def _patch_generic_pak_rows(data: bytes, rows: list[QueueRow], file_name: str) -> tuple[bytes, int]:
+    patched = bytearray(data)
+    operations = []
+    for row in rows:
+        try:
+            offset = _offset(row.locator)
+        except ValueError as exc:
+            raise WriteError(f"{file_name} requires an offset locator: {row.locator!r}") from exc
+        if offset < 0 or offset >= len(data):
+            raise WriteError(f"Offset outside resource: 0x{offset:X}")
+        try:
+            old, new = _fixed_generic_pak_replacement(row.source, row.translation, row.encoding)
+        except (UnicodeEncodeError, LookupError) as exc:
+            raise WriteError(f"Cannot encode {file_name} row: {row.translation!r}") from exc
+        if data[offset : offset + len(old)] != old:
+            raise WriteError(f"Source mismatch at 0x{offset:X} in {file_name}")
+        operations.append((offset, old, new, row))
+
+    for offset, old, new, row in sorted(operations, key=lambda item: item[0], reverse=True):
+        if patched[offset : offset + len(old)] != old:
+            raise WriteError(f"Overlapping/invalid patch at 0x{offset:X} in {file_name}")
+        patched[offset : offset + len(old)] = new
+    return bytes(patched), len(operations)
+
+
 def _patch_text_rows(data: bytes, rows: list[QueueRow], file_name: str) -> tuple[bytes, int]:
     patched = bytearray(data)
     operations = []
@@ -111,14 +153,8 @@ def _patch_text_rows(data: bytes, rows: list[QueueRow], file_name: str) -> tuple
             translation_double = row.translation.replace("\\", "\\\\").replace('"', '\\"')
             translation_single = row.translation.replace("\\", "\\\\").replace("'", "\\'")
             candidates = [
-                (
-                    f'"{escaped}"'.encode(enc),
-                    f'"{translation_double}"'.encode(enc),
-                ),
-                (
-                    f"'{source_single}'".encode(enc),
-                    f"'{translation_single}'".encode(enc),
-                ),
+                (f'"{escaped}"'.encode(enc), f'"{translation_double}"'.encode(enc)),
+                (f"'{source_single}'".encode(enc), f"'{translation_single}'".encode(enc)),
             ]
             old, new = next(
                 ((old, new) for old, new in candidates if data[offset : offset + len(old)] == old),
@@ -197,11 +233,13 @@ def _write_one(
             raise WriteError(
                 f"{name}: {stats['missing']} translation rows did not match the original resource"
             )
+    elif path.suffix.lower() == ".pak":
+        patched, changed = _patch_generic_pak_rows(original, rows, name)
     elif path.suffix.lower() in RESOURCE_EXTENSIONS:
         patched, changed = _patch_text_rows(original, rows, name)
     else:
         raise WriteError(f"Unsupported resource type: {path}")
-    if len(patched) != len(original) and name in PAK_FILES:
+    if len(patched) != len(original) and path.suffix.lower() == ".pak":
         raise WriteError(f"Fixed-size resource changed size: {name}")
     relative = path.relative_to(source_root)
     output = output_root / relative
