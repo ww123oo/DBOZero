@@ -20,6 +20,8 @@ DAT_ENTRY_RE = re.compile(
     r"(?m)^\s*([A-Za-z_][A-Za-z0-9_.-]*)\s*=\s*(\"(?:\\.|[^\"])*\"|'(?:\\.|[^'])*'|[^\r\n]+)\s*$"
 )
 LANG0_ENTRY_RE = re.compile(rb"(?m)^([A-Za-z_][A-Za-z0-9_.-]*)[ \t]*=[ \t]*\"")
+XML_ATTR_RE = re.compile(r"(?P<name>[A-Za-z_][\w:.-]*)\s*=\s*(?P<quote>[\"'])(?P<value>(?:\\.|(?!\k<quote>).)*)\k<quote>")
+XML_TEXT_RE = re.compile(r">(?P<value>[^<\r\n]{3,})<")
 RESOURCE_EXTENSIONS = {".pak", ".rdf", ".xml", ".dat"}
 WANTED_PACKS = {"lang0.pak", "tbl0.pak", "tbl1.pak", "tbl2.pak"}
 
@@ -125,7 +127,7 @@ def unquote_dat(value: str) -> str:
 
 
 def _decode_text_resource(raw: bytes) -> tuple[str | None, str]:
-    for enc in ("utf-8-sig", "utf-8", "gb18030"):
+    for enc in ("utf-8-sig", "utf-8", "gb18030", "utf-16le", "utf-16"):
         try:
             return raw.decode(enc), enc
         except UnicodeDecodeError:
@@ -150,6 +152,44 @@ def scan_dat_entries(path: Path) -> list[tuple[int, str, str, int, str]]:
         byte_length = len(match.group(2).encode(encoding))
         key = match.group(1)
         hits.append((byte_offset, key, value, byte_length, encoding))
+    return hits
+
+
+def _xml_candidates(path: Path) -> list[Hit]:
+    """Discover human-readable XML/RDF attribute and element values."""
+    raw = path.read_bytes()
+    text, encoding = _decode_text_resource(raw)
+    if text is None:
+        return []
+
+    def byte_offset(char_index: int) -> int:
+        return len(text[:char_index].encode(encoding)) + (
+            3 if encoding == "utf-8-sig" and raw.startswith(b"\xef\xbb\xbf") else 0
+        )
+
+    hits: list[Hit] = []
+    seen: set[tuple[int, str]] = set()
+    for match in XML_ATTR_RE.finditer(text):
+        value = match.group("value")
+        if not value.strip() or value.strip().isdigit() or not any(ch.isalpha() for ch in value):
+            continue
+        start = byte_offset(match.start("value"))
+        key = (start, value)
+        if key in seen:
+            continue
+        seen.add(key)
+        hits.append(Hit(path.name, start, encoding, value, confidence(path.name, start, value, encoding), len(value.encode(encoding)), "xml_attribute", match.group("name")))
+    for match in XML_TEXT_RE.finditer(text):
+        value = match.group("value").strip()
+        if not value or value.isdigit() or not any(ch.isalpha() for ch in value):
+            continue
+        leading = len(match.group("value")) - len(match.group("value").lstrip())
+        start = byte_offset(match.start("value") + leading)
+        key = (start, value)
+        if key in seen:
+            continue
+        seen.add(key)
+        hits.append(Hit(path.name, start, encoding, value, confidence(path.name, start, value, encoding), len(value.encode(encoding)), "xml_text", ""))
     return hits
 
 
@@ -194,20 +234,13 @@ def files_to_scan(root: Path):
 
 
 def scan_tbl2_structured(path: Path, display_name: str | None = None) -> list[Hit]:
-    """Discover the observed tbl2 record form and retain its stable numeric ID.
-
-    Observed records use uint32 id, uint8 type, uint16 UTF-16 code-unit length,
-    then UTF-16LE text. We only accept records whose length and text boundaries
-    validate exactly; other tbl2 sections continue through the generic scanner.
-    """
+    """Discover the observed tbl2 record form and retain its stable numeric ID."""
     data = path.read_bytes()
     shown = display_name or path.name
     hits: list[Hit] = []
     for record_pos in range(0, len(data) - 7):
         item_id = int.from_bytes(data[record_pos:record_pos + 4], "little")
-        if item_id == 0:
-            continue
-        if data[record_pos + 4] != 0:
+        if item_id == 0 or data[record_pos + 4] != 0:
             continue
         units = int.from_bytes(data[record_pos + 5:record_pos + 7], "little")
         if units < 1 or units > 512:
@@ -223,43 +256,50 @@ def scan_tbl2_structured(path: Path, display_name: str | None = None) -> list[Hi
             continue
         if not text or not any(ch.isalpha() for ch in text) or not all(printable(ch) for ch in text):
             continue
-        hits.append(
-            Hit(
-                shown,
-                text_start,
-                "utf-16le",
-                text,
-                confidence(shown, text_start, text, "utf-16le"),
-                len(raw),
-                "tbl2_record",
-                str(item_id),
-            )
-        )
+        hits.append(Hit(shown, text_start, "utf-16le", text, confidence(shown, text_start, text, "utf-16le"), len(raw), "tbl2_record", str(item_id)))
     return hits
+
+
+def _overlaps(offset: int, length: int, intervals: list[tuple[int, int]]) -> bool:
+    end = offset + max(length, 1)
+    return any(offset < other_end and end > other_start for other_start, other_end in intervals)
 
 
 def scan_file(path: Path, display_name: str | None = None) -> list[Hit]:
     data = path.read_bytes()
     shown = display_name or path.name
     hits: list[Hit] = []
+
     if path.name.lower() == "lang0.pak":
         for off, key, text, size in scan_lang0_entries(path):
-            # Derive encoding from the original value bytes, not from a UTF-8
-            # re-encoding of the already-decoded text.
             value_raw = data[off : off + size].replace(b'""', b'"')
             enc = _detect_lang0_value_encoding(value_raw)
-            hits.append(
-                Hit(shown, off, enc, text, confidence(shown, off, text, enc), size, "lang0_entry", key)
-            )
+            hits.append(Hit(shown, off, enc, text, confidence(shown, off, text, enc), size, "lang0_entry", key))
     if path.suffix.lower() == ".dat":
         for off, key, text, enc_size, enc in scan_dat_entries(path):
             hits.append(Hit(shown, off, enc, text, confidence(shown, off, text, enc), enc_size, "dat_entry", key))
+    if path.suffix.lower() in {".rdf", ".xml"}:
+        hits.extend(_xml_candidates(path))
     if path.name.lower() == "tbl2.pak":
         hits.extend(scan_tbl2_structured(path, shown))
+
+    # Generic binary scans fill gaps, but never duplicate an already structured
+    # candidate. This prevents one tbl2 record from becoming two write jobs.
+    occupied = [(hit.offset, hit.offset + hit.byte_length) for hit in hits if hit.byte_length]
     for off, text, chars in scan_utf16(data):
-        hits.append(Hit(shown, off, "utf-16le", text, confidence(shown, off, text, "utf-16le"), chars * 2, "utf16", ""))
+        size = chars * 2
+        if _overlaps(off, size, occupied):
+            continue
+        hit = Hit(shown, off, "utf-16le", text, confidence(shown, off, text, "utf-16le"), size, "utf16", "")
+        hits.append(hit)
+        occupied.append((off, off + size))
     for off, text, size in scan_single_byte(data):
-        hits.append(Hit(shown, off, "ascii", text, confidence(shown, off, text, "ascii"), size, "single_byte", ""))
+        if _overlaps(off, size, occupied):
+            continue
+        hit = Hit(shown, off, "ascii", text, confidence(shown, off, text, "ascii"), size, "single_byte", "")
+        hits.append(hit)
+        occupied.append((off, off + size))
+
     unique: dict[tuple[int, str, str, str], Hit] = {}
     for hit in hits:
         unique[(hit.offset, hit.text, hit.kind, hit.id)] = hit
