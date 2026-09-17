@@ -46,6 +46,6 @@ def test_build_one_creates_valid_taiwan_product(tmp_path, monkeypatch) -> None:
     ) == 0
 
     result = output.joinpath("pack/lang0.pak").read_bytes()
-    assert b'ACCOUNT="帳號"' in result
+    assert 'ACCOUNT="帳號"'.encode("utf-8") in result
     assert output.joinpath("pack/tbl2.pak").read_bytes() == source_root.joinpath("pack/tbl2.pak").read_bytes()
     assert output.joinpath("readme.txt").read_text(encoding="utf-8") == "untouched"
