@@ -14,7 +14,7 @@ def write_queue(path: Path) -> None:
         "surface\tfile\tid\tsource_hash\tsource_text\tzh_cn\tstatus\tkind\tencoding\tlegacy_source\tlegacy_row\tnote\n"
         "pak\tpack/lang0.pak\tACCOUNT\t\tAccount\t账号\ttranslated\tlang0_entry\tutf-8\t\t\t\n"
         "pak\tpack/gui0.pak\toffset:0\t\tHello\t嗨\ttranslated\tutf16\tutf-16le\t\t\t\n"
-        "rdf\tlocalize/Taiwan/language/table_text_all_data.rdf\toffset:18\t\tHello World\t你好世界\ttranslated\txml_text\tutf-8\t\t\t\n",
+        "rdf\tlocalize/Taiwan/language/table_text_all_data.rdf\toffset:13\t\tHello World\t你好世界\ttranslated\txml_text\tutf-8\t\t\t\n",
         encoding="utf-8-sig",
     )
 
