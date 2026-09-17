@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """Deterministic validator for generated DBO localization resources.
 
-The validator checks repository/toolchain invariants only. It never starts the
- game and never assumes in-game verification is available.
+The validator checks toolchain and resource-format invariants only. It never
+starts the game and never requires in-game verification.
 """
 from __future__ import annotations
 
@@ -70,28 +70,69 @@ def _validate_lang0(data: bytes, row: QueueRow) -> None:
         )
 
 
-def _tbl_override(row: QueueRow, file_name: str) -> tbl.TblOverride:
-    locator = (row.locator or "").strip()
-    if file_name == "tbl2.pak":
-        if locator.lower().startswith("id:"):
-            try:
-                return tbl.TblOverride(
-                    file_name,
-                    None,
-                    row.translation,
-                    row.translation,
-                    int(locator.split(":", 1)[1].strip(), 0),
-                )
-            except ValueError as exc:
-                raise ValidationError(f"Invalid tbl2 stable ID: {locator!r}") from exc
-        if row.kind == "tbl2_record":
-            try:
-                return tbl.TblOverride(
-                    file_name, None, row.translation, row.translation, int(locator, 0)
-                )
-            except ValueError as exc:
-                raise ValidationError(f"Invalid tbl2 record ID: {locator!r}") from exc
+def _parse_id(locator: str) -> int:
+    value = locator.split(":", 1)[1].strip()
+    try:
+        return int(value, 0)
+    except ValueError as exc:
+        raise ValidationError(f"Invalid tbl2 stable ID: {locator!r}") from exc
 
+
+def _validate_tbl2(data: bytes, row: QueueRow) -> None:
+    locator = (row.locator or "").strip()
+    if locator.lower().startswith("id:"):
+        item_id = _parse_id(locator)
+    elif row.kind == "tbl2_record":
+        try:
+            item_id = int(locator, 0)
+        except ValueError as exc:
+            raise ValidationError(f"Invalid tbl2 record ID: {locator!r}") from exc
+    else:
+        raise ValidationError("tbl2.pak rows must use a stable id:N locator")
+
+    try:
+        translated = row.translation.encode("utf-16le")
+        source = row.source.encode("utf-16le")
+    except UnicodeEncodeError as exc:
+        raise ValidationError(f"tbl2 text cannot be encoded as UTF-16LE: {row.source!r}") from exc
+    if len(translated) > len(source):
+        raise ValidationError(
+            f"tbl2 translation is longer than its fixed field: {row.source!r} -> {row.translation!r}"
+        )
+
+    id_bytes = item_id.to_bytes(4, "little", signed=False)
+    hits: list[int] = []
+    start = 0
+    expected_field = translated + b"\x00" * (len(source) - len(translated))
+    while True:
+        record_pos = data.find(id_bytes, start)
+        if record_pos < 0:
+            break
+        if record_pos + 7 > len(data):
+            break
+        if data[record_pos + 4] != 0:
+            start = record_pos + 1
+            continue
+        units = int.from_bytes(data[record_pos + 5 : record_pos + 7], "little")
+        if units < 1 or record_pos + 7 + units * 2 > len(data):
+            start = record_pos + 1
+            continue
+        field = data[record_pos + 7 : record_pos + 7 + units * 2]
+        if len(field) == len(source) and field == expected_field:
+            hits.append(record_pos)
+        start = record_pos + 1
+
+    if len(hits) != 1:
+        raise ValidationError(
+            f"tbl2 output record is missing or ambiguous: id:{item_id}, "
+            f"expected_text={row.translation!r}, matches={len(hits)}"
+        )
+
+
+def _validate_tbl_fixed_field(data: bytes, row: QueueRow, file_name: str) -> None:
+    locator = (row.locator or "").strip()
+    if not locator or locator.lower().startswith("id:"):
+        raise ValidationError(f"{file_name} row requires an offset locator")
     try:
         offset = tbl.parse_offset(
             locator[7:] if locator.lower().startswith("offset:") else locator,
@@ -99,16 +140,15 @@ def _tbl_override(row: QueueRow, file_name: str) -> tbl.TblOverride:
         )
     except tbl.PatchError as exc:
         raise ValidationError(str(exc)) from exc
-    return tbl.TblOverride(file_name, offset, row.translation, row.translation)
-
-
-def _validate_tbl(data: bytes, row: QueueRow, file_name: str) -> None:
-    override = _tbl_override(row, file_name)
-    _patched, stats = tbl.patch_tbl_bytes(data, [override])
-    if stats["missing"]:
+    if offset is None:
+        raise ValidationError(f"{file_name} does not permit wildcard locators")
+    try:
+        expected = tbl.fixed_replacement(row.source, row.translation)
+    except tbl.PatchError as exc:
+        raise ValidationError(str(exc)) from exc
+    if data[offset : offset + len(expected)] != expected:
         raise ValidationError(
-            f"{file_name} translation record could not be located in output: "
-            f"{row.locator or '<no locator>'} / {row.translation!r}"
+            f"{file_name} output field mismatch at 0x{offset:X}: {row.translation!r}"
         )
 
 
@@ -119,14 +159,8 @@ def _escaped_dat_candidates(source: str, translation: str, encoding: str) -> lis
     single_source = source.replace("\\", "\\\\").replace("'", "\\'")
     single_translation = translation.replace("\\", "\\\\").replace("'", "\\'")
     return [
-        (
-            f'"{source_escaped}"'.encode(enc),
-            f'"{translation_escaped}"'.encode(enc),
-        ),
-        (
-            f"'{single_source}'".encode(enc),
-            f"'{single_translation}'".encode(enc),
-        ),
+        (f'"{source_escaped}"'.encode(enc), f'"{translation_escaped}"'.encode(enc)),
+        (f"'{single_source}'".encode(enc), f"'{single_translation}'".encode(enc)),
     ]
 
 
@@ -189,31 +223,27 @@ def validate_build(source_root: Path, output_root: Path, rows: list[QueueRow]) -
         grouped.setdefault(row.file.replace("\\", "/").lower(), []).append(row)
 
     validated = 0
-    touched_files = 0
+    touched_files: set[str] = set()
     for requested_name, file_rows in sorted(grouped.items()):
         source_path = _resolve_resource(source_root, requested_name)
         output_path = _resolve_resource(output_root, requested_name)
-        if source_path.name.lower() in PAK_FILES:
-            touched_files += 1
-            original = output_path.read_bytes()
-            name = source_path.name.lower()
-            for row in file_rows:
-                if name == "lang0.pak":
-                    _validate_lang0(original, row)
-                else:
-                    _validate_tbl(original, row, name)
-                validated += 1
-        else:
-            touched_files += 1
-            original = output_path.read_bytes()
-            for row in file_rows:
-                _validate_text_resource(original, row)
-                validated += 1
+        name = source_path.name.lower()
+        touched_files.add(requested_name)
+        output_data = output_path.read_bytes()
+        for row in file_rows:
+            if name == "lang0.pak":
+                _validate_lang0(output_data, row)
+            elif name == "tbl2.pak":
+                _validate_tbl2(output_data, row)
+            elif name in {"tbl0.pak", "tbl1.pak"}:
+                _validate_tbl_fixed_field(output_data, row, name)
+            else:
+                _validate_text_resource(output_data, row)
+            validated += 1
 
-    untouched = len(source_files) - touched_files
     return ValidationSummary(
         files=len(output_files),
         queued_rows=len(rows),
         validated_rows=validated,
-        untouched_files=max(untouched, 0),
+        untouched_files=max(len(source_files) - len(touched_files), 0),
     )
