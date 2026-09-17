@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Read-only scanner for DBO localization resources.
-
-Supported discovery targets:
-  lang0.pak, tbl0.pak, tbl1.pak, tbl2.pak, *.rdf, *.xml, *.dat
-
-*.bin is intentionally excluded. This module only discovers candidates; it
-never modifies game resources.
-"""
+"""Read-only scanner for DBO localization resources."""
 from __future__ import annotations
 
 import argparse
@@ -20,7 +13,10 @@ DAT_ENTRY_RE = re.compile(
     r"(?m)^\s*([A-Za-z_][A-Za-z0-9_.-]*)\s*=\s*(\"(?:\\.|[^\"])*\"|'(?:\\.|[^'])*'|[^\r\n]+)\s*$"
 )
 LANG0_ENTRY_RE = re.compile(rb"(?m)^([A-Za-z_][A-Za-z0-9_.-]*)[ \t]*=[ \t]*\"")
-XML_ATTR_RE = re.compile(r"(?P<name>[A-Za-z_][\w:.-]*)\s*=\s*(?P<quote>[\"'])(?P<value>(?:\\.|(?!\k<quote>).)*)\k<quote>")
+XML_ATTR_RE = re.compile(
+    r"(?P<name>[A-Za-z_][\w:.-]*)\s*=\s*(?P<quote>[\"'])(?P<value>(?:\\.|(?! (?P=quote) ).)*) (?P=quote)",
+    re.X,
+)
 XML_TEXT_RE = re.compile(r">(?P<value>[^<\r\n]{3,})<")
 RESOURCE_EXTENSIONS = {".pak", ".rdf", ".xml", ".dat"}
 WANTED_PACKS = {"lang0.pak", "tbl0.pak", "tbl1.pak", "tbl2.pak"}
@@ -155,7 +151,7 @@ def scan_dat_entries(path: Path) -> list[tuple[int, str, str, int, str]]:
     return hits
 
 
-def _xml_candidates(path: Path) -> list[Hit]:
+def _xml_candidates(path: Path) -> list["Hit"]:
     """Discover human-readable XML/RDF attribute and element values."""
     raw = path.read_bytes()
     text, encoding = _decode_text_resource(raw)
@@ -283,8 +279,6 @@ def scan_file(path: Path, display_name: str | None = None) -> list[Hit]:
     if path.name.lower() == "tbl2.pak":
         hits.extend(scan_tbl2_structured(path, shown))
 
-    # Generic binary scans fill gaps, but never duplicate an already structured
-    # candidate. This prevents one tbl2 record from becoming two write jobs.
     occupied = [(hit.offset, hit.offset + hit.byte_length) for hit in hits if hit.byte_length]
     for off, text, chars in scan_utf16(data):
         size = chars * 2
