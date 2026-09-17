@@ -22,8 +22,7 @@ def test_tbl2_stable_id_patches_without_changing_field_width() -> None:
     assert stats["changed"] == 1
     assert len(patched) == len(original)
     assert patched[0:4] == (256001).to_bytes(4, "little")
-    assert patched[7:11] == "嗨".encode("utf-16le")
-    assert patched[11:17] == b"\x00" * 6
+    assert patched[7:17] == "嗨".encode("utf-16le") + b"\x00" * 8
 
 
 def test_tbl2_translation_that_grows_the_fixed_field_is_rejected() -> None:
