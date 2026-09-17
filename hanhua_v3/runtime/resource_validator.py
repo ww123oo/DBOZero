@@ -11,12 +11,7 @@ from pathlib import Path
 
 from . import lang0_gbk_patch as lang0
 from . import tbl_utf16_patch as tbl
-from .resource_writer import (
-    QueueRow,
-    _fixed_generic_pak_replacement,
-    _patch_generic_pak_rows,
-    _patch_text_rows,
-)
+from .resource_writer import QueueRow, _patch_generic_pak_rows, _patch_text_rows
 
 
 class ValidationError(RuntimeError):
@@ -52,73 +47,58 @@ def _resolve_resource(root: Path, name: str) -> Path:
     raise ValidationError(f"Resource name is ambiguous: {name}")
 
 
-def _encode_text(text: str, encoding: str) -> bytes:
-    normalized = (encoding or "utf-8").strip().lower().replace("_", "-")
-    if normalized in {"utf8", "utf-8", "utf-8-sig"}:
-        return text.encode("utf-8")
-    if normalized in {"gbk", "gb18030", "gb2312", "gbk/ascii"}:
-        return text.encode("gb18030" if normalized == "gb18030" else "gbk")
-    if normalized in {"utf-16", "utf-16le", "utf16"}:
-        return text.encode("utf-16le")
-    return text.encode(encoding)
-
-
-def _validate_lang0(data: bytes, rows: list[QueueRow]) -> None:
-    encoding = "utf-8"
+def _validate_lang0(source: bytes, output: bytes, rows: list[QueueRow]) -> None:
+    # Field-level semantic check catches malformed key/value escaping.
     for row in rows:
+        if not row.locator or row.locator.lower().startswith("offset:"):
+            raise ValidationError(f"lang0.pak row requires a key locator: {row.locator!r}")
         try:
-            if not row.locator or row.locator.lower().startswith("offset:"):
-                raise ValidationError(f"lang0.pak row requires a key locator: {row.locator!r}")
-            start = lang0.find_lang0_value_start(data, row.locator)
+            start = lang0.find_lang0_value_start(output, row.locator)
             if start < 0:
                 raise ValidationError(f"lang0 key missing from output: {row.locator}")
-            end = lang0.find_lang0_value_end(data, start, row.locator)
-            actual = lang0.decode_lang0_value(lang0.unescape_lang0_value(data[start:end]))
-            if actual != row.translation:
-                raise ValidationError(
-                    f"lang0 translation mismatch for {row.locator}: "
-                    f"expected {row.translation!r}, got {actual!r}"
-                )
+            end = lang0.find_lang0_value_end(output, start, row.locator)
+            actual = lang0.decode_lang0_value(lang0.unescape_lang0_value(output[start:end]))
         except lang0.PatchError as exc:
             raise ValidationError(str(exc)) from exc
-    # A canonical reconstruction is also checked so length and escaping stay deterministic.
-    for candidate in ("utf-8", "gbk"):
+        if actual != row.translation:
+            raise ValidationError(
+                f"lang0 translation mismatch for {row.locator}: "
+                f"expected {row.translation!r}, got {actual!r}"
+            )
+
+    # Strong check: rebuild from the pristine source using the only encodings
+    # supported by the current lang0 writer and require byte-for-byte equality.
+    expected_variants: list[tuple[str, bytes]] = []
+    for encoding in ("utf-8", "gbk"):
         try:
             expected, _stats = lang0.patch_lang0_bytes(
-                data,
+                source,
                 [(row.locator, row.translation) for row in rows],
-                encoding=candidate,
+                encoding=encoding,
             )
-            if expected == data:
-                encoding = candidate
-                break
         except (lang0.PatchError, UnicodeEncodeError):
             continue
-    if encoding not in {"utf-8", "gbk"}:
-        raise ValidationError("Unable to determine lang0 output encoding")
+        expected_variants.append((encoding, expected))
+    if not any(expected == output for _encoding, expected in expected_variants):
+        raise ValidationError("lang0 output differs from deterministic patch result")
 
 
-def _parse_id(locator: str) -> int:
-    value = locator.split(":", 1)[1].strip()
+def _tbl2_id(locator: str, kind: str) -> int:
+    value = locator.strip()
     try:
-        return int(value, 0)
+        if value.lower().startswith("id:"):
+            return int(value.split(":", 1)[1].strip(), 0)
+        if kind == "tbl2_record":
+            return int(value, 0)
     except ValueError as exc:
         raise ValidationError(f"Invalid tbl2 stable ID: {locator!r}") from exc
+    raise ValidationError("tbl2.pak rows must use a stable id:N locator")
 
 
 def _validate_tbl2(data: bytes, source: bytes, rows: list[QueueRow]) -> None:
+    overrides: list[tbl.TblOverride] = []
     for row in rows:
-        locator = (row.locator or "").strip()
-        if locator.lower().startswith("id:"):
-            item_id = _parse_id(locator)
-        elif row.kind == "tbl2_record":
-            try:
-                item_id = int(locator, 0)
-            except ValueError as exc:
-                raise ValidationError(f"Invalid tbl2 record ID: {locator!r}") from exc
-        else:
-            raise ValidationError("tbl2.pak rows must use a stable id:N locator")
-
+        item_id = _tbl2_id(row.locator, row.kind)
         try:
             translated = row.translation.encode("utf-16le")
             original = row.source.encode("utf-16le")
@@ -155,15 +135,10 @@ def _validate_tbl2(data: bytes, source: bytes, rows: list[QueueRow]) -> None:
                 f"tbl2 output record is missing or ambiguous: id:{item_id}, "
                 f"expected_text={row.translation!r}, matches={len(hits)}"
             )
+        overrides.append(tbl.TblOverride("tbl2.pak", None, row.source, row.translation, item_id))
 
     try:
-        expected, _stats = tbl.patch_tbl_bytes(
-            source,
-            [
-                tbl.TblOverride("tbl2.pak", None, row.source, row.translation, _parse_id(row.locator))
-                for row in rows
-            ],
-        )
+        expected, _stats = tbl.patch_tbl_bytes(source, overrides)
     except (tbl.PatchError, ValueError) as exc:
         raise ValidationError(f"tbl2 reconstruction failed: {exc}") from exc
     if expected != data:
@@ -199,27 +174,13 @@ def _validate_generic_pak(data: bytes, source: bytes, rows: list[QueueRow], file
         raise ValidationError(f"{file_name} output differs from deterministic fixed-field patch result")
 
 
-def _escaped_dat_candidates(source: str, translation: str, encoding: str) -> list[tuple[bytes, bytes]]:
-    enc = "gb18030" if encoding == "gb18030" else "utf-8"
-    source_escaped = source.replace("\\", "\\\\").replace('"', '\\"')
-    translation_escaped = translation.replace("\\", "\\\\").replace('"', '\\"')
-    single_source = source.replace("\\", "\\\\").replace("'", "\\'")
-    single_translation = translation.replace("\\", "\\\\").replace("'", "\\'")
-    return [
-        (f'"{source_escaped}"'.encode(enc), f'"{translation_escaped}"'.encode(enc)),
-        (f"'{single_source}'".encode(enc), f"'{single_translation}'".encode(enc)),
-    ]
-
-
 def _validate_text_resource(data: bytes, source: bytes, rows: list[QueueRow]) -> None:
     try:
         expected, _changed = _patch_text_rows(source, rows, rows[0].file.replace("\\", "/").lower())
     except Exception as exc:
         raise ValidationError(f"Text resource reconstruction failed: {exc}") from exc
     if expected != data:
-        raise ValidationError(
-            f"{rows[0].file} output differs from deterministic text patch result"
-        )
+        raise ValidationError(f"{rows[0].file} output differs from deterministic text patch result")
 
 
 def validate_build(source_root: Path, output_root: Path, rows: list[QueueRow]) -> ValidationSummary:
@@ -268,7 +229,7 @@ def validate_build(source_root: Path, output_root: Path, rows: list[QueueRow]) -
         output_data = output_path.read_bytes()
 
         if name == "lang0.pak":
-            _validate_lang0(output_data, file_rows)
+            _validate_lang0(source_data, output_data, file_rows)
         elif name == "tbl2.pak":
             _validate_tbl2(output_data, source_data, file_rows)
         elif name in {"tbl0.pak", "tbl1.pak"}:
