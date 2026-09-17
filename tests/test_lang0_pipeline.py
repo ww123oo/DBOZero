@@ -19,7 +19,7 @@ def test_lang0_utf8_fixed_field_preserves_size() -> None:
 
     assert stats["changed"] == 1
     assert len(patched) == len(original)
-    assert b'ACCOUNT="帳號"' in patched
+    assert 'ACCOUNT="帳號"'.encode("utf-8") in patched
     assert b'OTHER="Keep"' in patched
 
 
