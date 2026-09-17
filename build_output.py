@@ -150,13 +150,13 @@ def build_one(
     force: bool = False,
     no_parallel: bool = False,
 ) -> int:
-    # Sequential writing is intentional for the first deterministic builder.
-    # The CLI flag remains accepted for compatibility and future parallel work.
+    # Sequential writing is intentional for the deterministic baseline.
+    # The flag remains accepted for CLI compatibility and future parallel work.
     del no_parallel
     variant = _variant_name(variant)
     source_root = _resolve_source_root(source_dir)
     output_root = _safe_output_root(output_dir or OUTPUT_DIRS[variant])
-    if source_root == output_root or output_root in source_root.parents:
+    if source_root == output_root or source_root in output_root.parents:
         raise BuildError("Source and output roots must be separate")
     if not queue_path.is_file():
         raise BuildError(f"Translation queue not found: {queue_path}")
@@ -166,41 +166,45 @@ def build_one(
     except WriteError as exc:
         raise BuildError(str(exc)) from exc
     variant_rows = _variant_rows(rows, variant)
-    progress = Progress(max(1, 2 + len(variant_rows) * 2))
+    stage_size = max(len(variant_rows), 1)
+    progress = Progress(1 + stage_size * 3)
     temp_queue: Path | None = None
 
     try:
         progress.begin_stage("檢查來源", 1)
-        required = [source_root / "pack" / name for name in ("lang0.pak", "tbl0.pak", "tbl1.pak", "tbl2.pak")]
+        required = [
+            source_root / "pack" / name
+            for name in ("lang0.pak", "tbl0.pak", "tbl1.pak", "tbl2.pak")
+        ]
         for path in required:
             if not path.is_file():
                 raise BuildError(f"Missing required resource: {path}")
         progress.step()
         progress.end_stage()
 
-        progress.begin_stage("讀取翻譯表", max(len(rows), 1))
-        progress.step(max(len(rows), 1))
+        progress.begin_stage("讀取翻譯表", stage_size)
+        progress.step(stage_size)
         progress.end_stage()
         print(f"  翻譯佇列：{len(rows)} 筆可寫入項目")
 
         temp_queue = _write_temp_queue(variant_rows)
         _prepare_output(output_root, force)
 
-        progress.begin_stage("寫入資源", max(len(variant_rows), 1))
+        progress.begin_stage("寫入資源", stage_size)
         try:
             stats = write_queue(temp_queue, source_root, output_root)
         except WriteError as exc:
             raise BuildError(str(exc)) from exc
-        progress.step(max(len(variant_rows), 1))
+        progress.step(stage_size)
         progress.end_stage()
         print(f"  有翻譯變更的資源檔案：{len(stats)}")
 
-        progress.begin_stage("驗證輸出", max(len(variant_rows), 1))
+        progress.begin_stage("驗證輸出", stage_size)
         try:
             summary = validate_build(source_root, output_root, variant_rows)
         except ValidationError as exc:
             raise BuildError(str(exc)) from exc
-        progress.step(max(len(variant_rows), 1))
+        progress.step(stage_size)
         progress.end_stage()
         print(
             "  驗證："
