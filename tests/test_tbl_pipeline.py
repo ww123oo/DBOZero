@@ -3,7 +3,7 @@ from __future__ import annotations
 import pytest
 
 from hanhua_v3.runtime.resource_validator import ValidationError, validate_build
-from hanhua_v3.runtime.resource_writer import QueueRow
+from hanhua_v3.runtime.resource_writer import QueueRow, _fixed_generic_pak_replacement
 from hanhua_v3.runtime.tbl_utf16_patch import PatchError, TblOverride, patch_tbl_bytes
 
 
@@ -46,3 +46,9 @@ def test_tbl2_validator_detects_corrupted_output(tmp_path) -> None:
     row = QueueRow("tbl2.pak", "id:1234", "Hello", "嗨", "utf-16le", "tbl2_record")
     with pytest.raises(ValidationError, match="tbl2 output record"):
         validate_build(source, output, [row])
+
+
+def test_generic_utf16_pak_replacement_preserves_width() -> None:
+    old, new = _fixed_generic_pak_replacement("Hello", "嗨", "utf-16le")
+    assert len(old) == len(new)
+    assert new == "嗨".encode("utf-16le") + b"\x00" * 8
