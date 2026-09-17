@@ -251,12 +251,13 @@ def run_build(args: argparse.Namespace) -> int:
 
 def run_release(args: argparse.Namespace) -> int:
     """Build and validate both products independently; publish only if both pass."""
+    queue = Path(getattr(args, "queue", DEFAULT_QUEUE))
     for variant, label in (("simplified", "簡體中文"), ("taiwan", "台灣繁體中文")):
         print(f"\n[Release Gate] 開始獨立構建：{label} ({variant})")
         build_args = argparse.Namespace(
             source_dir=Path(args.source_dir),
             variant=variant,
-            queue=Path(args.queue),
+            queue=queue,
             force=args.force,
             no_parallel=args.no_parallel,
         )
@@ -385,6 +386,7 @@ def build_parser() -> argparse.ArgumentParser:
         if command in {"build", "update"}:
             add_build_args(parser_for_command)
         if command == "release":
+            parser_for_command.add_argument("--queue", type=Path, default=DEFAULT_QUEUE)
             parser_for_command.add_argument("--force", action="store_true")
             parser_for_command.add_argument("--no-parallel", action="store_true")
         if command == "scan":
