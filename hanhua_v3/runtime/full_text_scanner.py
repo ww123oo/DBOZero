@@ -62,7 +62,7 @@ def scan_single_byte(data: bytes, minimum: int = 4):
             except UnicodeDecodeError:
                 text = raw.decode("ascii", "ignore")
             if text and not text.isdigit():
-                yield start, text, len(raw), "ascii"
+                yield start, text, len(raw)
         i = max(i + 1, start + 1)
 
 
@@ -161,13 +161,13 @@ def confidence(file_name: str, offset: int, text: str, encoding: str) -> str:
         score += 1
     if CJK_RE.search(text):
         score += 2
-    if file_name.lower() in WANTED_PACKS:
+    if Path(file_name).name.lower() in WANTED_PACKS:
         score += 2
     if encoding == "utf-16le":
         score += 1
-    if file_name.lower().endswith(".dat"):
+    if Path(file_name).suffix.lower() == ".dat":
         score += 1
-    if offset < 16 and file_name.lower().startswith("tbl"):
+    if offset < 16 and Path(file_name).name.lower().startswith("tbl"):
         score -= 1
     return "high" if score >= 5 else "medium" if score >= 3 else "low"
 
@@ -244,10 +244,10 @@ def scan_file(path: Path, display_name: str | None = None) -> list[Hit]:
     hits: list[Hit] = []
     if path.name.lower() == "lang0.pak":
         for off, key, text, size in scan_lang0_entries(path):
-            enc = _detect_lang0_value_encoding(text.encode("utf-8")) if CJK_RE.search(text) else "ascii"
-            # For ASCII values both encodings decode identically; use UTF-8 as
-            # the neutral metadata value for source resources.
-            enc = "utf-8" if enc == "ascii" else enc
+            # Derive encoding from the original value bytes, not from a UTF-8
+            # re-encoding of the already-decoded text.
+            value_raw = data[off : off + size].replace(b'""', b'"')
+            enc = _detect_lang0_value_encoding(value_raw)
             hits.append(
                 Hit(shown, off, enc, text, confidence(shown, off, text, enc), size, "lang0_entry", key)
             )
@@ -256,10 +256,10 @@ def scan_file(path: Path, display_name: str | None = None) -> list[Hit]:
             hits.append(Hit(shown, off, enc, text, confidence(shown, off, text, enc), enc_size, "dat_entry", key))
     if path.name.lower() == "tbl2.pak":
         hits.extend(scan_tbl2_structured(path, shown))
-    for off, text, _chars in scan_utf16(data):
-        hits.append(Hit(shown, off, "utf-16le", text, confidence(shown, off, text, "utf-16le"), len(text) * 2, "utf16", ""))
-    for off, text, size, enc in scan_single_byte(data):
-        hits.append(Hit(shown, off, enc, text, confidence(shown, off, text, enc), size, "single_byte", ""))
+    for off, text, chars in scan_utf16(data):
+        hits.append(Hit(shown, off, "utf-16le", text, confidence(shown, off, text, "utf-16le"), chars * 2, "utf16", ""))
+    for off, text, size in scan_single_byte(data):
+        hits.append(Hit(shown, off, "ascii", text, confidence(shown, off, text, "ascii"), size, "single_byte", ""))
     unique: dict[tuple[int, str, str, str], Hit] = {}
     for hit in hits:
         unique[(hit.offset, hit.text, hit.kind, hit.id)] = hit
