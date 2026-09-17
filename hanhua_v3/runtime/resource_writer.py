@@ -64,6 +64,16 @@ def _find_resource(root: Path, name: str) -> Path:
     direct = root / wanted
     if direct.is_file():
         return direct
+    normalized = "/".join(Path(wanted).parts).casefold()
+    exact_path_matches = [
+        p
+        for p in root.rglob("*")
+        if p.is_file() and p.relative_to(root).as_posix().casefold() == normalized
+    ]
+    if len(exact_path_matches) == 1:
+        return exact_path_matches[0]
+    if len(exact_path_matches) > 1:
+        raise WriteError(f"Resource path is ambiguous: {name}")
     matches = [p for p in root.rglob(Path(wanted).name) if p.is_file()]
     if len(matches) == 1:
         return matches[0]
