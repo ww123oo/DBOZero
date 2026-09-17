@@ -156,7 +156,7 @@ def build_one(
     variant = _variant_name(variant)
     source_root = _resolve_source_root(source_dir)
     output_root = _safe_output_root(output_dir or OUTPUT_DIRS[variant])
-    if source_root == output_root or source_root in output_root.parents:
+    if source_root == output_root or source_root in output_root.parents or output_root in source_root.parents:
         raise BuildError("Source and output roots must be separate")
     if not queue_path.is_file():
         raise BuildError(f"Translation queue not found: {queue_path}")
