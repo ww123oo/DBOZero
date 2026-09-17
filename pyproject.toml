@@ -24,4 +24,4 @@ py-modules = ["build_output"]
 version = { attr = "hanhua_v3.__version__" }
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = ["tests", "hanhua_v3/tests"]
