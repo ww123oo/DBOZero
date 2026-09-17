@@ -53,7 +53,7 @@ def test_build_one_creates_valid_taiwan_product(tmp_path, monkeypatch) -> None:
     ) == 0
 
     assert 'ACCOUNT="帳號"'.encode("utf-8") in output.joinpath("pack/lang0.pak").read_bytes()
-    assert output.joinpath("pack/gui0.pak").read_bytes() == "嗨".encode("utf-16le") + b"\x00" * 6
+    assert output.joinpath("pack/gui0.pak").read_bytes() == "嗨".encode("utf-16le") + b"\x00" * 8
     assert output.joinpath("pack/tbl2.pak").read_bytes() == source_root.joinpath("pack/tbl2.pak").read_bytes()
     assert "你好世界" in output.joinpath("localize/Taiwan/language/table_text_all_data.rdf").read_text(encoding="utf-8")
     assert output.joinpath("readme.txt").read_text(encoding="utf-8") == "untouched"
