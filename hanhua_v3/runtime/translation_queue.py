@@ -3,7 +3,8 @@
 
 Resource scan output is authoritative for discovery. data/translations.tsv is
 legacy reference data; data/new_translations.tsv is the active daily/update
-queue. Matching is deliberately scoped to the same resource file.
+queue. Matching is deliberately scoped to the same resource file, while
+allowing an older basename-only queue to migrate safely to path-aware locators.
 """
 from __future__ import annotations
 
@@ -12,7 +13,20 @@ import csv
 import hashlib
 from pathlib import Path
 
-SCHEMA = ("surface", "file", "id", "source_hash", "source_text", "zh_cn", "status", "kind", "encoding", "legacy_source", "legacy_row", "note")
+SCHEMA = (
+    "surface",
+    "file",
+    "id",
+    "source_hash",
+    "source_text",
+    "zh_cn",
+    "status",
+    "kind",
+    "encoding",
+    "legacy_source",
+    "legacy_row",
+    "note",
+)
 
 
 def source_hash(text: str) -> str:
@@ -21,6 +35,10 @@ def source_hash(text: str) -> str:
 
 def _norm_file(value: str) -> str:
     return (value or "").replace("\\", "/").strip().lower()
+
+
+def _basename(value: str) -> str:
+    return Path(_norm_file(value)).name
 
 
 def _norm_id(value: str) -> str:
@@ -106,6 +124,25 @@ def _same_translation(rows: list[dict[str, str]]) -> bool:
     return len(values) == 1 and bool(next(iter(values), ""))
 
 
+def _unique_alias_match(rows: list[dict[str, str]], candidate: dict[str, str], *, by_hash: bool = False):
+    """Return one basename-compatible old row; reject ambiguous basenames."""
+    wanted = _basename(candidate.get("file", ""))
+    matching = []
+    for row in rows:
+        if _basename(row.get("file", "")) != wanted:
+            continue
+        if by_hash:
+            if hash_key(row)[1] != hash_key(candidate)[1]:
+                continue
+        else:
+            if _norm_id(row.get("id", "")) != _norm_id(candidate.get("id", "")):
+                continue
+            if (row.get("source_text") or "") != (candidate.get("source_text") or ""):
+                continue
+        matching.append(row)
+    return matching[0] if len(matching) == 1 else None
+
+
 def build_queue(scan_tsv: Path, legacy_tsv: Path, daily_tsv: Path) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
     legacy = _usable_old_rows(read_tsv(legacy_tsv))
     daily = _usable_old_rows(read_tsv(daily_tsv))
@@ -129,6 +166,9 @@ def build_queue(scan_tsv: Path, legacy_tsv: Path, daily_tsv: Path) -> tuple[list
             old = exact.get(key)
             match_mode = "exact"
             if old is None:
+                old = _unique_alias_match(legacy + daily, row)
+                match_mode = "basename" if old is not None else match_mode
+            if old is None:
                 matches = hashes.get(hash_key(row), [])
                 if len(matches) == 1:
                     old = matches[0]
@@ -136,6 +176,10 @@ def build_queue(scan_tsv: Path, legacy_tsv: Path, daily_tsv: Path) -> tuple[list
                 elif matches and _same_translation(matches):
                     old = matches[0]
                     match_mode = "duplicate-hash"
+                else:
+                    old = _unique_alias_match(legacy + daily, row, by_hash=True)
+                    if old is not None:
+                        match_mode = "basename-hash"
             if old is not None:
                 if old.get("zh_cn") or old.get("status") not in {"", "new"}:
                     row["zh_cn"] = old.get("zh_cn", "")
